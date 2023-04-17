@@ -4,7 +4,7 @@
     <div class="container-fluid">
     @isset($restorant)
         <div class="d-flex justify-center  pe-1">
-          <h5 id="resto_name" class="font-weight-bold text-black">{{$restorant->name}}</h5>
+          <h5 id="resto_name" class="font-weight-bold text-black" data-toggle="modal" data-target="#modal-restaurant-info" style="cursor: pointer;">{{$restorant->name}}</h5>
         </div>
     @endisset
         @if(!config('settings.hide_project_branding')||(!isset($restorant)))

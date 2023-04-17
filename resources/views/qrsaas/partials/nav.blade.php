@@ -32,6 +32,7 @@
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                     <a data-scroll href="#demo" class="nav-link">{{ __('qrlanding.demo') }}</a>
                 </li>
+               
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                     <a data-scroll href="{{route('generateqr')}}" class="nav-link">Generate</a>
                 </li>
