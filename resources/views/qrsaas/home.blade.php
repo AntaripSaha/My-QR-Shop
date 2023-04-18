@@ -91,6 +91,7 @@
 
         <!-- Product -->
         @include('qrsaas.partials.product')
+        @include('qrsaas.partials.new_product')
 
         <!-- Pricing -->
         @include('qrsaas.partials.pricing')
