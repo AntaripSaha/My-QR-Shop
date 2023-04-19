@@ -64,7 +64,7 @@ return array (
   'product6_subtitle' => 'Lot of countries, have legal requirement to keep log of their customers.',
   'product6_title' => 'Customer Log',
   'product_description' => 'There are platforms where you can make QR code, but no menu. There are platforms where you can create a menu but not design your QR',
-  'product_subtitle' => 'We do both',
+  'product_subtitle' => '',
   'product_title' => 'The most comprehensive platform for QR digital menu',
   'qr_code' => 'QR code',
   'register' => 'Register',

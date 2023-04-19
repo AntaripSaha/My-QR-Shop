@@ -34,7 +34,7 @@
                 </li>
                
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="{{route('generateqr')}}" class="nav-link">Generate</a>
+                    <a data-scroll href="{{route('generateqr')}}" class="nav-link">QrGenerator</a>
                 </li>
                 @if(count($availableLanguages)>1)
                 <li class="nav-item dropdown">

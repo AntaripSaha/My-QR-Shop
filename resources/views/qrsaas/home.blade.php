@@ -65,6 +65,10 @@
 
     <!-- Custom CSS by mobidonia -->
     <link type="text/css" href="{{ asset('custom') }}/css/custom_qr.css" rel="stylesheet">
+    
+    <!-- Owl Carousel -->
+    <link type="text/css" href="{{ asset('custom') }}/css/owl.carousel.min.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('custom') }}/css/owl.theme.default.min.css" rel="stylesheet">
 
     <!-- Custom CSS defined by admin -->
     <link type="text/css" href="{{ asset('byadmin') }}/front.css" rel="stylesheet">
@@ -138,6 +142,9 @@
 
     <!-- Notify JS -->
     <script src="{{ asset('custom') }}/js/notify.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="{{ asset('custom') }}/js/owl.carousel.min.js"></script>
 
     <!-- CKEditor -->
     <script src="{{ asset('ckeditor') }}/ckeditor.js"></script>

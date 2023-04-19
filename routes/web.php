@@ -63,6 +63,9 @@ Route::group(['middleware' => ['auth','impersonate']], function () {
         Route::get('removedemodata', 'RestorantController@removedemo')->name('restaurants.removedemo');
         Route::get('sitemap','SettingsController@regenerateSitemap')->name('regenerate.sitemap');
 
+        // Admin Products
+        Route::get('product', 'AdminProductController@index')->name('product.index');
+        Route::post('product_store', 'AdminProductController@store')->name('product.store');
         // Landing page settings 
         Route::get('landing', 'SettingsController@landing')->name('landing');
         Route::prefix('landing')->name('landing.')->group(function () {

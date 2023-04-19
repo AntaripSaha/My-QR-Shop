@@ -41,6 +41,11 @@
             <i class="ni ni-shop text-info"></i> {{ __('Restaurants') }}
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.product.index') }}">
+            <i class="ni ni-cart text-info"></i> {{ __('Products') }}
+        </a>
+    </li>
     @if(config('settings.multi_city'))
         <li class="nav-item">
             <a class="nav-link" href="{{ route('cities.index') }}">
