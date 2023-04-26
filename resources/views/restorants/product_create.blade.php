@@ -19,14 +19,14 @@
                     <div class="card-body">
                         <h6 class="heading-small text-muted mb-4">{{ __('Product information') }}</h6>
                         <div class="pl-lg-4">
-                            <form method="post" action="{{ route('admin.product.store') }}">
+                            <form method="post" action="{{ route('admin.product.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="name">{{ __('Product Image') }}</label>
                                     <input type="file" name="image" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Product Name here') }} ..." value="" required autofocus>
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('image'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('image') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -71,7 +71,21 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="name">{{ __('Rating') }}</label>
-                                    <input type="number" name="rating" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Max Rating 5') }} ..." value="" required autofocus>
+                                    <input type="number" name="rating" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Max Rating 5') }} ..." value=""  min="1" max="5" 
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    maxlength="1" required autofocus>
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="name">{{ __('Status') }}</label>
+                                    <select name="status">
+                                        <option value="1">Active Product</option>
+                                        <option value="0">Inactive Product</option>
+                                    </select>
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('name') }}</strong>

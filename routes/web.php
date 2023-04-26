@@ -65,7 +65,10 @@ Route::group(['middleware' => ['auth','impersonate']], function () {
 
         // Admin Products
         Route::get('product', 'AdminProductController@index')->name('product.index');
+        Route::get('product_create', 'AdminProductController@create')->name('product.create');
         Route::post('product_store', 'AdminProductController@store')->name('product.store');
+        Route::get('product_status/{id?}/{status?}', 'AdminProductController@status')->name('product.status');
+ 
         // Landing page settings 
         Route::get('landing', 'SettingsController@landing')->name('landing');
         Route::prefix('landing')->name('landing.')->group(function () {
