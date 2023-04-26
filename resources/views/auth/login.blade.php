@@ -125,7 +125,8 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-danger my-4">{{ __('Sign in') }}</button>
+                                <button type="submit" class="btn btn-success my-4">{{ __('Sign in') }}</button>
+                                <a class="btn btn-info my-4" href="{{route('register')}}">{{ __('Register') }}</a>
                             </div>
 
                             @if(config('app.isft') || isset($_GET['showCreate']))

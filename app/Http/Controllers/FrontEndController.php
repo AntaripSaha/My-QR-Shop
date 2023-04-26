@@ -50,7 +50,7 @@ class FrontEndController extends Controller
             }
         }
         else{
-            return redirect(route('register'));
+            return redirect(route('login'));
         }
     }
     /**
