@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('current_price')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

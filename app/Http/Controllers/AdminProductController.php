@@ -10,7 +10,7 @@ use App\Traits\Fields;
 
 use App\Restorant;
 
-use App\Models\Products;
+use App\Models\Product;
 
 
 class AdminProductController extends Controller
@@ -24,7 +24,7 @@ class AdminProductController extends Controller
         $this->ownerOnly();
     }
 
-    public function index(Products $products){
+    public function index(Product $products){
         if (auth()->user()->hasRole('admin')) {
             $allRes= $products->orderBy('id', 'desc')->pluck('name','id');
             return view('restorants.product_list', [
@@ -47,7 +47,7 @@ class AdminProductController extends Controller
     public function create(){
         return view('restorants.product_create');
     }
-    
+
     public function store(Request $request){
         // return $request;
         //Validate
@@ -60,7 +60,7 @@ class AdminProductController extends Controller
             'rating' => ['required', 'string', 'max:20'],
             'status' => ['required', 'string', 'max:5'],
         ]);
-        $product = new Products;
+        $product = new Product;
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images/product'), $imageName);
         $product->image = "/images/product/".$imageName;
@@ -79,10 +79,14 @@ class AdminProductController extends Controller
 
     public function status($id, $status, Request $request)
     {
-        Products::where('id', $id)->update([
+        Product::where('id', $id)->update([
             'status'=> $status
         ]);
         return redirect()->route('admin.product.index')->withStatus(__('Product Successfully Updated.'));
+    }
+    public function remove($id){
+       Product::where('id', $id)->delete();
+       return redirect()->route('admin.product.index')->withStatus(__('Product Deleted.'));
     }
 
 }

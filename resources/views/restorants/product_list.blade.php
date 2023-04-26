@@ -106,7 +106,7 @@
                                                             </a>
                                                         @endif
                                                     </form>
-                                                    <a class="dropdown-item warning red" onclick="return confirm('Are you sure you want to delete this Restaurant from Database? This will aslo delete all data related to it. This is irreversible step.')"  href="{{ route('admin.restaurant.remove',$product)}}">{{ __('Delete') }}</a>
+                                                    <a class="dropdown-item warning red" onclick="return confirm('Are you sure you want to delete this Product from Database?')"  href="{{ route('admin.product.remove',['id'=>$product->id])}}">{{ __('Delete') }}</a>
                                                 </div>
                                             </div>
                                         </td>
