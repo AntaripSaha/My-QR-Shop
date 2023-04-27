@@ -59,6 +59,7 @@
         "mckenziearts/laravel-notify": "^2.1",
         "mobidonia/laravel-dashboard-installer": "@dev",
         "mollie/laravel-mollie": "^2.0",
+        "mpdf/mpdf": "^8.1",
         "onecentlin/laravel-adminer": "^4.7",
         "paypal/rest-api-sdk-php": "^1.14",
         "pusher/pusher-php-server": "^4.1",
