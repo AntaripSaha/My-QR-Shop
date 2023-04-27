@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
  
-Route::get('/generate-qr', 'FrontEndController@testQr')->name('generateqr');
+Route::get('/generate-qr', 'FrontEndController@generateQr')->name('generateqr');
 
 
 Route::get('/', 'FrontEndController@index')->name('front');

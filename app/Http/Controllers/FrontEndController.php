@@ -12,6 +12,7 @@ use App\Categories;
 use App\Settings;
 use App\Tables;
 use App\User;
+use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -39,7 +40,7 @@ use Illuminate\Support\Facades\Auth;
 
 class FrontEndController extends Controller
 {
-    public function testQr(){
+    public function generateQr(){
         $user = Auth::check();
         if(!empty($user)){
             $plan = User::where('id', auth()->user()->id)->pluck('plan_id');
@@ -254,6 +255,7 @@ class FrontEndController extends Controller
      */
     public function subdomainMode()
     {
+  
         $subDomain = $this->getSubDomain();
         if ($subDomain) {
             $restorant = Restorant::whereRaw('REPLACE(subdomain, "-", "") = ?', [str_replace("-","",$subDomain)])->get();
@@ -279,6 +281,7 @@ class FrontEndController extends Controller
      */
     public function qrsaasMode()
     {
+        
         if (config('settings.disable_landing')) {
             //With disabled landing
             return redirect()->route('login');
@@ -335,8 +338,8 @@ class FrontEndController extends Controller
                 ]);
             }
 
-            $featured_vendors=Restorant::where('active',1)->where('is_featured',1)->get()->shuffle();
-           
+          $featured_vendors=Restorant::where('active',1)->where('is_featured',1)->get()->shuffle();
+          $products = Product::where('status', 1)->select('id','name', 'image', 'rating', 'description', 'discounted_price', 'current_price')->get();
 
             $response = new \Illuminate\Http\Response(view('qrsaas.'.config('settings.qr_landing'), [
                 'col'=>$colCounter[count($plans)],
@@ -345,10 +348,11 @@ class FrontEndController extends Controller
                 'availableLanguages'=>$availableLanguages,
                 'locale'=>$locale,
                 'pages'=>Pages::where('showAsLink', 1)->get(),
-                'featured_vendors'=>$featured_vendors
+                'featured_vendors'=>$featured_vendors,
+                'products'=>$products
             ]));
 
-            $response->withCookie(cookie('lang', $locale, 120));
+          $response->withCookie(cookie('lang', $locale, 120));
             App::setLocale(strtolower($locale));
 
             return $response;
