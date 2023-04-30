@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
  
 Route::get('/generate-qr', 'FrontEndController@generateQr')->name('generateqr');
 Route::get('/pdf-menu', 'PdfController@index')->name('pdf.menu');
+Route::get('/pdf-menu/download', 'PdfController@pdf')->name('pdf.menu.download');
 
 
 Route::get('/', 'FrontEndController@index')->name('front');

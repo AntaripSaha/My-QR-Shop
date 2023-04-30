@@ -54,91 +54,67 @@
             font-weight: bold;
             margin-left: auto;
         }
+        
+        .menu{
+            /* background-color: blue; */
+            /* background-image: url('{{ asset('images/product/p3.jpg') }}'); */
+            background-size: cover;
+            background-position: center center; 
+        }
+        
+        .description{
+            color: black !important;
+            font-weight: 700;
+        }
+
+        .button-action{
+            max-width: 600px;
+            margin: 0 auto;
+            display:flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
     <div class="menu">
         <h1>Restaurant Menu</h1>
         <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+1" alt="Food Item 1">
+            <img src="/images/product/p2.jpg" alt="Food Item 1">
             <div>
                 <h2>Food Item 1</h2>
-                <p>Description of food item 1</p>
+                <p class="description">Description of food item 1</p>
             </div>
             <span>$10.99</span>
         </div>
         <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+2" alt="Food Item 2">
+            <img src="/images/product/p1.jpg" alt="Food Item 1">
             <div>
-                <h2>Food Item 2</h2>
-                <p>Description of food item 2</p>
+                <h2>Food Item 1</h2>
+                <p class="description">Description of food item 1</p>
             </div>
-            <span>$12.99</span>
+            <span>$10.99</span>
         </div>
         <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+3" alt="Food Item 3">
+            <img src="/images/product/p3.jpg" alt="Food Item 1">
             <div>
-                <h2>Food Item 3</h2>
-                <p>Description of food item 3</p>
+                <h2>Food Item 1</h2>
+                <p class="description">Description of food item 1</p>
             </div>
-            <span>$8.99</span>
+            <span>$10.99</span>
         </div>
         <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+4" alt="Food Item 4">
+            <img src="/images/product/p4.jpg" alt="Food Item 1">
             <div>
-                <h2>Food Item 4</h2>
-                <p>Description of food item 4</p>
+                <h2>Food Item 1</h2>
+                <p class="description">Description of food item 1</p>
             </div>
-            <span>$15.99</span>
+            <span>$10.99</span>
         </div>
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+4" alt="Food Item 4">
-            <div>
-                <h2>Food Item 4</h2>
-                <p>Description of food item 4</p>
-            </div>
-            <span>$15.99</span>
-        </div>
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+4" alt="Food Item 4">
-            <div>
-                <h2>Food Item 4</h2>
-                <p>Description of food item 4</p>
-            </div>
-            <span>$15.99</span>
-        </div>
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+4" alt="Food Item 4">
-            <div>
-                <h2>Food Item 4</h2>
-                <p>Description of food item 4</p>
-            </div>
-            <span>$15.99</span>
-        </div>
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+4" alt="Food Item 4">
-            <div>
-                <h2>Food Item 4</h2>
-                <p>Description of food item 4</p>
-            </div>
-            <span>$15.99</span>
-        </div>
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+4" alt="Food Item 4">
-            <div>
-                <h2>Food Item 4</h2>
-                <p>Description of food item 4</p>
-            </div>
-            <span>$15.99</span>
-        </div>
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100x100.png?text=Food+Item+4" alt="Food Item 4">
-            <div>
-                <h2>Food Item 4</h2>
-                <p>Description of food item 4</p>
-            </div>
-            <span>$15.99</span>
-        </div>
+   
+    </div>
+    <div class="button-action">
+        <a href="#">Save</a>
+        <a href="{{route('pdf.menu.download')}}">Download</a>
     </div>
 </body>
 </html>
