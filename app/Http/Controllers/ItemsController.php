@@ -32,11 +32,9 @@ class ItemsController extends Controller
     public function index()
     {
         if (auth()->user()->hasRole('owner')) {
-
             
             $canAdd = auth()->user()->restorant->getPlanAttribute()['canAddNewItems'];
             
-
             //Change language
             ConfChanger::switchLanguage(auth()->user()->restorant);
 
@@ -67,12 +65,9 @@ class ItemsController extends Controller
                 $newDefault->default=1;
                 $newDefault->update();
                 
-                
-                
             }
 
             $currentEnvLanguage = isset(config('config.env')[2]['fields'][0]['data'][config('app.locale')]) ? config('config.env')[2]['fields'][0]['data'][config('app.locale')] : 'UNKNOWN';
-
 
             //Change currency
             ConfChanger::switchCurrency(auth()->user()->restorant);
@@ -86,7 +81,6 @@ class ItemsController extends Controller
             //If first item order starts with 0
             if($categories->first()&&$categories->first()->order_index==0){
                 Categories::setNewOrder($categories->pluck('id')->toArray());
-
                 //Re-get categories
                 $categories=auth()->user()->restorant->categories;
             }
