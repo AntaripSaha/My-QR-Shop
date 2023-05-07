@@ -81,8 +81,6 @@
          gap: 20px;
          padding-right: 20px;
          }
-          
-
       </style>
    </head>
    <body>
@@ -99,53 +97,25 @@
             <span>$10.99</span>
             </div> -->
          @foreach ( $category->items as $item)
-         
-           <!-- <div style="clear:both; position:relative;">
-                <div style="position:absolute; left:0pt; width:192pt;">
-                    <img class="card-img-top" src="{{ $item->logom }}" alt="...">
-                </div>
-                <div style="margin-left:200pt;">
-                        <h3 class="menu-name">{{ $item->name }}</h3>
-                        <p class="description">{{ $item->description }}</p>
-                    <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
-
-                </div>
-                 
-           </div> -->
          <table>
             <tr>
-                <td width="150px">
-                <img class="card-img-top" src="{{ $item->logom }}" alt="...">
-
-                </td>
-                <td width="400px">
-                <h3 class="menu-name">{{ $item->name }}</h3>
-                        <p class="description">{{ $item->description }}</p>
-                </td>
-                <td width="100px">
-                    <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
-                </td>
+               <td width="150px">
+                  <img class="card-img-top" src="{{ $item->logom }}" alt="...">
+               </td>
+               <td width="400px">
+                  <h3 class="menu-name">{{ $item->name }}</h3>
+                  <p class="description">{{ $item->description }}</p>
+               </td>
+               <td width="100px">
+                  <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
+               </td>
+               <td width="50px">
+                  <a  href="https://myqrshop.com/" target="_blank">
+                     <img src="/images/icons/plus.png" width="15px">
+                  </a>
+               </td>
             </tr>
          </table>
-           <!-- <div style="width: 100%; display: flex; justify-content:center">
-                <div style="width: 20%;">
-                    <img class="card-img-top" src="{{ $item->logom }}" alt="...">
-                </div>
-                <div style="width: 80%; ">
-                        <h3 class="menu-name">{{ $item->name }}</h3>
-                        <p class="description">{{ $item->description }}</p>
-                    <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
-
-                </div>
-                <div style="width: 20%">
-                    <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
-                </div>
-           </div>
-             -->
-                  
-         
-            
-            <br/>
          @endforeach
          @endforeach
       </div>
