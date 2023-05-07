@@ -60,7 +60,7 @@
          }
          .category{
          color: white;
-         text-align: left;
+         text-align: center;
          padding: 5px;
          background-color: #3c3c3c;
          }
@@ -109,19 +109,20 @@
                <td width="100px">
                   <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
                </td>
-               <td width="50px">
-                  <a  href="https://myqrshop.com/" target="_blank">
-                     <img src="/images/icons/plus.png" width="15px">
+               <td width="30px">
+                  <a href="https://myqrshop.com/" target="_blank">
+                     <img src="/images/icons/plus.png" width="30px">
                   </a>
                </td>
             </tr>
          </table>
          @endforeach
+         <span style="page-break-after:always;"></span>
+
          @endforeach
       </div>
       <div class="button-action">
-         <a href="#">Save</a>
-         <a href="{{route('pdf.menu.download')}}">Download</a>
+          <a href="{{route('pdf.menu.download')}}">Download</a>
       </div>
    </body>
 </html>

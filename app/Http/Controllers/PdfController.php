@@ -76,7 +76,7 @@ class PdfController extends Controller
           $categories=auth()->user()->restorant->categories;
       }
 
-      return view('pdf.index', [
+      return view('pdf.menu_two', [
           'hasMenuPDf'=>Module::has('menupdf'),
           'canAdd'=>$canAdd,
           'categories' => $categories,
@@ -98,9 +98,10 @@ class PdfController extends Controller
         'categories'    => $categories=auth()->user()->restorant->categories,
         'resto_name'    => $resto_name,
       ];
-      ini_set('max_execution_time', 180); //3 minutes
+      
+    //   ini_set('max_execution_time', 180); //3 minutes
       // Get the HTML content from the view
-      $html = view('pdf.index', $data)->render();
+      $html = view('pdf.menu_two', $data)->render();
     
 
 
@@ -119,6 +120,7 @@ class PdfController extends Controller
           $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
           $image->setAttribute('src', $base64);
       }
+      
   
       // Save the modified HTML
       $html = $doc->saveHTML();
@@ -134,9 +136,12 @@ class PdfController extends Controller
 
       // Set the paper size and orientation
       $dompdf->setPaper('A4', 'portrait');
-  
+    //   $paper_orientation = 'landscape';
+    //   $customPaper = array(0,0,950,950);
+    //   $dompdf->set_paper($customPaper,$paper_orientation);
       // Render the HTML as PDF
       $dompdf->render();
+       
   
       // Output the generated PDF (inline or as attachment)
       return $dompdf->stream('document.pdf');
