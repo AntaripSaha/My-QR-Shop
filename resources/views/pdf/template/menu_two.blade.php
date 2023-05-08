@@ -19,7 +19,6 @@
             padding-top: 20px;  
             
         }
-     
         .items
         {
             padding: 20px;
@@ -102,7 +101,6 @@
          border-radius: 7px;
          margin-right: 10px;
         }
-        
     </style>
 </head>
 <body>
@@ -157,9 +155,6 @@
         </tr>
         
     </table>
-    <div class="button-action">
-          <a href="{{route('pdf.menu.download')}}">Download</a>
-      </div>
  
 </body>
 </html>

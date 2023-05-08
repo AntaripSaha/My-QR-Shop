@@ -1,128 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <title>Restaurant Menu</title>
-      <style>
-         body {
-         font-family: Arial, sans-serif;
-         /* background-color: #f2f2f2; */
-         }
-         .menu {
-         max-width: 800px;
-         margin: 0 auto;
-         background-color: white;
-         border-radius: 10px;
-         padding: 20px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-         }
-         .menu h1 {
-         text-align: center;
-         margin-bottom: 30px;
-         }
-         .menu-item {
-         display: flex;
-         flex-direction: row;
-         align-items: center;
-         margin-bottom: 20px;
-         border-bottom: 1px solid #ccc;
-         padding-bottom: 10px;
-         }
-         .menu-item img {
-         width: 100px;
-         margin-right: 20px;
-         border-radius: 5px;
-         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-         }
-         .menu-item h2 {
-         margin: 0;
-         }
-         .menu-item p {
-         margin: 0;
-         font-size: 0.8em;
-         color: #777;
-         }
-         .menu-item span {
-         font-size: 1.2em;
-         font-weight: bold;
-         margin-left: auto;
-         }
-         .description{
-         color: #747474 !important;
-         font-weight: 700;
-         font-size: 12px;
-         }
-         .button-action{
-         max-width: 600px;
-         margin: 0 auto;
-         display:flex;
-         justify-content: space-between;
-         }
-         .category{
-         color: white;
-         text-align: center;
-         padding: 5px;
-         background-color: #3c3c3c;
-         }
-         .card-img-top{
-         width: 100px;
-         height: auto;
-         border-radius: 7px;
-         }
-         .menu-container{
-         display:flex;
-         align-items:center;
-         justify-content:space-between;
-         }
-         .submenu-container{
-         display:flex;
-         align-items:center;
-         justify-content:start;
-         gap: 20px;
-         padding-right: 20px;
-         }
-      </style>
-   </head>
-   <body>
-      <div class="menu">
-         <h1>{{$resto_name}}</h1>
-         @foreach ($categories as $index => $category)
-         <h2 class="category">{{ $category->name }}</h2>
-         <!-- <div class="menu-item">
-            <img src="/images/product/p2.jpg" alt="Food Item 1">
-            <div>
-                <h2>{{ $category->name }}</h2>
-                <p class="description">Description of food item 1</p>
+@extends('layouts.app', ['title' => __('Restaurant Menu Management')])
+@section('admin_title')
+{{__('Menu')}}
+@endsection
+@section('content')
+@include('items.partials.modals', ['restorant_id' => $restorant_id])
+<style>
+   .cus-card-img{
+      height: 400px !important;
+      width: auto;
+   }
+</style>
+<div class="header bg-gradient-primary pb-7 pt-5 pt-md-8">
+   <div class="container-fluid">
+      <div class="header-body">
+         <div class="row align-items-center py-4">
+            <!--<div class="col-lg-6 col-7">
+               </div>-->
+            <div class="col-lg-12 col-12 text-right">
+               <!-- <a href="{{ route('pdf.menu')}}" class="btn btn-icon btn-1 btn-sm btn-success">
+                  <span class="btn-inner--icon"><i class="fa fa-snowflake-o"></i> {{ __('Select Menu Template') }}</span>
+                  </a> -->
+               @if(config('settings.enable_miltilanguage_menus'))
+               @include('items.partials.languages')
+               @endif
             </div>
-            <span>$10.99</span>
-            </div> -->
-         @foreach ( $category->items as $item)
-         <table>
-            <tr>
-               <td width="150px">
-                  <img class="card-img-top" src="{{ $item->logom }}" alt="...">
-               </td>
-               <td width="400px">
-                  <h3 class="menu-name">{{ $item->name }}</h3>
-                  <p class="description">{{ $item->description }}</p>
-               </td>
-               <td width="100px">
-                  <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
-               </td>
-               <td width="30px">
-                  <a href="https://myqrshop.com/" target="_blank">
-                     <img src="/images/icons/plus.png" width="30px">
-                  </a>
-               </td>
-            </tr>
-         </table>
-         @endforeach
-         <span style="page-break-after:always;"></span>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="container-fluid mt--7">
+   <div class="row">
+      <div class="col-xl-12 order-xl-1">
+         <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+               <div class="row align-items-center">
+                  <div class="col-12">
+                     <div class="row">
+                        <div class="col">
+                           <h3 class="mb-0">{{ __('Select Layouts for Your Pdf Menu') }} @if(config('settings.enable_miltilanguage_menus')) ({{ $currentLanguage}}) @endif</h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <br/>
+            <div class="col-12">
+               @include('partials.flash')
+            </div>
+            <div class="card-body">
+               <div class="alert alert-default">
+                  <div class="row">
+                     <div class="col">
+                        <span class="h1 font-weight-bold mb-0 text-white">Available Pdf Designs</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="row justify-content-center">
+                  <div class="col-lg-12">
+                     <div class="row row-grid">
+                        <div class="col-lg-3">
+                           <a href="{{ route('pdf.menu', [1]) }}">
+                              <div class="card">
+                                 <input type="hidden" name="layout_numbers" value="1">
+                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo1.png" alt="...">
+                                 <div class="card-body">
+                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    <div class=" d-flex justify-around">
+                                       <p class="mt-3 mb-0 text-sm">
+                                          <span class="text-success mr-2">{{ __("AVAILABLE") }}</span>
+                                          <a href="{{route('pdf.menu.download', [1])}}">
+                                             <span class="btn btn-success btn-sm"> Download</span>
+                                          </a>
+                                          {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
+                                       </p>
+                                    </div>
+                                   
+                                 </div>
+                              </div>
+                              <br/>
+                           </a>
+                        </div>
+                        <div class="col-lg-3">
+                           <a href="{{ route('pdf.menu', [2]) }}">
+                              <div class="card">
+                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo2.png" alt="...">
+                                 <div class="card-body">
+                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    <p class="mt-3 mb-0 text-sm  d-flex justify-between">
+                                       <span class="text-success mr-2">{{ __("AVAILABLE") }}</span>
+                                       <a href="{{route('pdf.menu.download', [2])}}">
+                                          <span class="btn btn-success btn-sm"> Download</span>
+                                       </a>
+                                       {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
+                                    </p>
+                                 </div>
+                              </div>
+                              <br/>
+                           </a>
+                        </div>
+                        <div class="col-lg-3">
+                           <a href="#">
+                              <div class="card">
+                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo1.png" alt="...">
+                                 <div class="card-body">
+                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    <p class="mt-3 mb-0 text-sm">
+                                       {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
+                                       <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
+                                    </p>
+                                 </div>
+                              </div>
+                              <br/>
+                           </a>
+                        </div>
+                        <div class="col-lg-3">
+                           <a href="#">
+                              <div class="card">
+                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo1.png" alt="...">
+                                 <div class="card-body">
+                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    <p class="mt-3 mb-0 text-sm">
+                                       {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
+                                       <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
+                                    </p>
+                                 </div>
+                              </div>
+                              <br/>
+                           </a>
+                        </div>
+                        <div class="col-lg-3">
+                           <a href="#">
+                              <div class="card">
+                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo1.png" alt="...">
+                                 <div class="card-body">
+                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    <p class="mt-3 mb-0 text-sm">
+                                       {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
+                                       <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
+                                    </p>
+                                 </div>
+                              </div>
+                              <br/>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+@endsection
+@section('js')
+<script>
+   $("[data-target='#modal-edit-category']").on('click',function() {
+     var id = $(this).attr('data-id');
+     var name = $(this).attr('data-name');
 
-         @endforeach
-      </div>
-      <div class="button-action">
-          <a href="{{route('pdf.menu.download')}}">Download</a>
-      </div>
-   </body>
-</html>
+     $('#cat_name').val(name);
+     $("#form-edit-category").attr("action", "/categories/"+id);
+   })
+</script>
+@endsection
