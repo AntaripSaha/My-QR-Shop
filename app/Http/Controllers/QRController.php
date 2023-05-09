@@ -17,9 +17,10 @@ class QRController extends Controller
         }else if (config('settings.wildcard_domain_ready')) {
             $linkToTheMenu = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] ? 'https://' : 'http://').auth()->user()->restorant->subdomain.'.'.str_replace('www.', '', $_SERVER['HTTP_HOST']);
         }
-
+        $resto_name = url('/pdf-customer/download/'.auth()->user()->restorant->subdomain);
         $dataToPass = [
             'url'=>$linkToTheMenu,
+            'resto_name'=>$resto_name,
             'titleGenerator'=>__('Restaurant QR Generators'),
             'selectQRStyle'=>__('SELECT QR STYLE'),
             'selectQRColor'=>__('SELECT QR COLOR'),

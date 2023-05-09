@@ -15,7 +15,9 @@ export default class QRBuilder extends Component {
             imgData:"",
             numRow:5,
             numCol:3,
+            resto_name:JSON.parse(props.data).resto_name,
             url:JSON.parse(props.data).url,
+            tempUrl:JSON.parse(props.data).url,
             passedData:JSON.parse(props.data),
             color1:'#000000',
             color2:'#000000'
@@ -57,7 +59,6 @@ export default class QRBuilder extends Component {
         return new Promise(resolve => {
             
             _this.saveImgSVG(_this.state.type,  document.getElementById("theQR").innerHTML, 1500, 1500).then((res) => {
-                
                 resolve(res);
             });
         });
@@ -205,12 +206,19 @@ export default class QRBuilder extends Component {
                                         <h3 className="mb-0">{this.state.passedData.titleDownload}</h3>
                                     </div>
                                 </div>
-                                <button>TTTTT</button>
+                                <div>
+                                    <input type='radio' name='qrOptions' onChange={()=> this.setState({tempUrl:this.state.resto_name})} checked={this.state.tempUrl === this.state.resto_name ? 'checked' : ''}/> Menu
+                                    <input  style={{ marginLeft: '15px'}} type='radio' name='qrOptions' onChange={()=> this.setState({tempUrl:this.state.url})} checked={this.state.tempUrl === this.state.url ? 'checked' : ''} /> Restaurant
+                                </div>
+
+                                {/* <button onClick={()=> this.setState({tempUrl:this.state.resto_name})}>Menu</button>
+                                <button onClick={()=> this.setState({tempUrl:this.state.url})}>Restaurant</button> */}
                             </div>
 
                             <div className="card-body" id="section-to-print" style={{height:"500px"}}>
                                 <div id="theQR">
-                                    <QR link={this.state.url} color1={this.state.color1} color2={this.state.color2} type={this.state.type} className="img-thumbnail" value={this.state.url} />
+                                    {this.state.tempUrl}
+                                    <QR link={this.state.tempUrl} color1={this.state.color1} color2={this.state.color2} type={this.state.type} className="img-thumbnail" value={this.state.url} />
                                 </div>
                             <br />
                             <button  onClick={()=>{this.downloadJPEG().then(res => this.setImgData(res))}} type="button" className="btn btn-success">{this.state.passedData.downloadJPG}</button>

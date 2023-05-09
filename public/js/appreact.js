@@ -82150,7 +82150,9 @@ var QRBuilder = /*#__PURE__*/function (_Component) {
       imgData: "",
       numRow: 5,
       numCol: 3,
+      resto_name: JSON.parse(props.data).resto_name,
       url: JSON.parse(props.data).url,
+      tempUrl: JSON.parse(props.data).url,
       passedData: JSON.parse(props.data),
       color1: '#000000',
       color2: '#000000'
@@ -82225,7 +82227,6 @@ var QRBuilder = /*#__PURE__*/function (_Component) {
   }, {
     key: "saveImg",
     value: function saveImg(value, content, width, height) {
-      console.log('.......')
       // Finish creating downloadable data
       var filename = "QRcode_" + value + ".jpg";
       var wrap = document.createElement('div');
@@ -82366,7 +82367,28 @@ var QRBuilder = /*#__PURE__*/function (_Component) {
         className: "col-8"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "mb-0"
-      }, this.state.passedData.titleDownload)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.passedData.titleDownload))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        name: "qrOptions",
+        onChange: function onChange() {
+          return _this3.setState({
+            tempUrl: _this3.state.resto_name
+          });
+        },
+        checked: this.state.tempUrl === this.state.resto_name ? 'checked' : ''
+      }), " Menu", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        style: {
+          marginLeft: '15px'
+        },
+        type: "radio",
+        name: "qrOptions",
+        onChange: function onChange() {
+          return _this3.setState({
+            tempUrl: _this3.state.url
+          });
+        },
+        checked: this.state.tempUrl === this.state.url ? 'checked' : ''
+      }), " Restaurant")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body",
         id: "section-to-print",
         style: {
@@ -82374,8 +82396,8 @@ var QRBuilder = /*#__PURE__*/function (_Component) {
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "theQR"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QR__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        link: this.state.url,
+      }, this.state.tempUrl, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QR__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        link: this.state.tempUrl,
         color1: this.state.color1,
         color2: this.state.color2,
         type: this.state.type,
@@ -82488,7 +82510,7 @@ if (document.getElementById('qrgen')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danieldimov/Documents/Projects/Mobidonia/CodeCanyon/MRestorant/Site/resources/js/appreact.js */"./resources/js/appreact.js");
+module.exports = __webpack_require__(/*! D:\Projects\QR\qr_laravel\resources\js\appreact.js */"./resources/js/appreact.js");
 
 
 /***/ })
