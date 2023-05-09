@@ -20,6 +20,7 @@ use App\Models\Allergens;
 class PdfController extends Controller
 {
   public function layoutindex(){
+    $restaurant_id = auth()->user()->restorant->id;
     $resto_name = auth()->user()->restorant->name;
      
     if (auth()->user()->hasRole('owner')) {
@@ -82,6 +83,7 @@ class PdfController extends Controller
           'categories' => $categories,
           'restorant_id' => auth()->user()->restorant->id,
           'resto_name' => $resto_name,
+          'restaurant_id' => $restaurant_id,
           'currentLanguage'=> $currentEnvLanguage,
           'availableLanguages'=>auth()->user()->restorant->localmenus,
           'defaultLanguage'=>$defaultLng?$defaultLng->language:""
@@ -237,8 +239,6 @@ class PdfController extends Controller
   }
   public function pdfDownload($var)
   {
-    // return $var;
-    
       $resto_name = auth()->user()->restorant->name;
       $categories=auth()->user()->restorant->categories;
       $data = [
@@ -255,8 +255,6 @@ class PdfController extends Controller
         $html = view('pdf.template.menu_two', $data)->render();
 
       }
-    
-
 
       libxml_use_internal_errors(true);
 
@@ -289,9 +287,9 @@ class PdfController extends Controller
 
       // Set the paper size and orientation
       $dompdf->setPaper('A4', 'portrait');
-    //   $paper_orientation = 'landscape';
-    //   $customPaper = array(0,0,950,950);
-    //   $dompdf->set_paper($customPaper,$paper_orientation);
+      //   $paper_orientation = 'landscape';
+      //   $customPaper = array(0,0,950,950);
+      //   $dompdf->set_paper($customPaper,$paper_orientation);
       // Render the HTML as PDF
       $dompdf->render();
        
@@ -299,6 +297,61 @@ class PdfController extends Controller
       // Output the generated PDF (inline or as attachment)
       return $dompdf->stream('document.pdf');
   }
+
+  public function pdfDownloadUser($var)
+  {
+      $restorant = Restorant::whereRaw('REPLACE(subdomain, "-", "") = ?', [str_replace("-","",$var)])->first();
+      $categories = $restorant->categories;
+      $resto_name = $restorant->name;
+      $data = [
+        'categories'    => $categories,
+        'resto_name'    => $resto_name,
+      ];
+      
+    //   ini_set('max_execution_time', 180); //3 minutes
+      // Get the HTML content from the view
+      $html = view('pdf.template.menu_one', $data)->render();
+   
+      libxml_use_internal_errors(true);
+
+      // Find all img tags in the HTML
+      $doc = new \DOMDocument();
+      $doc->loadHTML($html);
+      $images = $doc->getElementsByTagName('img');
   
+      // Loop through each image and convert it to base64
+      foreach ($images as $image) {
+          $path = public_path() . $image->getAttribute('src');
+          $type = pathinfo($path, PATHINFO_EXTENSION);
+          $data = file_get_contents($path);
+          $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+          $image->setAttribute('src', $base64);
+      }
+      
+  
+      // Save the modified HTML
+      $html = $doc->saveHTML();
+  
+      // Create a new Dompdf instance
+      $dompdf = new Dompdf();
+  
+      // Load the modified HTML into Dompdf
+     $dompdf->loadHtml($html);
+  
+
+     libxml_use_internal_errors(false);
+
+      // Set the paper size and orientation
+      $dompdf->setPaper('A4', 'portrait');
+      //   $paper_orientation = 'landscape';
+      //   $customPaper = array(0,0,950,950);
+      //   $dompdf->set_paper($customPaper,$paper_orientation);
+      // Render the HTML as PDF
+      $dompdf->render();
+       
+  
+      // Output the generated PDF (inline or as attachment)
+      return $dompdf->stream('document.pdf');
+  }
   
 }

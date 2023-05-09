@@ -82225,6 +82225,7 @@ var QRBuilder = /*#__PURE__*/function (_Component) {
   }, {
     key: "saveImg",
     value: function saveImg(value, content, width, height) {
+      console.log('.......')
       // Finish creating downloadable data
       var filename = "QRcode_" + value + ".jpg";
       var wrap = document.createElement('div');

@@ -205,6 +205,7 @@ export default class QRBuilder extends Component {
                                         <h3 className="mb-0">{this.state.passedData.titleDownload}</h3>
                                     </div>
                                 </div>
+                                <button>TTTTT</button>
                             </div>
 
                             <div className="card-body" id="section-to-print" style={{height:"500px"}}>

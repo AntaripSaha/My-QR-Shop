@@ -4,12 +4,7 @@
 @endsection
 @section('content')
 @include('items.partials.modals', ['restorant_id' => $restorant_id])
-<style>
-   .cus-card-img{
-      height: 400px !important;
-      width: auto;
-   }
-</style>
+
 <div class="header bg-gradient-primary pb-7 pt-5 pt-md-8">
    <div class="container-fluid">
       <div class="header-body">
@@ -34,10 +29,18 @@
          <div class="card bg-secondary shadow">
             <div class="card-header bg-white border-0">
                <div class="row align-items-center">
-                  <div class="col-12">
+                  <div class="col-md-6 col-sm-12">
                      <div class="row">
                         <div class="col">
                            <h3 class="mb-0">{{ __('Select Layouts for Your Pdf Menu') }} @if(config('settings.enable_miltilanguage_menus')) ({{ $currentLanguage}}) @endif</h3>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                     <div class="row">
+                        <div class="col d-flex justify-content-lg-end">
+                           <span class="btn btn-success btn-sm" id="download-btn">Download QR Code for Menu</span>
+                           <input id="url-input" type="hidden" value="{{route('pdf.user.download',[$resto_name])}}">
                         </div>
                      </div>
                   </div>
@@ -62,21 +65,18 @@
                            <a href="{{ route('pdf.menu', [1]) }}">
                               <div class="card">
                                  <input type="hidden" name="layout_numbers" value="1">
-                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo1.png" alt="...">
+                                 <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
                                  <div class="card-body">
-                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
-                                    <div class=" d-flex justify-around">
-                                       <p class="mt-3 mb-0 text-sm">
+                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
+                                       <p class="mt-3 mb-0 text-sm  d-flex justify-between">
                                           <span class="text-success mr-2">{{ __("AVAILABLE") }}</span>
                                           <a href="{{route('pdf.menu.download', [1])}}">
                                              <span class="btn btn-success btn-sm"> Download</span>
                                           </a>
                                           {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
                                        </p>
-                                    </div>
-                                   
-                                 </div>
+                                  </div>
                               </div>
                               <br/>
                            </a>
@@ -84,10 +84,10 @@
                         <div class="col-lg-3">
                            <a href="{{ route('pdf.menu', [2]) }}">
                               <div class="card">
-                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo2.png" alt="...">
+                                 <img class="card-img-top" src="/images/pdf/menu-demo2.png" alt="...">
                                  <div class="card-body">
-                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
                                     <p class="mt-3 mb-0 text-sm  d-flex justify-between">
                                        <span class="text-success mr-2">{{ __("AVAILABLE") }}</span>
                                        <a href="{{route('pdf.menu.download', [2])}}">
@@ -103,10 +103,10 @@
                         <div class="col-lg-3">
                            <a href="#">
                               <div class="card">
-                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo1.png" alt="...">
+                                 <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
                                  <div class="card-body">
-                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
                                     <p class="mt-3 mb-0 text-sm">
                                        {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
                                        <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
@@ -119,10 +119,10 @@
                         <div class="col-lg-3">
                            <a href="#">
                               <div class="card">
-                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo1.png" alt="...">
+                                 <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
                                  <div class="card-body">
-                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
                                     <p class="mt-3 mb-0 text-sm">
                                        {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
                                        <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
@@ -135,10 +135,10 @@
                         <div class="col-lg-3">
                            <a href="#">
                               <div class="card">
-                                 <img class="card-img-top cus-card-img" src="/images/pdf/menu-demo1.png" alt="...">
+                                 <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
                                  <div class="card-body">
-                                    <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p>
+                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
                                     <p class="mt-3 mb-0 text-sm">
                                        {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
                                        <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
@@ -167,4 +167,43 @@
      $("#form-edit-category").attr("action", "/categories/"+id);
    })
 </script>
+<script>
+   // Get the button element
+   var downloadBtn = document.getElementById('download-btn');
+
+   // Add a click event listener to the button
+   downloadBtn.addEventListener('click', function() {
+       // Get the URL input element
+       var urlInput = document.getElementById('url-input');
+
+       // Get the value of the URL input element
+       var url = urlInput.value;
+
+       // Generate the QR code image URL using the Google Chart API
+       var qrCodeUrl = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' + encodeURIComponent(url);
+
+       // Fetch the image as a binary blob
+       fetch(qrCodeUrl)
+           .then(response => response.blob())
+           .then(blob => {
+               // Create a temporary URL for the blob
+               var blobUrl = URL.createObjectURL(blob);
+
+               // Create a temporary a tag to download the image
+               var link = document.createElement('a');
+               link.download = '';
+               link.href = blobUrl;
+
+               // Trigger a click event on the link to start the download
+               document.body.appendChild(link);
+               link.click();
+               document.body.removeChild(link);
+
+               // Revoke the temporary URL after the download is complete
+               URL.revokeObjectURL(blobUrl);
+           });
+   });
+</script>
+
+
 @endsection

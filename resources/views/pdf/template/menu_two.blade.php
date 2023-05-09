@@ -146,8 +146,6 @@
                                 </div>
                         </div>
                             <span style="page-break-before: always;"></span>
-
-          
                     @endforeach
                 </div>
             </td>

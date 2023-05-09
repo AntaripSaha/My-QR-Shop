@@ -40,6 +40,11 @@
                 <i class="ni ni-collection text-pink"></i> {{ __('Menu') }}
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('pdf.menu.layouts') }}">
+                <i class="ni ni-books text-success"></i> {{ __('Pdf Menu') }}
+            </a>
+        </li>
     @endif
     @if(config('app.isft'))
         <li class="nav-item">

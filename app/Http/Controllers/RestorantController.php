@@ -916,7 +916,6 @@ $restaurant=Restorant::findOrFail($restaurantid);
             
         }
         
-
         if(Module::has('qrgen')){
             //With QR Module
             return redirect((route('qrgen.gen',['name'=>$filename]))."?data=".$vendorURL);

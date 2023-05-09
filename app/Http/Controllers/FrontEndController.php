@@ -1068,6 +1068,7 @@ class FrontEndController extends Controller
 
     public function restorant($alias)
     {
+       
         //Do we have impressum app
         $doWeHaveImpressumApp=Module::has('impressum');
 
@@ -1076,7 +1077,6 @@ class FrontEndController extends Controller
             return redirect()->route('restorant', $subDomain);
         }
         $restorant = Restorant::whereRaw('REPLACE(subdomain, "-", "") = ?', [str_replace("-","",$alias)])->first();
-
         if(config('app.isloyalty',false)&&$restorant){
             return $this->loyaltyPlatform($restorant);
         }
@@ -1194,8 +1194,7 @@ class FrontEndController extends Controller
            }
 
            session(['last_visited_restaurant_alias' => $restorant->alias]);
-
-
+          
            $viewData=[
                 'wh'=>$wh,
                 'allergens'=>in_array("allergens", config('global.modules',[]))?Allergens::where('post_type','allergen')->get():[],
