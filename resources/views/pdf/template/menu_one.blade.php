@@ -111,7 +111,7 @@
                </td>
                <td width="30px">
                   <a href="https://myqrshop.com/" target="_blank">
-                     <img src="/images/icons/plus.png" width="30px">
+                     <img src="/images/icons/plus.svg" width="50px">
                   </a>
                </td>
             </tr>
