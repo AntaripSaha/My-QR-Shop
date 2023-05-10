@@ -76,9 +76,8 @@ export default class QRBuilder extends Component {
         a.click()
     }
 
-    
-
     saveImg(value, content, width, height) {
+
         // Finish creating downloadable data
         let filename = "QRcode_" + value + ".jpg";
         const wrap = document.createElement('div');
@@ -88,11 +87,14 @@ export default class QRBuilder extends Component {
     
         const $svg = wrap.firstChild
         const $clone = $svg.cloneNode(true);
+
+        
     
         $clone.setAttribute('width', width);
         $clone.setAttribute('height', height);
     
         const svgData = new XMLSerializer().serializeToString($clone);
+
     
         let canvas = document.createElement('canvas');
     
@@ -108,7 +110,6 @@ export default class QRBuilder extends Component {
     
         
         return new Promise(resolve => {
-            
             if (!img.complete) {
                 // add onload listener here
                 
@@ -129,6 +130,7 @@ export default class QRBuilder extends Component {
                     a.click();
         
                     resolve(data)
+                    
                 };
             }else{
                 
