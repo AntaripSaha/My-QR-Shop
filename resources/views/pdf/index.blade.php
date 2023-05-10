@@ -76,6 +76,41 @@
                                           </a>
                                           {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
                                        </p>
+                                       <div class="mt-3">
+                                          {{-- <select class="form-control select2" >
+                                             @if ($active_template && $active_template->pdf_no == 1)
+                                             <option value="1" selected>Active</option>
+                                             <option value="2">Inactive</option>
+                                             @elseif ($active_template && $active_template->pdf_no != 1)
+                                             <option value="1">Active</option>
+                                             <option value="2" selected>Inactive</option>
+                                             @else
+                                             <option>Select Default Template</option>
+                                             <option value="1">Active</option>
+                                             <option value="2">Inactive</option>
+                                             @endif
+                                            
+                                          </select> --}}
+
+                                          <form action="{{route('default.pdf.menu')}}" method="post">
+                                             @csrf
+                                             <input type="hidden" name="pdf_no" value="1">
+                                             @if ($active_template && $active_template->pdf_no == 1)
+                                                <button class="btn btn-outline-success" type="submit">
+                                                   Active Menu
+                                                </button>
+                                             @elseif ($active_template && $active_template->pdf_no != 1)
+                                                <button class="btn btn-outline-danger" type="submit">
+                                                   Inactive
+                                                </button>
+                                             @else
+                                                <button class="btn btn-outline-info" type="submit">
+                                                   Make Default Menu
+                                                </button>
+                                             @endif
+
+                                          </form>
+                                        </div>
                                   </div>
                               </div>
                               <br/>
@@ -93,8 +128,30 @@
                                        <a href="{{route('pdf.menu.download', [2])}}">
                                           <span class="btn btn-success btn-sm"> Download</span>
                                        </a>
+
                                        {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
                                     </p>
+                                    <div class="mt-3">
+                                       <form action="{{route('default.pdf.menu')}}" method="post">
+                                          @csrf
+                                          <input type="hidden" name="pdf_no" value="2">
+                                          @if ($active_template && $active_template->pdf_no == 2)
+                                             <button class="btn btn-outline-success" type="submit">
+                                                Active Menu
+                                             </button>
+                                          @elseif ($active_template && $active_template->pdf_no != 2)
+                                             <button class="btn btn-outline-danger" type="submit">
+                                                Inactive
+                                             </button>
+                                          @else
+                                             <button class="btn btn-outline-info" type="submit">
+                                                Make Default Menu
+                                             </button>
+                                          @endif
+
+                                       </form>
+
+                                    </div>
                                  </div>
                               </div>
                               <br/>

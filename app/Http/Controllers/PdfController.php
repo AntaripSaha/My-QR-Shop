@@ -11,6 +11,7 @@ use App\Imports\ItemsImport;
 use App\Items;
 use App\Plans;
 use App\Restorant;
+use App\Models\RestaurantMenu;
 use Image;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Services\ConfChanger;
@@ -20,6 +21,8 @@ use App\Models\Allergens;
 class PdfController extends Controller
 {
   public function layoutindex(){
+     
+    $active_template = RestaurantMenu::where('user_id', auth()->user()->id)->first();
     $restaurant_id = auth()->user()->restorant->id;
     $resto_name = auth()->user()->restorant->name;
      
@@ -81,6 +84,7 @@ class PdfController extends Controller
           'hasMenuPDf'=>Module::has('menupdf'),
           'canAdd'=>$canAdd,
           'categories' => $categories,
+          'active_template' => $active_template,
           'restorant_id' => auth()->user()->restorant->id,
           'resto_name' => $resto_name,
           'restaurant_id' => $restaurant_id,
@@ -300,6 +304,7 @@ class PdfController extends Controller
 
   public function pdfDownloadUser($var)
   {
+    return 'a';
       $restorant = Restorant::whereRaw('REPLACE(subdomain, "-", "") = ?', [str_replace("-","",$var)])->first();
       $categories = $restorant->categories;
       $resto_name = $restorant->name;
@@ -352,6 +357,24 @@ class PdfController extends Controller
   
       // Output the generated PDF (inline or as attachment)
       return $dompdf->stream('document.pdf');
+  }
+  public function defaultMenu(Request $request){
+   $default_menu =  RestaurantMenu::where('user_id', auth()->user()->id)->first();
+    if($default_menu){
+      RestaurantMenu::where('user_id', auth()->user()->id)->update([
+        'pdf_no'=>$request->pdf_no
+      ]);
+    }else{
+      $create_default_menu = new RestaurantMenu;
+      $create_default_menu->user_id = auth()->user()->id;
+      $create_default_menu->restaurant_id = auth()->user()->restorant->id;
+      $create_default_menu->subdomain = auth()->user()->restorant->subdomain;
+      $create_default_menu->pdf_no = $request->pdf_no;
+      $create_default_menu->status = 1;
+      $create_default_menu->save();
+      return redirect()->back();
+    }
+    return redirect()->back();
   }
   
 }

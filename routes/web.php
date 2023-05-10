@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
- 
+
 Route::get('/generate-qr', 'FrontEndController@generateQr')->name('generateqr');
 Route::get('/pdf-layouts', 'PdfController@layoutindex')->name('pdf.menu.layouts');
 Route::get('/pdf-menu/{var?}', 'PdfController@index')->name('pdf.menu');
 Route::get('/pdf-menu/download/{var?}', 'PdfController@pdfDownload')->name('pdf.menu.download');
 Route::get('/pdf-customer/download/{var?}', 'PdfController@pdfDownloadUser')->name('pdf.user.download');
+Route::any('/default-pdf-menu', 'PdfController@defaultMenu')->name('default.pdf.menu');
+
+
 
 
 Route::get('/', 'FrontEndController@index')->name('front');
