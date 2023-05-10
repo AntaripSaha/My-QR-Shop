@@ -82396,13 +82396,13 @@ var QRBuilder = /*#__PURE__*/function (_Component) {
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "theQR"
-      }, this.state.tempUrl, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QR__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QR__WEBPACK_IMPORTED_MODULE_2__["default"], {
         link: this.state.tempUrl,
         color1: this.state.color1,
         color2: this.state.color2,
         type: this.state.type,
         className: "img-thumbnail",
-        value: this.state.url
+        value: this.state.tempUrl
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           _this3.downloadJPEG().then(function (res) {
