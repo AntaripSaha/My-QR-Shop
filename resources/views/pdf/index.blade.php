@@ -77,21 +77,6 @@
                                           {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
                                        </p>
                                        <div class="mt-3">
-                                          {{-- <select class="form-control select2" >
-                                             @if ($active_template && $active_template->pdf_no == 1)
-                                             <option value="1" selected>Active</option>
-                                             <option value="2">Inactive</option>
-                                             @elseif ($active_template && $active_template->pdf_no != 1)
-                                             <option value="1">Active</option>
-                                             <option value="2" selected>Inactive</option>
-                                             @else
-                                             <option>Select Default Template</option>
-                                             <option value="1">Active</option>
-                                             <option value="2">Inactive</option>
-                                             @endif
-                                            
-                                          </select> --}}
-
                                           <form action="{{route('default.pdf.menu')}}" method="post">
                                              @csrf
                                              <input type="hidden" name="pdf_no" value="1">
@@ -108,9 +93,8 @@
                                                    Make Default Menu
                                                 </button>
                                              @endif
-
                                           </form>
-                                        </div>
+                                       </div>
                                   </div>
                               </div>
                               <br/>
@@ -168,6 +152,11 @@
                                        {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
                                        <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
                                     </p>
+                                    <div class="mt-3">
+                                       <button class="btn btn-outline-info" type="submit">
+                                          Make Default Menu
+                                       </button>
+                                    </div>
                                  </div>
                               </div>
                               <br/>
@@ -184,6 +173,11 @@
                                        {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
                                        <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
                                     </p>
+                                    <div class="mt-3">
+                                       <button class="btn btn-outline-info" type="submit">
+                                          Make Default Menu
+                                       </button>
+                                    </div>
                                  </div>
                               </div>
                               <br/>
@@ -200,6 +194,11 @@
                                        {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
                                        <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
                                     </p>
+                                    <div class="mt-3">
+                                       <button class="btn btn-outline-info" type="submit">
+                                          Make Default Menu
+                                       </button>
+                                    </div>
                                  </div>
                               </div>
                               <br/>

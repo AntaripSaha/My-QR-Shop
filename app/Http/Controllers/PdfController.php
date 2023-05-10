@@ -304,7 +304,6 @@ class PdfController extends Controller
 
   public function pdfDownloadUser($var)
   {
-    return 'a';
       $restorant = Restorant::whereRaw('REPLACE(subdomain, "-", "") = ?', [str_replace("-","",$var)])->first();
       $categories = $restorant->categories;
       $resto_name = $restorant->name;
@@ -312,10 +311,19 @@ class PdfController extends Controller
         'categories'    => $categories,
         'resto_name'    => $resto_name,
       ];
-      
-    //   ini_set('max_execution_time', 180); //3 minutes
+     
+      $default_menu =  RestaurantMenu::where('restaurant_id', $restorant->id)->where('subdomain', $restorant->subdomain)->select('pdf_no')->first();
+
+      //   ini_set('max_execution_time', 180); //3 minutes
       // Get the HTML content from the view
-      $html = view('pdf.template.menu_one', $data)->render();
+      if($default_menu && $default_menu->pdf_no == 1){
+        $html = view('pdf.template.menu_one', $data)->render();
+      }elseif($default_menu && $default_menu->pdf_no == 2){
+        $html = view('pdf.template.menu_two', $data)->render();
+      }else{
+        $html = view('pdf.template.menu_one', $data)->render();
+      }
+      
    
       libxml_use_internal_errors(true);
 
