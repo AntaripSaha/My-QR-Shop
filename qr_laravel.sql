@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 13, 2023 at 10:15 AM
+-- Generation Time: May 11, 2023 at 04:31 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.1.13
 
@@ -107,17 +107,17 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `categories_restorant_id_foreign` (`restorant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `restorant_id`, `created_at`, `updated_at`, `order_index`, `active`, `deleted_at`) VALUES
-(1, 'Salads', 1, '2023-03-30 08:25:56', '2023-04-02 11:18:56', 1, 1, NULL),
-(2, 'Pizza', 1, '2023-03-30 08:25:56', '2023-04-02 11:18:56', 2, 1, NULL),
-(3, 'Fresh Pasta and Risotto', 1, '2023-03-30 08:25:57', '2023-04-02 11:18:56', 3, 1, NULL),
-(4, 'Lasagna', 1, '2023-03-30 08:25:57', '2023-04-02 11:18:56', 4, 1, NULL),
+(1, 'Salads', 1, '2023-03-30 08:25:56', '2023-05-01 23:51:47', 3, 1, NULL),
+(2, 'Pizza', 1, '2023-03-30 08:25:56', '2023-05-08 00:56:04', 1, 1, NULL),
+(3, 'Fresh Pasta and Risotto', 1, '2023-03-30 08:25:57', '2023-05-01 23:51:39', 4, 1, NULL),
+(4, 'Lasagna', 1, '2023-03-30 08:25:57', '2023-05-08 00:56:04', 2, 1, NULL),
 (5, 'Burgers', 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 0, 1, NULL),
 (6, 'Garnish', 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 0, 1, NULL),
 (7, 'Salads', 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 0, 1, NULL),
@@ -183,7 +183,8 @@ INSERT INTO `categories` (`id`, `name`, `restorant_id`, `created_at`, `updated_a
 (67, 'Salads', 16, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 0, 1, NULL),
 (68, 'Pizza', 16, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 0, 1, NULL),
 (69, 'Milk', 27, '2023-04-03 10:21:27', '2023-04-03 10:21:27', 1, 1, NULL),
-(70, 'burger', 26, '2023-04-04 09:26:04', '2023-04-04 09:26:04', 1, 1, NULL);
+(70, 'burger', 26, '2023-04-04 09:26:04', '2023-04-04 09:26:04', 1, 1, NULL),
+(71, 'Rice', 1, '2023-05-07 23:42:54', '2023-05-07 23:42:54', 5, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -273,20 +274,20 @@ CREATE TABLE IF NOT EXISTS `companies` (
   UNIQUE KEY `restorants_name_unique` (`name`),
   UNIQUE KEY `restorants_subdomain_unique` (`subdomain`),
   KEY `restorants_user_id_foreign` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `companies`
 --
 
 INSERT INTO `companies` (`id`, `created_at`, `updated_at`, `name`, `subdomain`, `logo`, `cover`, `active`, `user_id`, `lat`, `lng`, `address`, `phone`, `minimum`, `description`, `fee`, `static_fee`, `radius`, `is_featured`, `city_id`, `views`, `can_pickup`, `can_deliver`, `self_deliver`, `free_deliver`, `whatsapp_phone`, `fb_username`, `do_covertion`, `currency`, `payment_info`, `mollie_payment_key`, `deleted_at`, `can_dinein`) VALUES
-(1, '2023-03-30 08:25:56', '2023-04-06 06:52:56', 'Leuka Pizza', 'leukapizza', 'https://foodtiger.mobidonia.com/uploads/restorants/9d180742-9fb3-4b46-8563-8c24c9004fd3', '', 1, 2, '40.654509', '-73.948990', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'italian, pasta, pizza', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 111, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
+(1, '2023-03-30 08:25:56', '2023-05-11 00:25:18', 'Ovenstory', 'ovenstory', '1e1d0803-19d0-4862-82b6-5b609a740d96', '672827ed-8852-4444-bb91-79047bc2cbe5', 1, 2, '40.654509', '-73.948990', '6 Yukon Drive Raeford, NC 28376', '+15306259694', '10', 'italian, pasta, pizza', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 79, 1, 1, 0, 0, '+38971605048', NULL, 1, 'USD', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 'Oasis Burgers', 'oasisburgers', 'https://foodtiger.mobidonia.com/uploads/restorants/c8d27bcc-54da-4c18-b8e6-f1414c71612c', '', 1, 2, '40.588894', '-73.939175', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'burgers, drinks, best chicken', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (3, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 'Brooklyn Taco', 'brooklyntaco', 'https://foodtiger.mobidonia.com/uploads/restorants/3e571ad8-e161-4245-91d9-88b47d6d6770', '', 1, 2, '40.607402', '-73.987272', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'yummy taco, wraps, fast food', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (4, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 'The Brooklyn tree', 'thebrooklyntree', 'https://foodtiger.mobidonia.com/uploads/restorants/6fa5233f-00f3-4f52-950c-5a1705583dfc', '', 1, 2, '40.621997', '-73.938831', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'drinks, lunch, bbq', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (5, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 'Awang Italian Restorant', 'awangitalianrestorant', 'https://foodtiger.mobidonia.com/uploads/restorants/4a2067cb-f39c-4b26-83ef-9097512d3328', '', 1, 2, '40.716729', '-73.793035', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'italian, pasta, pizza', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (6, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 'Wendy Taco', 'wendytaco', 'https://foodtiger.mobidonia.com/uploads/restorants/6f9e8892-4a28-4c99-ab24-57179a1424b9', '', 1, 2, '40.751418', '-73.809531', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'yummy taco, wraps, fast food', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
-(7, '2023-03-30 08:25:58', '2023-04-09 01:22:17', 'Burger 2Go', 'burger2go', 'https://foodtiger.mobidonia.com/uploads/restorants/80a49037-07e9-4e28-b23e-66fd641c1c77', '', 1, 2, '40.753759', '-73.799224', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'burgers, drinks, best chicken', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 71, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
+(7, '2023-03-30 08:25:58', '2023-04-29 23:16:45', 'Burger 2Go', 'burger2go', 'https://foodtiger.mobidonia.com/uploads/restorants/80a49037-07e9-4e28-b23e-66fd641c1c77', '', 1, 2, '40.753759', '-73.799224', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'burgers, drinks, best chicken', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 87, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (8, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 'Titan Foods', 'titanfoods', 'https://foodtiger.mobidonia.com/uploads/restorants/56e90ea7-5321-4cfd-8b2c-918ccd3c3f77', '', 1, 2, '40.749078', '-73.812623', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'drinks, lunch, bbq', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (9, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 'Pizza Manhattn', 'pizzamanhattn', 'https://foodtiger.mobidonia.com/uploads/restorants/0102bebe-b6c4-46b0-9195-ee06bca71a37', '', 1, 2, '40.726358', '-73.996879', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'italian, international, pasta', 0.00, 0.00, '[{\"lat\": 40.70279189834177, \"lng\": -74.01818193403926}, {\"lat\": 40.711640621663136, \"lng\": -73.97972978560176}, {\"lat\": 40.798503799354734, \"lng\": -73.91381181685176}, {\"lat\": 40.83487975446948, \"lng\": -73.94745744673457}, {\"lat\": 40.750665070026194, \"lng\": -74.01200212446895}]', 0, 4, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (10, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 'il Buco', 'ilbuco', 'https://foodtiger.mobidonia.com/uploads/restorants/4384df9b-9656-49d1-bfc1-9b5e85e1193a', '', 1, 2, '40.724883', '-74.001985', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'tacos, wraps, Quesadilla', 0.00, 0.00, '[{\"lat\": 40.70279189834177, \"lng\": -74.01818193403926}, {\"lat\": 40.711640621663136, \"lng\": -73.97972978560176}, {\"lat\": 40.798503799354734, \"lng\": -73.91381181685176}, {\"lat\": 40.83487975446948, \"lng\": -73.94745744673457}, {\"lat\": 40.750665070026194, \"lng\": -74.01200212446895}]', 0, 4, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
@@ -305,8 +306,12 @@ INSERT INTO `companies` (`id`, `created_at`, `updated_at`, `name`, `subdomain`, 
 (23, '2023-04-02 05:53:05', '2023-04-02 05:53:05', 'Test Antatrip', 'testantatrip', '', '', 1, 41, '0', '0', '', '+8801713702979', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
 (24, '2023-04-02 07:36:30', '2023-04-02 07:36:30', 'testtwoAn', 'testtwoan', '', '', 1, 42, '0', '0', '', '+1524154648844', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
 (25, '2023-04-02 07:39:45', '2023-04-03 10:18:30', 'tryone', 'tryone', '', '', 1, 43, '23.7489649', '90.3850897', '', '+1524154648844', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', '2023-04-03 10:18:30', 1),
-(26, '2023-04-03 09:15:33', '2023-04-04 10:13:28', 'test', 'test', '', '', 1, 44, '0', '0', '', '+101626060097', '0', '', 0.00, 0.00, '{}', 0, NULL, 1, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
-(27, '2023-04-03 10:18:45', '2023-04-03 10:19:35', 'Antarip Saha', 'antaripsaha', '', '', 1, 45, '23.7489417', '90.3850897', '', '+101713702979', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1);
+(26, '2023-04-03 09:15:33', '2023-04-18 04:20:02', 'test', 'test', '', '', 1, 44, '0', '0', '', '+101626060097', '0', '', 0.00, 0.00, '{}', 0, NULL, 5, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
+(27, '2023-04-03 10:18:45', '2023-04-19 05:03:59', 'Antarip Saha', 'antaripsaha', '', '', 1, 45, '23.7489417', '90.3850897', '', '+101713702979', '0', '', 0.00, 0.00, '{}', 0, NULL, 1, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
+(28, '2023-04-06 04:59:08', '2023-04-06 11:35:03', 'abc', 'abc', '', '', 1, 46, '0', '0', '', '+880131965745', '0', '', 0.00, 0.00, '{}', 0, NULL, 1, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
+(29, '2023-04-19 05:07:39', '2023-04-19 05:07:39', 'ddd', 'ddd', '', '', 1, 48, '0', '0', '', '+101713702979', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
+(30, '2023-04-26 14:02:18', '2023-04-26 14:02:18', 'Customer\'s New Resto', 'customersnewresto', '', '', 1, 50, '0', '0', '', '+11221215454', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
+(31, '2023-04-27 05:43:36', '2023-04-27 07:09:47', 'SHadow', 'shadow', '', '', 1, 51, '23.7491475', '90.3864694', '', '+8801947295072', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -324,7 +329,7 @@ CREATE TABLE IF NOT EXISTS `configs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `configs`
@@ -352,7 +357,23 @@ INSERT INTO `configs` (`id`, `value`, `key`, `model_type`, `model_id`, `created_
 (19, '0', 'disable_callwaiter', 'App\\Restorant', 26, '2023-04-03 09:15:33', '2023-04-03 09:15:33'),
 (20, '0', 'disable_ordering', 'App\\Restorant', 26, '2023-04-03 09:15:33', '2023-04-03 09:15:33'),
 (21, '0', 'disable_callwaiter', 'App\\Restorant', 27, '2023-04-03 10:18:45', '2023-04-03 10:18:45'),
-(22, '0', 'disable_ordering', 'App\\Restorant', 27, '2023-04-03 10:18:45', '2023-04-03 10:18:45');
+(22, '0', 'disable_ordering', 'App\\Restorant', 27, '2023-04-03 10:18:45', '2023-04-03 10:18:45'),
+(23, '0', 'disable_callwaiter', 'App\\Restorant', 28, '2023-04-06 04:59:08', '2023-04-06 04:59:08'),
+(24, '0', 'disable_ordering', 'App\\Restorant', 28, '2023-04-06 04:59:08', '2023-04-06 04:59:08'),
+(25, NULL, 'plugins', 'App\\Plans', 1, '2023-04-16 17:17:17', '2023-04-16 17:17:17'),
+(26, '0', 'disable_callwaiter', 'App\\Restorant', 29, '2023-04-19 05:07:39', '2023-04-19 05:07:39'),
+(27, '0', 'disable_ordering', 'App\\Restorant', 29, '2023-04-19 05:07:39', '2023-04-19 05:07:39'),
+(28, '0', 'disable_callwaiter', 'App\\Restorant', 30, '2023-04-26 14:02:18', '2023-04-26 14:02:18'),
+(29, '0', 'disable_ordering', 'App\\Restorant', 30, '2023-04-26 14:02:18', '2023-04-26 14:02:18'),
+(30, '0', 'disable_callwaiter', 'App\\Restorant', 1, '2023-04-27 05:36:43', '2023-04-27 05:36:43'),
+(31, '0', 'disable_ordering', 'App\\Restorant', 1, '2023-04-27 05:36:43', '2023-04-27 05:36:43'),
+(32, '0', 'disable_continues_ordering', 'App\\Restorant', 1, '2023-04-27 05:36:43', '2023-04-27 05:36:43'),
+(33, '0', 'time_to_prepare_order_in_minutes', 'App\\Restorant', 1, '2023-04-27 05:36:43', '2023-04-27 05:36:43'),
+(34, '30', 'delivery_interval_in_minutes', 'App\\Restorant', 1, '2023-04-27 05:36:43', '2023-04-27 05:36:43'),
+(35, '0', 'disable_callwaiter', 'App\\Restorant', 31, '2023-04-27 05:43:36', '2023-04-27 05:43:36'),
+(36, '0', 'disable_ordering', 'App\\Restorant', 31, '2023-04-27 05:43:36', '2023-04-27 05:43:36'),
+(37, 'daf1a781-0e49-499e-a9e7-2c87b6d558ae', 'resto_wide_logo', 'App\\Restorant', 1, '2023-04-27 06:06:15', '2023-04-27 02:30:55'),
+(38, '2391897b-1522-49b4-9b10-8cacdc7261bf', 'resto_wide_logo_dark', 'App\\Restorant', 1, '2023-04-27 06:06:15', '2023-04-27 02:30:55');
 
 -- --------------------------------------------------------
 
@@ -1035,7 +1056,7 @@ CREATE TABLE IF NOT EXISTS `hours` (
   `restorant_id` bigint UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   KEY `hours_restorant_id_foreign` (`restorant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `hours`
@@ -1068,7 +1089,11 @@ INSERT INTO `hours` (`id`, `created_at`, `updated_at`, `0_from`, `0_to`, `1_from
 (24, '2023-04-02 07:36:30', '2023-04-02 07:36:30', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 24),
 (25, '2023-04-02 07:39:45', '2023-04-02 07:39:45', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 25),
 (26, '2023-04-03 09:15:33', '2023-04-03 09:15:33', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 26),
-(27, '2023-04-03 10:18:45', '2023-04-03 10:18:45', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 27);
+(27, '2023-04-03 10:18:45', '2023-04-03 10:18:45', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 27),
+(28, '2023-04-06 04:59:08', '2023-04-06 04:59:08', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 28),
+(29, '2023-04-19 05:07:39', '2023-04-19 05:07:39', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 29),
+(30, '2023-04-26 14:02:18', '2023-04-26 14:02:18', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 30),
+(31, '2023-04-27 05:43:36', '2023-04-27 05:43:36', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 31);
 
 -- --------------------------------------------------------
 
@@ -1094,39 +1119,39 @@ CREATE TABLE IF NOT EXISTS `items` (
   `discounted_price` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `items_category_id_foreign` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=343 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=352 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `items`
 --
 
 INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id`, `created_at`, `updated_at`, `available`, `has_variants`, `vat`, `deleted_at`, `enable_system_variants`, `discounted_price`) VALUES
-(1, 'Caprese Salad (350gr)', 'peeled tomatoes, mozzarella salad, Genovese pesto', 'https://foodtiger.mobidonia.com/uploads/restorants/bd5292e7-e898-479d-8921-4c47a776ba82', 9.99, 1, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 0, 21.00, NULL, 0, 0),
-(2, 'Caesar Salad (400g)', 'iceberg, bacon, chicken breast, parmesan, Caesar sauce', 'https://foodtiger.mobidonia.com/uploads/restorants/25ed56dc-45cc-473f-ad00-d4b449acc71a', 10.99, 1, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 0, 21.00, NULL, 0, 0),
-(3, 'Salad Napoli (350g)', 'iceberg, arugula, cherry tomatoes, mozzarella salad, salad dressing: (Extra Virgin olive oil, Modena balsamic vinegar, honey and mustard)', 'https://foodtiger.mobidonia.com/uploads/restorants/93641a19-dba6-4010-a852-0e88da83a01f', 9.99, 1, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 0, 21.00, NULL, 0, 0),
-(4, 'Green tuna salad (400g)', 'lettuce, cucumbers, tuna, olive, corn, lemon, salad dressing: (Extra Virgin olive oil, Modena balsamic vinegar, honey and mustard)', 'https://foodtiger.mobidonia.com/uploads/restorants/d3379607-df34-4ed0-8f87-8bb6f73ed16d', 9.99, 1, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 0, 21.00, NULL, 0, 0),
-(5, 'Green salad (350g)', 'lettuce, cucumbers, radishes, onions, egg, salad dressing: (Extra Virgin olive oil, Modena balsamic vinegar, honey and mustard)', 'https://foodtiger.mobidonia.com/uploads/restorants/2e7eb9a6-5307-4ec7-8cf8-86490d4c2363', 7.99, 1, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 0, 21.00, NULL, 0, 0),
-(6, 'Greek Salad (500g)', 'tomatoes, cucumbers, green pepper, red onion, olive, feta cheese, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/f5a8b88d-9b94-44fc-9555-2f0fe043d624', 9.99, 1, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 0, 21.00, NULL, 0, 0),
-(7, 'Mozzarella Pizza', 'tomato sauce, mozzarella sabelli, cherry tomatoes, olives, pesto sauce, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/f71ae2d7-f24f-4e1b-9bdd-7ab7143ce3c8', 10.99, 2, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 1, 21.00, NULL, 0, 0),
-(8, 'Prosciutto crust pizza', 'tomato sauce, mozzarella sabelli, prosciutto, arugula, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/9b9886cb-5d4b-4bfe-a02a-dc3b94dae706', 14.99, 2, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 1, 21.00, NULL, 0, 0),
-(9, 'Pepperoni Pizza', 'tomato sauce, mozzarella Sabelli, Calabro salad (spicy), extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/4b26647d-52b8-43c5-8b62-708c99252c24', 14.99, 2, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 1, 21.00, NULL, 0, 0),
-(10, 'Carriola Pizza', 'tomato sauce, mozzarella sabelli, bacon, red onion, olives, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/e1e5559a-ca6d-4a34-80c6-b72c31d97d96', 14.99, 2, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 1, 21.00, NULL, 0, 0),
-(11, 'Perugia Pizza', 'tomato sauce, mozzarella sabelli, chicken fillet, red onion, fresh peppers, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/a8e8c22a-84cd-48d0-971a-2c98e695e387', 14.99, 2, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 1, 21.00, NULL, 0, 0),
-(12, 'Pizza Napoli', 'tomato sauce, mozzarella sabelli, ham, cherry tomatoes, emmental, arugula, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/5c8fa7eb-bc11-42e1-a1a5-ffb0b3d7a6b7', 14.99, 2, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 1, 21.00, NULL, 0, 0),
-(13, 'Margarita Pizza', 'tomato sauce, mozzarella Sabelli, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/9d180742-9fb3-4b46-8563-8c24c9004fd3', 10.49, 2, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 1, 21.00, NULL, 0, 0),
-(14, 'Combo Pizza 50/50 (70cm)', '', 'https://foodtiger.mobidonia.com/uploads/restorants/cb7372d0-73a8-4551-bc31-22035d9551c4', 39.99, 2, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, 1, 21.00, NULL, 0, 0),
-(15, 'Capricciosa Pizza', 'tomato sauce, mozzarella sabelli, ham, fresh mushrooms, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/0102bebe-b6c4-46b0-9195-ee06bca71a37', 14.99, 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 1, 21.00, NULL, 0, 0),
-(16, 'Quattro Formaggi Pizza', 'cream (animal), mozzarella Sabelli, blue cheese, emmental, parmesan, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/0054144d-131c-4807-a209-cee855415182', 14.99, 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 1, 21.00, NULL, 0, 0),
-(17, 'Marco Polo Pizza', 'tomato sauce, Sabelli mozzarella, chicken fillet, smoked cheese, corn, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/f77218a9-676e-434e-ac5b-4ae3dc5795b3', 14.99, 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 1, 21.00, NULL, 0, 0),
-(18, 'Spaghetti Carbonara (450g)', 'fresh pasta, cream (animal), onion, pancakes (smoked bacon), egg, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/b65d5389-4742-4a78-9d94-f31110984db6', 11.99, 3, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
-(19, 'Spaghetti Formaggi (450g)', 'fresh pasta, cream (animal), blue cheese, emmental, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/4a2067cb-f39c-4b26-83ef-9097512d3328', 11.99, 3, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
-(20, 'Tagliatelle with mushrooms (400g)', 'fresh pasta, cream (animal), mushrooms, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/0bae6238-dda6-4630-b300-5125fde865d4', 11.99, 3, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
-(21, 'Chicken risotto (450g)', 'Arborio rice, chicken breast, onion, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/033c32c1-cdae-495e-910f-66b5fa239297', 11.99, 3, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
-(22, 'Risotto with mushrooms (450g)', 'Arborio rice, mushrooms, garlic, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/08d82944-f947-48f4-a197-a3199bb3b6e7', 11.99, 3, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
-(23, 'Tagliatelle with Bolognese Sauce (400g)', 'fresh pasta, bolognese sauce, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/cc695ba9-8af3-47a4-8e41-dc1706cbf2c3', 11.99, 3, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
-(24, 'Lasagna Classic (450g)', 'Bolognese sauce, mozzarella Sabelli', 'https://foodtiger.mobidonia.com/uploads/restorants/94d44523-ec90-4069-bd11-eb9588207c31', 11.99, 4, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
-(25, 'Napoli Lasagna (450g)', 'chicken fillet, cream (animal), corn, blue cheese, mozzarella Sabelli', 'https://foodtiger.mobidonia.com/uploads/restorants/4c367950-992c-4711-ab56-42bed10de86c', 11.99, 4, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
-(26, 'Lasagna Formagio (450g)', 'smoked cheese, blue cheese, emmental, cream (animal), mozzarella Sabelli', 'https://foodtiger.mobidonia.com/uploads/restorants/8bafc3ec-82e7-46f8-964a-77a13e4ddf96', 11.99, 4, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
+(1, 'Caprese Salad (350gr)', 'peeled tomatoes, mozzarella salad, Genovese pesto', '9007e74f-d112-42a2-8eff-4dcb63e0d8d3', 9.99, 1, '2023-03-30 08:25:56', '2023-04-27 06:19:30', 1, 0, 21.00, NULL, 0, 0),
+(2, 'Caesar Salad (400g)', 'iceberg, bacon, chicken breast, parmesan, Caesar sauce', 'ea53ad12-2cdc-4d6c-a5b1-e094850821fd', 10.99, 1, '2023-03-30 08:25:56', '2023-04-27 06:21:28', 1, 0, 21.00, NULL, 0, 0),
+(3, 'Salad Napoli (350g)', 'iceberg, arugula, cherry tomatoes, mozzarella salad, salad dressing: (Extra Virgin olive oil, Modena balsamic vinegar, honey and mustard)', '82fa5f46-6465-426b-b12c-01c99c79e7df', 9.99, 1, '2023-03-30 08:25:56', '2023-04-27 06:23:46', 1, 0, 21.00, NULL, 0, 0),
+(4, 'Green tuna salad (400g)', 'lettuce, cucumbers, tuna, olive, corn, lemon, salad dressing: (Extra Virgin olive oil, Modena balsamic vinegar, honey and mustard)', 'e56833ef-9a46-46bc-8c26-606ad45ea713', 9.99, 1, '2023-03-30 08:25:56', '2023-04-27 06:26:37', 1, 0, 21.00, NULL, 0, 0),
+(5, 'Green salad (350g)', 'lettuce, cucumbers, radishes, onions, egg, salad dressing: (Extra Virgin olive oil, Modena balsamic vinegar, honey and mustard)', 'e9f41ad3-f60e-4384-a2e9-d6fedc940a6e', 7.99, 1, '2023-03-30 08:25:56', '2023-04-27 06:36:52', 1, 0, 21.00, NULL, 0, 0),
+(6, 'Greek Salad (500g)', 'tomatoes, cucumbers, green pepper, red onion, olive, feta cheese, extra virgin olive oil', 'bf426c8b-3840-4ce4-b8b8-6ecbef489a27', 9.99, 1, '2023-03-30 08:25:56', '2023-04-27 06:39:22', 1, 0, 21.00, NULL, 0, 0),
+(7, 'Mozzarella Pizza', 'tomato sauce, mozzarella sabelli, cherry tomatoes, olives, pesto sauce, extra virgin olive oil', '97adacb3-fa9c-4d6c-8514-ebc8f787d098', 10.99, 2, '2023-03-30 08:25:56', '2023-04-27 06:41:56', 1, 1, 21.00, NULL, 0, 0),
+(8, 'Prosciutto crust pizza', 'tomato sauce, mozzarella sabelli, prosciutto, arugula, extra virgin olive oil', '4a957108-be7b-4fe0-858a-c235ef6e9953', 14.99, 2, '2023-03-30 08:25:56', '2023-04-27 06:45:24', 1, 1, 21.00, NULL, 0, 0),
+(9, 'Pepperoni Pizza', 'tomato sauce, mozzarella Sabelli, Calabro salad (spicy), extra virgin olive oil', '8f80a631-8fb5-427b-937d-c0135db08e18', 14.99, 2, '2023-03-30 08:25:56', '2023-04-27 06:48:13', 1, 1, 21.00, NULL, 0, 0),
+(10, 'Carriola Pizza', 'tomato sauce, mozzarella sabelli, bacon, red onion, olives, extra virgin olive oil', '48ccc59a-b1ac-42ab-abf0-36e54036afe1', 14.99, 2, '2023-03-30 08:25:56', '2023-04-27 06:51:36', 1, 1, 21.00, NULL, 0, 0),
+(11, 'Perugia Pizza', 'tomato sauce, mozzarella sabelli, chicken fillet, red onion, fresh peppers, extra virgin olive oil', '79140b09-2ef9-4f58-83c3-4ba22b925653', 14.99, 2, '2023-03-30 08:25:56', '2023-04-27 06:53:24', 1, 1, 21.00, NULL, 0, 0),
+(12, 'Pizza Napoli', 'tomato sauce, mozzarella sabelli, ham, cherry tomatoes, emmental, arugula, extra virgin olive oil', 'bce90d5e-7b2b-4b81-8c54-8682a6501447', 14.99, 2, '2023-03-30 08:25:56', '2023-04-27 06:55:08', 1, 1, 21.00, NULL, 0, 0),
+(13, 'Margarita Pizza', 'tomato sauce, mozzarella Sabelli, extra virgin olive oil', 'cf85b23b-5729-4c3a-8bb7-8580bce41d6d', 10.49, 2, '2023-03-30 08:25:56', '2023-04-27 06:56:57', 1, 1, 21.00, NULL, 0, 0),
+(14, 'Combo Pizza 50/50 (70cm)', 'tomato sauce, mozzarella Sabelli, extra virgin olive oil', 'fbe43540-f29e-485e-8438-1ea0756966bb', 39.99, 2, '2023-03-30 08:25:56', '2023-04-27 07:01:48', 1, 1, 21.00, NULL, 0, 0),
+(15, 'Capricciosa Pizza', 'tomato sauce, mozzarella sabelli, ham, fresh mushrooms, extra virgin olive oil', 'eb2ce378-fe32-4da3-a2cf-bba4afbc3a57', 14.99, 2, '2023-03-30 08:25:57', '2023-04-27 07:04:12', 1, 1, 21.00, NULL, 0, 0),
+(16, 'Quattro Formaggi Pizza', 'cream (animal), mozzarella Sabelli, blue cheese, emmental, parmesan, extra virgin olive oil', '7bfe7a5d-72c3-4921-b83e-8aeb6d96fc20', 14.99, 2, '2023-03-30 08:25:57', '2023-04-27 07:06:14', 1, 1, 21.00, NULL, 0, 0),
+(17, 'Marco Polo Pizza', 'tomato sauce, Sabelli mozzarella, chicken fillet, smoked cheese, corn, extra virgin olive oil', '38a4e8c5-8858-4c99-b3f3-ceb59cb84896', 14.99, 2, '2023-03-30 08:25:57', '2023-04-27 07:08:13', 1, 1, 21.00, NULL, 0, 0),
+(18, 'Spaghetti Carbonara (450g)', 'fresh pasta, cream (animal), onion, pancakes (smoked bacon), egg, parmesan', '7675f290-2f4b-495d-a2be-0742e402f7d8', 11.99, 3, '2023-03-30 08:25:57', '2023-04-27 07:12:05', 1, 0, 21.00, NULL, 0, 0),
+(19, 'Spaghetti Formaggi (450g)', 'fresh pasta, cream (animal), blue cheese, emmental, parmesan', 'effcef4f-3114-4491-8f4a-c63c0a238b5c', 11.99, 3, '2023-03-30 08:25:57', '2023-04-27 07:15:03', 1, 0, 21.00, NULL, 0, 0),
+(20, 'Tagliatelle with mushrooms (400g)', 'fresh pasta, cream (animal), mushrooms, parmesan', '9bfb1412-a7f6-4063-bf56-26eaad0434cd', 11.99, 3, '2023-03-30 08:25:57', '2023-04-27 07:18:06', 1, 0, 21.00, NULL, 0, 0),
+(21, 'Chicken risotto (450g)', 'Arborio rice, chicken breast, onion, parmesan', '28e56512-5bc6-4050-b39d-2c458b22121b', 11.99, 3, '2023-03-30 08:25:57', '2023-04-27 07:22:18', 1, 0, 21.00, NULL, 0, 0),
+(22, 'Risotto with mushrooms (450g)', 'Arborio rice, mushrooms, garlic, parmesan', 'a6b64dc5-99ca-4b3a-a121-551450fa5c11', 11.99, 3, '2023-03-30 08:25:57', '2023-04-27 07:24:29', 1, 0, 21.00, NULL, 0, 0),
+(23, 'Tagliatelle with Bolognese Sauce (400g)', 'fresh pasta, bolognese sauce, parmesan', 'bca1b41f-23d2-4edc-ba59-da60a30ac2b4', 11.99, 3, '2023-03-30 08:25:57', '2023-04-27 07:28:04', 1, 0, 21.00, NULL, 0, 0),
+(24, 'Lasagna Classic (450g)', 'Bolognese sauce, mozzarella Sabelli', 'c48d825b-2382-426d-826a-ac520883c022', 11.99, 4, '2023-03-30 08:25:57', '2023-04-27 07:30:49', 1, 0, 21.00, NULL, 0, 0),
+(25, 'Napoli Lasagna (450g)', 'chicken fillet, cream (animal), corn, blue cheese, mozzarella Sabelli', 'e81c5b0d-d3ff-4f31-87d9-29e95ba7f543', 11.99, 4, '2023-03-30 08:25:57', '2023-04-27 07:33:30', 1, 0, 21.00, NULL, 0, 0),
+(26, 'Lasagna Formagio (450g)', 'smoked cheese, blue cheese, emmental, cream (animal), mozzarella Sabelli', '426236eb-3e1d-4211-995e-3c5b06b78cda', 11.99, 4, '2023-03-30 08:25:57', '2023-04-27 07:35:37', 1, 0, 21.00, NULL, 0, 0),
 (27, 'Wild Wild West', 'freshly baked brioche bread, 100% freshly ground beef Limousine, crispy bacon, melted cheddar, brewed in Skapto beer onion rings, homemade BBQ sauce', 'https://foodtiger.mobidonia.com/uploads/restorants/c8d27bcc-54da-4c18-b8e6-f1414c71612c', 8.99, 5, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
 (28, 'Skapto Bulleit Bourbon', 'juicy 100% minced beef, crispy bacon, melted cheddar, homemade Bulleit bourbon sauce, homemade marinated red onion, pickles, iceberg', 'https://foodtiger.mobidonia.com/uploads/restorants/4c2d9b73-685a-4252-84a3-6ba354f3a59c', 10.99, 5, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
 (29, 'Back to Basics', 'juicy 100% minced beef, melted cheddar, pickles, iceberg, homemade Skapto sauce', 'https://foodtiger.mobidonia.com/uploads/restorants/643dd56b-684a-47f9-b72f-0fec59c16cb0', 7.99, 5, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, 0, 21.00, NULL, 0, 0),
@@ -1269,12 +1294,12 @@ INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id
 (166, 'Coca Cola (330ml)', '(330ml.)', 'https://foodtiger.mobidonia.com/uploads/restorants/6dfb661a-cc55-4c27-b223-504b047c7e1a', 2.49, 33, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
 (167, 'Burrito with chicken', 'chicken on a plate, tortilla cake, rice, peppers on a plate, onion on a plate, red beans, mushrooms, corn with spices, tomatoes, olives, iceberg, yellow cheese, cream sauce, mayonnaise sauce or hot salad ', 'https://foodtiger.mobidonia.com/uploads/restorants/3e571ad8-e161-4245-91d9-88b47d6d6770', 6.99, 34, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
 (168, 'Burrito Veggie', '', 'https://foodtiger.mobidonia.com/uploads/restorants/cc167252-968b-4cf4-9964-86c6a5feba45', 5.99, 34, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
-(169, 'Burrito with beef roast', 'veal or minced meat (specify), tortilla bread, rice, plate peppers, onion, red beans, mushrooms, corn with spices, tomatoes, iceberg, olives, yellow cheese, cream sauce, mayonnaise sauce, or hot spit at will ', 'https://foodtiger.mobidonia.com/uploads/restorants/c0895e35-f4f9-4113-96d7-ecae6d27ed2b', 8.49, 34, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0);
-INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id`, `created_at`, `updated_at`, `available`, `has_variants`, `vat`, `deleted_at`, `enable_system_variants`, `discounted_price`) VALUES
+(169, 'Burrito with beef roast', 'veal or minced meat (specify), tortilla bread, rice, plate peppers, onion, red beans, mushrooms, corn with spices, tomatoes, iceberg, olives, yellow cheese, cream sauce, mayonnaise sauce, or hot spit at will ', 'https://foodtiger.mobidonia.com/uploads/restorants/c0895e35-f4f9-4113-96d7-ecae6d27ed2b', 8.49, 34, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
 (170, 'Burrito with pork', 'pork roast, tortilla bread, rice, plate peppers, plate onion, red beans, mushrooms, spicy corn, tomatoes, iceberg, olives, yellow cheese, cream sauce, mayonnaise sauce or hot salad, if desired', 'https://foodtiger.mobidonia.com/uploads/restorants/4384df9b-9656-49d1-bfc1-9b5e85e1193a', 6.99, 34, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
 (171, 'Spaghetti Carbonara (450g)', 'fresh pasta, cream (animal), onion, pancakes (smoked bacon), egg, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/b65d5389-4742-4a78-9d94-f31110984db6', 11.99, 35, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
 (172, 'Spaghetti Formaggi (450g)', 'fresh pasta, cream (animal), blue cheese, emmental, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/4a2067cb-f39c-4b26-83ef-9097512d3328', 11.99, 35, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
-(173, 'Tagliatelle with mushrooms (400g)', 'fresh pasta, cream (animal), mushrooms, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/0bae6238-dda6-4630-b300-5125fde865d4', 11.99, 35, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
+(173, 'Tagliatelle with mushrooms (400g)', 'fresh pasta, cream (animal), mushrooms, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/0bae6238-dda6-4630-b300-5125fde865d4', 11.99, 35, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0);
+INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id`, `created_at`, `updated_at`, `available`, `has_variants`, `vat`, `deleted_at`, `enable_system_variants`, `discounted_price`) VALUES
 (174, 'Chicken risotto (450g)', 'Arborio rice, chicken breast, onion, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/033c32c1-cdae-495e-910f-66b5fa239297', 11.99, 35, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
 (175, 'Risotto with mushrooms (450g)', 'Arborio rice, mushrooms, garlic, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/08d82944-f947-48f4-a197-a3199bb3b6e7', 11.99, 35, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
 (176, 'Tagliatelle with Bolognese Sauce (400g)', 'fresh pasta, bolognese sauce, parmesan', 'https://foodtiger.mobidonia.com/uploads/restorants/cc695ba9-8af3-47a4-8e41-dc1706cbf2c3', 11.99, 35, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 1, 0, 21.00, NULL, 0, 0),
@@ -1438,13 +1463,22 @@ INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id
 (334, 'Perugia Pizza', 'tomato sauce, mozzarella sabelli, chicken fillet, red onion, fresh peppers, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/a8e8c22a-84cd-48d0-971a-2c98e695e387', 14.99, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0),
 (335, 'Pizza Napoli', 'tomato sauce, mozzarella sabelli, ham, cherry tomatoes, emmental, arugula, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/5c8fa7eb-bc11-42e1-a1a5-ffb0b3d7a6b7', 14.99, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0),
 (336, 'Margarita Pizza', 'tomato sauce, mozzarella Sabelli, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/9d180742-9fb3-4b46-8563-8c24c9004fd3', 10.49, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0),
-(337, 'Combo Pizza 50/50 (70cm)', '', 'https://foodtiger.mobidonia.com/uploads/restorants/cb7372d0-73a8-4551-bc31-22035d9551c4', 39.99, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0);
-INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id`, `created_at`, `updated_at`, `available`, `has_variants`, `vat`, `deleted_at`, `enable_system_variants`, `discounted_price`) VALUES
+(337, 'Combo Pizza 50/50 (70cm)', '', 'https://foodtiger.mobidonia.com/uploads/restorants/cb7372d0-73a8-4551-bc31-22035d9551c4', 39.99, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0),
 (338, 'Capricciosa Pizza', 'tomato sauce, mozzarella sabelli, ham, fresh mushrooms, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/0102bebe-b6c4-46b0-9195-ee06bca71a37', 14.99, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0),
 (339, 'Quattro Formaggi Pizza', 'cream (animal), mozzarella Sabelli, blue cheese, emmental, parmesan, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/0054144d-131c-4807-a209-cee855415182', 14.99, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0),
 (340, 'Marco Polo Pizza', 'tomato sauce, Sabelli mozzarella, chicken fillet, smoked cheese, corn, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/f77218a9-676e-434e-ac5b-4ae3dc5795b3', 14.99, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0),
 (341, 'Dano', 'dd', 'e89dddeb-6ec6-45c2-913b-d48aab0d70c4', 10, 69, '2023-04-03 10:21:59', '2023-04-03 10:21:59', 1, 0, 0.00, NULL, 0, 0),
-(342, 'hi', 'nhfghgfc', '', 123, 70, '2023-04-04 09:26:26', '2023-04-04 09:26:26', 1, 0, 0.00, NULL, 0, 0);
+(342, 'hi', 'nhfghgfc', '', 123, 70, '2023-04-04 09:26:26', '2023-04-04 09:26:26', 1, 0, 0.00, NULL, 0, 0),
+(343, 'Pasta Basta', 'Oven Baked Pasta Basta', '7240d514-9889-4727-acff-ee166fa4912a', 5, 1, '2023-04-30 06:05:47', '2023-04-30 06:05:47', 1, 0, 0.00, NULL, 0, 0);
+INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id`, `created_at`, `updated_at`, `available`, `has_variants`, `vat`, `deleted_at`, `enable_system_variants`, `discounted_price`) VALUES
+(344, 'fried rice', 'fried rice', '146d0344-6081-4793-bcff-709382954a62', 10, 71, '2023-05-07 23:45:24', '2023-05-07 23:45:24', 1, 0, 0.00, NULL, 0, 0),
+(345, 'fried rice  2', 'fried rice 2', '87004045-fbbb-4e4a-afa5-21636c5aec6a', 12, 71, '2023-05-07 23:45:39', '2023-05-07 23:45:39', 1, 0, 0.00, NULL, 0, 0),
+(346, 'fried rice 3', 'fried rice 3', '82503504-c9c7-458c-86c4-febdbe27d470', 12, 71, '2023-05-07 23:46:00', '2023-05-07 23:46:00', 1, 0, 0.00, NULL, 0, 0),
+(347, 'fried rice 4', 'fried rice 4', '1f139e9d-313a-4cc4-8fa9-ab205f170a3e', 11, 71, '2023-05-07 23:46:17', '2023-05-07 23:46:17', 1, 0, 0.00, NULL, 0, 0),
+(348, 'fried rice 5', 'fried rice 5', '4f18137b-ea73-450d-8fb3-5b8a13142b26', 10, 71, '2023-05-07 23:46:36', '2023-05-07 23:46:36', 1, 0, 0.00, NULL, 0, 0),
+(349, 'fried rice 6', 'fried rice 6', '4d11ab95-8086-41ab-bdfe-51bc0911852f', 11, 71, '2023-05-07 23:47:13', '2023-05-07 23:47:13', 1, 0, 0.00, NULL, 0, 0),
+(350, 'fried rice  7', 'fried rice 7', '6f902b3f-5bdd-4988-8b10-0a0c743b6ecc', 11, 71, '2023-05-07 23:47:49', '2023-05-07 23:47:49', 1, 0, 0.00, NULL, 0, 0),
+(351, 'fried rice 8', 'fried rice 6', '24c5c591-d067-4077-ab6b-4960489dde9a', 12, 71, '2023-05-07 23:48:09', '2023-05-07 23:48:09', 1, 0, 0.00, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1509,7 +1543,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -1613,7 +1647,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (95, '2022_12_23_100529_update_orders_with_id_per_vendor', 2),
 (96, '2022_12_27_012420_update_posts_description_table', 2),
 (97, '2023_01_23_175344_large_numbers', 2),
-(98, '2025_07_21_162114_make_pure_saas', 2);
+(98, '2025_07_21_162114_make_pure_saas', 2),
+(99, '2023_04_26_125306_create_products_table', 3),
+(100, '2023_05_10_081951_create_restaurant_menus_table', 3);
 
 -- --------------------------------------------------------
 
@@ -1694,7 +1730,13 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (2, 'App\\User', 42),
 (2, 'App\\User', 43),
 (2, 'App\\User', 44),
-(2, 'App\\User', 45);
+(2, 'App\\User', 45),
+(2, 'App\\User', 46),
+(4, 'App\\User', 47),
+(2, 'App\\User', 48),
+(4, 'App\\User', 49),
+(2, 'App\\User', 50),
+(2, 'App\\User', 51);
 
 -- --------------------------------------------------------
 
@@ -2766,7 +2808,7 @@ CREATE TABLE IF NOT EXISTS `plan` (
 --
 
 INSERT INTO `plan` (`id`, `name`, `limit_items`, `limit_orders`, `price`, `period`, `paddle_id`, `created_at`, `updated_at`, `deleted_at`, `description`, `features`, `limit_views`, `enable_ordering`, `stripe_id`, `paypal_id`, `mollie_id`, `paystack_id`) VALUES
-(1, 'Free', 30, 0, 0, 1, '', '2023-03-30 08:26:00', '2023-03-30 08:26:00', NULL, 'If you run a small restaurant or bar, or just need the basics, this plan is great.', 'Full access to QR tool, Access to the menu creation tool, Unlimited views, 30 items in the menu, Community support', 0, 2, '', NULL, NULL, NULL),
+(1, 'Free', 30, 0, 4, 1, '', '2023-03-30 08:26:00', '2023-04-16 17:17:17', NULL, 'If you run a small restaurant or bar, or just need the basics, this plan is great.', 'Full access to QR tool, Access to the menu creation tool, Unlimited views, 30 items in the menu, Community support', 0, 2, '', NULL, NULL, NULL),
 (2, 'Starter', 0, 300, 9, 1, '', '2023-03-30 08:26:00', '2023-03-30 08:26:00', NULL, 'For bigger restaurants and bars. Offer a full menu. Limitless plan', 'Full access to QR tool, Access to the menu creation tool, Unlimited views, Unlimited items in the menu, 300 orders per month, Dedicated Support', 0, 1, '', NULL, NULL, NULL),
 (3, 'Pro', 0, 0, 49, 1, '', '2023-03-30 08:26:00', '2023-03-30 08:26:00', NULL, 'Accept orders directly from your customer mobile phone', 'Accept Orders, Manage order, Full access to QR tool, Access to the menu creation tool, Unlimited views, Unlimited items in the menu, Unlimited orders, Dedicated Support', 0, 1, '', NULL, NULL, NULL);
 
@@ -2794,6 +2836,39 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rating` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `discounted_price` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `current_price` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `image`, `rating`, `name`, `description`, `discounted_price`, `current_price`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '/images/product/p1.jpg', '1', 'test 1', 'test 1 description Lorem description Lorem description Lorem description Lorem description Lorem ', '1', '12', '1', '2023-04-26 07:00:05', '2023-04-26 07:12:00', NULL),
+(2, '/images/product/p2.jpg', '5', 'test 2', 'test 2 description description Lorem ', '10', '12', '1', '2023-04-26 07:09:00', '2023-04-26 07:09:26', NULL),
+(3, '/images/product/p3.jpg', '1', 'test 3', 'test 3 description description Lorem ', '1', '12', '1', '2023-04-26 07:00:05', '2023-04-26 07:12:00', NULL),
+(4, '/images/product/p4.jpg', '1', 'test 4', 'test 4 description description Lorem ', '10', '12', '1', '2023-04-26 07:00:05', '2023-04-26 07:12:00', NULL),
+(5, '/images/product/1682832356.jpg', '4', 'test 5', 'There are platforms where you can make QR code, but no menu. There are platforms where you can create a menu but not design your QR', '20', '40', '1', '2023-04-30 01:25:56', '2023-05-11 00:06:16', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ratings`
 --
 
@@ -2815,6 +2890,32 @@ CREATE TABLE IF NOT EXISTS `ratings` (
   KEY `ratings_user_id_foreign` (`user_id`),
   KEY `ratings_order_id_foreign` (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `restaurant_menus`
+--
+
+DROP TABLE IF EXISTS `restaurant_menus`;
+CREATE TABLE IF NOT EXISTS `restaurant_menus` (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `restaurant_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subdomain` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'restaurant name',
+  `pdf_no` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `restaurant_menus`
+--
+
+INSERT INTO `restaurant_menus` (`id`, `user_id`, `restaurant_id`, `subdomain`, `pdf_no`, `status`, `created_at`, `updated_at`) VALUES
+(4, '2', '1', 'ovenstory', '1', '1', '2023-05-10 06:52:21', '2023-05-10 06:52:53');
 
 -- --------------------------------------------------------
 
@@ -2969,7 +3070,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 --
 
 INSERT INTO `settings` (`id`, `created_at`, `updated_at`, `site_name`, `site_logo`, `search`, `restorant_details_image`, `restorant_details_cover_image`, `description`, `header_title`, `header_subtitle`, `currency`, `facebook`, `instagram`, `playstore`, `appstore`, `maps_api_key`, `delivery`, `typeform`, `mobile_info_title`, `mobile_info_subtitle`, `order_options`, `site_logo_dark`, `order_fields`) VALUES
-(1, '2023-03-30 08:25:56', '2023-04-05 05:01:52', 'My QR Shop', 'b609a738-b9b9-4614-9306-951437e8c1cf', '/default/cover.jpg', '/default/restaurant_large.jpg', '/default/cover.jpg', 'Food Delivery from best restaurants', '', '', 'USD', '', '', '', '', 'AIzaSyCZhq0g1x1ttXPa1QB3ylcDQPTAzp_KUgA', 0.00, '', '', '', '{}', 'c9303bcc-a7b8-48f8-a7ae-9941665072f7', NULL);
+(1, '2023-03-30 08:25:56', '2023-04-19 11:45:05', 'My QR Shop', 'b609a738-b9b9-4614-9306-951437e8c1cf', '/default/cover.jpg', 'ef43fa58-867c-4830-a14d-fae235cdc41c', '2964123c-4a53-4e6f-832d-5bf2224398b3', 'Food Delivery from best restaurants', '', '', 'USD', '', '', '', '', 'AIzaSyCZhq0g1x1ttXPa1QB3ylcDQPTAzp_KUgA', 0.00, '', '', '', '{}', 'c9303bcc-a7b8-48f8-a7ae-9941665072f7', NULL);
 
 -- --------------------------------------------------------
 
@@ -3478,15 +3579,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_verification_code_unique` (`verification_code`),
   KEY `users_stripe_id_index` (`stripe_id`),
   KEY `users_restaurant_id_foreign` (`restaurant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `google_id`, `fb_id`, `name`, `email`, `email_verified_at`, `password`, `api_token`, `phone`, `remember_token`, `created_at`, `updated_at`, `active`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`, `verification_code`, `phone_verified_at`, `plan_id`, `plan_status`, `cancel_url`, `update_url`, `checkout_id`, `subscription_plan_id`, `stripe_account`, `birth_date`, `lat`, `lng`, `working`, `onorder`, `numorders`, `rejectedorders`, `paypal_subscribtion_id`, `mollie_customer_id`, `mollie_mandate_id`, `tax_percentage`, `extra_billing_information`, `mollie_subscribtion_id`, `paystack_subscribtion_id`, `paystack_trans_id`, `restaurant_id`, `deleted_at`, `expotoken`, `pm_type`, `pm_last_four`) VALUES
-(1, NULL, NULL, 'Admin Admin', 'admin@gmail.com', '2023-03-30 08:25:56', '$2y$10$MkNC/5mVJ4Fyts5pVKJ3j.J3u6bcbX9DmTjpBVR74yWcA9Rzl/6FW', 'alIlz776GWvRsWkuOqzGhNU2MVprczYJ7K0TA4hwf0kHREfkXxKtPsraAtVsPrLdaOUkhkSNeRzx7RMh', '', NULL, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, NULL, 'Demo Owner', 'owner@example.com', '2023-03-30 08:25:56', '$2y$10$WmdptyUXGtloT9FAdwjNbOVAlVX7gGOF1yNzgMeFKZl3xmZkjr4B.', 'IxeAsvx5OACSqhdn61zIuPhfTyuwKSus8GT64Tze8jbpmHmBDwvfW0w9FBz3HVQ62MExjXPQrV0B3jsn', '', NULL, '2023-03-30 08:25:56', '2023-04-02 11:18:48', 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
+(1, NULL, NULL, 'Admin Admin', 'admin@gmail.com', '2023-03-30 08:25:56', '$2y$10$MkNC/5mVJ4Fyts5pVKJ3j.J3u6bcbX9DmTjpBVR74yWcA9Rzl/6FW', 'alIlz776GWvRsWkuOqzGhNU2MVprczYJ7K0TA4hwf0kHREfkXxKtPsraAtVsPrLdaOUkhkSNeRzx7RMh', '', 'sQsIB5TJJUuunHz47efuTkXI3xsBd1GLj7iMKDIYHFHujFd4rj3u3SbXpuF3', '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, NULL, NULL, NULL, NULL, NULL, NULL, 4, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, NULL, 'Demo Owner', 'owner@example.com', '2023-03-30 08:25:56', '$2y$10$MkNC/5mVJ4Fyts5pVKJ3j.J3u6bcbX9DmTjpBVR74yWcA9Rzl/6FW', 'IxeAsvx5OACSqhdn61zIuPhfTyuwKSus8GT64Tze8jbpmHmBDwvfW0w9FBz3HVQ62MExjXPQrV0B3jsn', '', 'tjZ6WApTVhXExfLweeHt6S71KzB8CbsAaUAy8PthMEvLB2uCuD1qyqTvBBgR', '2023-03-30 08:25:56', '2023-04-02 11:18:48', 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
 (3, NULL, NULL, 'Demo Staff 1', 'staff@example.com', '2023-03-30 08:25:56', '$2y$10$ougBnvw0w2/9zTq9CmMcVetqCnv52Sxu312Un3775IZNLpAajGge2', 'WyxJwejuZaYnYqgadHzVZ6z2zuNAIQ7TZJKDTgJVt2150B50y0V027gYsn0zeE3RDvowSEHznl5wRfde', '', NULL, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
 (4, NULL, NULL, 'Demo Staff 2', 'staff2_1@example.com', '2023-03-30 08:25:56', '$2y$10$W4qiJxLD4kqkuBMVp3uVYuSGPMkN0gjHhmsY02e.P3l2/LRdQs94i', 'HYYOmeCmlW3O3CyOCwPvkZQiafNCoAab39EAQ9g31cTaCUFIlMmvGyHxm5MZpHk4GY9QhSUtAzjQsPmK', '', NULL, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
 (5, NULL, NULL, 'Demo Staff 1', 'staff1_2@example.com', '2023-03-30 08:25:57', '$2y$10$NRHYRdI57DL2QSgzi8cUWeX6qeFeNxw29H26uC/H4dM1FzCnGvBdW', 'GP4LvRFDwLe3sCgEr5cTfUK93DeOOqrZWyBlrhXQcTPVHSu0CwrVxA7EgN6JVZlwNVQICP2qjHwJgYio', '', NULL, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
@@ -3522,7 +3623,13 @@ INSERT INTO `users` (`id`, `google_id`, `fb_id`, `name`, `email`, `email_verifie
 (35, NULL, NULL, 'Moder dokan', 'cdbd6106.chaldal@gmail.com', NULL, '$2y$10$2dkyIw1wICmxA9iH5NKJpeydEKkBJTXBqXpeFdvc5DNc29Il8KK1C', 'b0tJ2O08eVAInfn1d86vUhAMKHQokNDBdNGPQlzYm9fTpoI6PTPO80FIvJgOi14RtDBWrvZdIrdsNHuT', '+8801947295072', NULL, '2023-03-30 10:49:19', '2023-03-30 10:49:19', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (43, NULL, NULL, 'tryone', 'antarip15@gmail.com', NULL, '$2y$10$joig0XkTtwaaHjUAcNTxY.7Ep5PinIzl/arYXIFk5BTLUGgEvdrfu', 'zNDD6fWlkRn9scsmOsioKuXNvHgeatgijLpZuBeJY8VoqSBj11eYVCVD1f8yirL61ezi5kyHNHlpBzZN', '+1524154648844', NULL, '2023-04-02 07:39:45', '2023-04-03 10:18:30', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '2023-04-03 10:18:30', NULL, NULL, NULL),
 (44, NULL, NULL, 'Nowshid Alam Sayem', 'nowshidalamsayem@gmail.com', NULL, '$2y$10$NH23KFvh.enhfZw04zzBEuAj4kjt5ZhOw0CkYAoyhj91bnbRZuDji', 'r10yE1CdoiSc56I6qe2sihpIEwzK1seFxvuUiUvcLGXojPZiSYlsLKR89I3E7NmCrMGMmP4e6IGoEC6N', '+101626060097', NULL, '2023-04-03 09:15:33', '2023-04-04 09:26:26', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 26, NULL, NULL, NULL, NULL),
-(45, NULL, NULL, 'Antarip Saha', 'antarip15@gmail.com', NULL, '$2y$10$q/EA2jnoFN9RhYOSyX9hUu3kY5tnMnKYsFh2cftjJAtwrDi9mvCbS', 'SETUAWy5BQLy7otmwtpEpbE8r2dgdli39SYVh9BqnDomeTvrRAW8dewsC3UNDbOKVo8E14OCkmnpWqej', '+101713702979', NULL, '2023-04-03 10:18:45', '2023-04-05 02:02:25', 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, 'set_by_admin', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 27, NULL, NULL, NULL, NULL);
+(45, NULL, NULL, 'Antarip Saha', 'antarip1@gmail.com', NULL, '$2y$10$FLuph9odvoKKHNy.wwY3S.qqpwgRb/oOhmvPI5UstghD53BSjWdLG', 'SETUAWy5BQLy7otmwtpEpbE8r2dgdli39SYVh9BqnDomeTvrRAW8dewsC3UNDbOKVo8E14OCkmnpWqej', '+101713702979', 'wYDW93HnqvxJafzauDHuWNODph9xJybXvvBPGJ5Gb9rJLcKe3tJJF8mL5LHP', '2023-04-03 10:18:45', '2023-04-19 05:02:10', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 27, NULL, NULL, NULL, NULL),
+(46, NULL, NULL, 'abc', 'abd@gmail.com', NULL, '$2y$10$MSjHY3CYqNtUG5arKakppeGCdUpWiL8vCx2QkgTJQXq8bfSQen0ua', 'Ih76EKHkj9DkoHSym0fcF36xLD8l6sqj78YhrCh46y2MQ0pbtTMjvnTjRRsazjcWJBvRNng1Bja6DnHn', '+880131965745', NULL, '2023-04-06 04:59:08', '2023-04-06 04:59:08', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, NULL, NULL, 'Delcado clarke', 'kuemart20@gmail.com', NULL, '$2y$10$5bNlUIpYz1JT1P.sqXs5D.J/11foDGfjbL3oQr97/Z7RhKQFZ4jOu', 'aT5UDPrIraFygK6PPzzoMNfxIKXL733fyNfFz2l7cxhD8rSGiOBeNumAv7FEzBIV1gBWArusM4SiD2FH', '+16463878617', NULL, '2023-04-17 08:21:06', '2023-04-17 08:21:06', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, NULL, NULL, 'Antarip Saha', 'antaripsaha0@gmail.com', NULL, '$2y$10$VMuF8NxB36rz32pHvbzeseuhv3boFxvNvqgweSP66W7MXoEIkwErq', 'hgkbJmQD0YqSPfe3fL58aLkosgEX9yZjaoC4L2ygSC12h68T79ZNOxkIMc72juHGuSb4nSU9SIFVUTlu', '+101713702979', 'YD3rn6NrRRevluCnWzKpPqoFOAm9fQ6JZkCeA25Lq5LCAbgFEIXdvOVUuH9j', '2023-04-19 05:07:39', '2023-04-19 05:07:39', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, NULL, NULL, 'customer', 'customer@gmail.com', NULL, '$2y$10$X.m/ZsIFX0FvJE05gV7KGeEGGBOiScxoNPP7AtA0mUQfqPCivXJeS', 'AqgdmBge8yuVqytSNnjwmtmTxApwH6nNYcquNSM3GYU7ZSrd2zQvJGddbmLGiETsBBqia1CyvGhHCNW3', '+1123456789', NULL, '2023-04-26 13:59:01', '2023-04-26 13:59:01', 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, NULL, NULL, 'Customer', 'antarip15@gmail.com', NULL, '$2y$10$CUyvfm/ENXTqKBLcNMXIOuyrGzegjtmUuNYXkBYH6CU2jOCdvfLra', 'BLtxJMFLDtPDVF8YFXQJFkl7JNzyer4ZaPNnlPudVDJ6RWIg22eh8RxoWii7DpSsluIWISFXep9dbit3', '+11221215454', 'XFgaxfntH8nOH2cyL68LpPglDpRtCJFDjkIoQWifQfpiuYGrZieoRT1pxCZK', '2023-04-26 14:02:18', '2023-04-26 14:02:18', 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, NULL, NULL, 'Hunter', 'suntonu.pal@gmail.com', NULL, '$2y$10$wkacvEiala000CiMVkENAud2c8QUbfJpEetoouvgp38neoiRwuOHa', 'qPTKhaRqJVL9DAZMQfp5N8FQUuymxDCQ2QJw7MGiLqWZJ8a2c0i2paNnMuTwj8dmECLNqX9PYmQSUIeU', '+8801947295072', NULL, '2023-04-27 05:43:36', '2023-04-27 05:43:36', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
