@@ -15,7 +15,59 @@
       <link href="js/ol/ol.css" rel="stylesheet">
       <link href="js/tempusdominus/css/tempus-dominus.min.css" rel="stylesheet">
       <link href="qrstyle.css?v=5.3.4" rel="stylesheet">
+      {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+
+      <link href="./qr_gen_css/timeline.css" rel="stylesheet">
+      
+
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
       <style type="text/css">:root {--bs-link-color: #1bc184;--bs-link-hover-color:#13885d;--bs-primary-color: #1bc184;}.nav-pills, .nav-link {--bs-nav-pills-link-active-bg: #1bc184;}.nav, .navbar-nav {--bs-nav-link-hover-color: #13885d;}.btn-primary {--bs-btn-bg: #1bc184;--bs-btn-border-color: #1bc184;--bs-btn-disabled-bg: #1bc184;--bs-btn-disabled-border-color: #1bc184;}.btn-primary {--bs-btn-hover-bg: #13885d;--bs-btn-hover-border-color: #13885d;--bs-btn-active-bg: #13885d;--bs-btn-active-border-color: #13885d;}.btn-outline-primary {--bs-btn-color: #1bc184;--bs-btn-border-color: #1bc184;--bs-btn-disabled-bg: #1bc184;--bs-btn-disabled-border-color: #1bc184;}.btn-outline-primary {--bs-btn-hover-bg: #1bc184;--bs-btn-hover-border-color: #1bc184;--bs-btn-active-bg: #13885d;--bs-btn-active-border-color: #1bc184;}.dropdown-menu {--bs-dropdown-link-active-bg: #1bc184;}.bg-primary, .nav-pills .nav-link.active, .nav-pills .show > .nav-link, label.custom-file-label:after{color:#F6F6F6;background-color:#1bc184!important;}</style>
+      <style>
+
+            .card-header:not(.collapsed) .rotate-icon {
+            transform: rotate(180deg);
+            }
+            .css-card
+            {
+               display: flex;
+               gap: 10px;
+               overflow: auto;
+               border-radius: 7px;
+              
+            }
+            .css-card .css-card-body
+            {
+               background: aliceblue;
+               padding: 20px;
+               min-width: 300px;
+              
+            }
+            .css-card .css-card-body h1
+            {
+               flex-wrap: nowrap;
+            }
+            @media (min-width: 268px) and (max-width: 768px) {
+               .mobile{
+                  display: flex;
+               }
+               .desktop{
+                  display: none;
+               }
+            }
+            @media (min-width: 769px) {
+               .mobile{
+                  display: none;
+               }
+               .desktop{
+                  display: flex;
+               }
+            }
+      </style>
    </head>
    <body class="qrcdr">
       <nav class="navbar bg-primary m-0 navbar-expand-sm navbar-dark bg-dark">
@@ -36,8 +88,295 @@
             </ul>
          </div>
       </nav>
-      <div class="bg-primary position-relative">
+      {{-- Section 1 Start --}}
+      <div class="pt-5 pb-2 bg-light">
+         <div class="container mt-5 mb-4">
+            <h1 class="text-center fw-bold display-4">Create your own QR codes and boost your business or idea.</h1>
+            <p class="text-center">Easily generate, manage and statistically track your QR codes.</p>
+            <div class="d-flex justify-content-center">
+               <button class="btn btn-primary rounded-pill btn-lg">
+                  Create QR Code
+               </button>
+            </div>
+            <div class="mt-3">
+               <img class="rounded" src="./images/qr_bg.webp" alt="">
+            </div>
+         </div>
+      </div>
+      {{-- Section 1 End --}}
+      
+      {{-- Section 2 Start--}}
+
+
+      <div class="container mt-5 mb-4">
+         
+         <h1 class="text-center fw-bold display-4">Everything you need to know to get started</h1>
+         <p class="text-center">In this section you will find the basic concepts and the necessary steps to start enjoying the benefits of using QR.</p>
+        
+         <div class="row mt-5 mb-5">
+
+            <div class="col-md-6 col-sm-12 mt-0">
+               <img class="rounded" width="350px" src="./images/qr_bg2.webp" alt="">
+            </div>
+
+            <div class="col-md-6 col-sm-12 mt-5">
+               <div class="accordion" id="accordionExample">
+                  <div class="card">
+                     <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">     
+                        <span class="title fw-bold" style="font-size: 25px;">What is a QR Code?</span>
+                        <span class="accicon">
+                           <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                        </span>
+                     </div>
+                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                        <div class="card-body">
+                           The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        </div>
+                     </div>
+                  </div>
+                  <div class="card">
+                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">     
+                        <span class="title fw-bold" style="font-size: 25px;">Know the benefits of using QR</span>
+                        <span class="accicon">                     
+                           <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                        </span>
+                     </div>
+                     <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                        <div class="card-body">
+
+                           You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        </div>
+                     </div>
+                  </div>
+                  <div class="card">
+                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
+                        <span class="title fw-bold" style="font-size: 25px;">How to start using QR?</span>
+                        <span class="accicon">                     
+                           <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                        </span>
+                     </div>
+                     <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                        <div class="card-body">
+
+                           Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+       
+            
+         </div>      
+      </div>
+
+      {{-- Section 2  End--}}
+
+      {{-- Section 3 Start--}}
+
+
+      <div class="mt-5 mb-5 p-3 bg-white">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-5 col-sm-12 mt-5">
+                  <h1>QRfy makes all the difference</h1>
+                  <p>If you want to create your own QR code, a good tool for doing so is the QRfy QR generator, due to its ease of use and all the options it offers to make your ideas come true or your business grow.</p>
+                  <div class="d-flex justify-content-between">
+                     <div>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Unlimited QR codes
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Scan without limits
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Mass creation
+                        </p>
+                     </div>
+                     <div>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Add multiple users
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Complete monitoring
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           White label (CNAME)
+                        </p>
+                     </div>
+                  </div>
+                  <button class="btn btn-primary btn-lg rounded-pill mt-4">
+                     Create QR Code
+                  </button>
+               </div>
+               <div class="col-md-7 col-sm-12 mt-0 d-flex justify-content-end overflow-auto ">
+                  <div class="row desktop">
+                     <div class="col-md-6 col-sm-12  ">
+                        <div class="card mb-2 bg-light" style="width: 17rem;">
+                           <div class="card-body">
+                             <h5 class="card-title">Card title</h5>
+                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                             <a href="#" class="card-link">Card link</a>
+                             <a href="#" class="card-link">Another link</a>
+                           </div>
+                        </div>
+                        <div class="card bg-light" style="width: 17rem;">
+                           <div class="card-body">
+                             <h5 class="card-title">Card title</h5>
+                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                             <a href="#" class="card-link">Card link</a>
+                             <a href="#" class="card-link">Another link</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-sm-12" style="margin-top: 20px">
+                        <div class="card mb-2 bg-light" style="width: 17rem;">
+                           <div class="card-body">
+                             <h5 class="card-title">Card title</h5>
+                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                             <a href="#" class="card-link">Card link</a>
+                             <a href="#" class="card-link">Another link</a>
+                           </div>
+                        </div>
+                        <div class="card bg-light" style="width: 17rem;">
+                           <div class="card-body">
+                             <h5 class="card-title">Card title</h5>
+                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                             <a href="#" class="card-link">Card link</a>
+                             <a href="#" class="card-link">Another link</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+   
+            </div>
+         </div>
+      </div>
+
+
+
+      <div class="container">
+         <div class="css-card mobile">
+            <div class="css-card-body">
+               <h1>Card Title</h1>
+               <h2>Card Subtitle</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta quasi voluptatibus facere quia ex voluptate libero, tempore adipisci obcaecati animi fuga iste autem recusandae minima laborum error corporis! Libero?</p>
+            </div>
+            <div class="css-card-body">
+               <h1>Card Title</h1>
+               <h2>Card Subtitle</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta quasi voluptatibus facere quia ex voluptate libero, tempore adipisci obcaecati animi fuga iste autem recusandae minima laborum error corporis! Libero?</p>
+            </div>
+            <div class="css-card-body">
+               <div>
+                  <h1>Card Title</h1>
+                  <h2>Card Subtitle</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta quasi voluptatibus facere quia ex voluptate libero, tempore adipisci obcaecati animi fuga iste autem recusandae minima laborum error corporis! Libero?</p>
+               </div>
+            </div>
+            <div class="css-card-body">
+               <div>
+                  <h1>Card Title</h1>
+                  <h2>Card Subtitle</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta quasi voluptatibus facere quia ex voluptate libero, tempore adipisci obcaecati animi fuga iste autem recusandae minima laborum error corporis! Libero?</p>
+               </div>
+            </div>
+         </div>
+      
+        
+      </div>
+     
+       {{-- Section 3 End --}}
+       {{-- Section 4 Start --}}
+
+
+       {{-- Section 4 End --}}
+
+
+       {{-- Section 5 Start --}}
+       <div class="bg-light p-5">
+         <div class="container">
+            <h1 class="text-center">Do not leave with doubt
+            </h1>
+            <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+               <li class="nav-item">
+                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+               </li>
+             </ul>
+             <div class="tab-content  d-flex justify-content-center" id="pills-tabContent">
+               <div class="tab-pane fade show active w-100" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div class="accordion" id="accordionExample">
+                     <div class="card">
+                        <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true">     
+                           <span class="title fw-bold" style="font-size: 25px;">What is a QR Code?</span>
+                           <span class="accicon">
+                              <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                           </span>
+                        </div>
+                        <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                           <div class="card-body">
+                              The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        </div>
+                        </div>
+                     </div>
+                     <div class="card">
+                        <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">     
+                           <span class="title fw-bold" style="font-size: 25px;">Know the benefits of using QR</span>
+                           <span class="accicon">                     
+                              <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                           </span>
+                        </div>
+                        <div id="collapseFive" class="collapse" data-parent="#accordionExample">
+                           <div class="card-body">
+   
+                              You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        </div>
+                        </div>
+                     </div>
+                     <div class="card">
+                        <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false">
+                           <span class="title fw-bold" style="font-size: 25px;">How to start using QR?</span>
+                           <span class="accicon">                     
+                              <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                           </span>
+                        </div>
+                        <div id="collapseSix" class="collapse" data-parent="#accordionExample">
+                           <div class="card-body">
+   
+                              Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        </div>
+                        </div>
+                     </div>
+                  </div>            
+               </div>
+               <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+               <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+             </div>
+   
+          </div>
+       </div>
+
+       
+
+
+       {{-- Section 5 End --}}
+      
+      {{-- <div class="bg-primary position-relative">
          <div class="overlay-gradient"></div>
+         <div>
+            
+         </div>
          <div class="container position-relative">
             <div class="row py-5">
                <div class="col">
@@ -47,7 +386,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> --}}
       <input type="hidden" id="qrcdr-relative" value="">
       <div class="container">
          <div class="row mt-3">
@@ -3285,10 +3624,15 @@
                </div>
                <!-- row -->
             </div>
+          
             <!-- col-lg-8 -->
          </div>
          <!-- row -->
+         <div>
+            <h1>hello</h1>
+         </div>
       </div>
+      
       <!-- containerOOO -->
       <div class="alert_placeholder toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
          <div class="toast-header">
