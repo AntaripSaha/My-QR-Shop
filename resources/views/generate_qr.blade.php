@@ -51,7 +51,7 @@
             {
                flex-wrap: nowrap;
             }
-            @media (min-width: 268px) and (max-width: 768px) {
+       @media (min-width: 268px) and (max-width: 768px) {
                .mobile{
                   display: flex;
                }
@@ -299,7 +299,55 @@
 
 
        {{-- Section 4 End --}}
-
+      <div class="bg-light p-5">
+        <div class="container">
+         <h1 class="text-center">Create different types of QR codes</h1>
+         <section class="timeline-section">
+            <div class="timeline-container" id="container-one">
+              <div id="container-two">
+                 <h1>Choose the content of your QR code</h1>
+                <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
+              </div>
+              <div class="timeline-class" id="container-three">
+                 <div class="timeline">1</div>
+                 <div class="hr-tag"></div>
+              </div>
+              <div id="container-four">
+                 <img src="./images/timeline/step1.bc4310cce85fdd039b61ce2e99b92531.svg" alt="">
+              </div>
+            </div>
+            <div class="timeline-container" id="container-one">
+              <div id="container-two">
+                <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
+              </div>
+              <div class="timeline-class" id="container-three">
+                 <div class="timeline">2</div>
+                 <div class="hr-tag"></div> 
+              </div>
+              <div id="container-four">
+                 <h1>Choose the content of your QR code</h1>
+                 <p>SFill in all the information and use our QR generator to get a unique design</p>
+              </div>
+            </div>
+            <div class="timeline-container" id="container-one">
+             <div id="container-two">
+               <h1>Customise and design it as you like</h1>
+                <p>Fill in all the information and use our QR generator to get a unique design.</p>
+             </div>
+             <div id="container-three">
+                <div class="timeline">3</div>
+                <div class="hr-tag"></div>
+                <div>
+                 <button>Create QR Code</button>
+                </div>
+             </div>
+             <div id="container-four">
+                 <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
+             </div>
+           </div>
+         </section>
+        </div>
+      </div>
 
        {{-- Section 5 Start --}}
        <div class="bg-light p-5">
