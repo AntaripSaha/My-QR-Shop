@@ -51,21 +51,43 @@
             {
                flex-wrap: nowrap;
             }
-       @media (min-width: 268px) and (max-width: 768px) {
+            @media (min-width: 268px) and (max-width: 768px) {
                .mobile{
                   display: flex;
                }
                .desktop{
                   display: none;
+               }
+               h1{
+                  font-size: 30px;
+                  font-weight: 700;
+               }
+               h2{
+                  font-size: 20px;
+                  font-weight: 600;
                }
             }
             @media (min-width: 769px) {
+               h1{
+                  font-size: 45px;
+                  font-weight: 700;
+               }
+               h2{
+                  font-size: 27px;
+                  font-weight: 600;
+               }
                .mobile{
                   display: none;
                }
                .desktop{
                   display: flex;
                }
+            }
+            .bg-grad {
+               background-image: linear-gradient(to bottom, #1d59f9, #0e1116);
+            }
+            .bg-black {
+               background: #0e1116;
             }
       </style>
    </head>
@@ -91,7 +113,7 @@
       {{-- Section 1 Start --}}
       <div class="pt-5 pb-2 bg-light">
          <div class="container mt-5 mb-4">
-            <h1 class="text-center fw-bold display-4">Create your own QR codes and boost your business or idea.</h1>
+            <h1 class="text-center fw-bold">Create your own QR codes and boost your business or idea.</h1>
             <p class="text-center">Easily generate, manage and statistically track your QR codes.</p>
             <div class="d-flex justify-content-center">
                <button class="btn btn-primary rounded-pill btn-lg">
@@ -110,7 +132,7 @@
 
       <div class="container mt-5 mb-4">
          
-         <h1 class="text-center fw-bold display-4">Everything you need to know to get started</h1>
+         <h1 class="text-center">Everything you need to know to get started</h1>
          <p class="text-center">In this section you will find the basic concepts and the necessary steps to start enjoying the benefits of using QR.</p>
         
          <div class="row mt-5 mb-5">
@@ -123,7 +145,7 @@
                <div class="accordion" id="accordionExample">
                   <div class="card">
                      <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">     
-                        <span class="title fw-bold" style="font-size: 25px;">What is a QR Code?</span>
+                        <h2 >What is a QR Code?</h2>
                         <span class="accicon">
                            <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                         </span>
@@ -135,7 +157,7 @@
                   </div>
                   <div class="card">
                      <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">     
-                        <span class="title fw-bold" style="font-size: 25px;">Know the benefits of using QR</span>
+                        <h2 >Know the benefits of using QR</h2>
                         <span class="accicon">                     
                            <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                         </span>
@@ -148,7 +170,7 @@
                   </div>
                   <div class="card">
                      <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
-                        <span class="title fw-bold" style="font-size: 25px;">How to start using QR?</span>
+                        <h2>How to start using QR?</h2>
                         <span class="accicon">                     
                            <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                         </span>
@@ -171,14 +193,13 @@
 
       {{-- Section 3 Start--}}
 
-
       <div class="mt-5 mb-5 p-3 bg-white">
          <div class="container">
             <div class="row">
                <div class="col-md-5 col-sm-12 mt-5">
                   <h1>QRfy makes all the difference</h1>
                   <p>If you want to create your own QR code, a good tool for doing so is the QRfy QR generator, due to its ease of use and all the options it offers to make your ideas come true or your business grow.</p>
-                  <div class="d-flex justify-content-between">
+                  <div class="d-flex justify-content-between gap-2">
                      <div>
                         <p>
                            <img width="20px" src="./images/check-mark.png" alt="">
@@ -261,8 +282,6 @@
          </div>
       </div>
 
-
-
       <div class="container">
          <div class="css-card mobile">
             <div class="css-card-body">
@@ -293,124 +312,125 @@
       
         
       </div>
-     
        {{-- Section 3 End --}}
+
        {{-- Section 4 Start --}}
 
-
-       {{-- Section 4 End --}}
-      <div class="bg-light p-5 desktop">
-        <div class="container">
-         <h1 class="text-center">Create different types of QR codes</h1>
-         <section>
-            <div class="timeline-container" id="container-one">
-              <div id="container-two">
-                 <h1>Choose the content of your QR code</h1>
-                <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
-              </div>
-              <div class="timeline-class" id="container-three">
-                 <div class="timeline">1</div>
-                 <div class="hr-tag"></div>
-              </div>
-              <div id="container-four">
-                 <img src="./images/timeline/step1.bc4310cce85fdd039b61ce2e99b92531.svg" alt="">
-              </div>
-            </div>
-            <div class="timeline-container" id="container-one">
-              <div id="container-two">
-                <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
-              </div>
-              <div class="timeline-class" id="container-three">
-                 <div class="timeline">2</div>
-                 <div class="hr-tag"></div> 
-              </div>
-              <div id="container-four">
-                 <h1>Choose the content of your QR code</h1>
-                 <p>SFill in all the information and use our QR generator to get a unique design</p>
-              </div>
-            </div>
-            <div class="timeline-container" id="container-one">
-             <div id="container-two">
-               <h1>Customise and design it as you like</h1>
-                <p>Fill in all the information and use our QR generator to get a unique design.</p>
-             </div>
-             <div id="container-three">
-                <div class="timeline">3</div>
-                <div class="hr-tag"></div>
-                <div>
-                 <button>Create QR Code</button>
-                </div>
-             </div>
-             <div id="container-four">
-                 <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
-             </div>
-            </div>
-         </section>
-        </div>
-      </div>
-      <div class="bg-light p-5 mobile">
+       <div class="bg-light p-5 desktop">
          <div class="container">
           <h1 class="text-center">Create different types of QR codes</h1>
-          <div class="d-block">
-             <div class="mb-2">
-               <div>
+          <section>
+             <div class="timeline-container" id="container-one">
+               <div id="container-two">
                   <h1>Choose the content of your QR code</h1>
                  <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
                </div>
-               <div>
+               <div class="timeline-class" id="container-three">
+                  <div class="timeline">1</div>
+                  <div class="hr-tag"></div>
+               </div>
+               <div id="container-four">
                   <img src="./images/timeline/step1.bc4310cce85fdd039b61ce2e99b92531.svg" alt="">
                </div>
              </div>
-             <div>
-            
-             
-               <div >
+             <div class="timeline-container" id="container-one">
+               <div id="container-two">
+                 <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
+               </div>
+               <div class="timeline-class" id="container-three">
+                  <div class="timeline">2</div>
+                  <div class="hr-tag"></div> 
+               </div>
+               <div id="container-four">
                   <h1>Choose the content of your QR code</h1>
                   <p>SFill in all the information and use our QR generator to get a unique design</p>
                </div>
-               <div>
-                  <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
-                </div>
              </div>
-             <div>
-              <div >
+             <div class="timeline-container" id="container-one">
+              <div id="container-two">
                 <h1>Customise and design it as you like</h1>
                  <p>Fill in all the information and use our QR generator to get a unique design.</p>
               </div>
-              <div>
-               <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
-             </div>
-              <div>
+              <div id="container-three">
+                 <div class="timeline">3</div>
+                 <div class="hr-tag"></div>
                  <div>
-                  <button class="mx-auto d-block" style="background: #1D59F9;
-                  padding: 20px 30px;
-                  border-radius: 30px;
-                  border: 10px none;
-                  color: white;
-                  font-size: 18px;
-                  margin-top:10px;
-                  flex-wrap: nowrap;">Create QR Code</button>
+                  <button>Create QR Code</button>
                  </div>
               </div>
+              <div id="container-four">
+                  <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
+              </div>
              </div>
-            </div>
+          </section>
          </div>
        </div>
+       <div class="bg-light p-5 mobile">
+          <div class="container">
+           <h1 class="text-center">Create different types of QR codes</h1>
+           <div class="d-block">
+              <div class="mb-2">
+                <div>
+                   <h1>Choose the content of your QR code</h1>
+                  <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
+                </div>
+                <div>
+                   <img src="./images/timeline/step1.bc4310cce85fdd039b61ce2e99b92531.svg" alt="">
+                </div>
+              </div>
+              <div>
+             
+              
+                <div >
+                   <h1>Choose the content of your QR code</h1>
+                   <p>SFill in all the information and use our QR generator to get a unique design</p>
+                </div>
+                <div>
+                   <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
+                 </div>
+              </div>
+              <div>
+               <div >
+                 <h1>Customise and design it as you like</h1>
+                  <p>Fill in all the information and use our QR generator to get a unique design.</p>
+               </div>
+               <div>
+                <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
+              </div>
+               <div>
+                  <div>
+                   <button class="mx-auto d-block" style="background: #1D59F9;
+                   padding: 20px 30px;
+                   border-radius: 30px;
+                   border: 10px none;
+                   color: white;
+                   font-size: 18px;
+                   margin-top:10px;
+                   flex-wrap: nowrap;">Create QR Code</button>
+                  </div>
+               </div>
+              </div>
+             </div>
+          </div>
+        </div>
+
+       {{-- Section 4 End --}}
+
 
        {{-- Section 5 Start --}}
-       <div class="bg-light p-5">
+       <div class="bg-light mt-5 mb-4 pt-5 pb-5">
          <div class="container">
-            <h1 class="text-center">Do not leave with doubt
+            <h1 class="text-center mb-4">Do not leave with doubt
             </h1>
-            <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-5 d-flex justify-content-center" id="pills-tab" role="tablist">
                <li class="nav-item">
-                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                 <a class="nav-link active rounded-pill" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Basic Information</a>
                </li>
                <li class="nav-item">
-                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                 <a class="nav-link rounded-pill" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Design & Creation</a>
                </li>
                <li class="nav-item">
-                 <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                 <a class="nav-link rounded-pill" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Scan & Print</a>
                </li>
              </ul>
              <div class="tab-content  d-flex justify-content-center" id="pills-tabContent">
@@ -418,7 +438,7 @@
                   <div class="accordion" id="accordionExample">
                      <div class="card">
                         <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true">     
-                           <span class="title fw-bold" style="font-size: 25px;">What is a QR Code?</span>
+                           <h2 >What is a QR Code?</h2>
                            <span class="accicon">
                               <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                            </span>
@@ -430,7 +450,7 @@
                      </div>
                      <div class="card">
                         <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">     
-                           <span class="title fw-bold" style="font-size: 25px;">Know the benefits of using QR</span>
+                           <h2 >Know the benefits of using QR</h2>
                            <span class="accicon">                     
                               <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                            </span>
@@ -443,7 +463,7 @@
                      </div>
                      <div class="card">
                         <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false">
-                           <span class="title fw-bold" style="font-size: 25px;">How to start using QR?</span>
+                           <h2 >How to start using QR?</h2>
                            <span class="accicon">                     
                               <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                            </span>
@@ -456,16 +476,98 @@
                      </div>
                   </div>            
                </div>
-               <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-               <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+               <div class="tab-pane fade w-100" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <div class="tab-pane fade show active w-100" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                     <div class="accordion" id="accordionExample">
+                        <div class="card">
+                           <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true">     
+                              <h2 >What is a QR Code?</h2>
+                              <span class="accicon">
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseSeven" class="collapse show" data-parent="#accordionExample">
+                              <div class="card-body">
+                                 The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">     
+                              <h2 >Know the benefits of using QR</h2>
+                              <span class="accicon">                     
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseEight" class="collapse" data-parent="#accordionExample">
+                              <div class="card-body">
+      
+                                 You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false">
+                              <h2 >How to start using QR?</h2>
+                              <span class="accicon">                     
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseNine" class="collapse" data-parent="#accordionExample">
+                              <div class="card-body">
+      
+                                 Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        </div>
+                           </div>
+                        </div>
+                     </div>            
+                  </div>
+               </div>
+               <div class="tab-pane fade w-100" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                  <div class="tab-pane fade show active w-100" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                     <div class="accordion" id="accordionExample">
+                        <div class="card">
+                           <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTen" aria-expanded="true">     
+                              <h2 >What is a QR Code?</h2>
+                              <span class="accicon">
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseTen" class="collapse show" data-parent="#accordionExample">
+                              <div class="card-body">
+                                 The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">     
+                              <h2 >Know the benefits of using QR</h2>
+                              <span class="accicon">                     
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseEleven" class="collapse" data-parent="#accordionExample">
+                              <div class="card-body">
+      
+                                 You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false">
+                              <h2 >How to start using QR?</h2>
+                              <span class="accicon">                     
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseTwelve" class="collapse" data-parent="#accordionExample">
+                              <div class="card-body">
+      
+                                 Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        </div>
+                           </div>
+                        </div>
+                     </div>            
+                  </div>
+               </div>
              </div>
    
           </div>
        </div>
-
-       
-
-
        {{-- Section 5 End --}}
       
       {{-- <div class="bg-primary position-relative">
@@ -3724,46 +3826,62 @@
             <!-- col-lg-8 -->
          </div>
          <!-- row -->
-         <div>
-            <h1>hello</h1>
-         </div>
+        
       </div>
-      
-      <!-- containerOOO -->
-      <div class="alert_placeholder toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
-         <div class="toast-header">
-            <div class="mr-auto">
-               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-               </svg>
+
+      {{-- Section 6 Start --}}
+      <div class="bg-grad pt-5 pb-5">
+         <div class="container">
+            <div class="text-center ">
+               <h1 class="text-white">Try our QR code generator for 7 days for free.</h1>
+               <button class="btn btn-outline-light pr-5 pl-5 mt-3 mb-3 rounded-pill">Register Now</button>
             </div>
-            <button type="button" class="ml-2 ms-auto mb-1 btn-close close" data-dismiss="toast" aria-label="Close">
-               <span aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                  </svg>
-               </span>
-            </button>
+            <img class="mt-3 rounded" src="./images/qr_bg3.webp" alt="">
          </div>
-         <div class="toast-body"></div>
-      </div>
-      <div class="pt-5">
-         <div class="container fixed-bottom">
-            <!-- <hr>
-               <div class="row pt-5 pb-4">
-                  <div class="col">
-                     <p>This is an example of footer. Place here your contents, or remove the file <code>/template/<span class="bg-danger text-white px-1">footer.php</span></code>.</p>
+
+
+         <!-- containerOOO -->
+         <div class="alert_placeholder toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+            <div class="toast-header">
+               <div class="mr-auto">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                     <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                  </svg>
+               </div>
+               <button type="button" class="ml-2 ms-auto mb-1 btn-close close" data-dismiss="toast" aria-label="Close">
+                  <span aria-hidden="true">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                     </svg>
+                  </span>
+               </button>
+            </div>
+            <div class="toast-body"></div>
+         </div>
+         <div class="pt-5">
+            <div class="container">
+            {{-- <div class="container fixed-bottom"> --}}
+               <!-- <hr>
+                  <div class="row pt-5 pb-4">
+                     <div class="col">
+                        <p>This is an example of footer. Place here your contents, or remove the file <code>/template/<span class="bg-danger text-white px-1">footer.php</span></code>.</p>
+                     </div>
+                  </div> -->
+               <hr>
+               <div class="row py-2 small mb-3">
+                  <div class="col-6 text-white">My QR Shop &copy; 2023</div>
+                  <div class="col-6">
                   </div>
-               </div> -->
-            <hr>
-            <div class="row py-2 small mb-3">
-               <div class="col-6">My QR Shop &copy; 2023</div>
-               <div class="col-6">
                </div>
             </div>
          </div>
+
+
       </div>
+      {{-- Section 6 End --}}
+      
+      
       <script  type="text/javascript" src="js/popper.min.js"></script><script src="js/tempusdominus/js/tempus-dominus.min.js"></script><script src="js/qrcdr.min.js?v=5.3.4"></script><script src="js/call.js?v=5.3.4"></script>    
    </body>
 </html>
