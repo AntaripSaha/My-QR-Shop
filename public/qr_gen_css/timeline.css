@@ -1,7 +1,4 @@
-.timeline-section
-{
-	margin: 20px;
-}
+
 .timeline-container
 {
 	display: flex;
@@ -12,7 +9,6 @@
 #container-one
 {
 	width: 100%;
-	
 }
 #container-two
 {
@@ -39,12 +35,13 @@
 #container-three button
 {
 background: #1D59F9;
-padding: 20px;
+padding: 20px 30px;
 border-radius: 30px;
 border: 10px none;
 color: white;
 font-size: 18px;
-margin-left: 25px;
+margin-left: 18px;
+flex-wrap: nowrap;
 }
 #container-four
 {
@@ -72,4 +69,3 @@ background: black;
 margin: 0 auto;
 }
 
-  

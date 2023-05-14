@@ -299,10 +299,10 @@
 
 
        {{-- Section 4 End --}}
-      <div class="bg-light p-5">
+      <div class="bg-light p-5 desktop">
         <div class="container">
          <h1 class="text-center">Create different types of QR codes</h1>
-         <section class="timeline-section">
+         <section>
             <div class="timeline-container" id="container-one">
               <div id="container-two">
                  <h1>Choose the content of your QR code</h1>
@@ -344,10 +344,58 @@
              <div id="container-four">
                  <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
              </div>
-           </div>
+            </div>
          </section>
         </div>
       </div>
+      <div class="bg-light p-5 mobile">
+         <div class="container">
+          <h1 class="text-center">Create different types of QR codes</h1>
+          <div class="d-block">
+             <div class="mb-2">
+               <div>
+                  <h1>Choose the content of your QR code</h1>
+                 <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
+               </div>
+               <div>
+                  <img src="./images/timeline/step1.bc4310cce85fdd039b61ce2e99b92531.svg" alt="">
+               </div>
+             </div>
+             <div>
+            
+             
+               <div >
+                  <h1>Choose the content of your QR code</h1>
+                  <p>SFill in all the information and use our QR generator to get a unique design</p>
+               </div>
+               <div>
+                  <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
+                </div>
+             </div>
+             <div>
+              <div >
+                <h1>Customise and design it as you like</h1>
+                 <p>Fill in all the information and use our QR generator to get a unique design.</p>
+              </div>
+              <div>
+               <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
+             </div>
+              <div>
+                 <div>
+                  <button class="mx-auto d-block" style="background: #1D59F9;
+                  padding: 20px 30px;
+                  border-radius: 30px;
+                  border: 10px none;
+                  color: white;
+                  font-size: 18px;
+                  margin-top:10px;
+                  flex-wrap: nowrap;">Create QR Code</button>
+                 </div>
+              </div>
+             </div>
+            </div>
+         </div>
+       </div>
 
        {{-- Section 5 Start --}}
        <div class="bg-light p-5">
