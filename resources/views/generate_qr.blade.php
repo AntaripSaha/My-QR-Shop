@@ -67,6 +67,12 @@
                   display: flex;
                }
             }
+            .bg-grad {
+               background-image: linear-gradient(to bottom, #1d59f9, #0e1116);
+            }
+            .bg-black {
+               background: #0e1116;
+            }
       </style>
    </head>
    <body class="qrcdr">
@@ -304,17 +310,17 @@
        {{-- Section 5 Start --}}
        <div class="bg-light p-5">
          <div class="container">
-            <h1 class="text-center">Do not leave with doubt
+            <h1 class="text-center mb-4">Do not leave with doubt
             </h1>
-            <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-5 d-flex justify-content-center" id="pills-tab" role="tablist">
                <li class="nav-item">
-                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                 <a class="nav-link active rounded-pill" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Basic Information</a>
                </li>
                <li class="nav-item">
-                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                 <a class="nav-link rounded-pill" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Design & Creation</a>
                </li>
                <li class="nav-item">
-                 <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                 <a class="nav-link rounded-pill" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Scan & Print</a>
                </li>
              </ul>
              <div class="tab-content  d-flex justify-content-center" id="pills-tabContent">
@@ -360,8 +366,94 @@
                      </div>
                   </div>            
                </div>
-               <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-               <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+               <div class="tab-pane fade w-100" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <div class="tab-pane fade show active w-100" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                     <div class="accordion" id="accordionExample">
+                        <div class="card">
+                           <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true">     
+                              <span class="title fw-bold" style="font-size: 25px;">What is a QR Code?</span>
+                              <span class="accicon">
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseSeven" class="collapse show" data-parent="#accordionExample">
+                              <div class="card-body">
+                                 The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">     
+                              <span class="title fw-bold" style="font-size: 25px;">Know the benefits of using QR</span>
+                              <span class="accicon">                     
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseEight" class="collapse" data-parent="#accordionExample">
+                              <div class="card-body">
+      
+                                 You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false">
+                              <span class="title fw-bold" style="font-size: 25px;">How to start using QR?</span>
+                              <span class="accicon">                     
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseNine" class="collapse" data-parent="#accordionExample">
+                              <div class="card-body">
+      
+                                 Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        </div>
+                           </div>
+                        </div>
+                     </div>            
+                  </div>
+               </div>
+               <div class="tab-pane fade w-100" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                  <div class="tab-pane fade show active w-100" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                     <div class="accordion" id="accordionExample">
+                        <div class="card">
+                           <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTen" aria-expanded="true">     
+                              <span class="title fw-bold" style="font-size: 25px;">What is a QR Code?</span>
+                              <span class="accicon">
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseTen" class="collapse show" data-parent="#accordionExample">
+                              <div class="card-body">
+                                 The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">     
+                              <span class="title fw-bold" style="font-size: 25px;">Know the benefits of using QR</span>
+                              <span class="accicon">                     
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseEleven" class="collapse" data-parent="#accordionExample">
+                              <div class="card-body">
+      
+                                 You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        </div>
+                           </div>
+                        </div>
+                        <div class="card">
+                           <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false">
+                              <span class="title fw-bold" style="font-size: 25px;">How to start using QR?</span>
+                              <span class="accicon">                     
+                                 <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                              </span>
+                           </div>
+                           <div id="collapseTwelve" class="collapse" data-parent="#accordionExample">
+                              <div class="card-body">
+      
+                                 Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        </div>
+                           </div>
+                        </div>
+                     </div>            
+                  </div>
+               </div>
              </div>
    
           </div>
@@ -3628,46 +3720,68 @@
             <!-- col-lg-8 -->
          </div>
          <!-- row -->
-         <div>
-            <h1>hello</h1>
-         </div>
+        
       </div>
-      
-      <!-- containerOOO -->
-      <div class="alert_placeholder toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
-         <div class="toast-header">
-            <div class="mr-auto">
-               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-               </svg>
+
+      {{-- Section 6 Start --}}
+      <div class="bg-grad p-5">
+         <div class="container">
+            <div class="text-center ">
+               <h1 class="text-white">Try our QR code generator for 7 days for free.</h1>
+               <button class="btn btn-outline-light pr-5 pl-5 mt-3 mb-3 rounded-pill">Register Now</button>
             </div>
-            <button type="button" class="ml-2 ms-auto mb-1 btn-close close" data-dismiss="toast" aria-label="Close">
-               <span aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                  </svg>
-               </span>
-            </button>
+            <img class="mt-3 rounded" src="./images/qr_bg3.webp" alt="">
          </div>
-         <div class="toast-body"></div>
-      </div>
-      <div class="pt-5">
-         <div class="container fixed-bottom">
-            <!-- <hr>
-               <div class="row pt-5 pb-4">
-                  <div class="col">
-                     <p>This is an example of footer. Place here your contents, or remove the file <code>/template/<span class="bg-danger text-white px-1">footer.php</span></code>.</p>
+
+
+
+
+            <!-- containerOOO -->
+            <div class="alert_placeholder toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+               <div class="toast-header">
+                  <div class="mr-auto">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                     </svg>
                   </div>
-               </div> -->
-            <hr>
-            <div class="row py-2 small mb-3">
-               <div class="col-6">My QR Shop &copy; 2023</div>
-               <div class="col-6">
+                  <button type="button" class="ml-2 ms-auto mb-1 btn-close close" data-dismiss="toast" aria-label="Close">
+                     <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                     </span>
+                  </button>
+               </div>
+               <div class="toast-body"></div>
+            </div>
+            <div class="pt-5">
+               <div class="container">
+               {{-- <div class="container fixed-bottom"> --}}
+                  <!-- <hr>
+                     <div class="row pt-5 pb-4">
+                        <div class="col">
+                           <p>This is an example of footer. Place here your contents, or remove the file <code>/template/<span class="bg-danger text-white px-1">footer.php</span></code>.</p>
+                        </div>
+                     </div> -->
+                  <hr>
+                  <div class="row py-2 small mb-3">
+                     <div class="col-6 text-white">My QR Shop &copy; 2023</div>
+                     <div class="col-6">
+                     </div>
+                  </div>
                </div>
             </div>
-         </div>
+
+
+
+
+
+
       </div>
+      {{-- Section 6 End --}}
+      
+      
       <script  type="text/javascript" src="js/popper.min.js"></script><script src="js/tempusdominus/js/tempus-dominus.min.js"></script><script src="js/qrcdr.min.js?v=5.3.4"></script><script src="js/call.js?v=5.3.4"></script>    
    </body>
 </html>
