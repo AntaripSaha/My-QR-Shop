@@ -42,10 +42,9 @@
             }
             .css-card .css-card-body
             {
-               background: aliceblue;
+               
                padding: 20px;
                min-width: 300px;
-              
             }
             .css-card .css-card-body h1
             {
@@ -238,40 +237,32 @@
                      <div class="col-md-6 col-sm-12  ">
                         <div class="card mb-2 bg-light" style="width: 17rem;">
                            <div class="card-body">
-                             <h5 class="card-title">Card title</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                             <a href="#" class="card-link">Card link</a>
-                             <a href="#" class="card-link">Another link</a>
+                             <h5 class="card-title"><img src="./images/icons/qr-icon/qr_dinamico.svg" alt="" style="width: 48px; height:48px;"></h5>
+                             <h6 class="mb-2">Dynamic QR codes</h6>
+                             <p class="card-text">You can edit and manage the content without printing them again.</p>
                            </div>
                         </div>
                         <div class="card bg-light" style="width: 17rem;">
                            <div class="card-body">
-                             <h5 class="card-title">Card title</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <h5 class="card-title"><img src="./images/icons/qr-icon/multiples_landings.svg" alt="" style="width: 48px; height:48px;"></h5>
+                              <h6 class="mb-2">Dynamic QR codes</h6>
                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                             <a href="#" class="card-link">Card link</a>
-                             <a href="#" class="card-link">Another link</a>
                            </div>
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-12" style="margin-top: 20px">
                         <div class="card mb-2 bg-light" style="width: 17rem;">
                            <div class="card-body">
-                             <h5 class="card-title">Card title</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <h5 class="card-title"><img src="./images/icons/qr-icon/estadisticas_completas.svg" alt="" style="width: 48px; height:48px;"></h5>
+                              <h6 class="mb-2">Dynamic QR codes</h6>
                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                             <a href="#" class="card-link">Card link</a>
-                             <a href="#" class="card-link">Another link</a>
                            </div>
                         </div>
                         <div class="card bg-light" style="width: 17rem;">
                            <div class="card-body">
-                             <h5 class="card-title">Card title</h5>
-                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <h5 class="card-title"><img src="./images/icons/qr-icon/personaliza_qr.svg" alt="" style="width: 48px; height:48px;"></h5>
+                             <h6 class="mb-2">Dynamic QR codes</h6>
                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                             <a href="#" class="card-link">Card link</a>
-                             <a href="#" class="card-link">Another link</a>
                            </div>
                         </div>
                      </div>
@@ -283,25 +274,25 @@
       </div>
 
       <div class="container">
-         <div class="css-card mobile">
-            <div class="css-card-body">
+         <div class="css-card mobile ">
+            <div class="css-card-body bg-light">
                <h1>Card Title</h1>
                <h2>Card Subtitle</h2>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta quasi voluptatibus facere quia ex voluptate libero, tempore adipisci obcaecati animi fuga iste autem recusandae minima laborum error corporis! Libero?</p>
             </div>
-            <div class="css-card-body">
+            <div class="css-card-body bg-light">
                <h1>Card Title</h1>
                <h2>Card Subtitle</h2>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta quasi voluptatibus facere quia ex voluptate libero, tempore adipisci obcaecati animi fuga iste autem recusandae minima laborum error corporis! Libero?</p>
             </div>
-            <div class="css-card-body">
+            <div class="css-card-body bg-light">
                <div>
                   <h1>Card Title</h1>
                   <h2>Card Subtitle</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta quasi voluptatibus facere quia ex voluptate libero, tempore adipisci obcaecati animi fuga iste autem recusandae minima laborum error corporis! Libero?</p>
                </div>
             </div>
-            <div class="css-card-body">
+            <div class="css-card-body bg-light">
                <div>
                   <h1>Card Title</h1>
                   <h2>Card Subtitle</h2>
