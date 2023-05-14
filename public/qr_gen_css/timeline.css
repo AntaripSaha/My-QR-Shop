@@ -1,36 +1,35 @@
-
 .timeline-container
 {
-	display: flex;
-	max-width: 1200px;
-	margin: 0 auto;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #container-one
 {
-	width: 100%;
+    width: 100%;
 }
 #container-two
 {
-	width: 40%;
-	text-align: right;
-	
+    width: 40%;
+    text-align: right;
+
 }
 #container-two h1
 {
-	font-weight: 700;
-	font-size: 25px;
-	margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 #container-four h1
 {
-	font-weight: 700;
-	font-size: 25px;
-	margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 #container-three
 {
-	width: 20%;
+    width: 20%;
 }
 #container-three button
 {
@@ -45,20 +44,20 @@ flex-wrap: nowrap;
 }
 #container-four
 {
-	width: 40%;
+    width: 40%;
 }
 .timeline
 {
-	background: #220E27;
-	border-radius: 50%;
-	width: 44px;
-	height: 44px;
-	color: white;
-	margin: 0 auto;
-	padding: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    background: #220E27;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    color: white;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hr-tag
@@ -68,4 +67,3 @@ height: 300px;
 background: black;
 margin: 0 auto;
 }
-
