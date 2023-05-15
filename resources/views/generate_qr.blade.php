@@ -216,7 +216,7 @@
       {{-- Section 1 Start --}}
       <div class="pt-5 pb-2 bg-light">
          <div class="container mt-5 mb-4">
-            <h1 class="text-center fw-bold">Create your own QR codes and boost your business.</h1>
+            <h1 class="text-center fw-bold">Create Your Own QR Codes and Boost Your Business.</h1>
             <p class="text-center">Easily generate, manage and statistically track your QR codes.</p>
             <div class="d-flex justify-content-center">
                <a href="#qrgen">
@@ -233,7 +233,7 @@
       {{-- Section 1 End --}}
       {{-- Section 2 Start--}}
       <div class="container mt-5 mb-4">
-         <h1 class="text-center">Everything you need to know to get started</h1>
+         <h1 class="text-center">Everything You Need to Know to Get Started</h1>
          <p class="text-center">In this section you will find the basic concepts and the necessary steps to start enjoying the benefits of using QR.</p>
          <div class="row mt-5 mb-5">
             <div class="col-md-6 col-sm-12 mt-0">
