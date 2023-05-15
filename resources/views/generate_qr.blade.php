@@ -216,7 +216,7 @@
       {{-- Section 1 Start --}}
       <div class="pt-5 pb-2 bg-light">
          <div class="container mt-5 mb-4">
-            <h1 class="text-center fw-bold">Create your own QR codes and boost your business or idea.</h1>
+            <h1 class="text-center fw-bold">Create your own QR codes and boost your business.</h1>
             <p class="text-center">Easily generate, manage and statistically track your QR codes.</p>
             <div class="d-flex justify-content-center">
                <a href="#qrgen">

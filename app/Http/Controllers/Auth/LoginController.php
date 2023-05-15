@@ -49,7 +49,7 @@ class LoginController extends Controller
         if($lastVendor&&auth()->user()->hasRole('client')){
             return route('vendrobyalias',['alias'=>$lastVendor]);
         }else{
-            return route('/');
+            return route('front');
         }
     }
 
