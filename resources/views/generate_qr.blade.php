@@ -226,7 +226,7 @@
                </a>
             </div>
             <div class="mt-3">
-               <img class="rounded" src="./images/qr_bg.webp" alt="">
+               <img class="rounded" src="./images/qr_bg.png" alt="">
             </div>
          </div>
       </div>
@@ -404,20 +404,20 @@
                <p>You can edit and manage the content without printing them again.</p>
             </div>
             <div class="css-card-body bg-light">
-               <h1><img src="./images/icons/qr-icon/qr_dinamico.svg" alt="" style="width: 48px; height:48px;"></h1>
+               <h1><img src="./images/icons/qr-icon/multiples_landings.svg" alt="" style="width: 48px; height:48px;"></h1>
                <h2>Multiple landing pages</h2>
                <p>Code customization with our design tool.</p>
             </div>
             <div class="css-card-body bg-light">
                <div>
-                  <h1><img src="./images/icons/qr-icon/qr_dinamico.svg" alt="" style="width: 48px; height:48px;"></h1>
+                  <h1><img src="./images/icons/qr-icon/estadisticas_completas.svg" alt="" style="width: 48px; height:48px;"></h1>
                   <h2>Complete statistics</h2>
                   <p>Exports all the information of the scans they have done.</p>
                </div>
             </div>
             <div class="css-card-body bg-light">
                <div>
-                  <h1><img src="./images/icons/qr-icon/qr_dinamico.svg" alt="" style="width: 48px; height:48px;"></h1>
+                  <h1><img src="./images/icons/qr-icon/personaliza_qr.svg" alt="" style="width: 48px; height:48px;"></h1>
                   <h2>Customize your QR code</h2>
                   <p>Customize your QR with your logo, colors and shapes.</p>
                </div>
@@ -440,12 +440,12 @@
                      <div class="hr-tag"></div>
                   </div>
                   <div id="container-four">
-                     <img src="./images/timeline/step1.bc4310cce85fdd039b61ce2e99b92531.svg" alt="">
+                     <img src="./images/timeline/step1.png" alt="">
                   </div>
                </div>
                <div class="timeline-container" id="container-one">
                   <div id="container-two">
-                     <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
+                     <img src="./images/timeline/step2.png" alt="">
                   </div>
                   <div class="timeline-class" id="container-three">
                      <div class="timeline">2</div>
@@ -469,7 +469,7 @@
                      </div>
                   </div>
                   <div id="container-four">
-                     <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
+                     <img src="./images/timeline/step3.png" alt="">
                   </div>
                </div>
             </section>
@@ -3946,7 +3946,7 @@
             <h1 class="text-white">Try Our QR Code Generator.</h1>
             {{-- <button class="btn btn-outline-light pr-5 pl-5 mt-3 mb-3 rounded-pill">Register Now</button> --}}
          </div>
-         <img class="mt-3 rounded" src="./images/qr_bg3.webp" alt="">
+         <img class="mt-3 rounded" src="./images/qr_bg3.png" alt="">
       </div>
       <!-- containerOOO -->
       <div class="alert_placeholder toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
