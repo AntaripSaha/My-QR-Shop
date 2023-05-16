@@ -25,6 +25,10 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <style type="text/css">:root {--bs-link-color: #1bc184;--bs-link-hover-color:#13885d;--bs-primary-color: #1bc184;}.nav-pills, .nav-link {--bs-nav-pills-link-active-bg: #1bc184;}.nav, .navbar-nav {--bs-nav-link-hover-color: #13885d;}.btn-primary {--bs-btn-bg: #1bc184;--bs-btn-border-color: #1bc184;--bs-btn-disabled-bg: #1bc184;--bs-btn-disabled-border-color: #1bc184;}.btn-primary {--bs-btn-hover-bg: #13885d;--bs-btn-hover-border-color: #13885d;--bs-btn-active-bg: #13885d;--bs-btn-active-border-color: #13885d;}.btn-outline-primary {--bs-btn-color: #1bc184;--bs-btn-border-color: #1bc184;--bs-btn-disabled-bg: #1bc184;--bs-btn-disabled-border-color: #1bc184;}.btn-outline-primary {--bs-btn-hover-bg: #1bc184;--bs-btn-hover-border-color: #1bc184;--bs-btn-active-bg: #13885d;--bs-btn-active-border-color: #1bc184;}.dropdown-menu {--bs-dropdown-link-active-bg: #1bc184;}.bg-primary, .nav-pills .nav-link.active, .nav-pills .show > .nav-link, label.custom-file-label:after{color:#F6F6F6;background-color:#1bc184!important;}</style>
       <style>
+         *
+         {
+            scroll-margin-top: 90px;
+         }
          .card-header:not(.collapsed) .rotate-icon {
          transform: rotate(180deg);
          }
@@ -523,26 +527,16 @@
             </div>
          </div>
       </div>
+
       {{-- Section 4 End --}}
-      {{-- 
-      <div class="bg-primary position-relative">
-         <div class="overlay-gradient"></div>
-         <div>
-         </div>
-         <div class="container position-relative">
-            <div class="row py-5">
-               <div class="col">
-                  <h1 class="display-1">My QR Code Generator</h1>
-                  <p>To Generate Your QR Code<br>Place Your Informations Below</p>
-                  <p><a href="{{route('front')}}" class="btn btn-primary btn-lg shadow" role="button">Learn more &raquo;</a></p>
-               </div>
-            </div>
-         </div>
-      </div>
-      --}}
+
+
+      {{-- Section QRGen Start --}}
+      
+
       <div class="bg-light">
          <input type="hidden" id="qrcdr-relative" value="">
-         <div class="container pt-3" id="qrgen">
+         <div class="container pt-3"  id="qrgen">
             <h1 class="text-center">Generate Your QR Code</h1>
             <div class="row ">
                <div class="col-lg-4 order-last">
@@ -3785,6 +3779,27 @@
          </div>
 
       </div>
+      {{-- Section QRGen End --}}
+      
+
+
+      {{-- 
+      <div class="bg-primary position-relative">
+         <div class="overlay-gradient"></div>
+         <div>
+         </div>
+         <div class="container position-relative">
+            <div class="row py-5">
+               <div class="col">
+                  <h1 class="display-1">My QR Code Generator</h1>
+                  <p>To Generate Your QR Code<br>Place Your Informations Below</p>
+                  <p><a href="{{route('front')}}" class="btn btn-primary btn-lg shadow" role="button">Learn more &raquo;</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      --}}
+
       {{-- Section 5 Start --}}
       <div class="bg-white mt-5 pt-5 pb-5">
          <div class="container">
@@ -3939,6 +3954,7 @@
          </div>
       </div>
       {{-- Section 5 End --}}
+
       {{-- Section 6 Start --}}
       <div class="bg-grad pt-4 pb-5">
       <div class="container pt-3">
