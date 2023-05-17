@@ -192,7 +192,7 @@
                         <p class="text-muted mb-0">{{ __('Hmmm... Nothing found!')}}</p>
                         <br/><br/><br/>
                         <div class="text-center" style="opacity: 0.2;">
-                            <img src="https://www.jing.fm/clipimg/full/256-2560623_juice-clipart-pizza-box-pizza-box.png" width="200" height="200"></img>
+                            <img src="https://www.jing.fm/clipimg/full/256-2560623_juice-clipart-pizza-box-pizza-box.png" width="200" height="200">
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ use App\Restorant;
 use App\Tables;
 use App\Plans;
 use Carbon\Carbon;
+use App\Models\Product;
 use Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;

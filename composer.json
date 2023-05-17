@@ -73,7 +73,7 @@
         "spatie/laravel-sitemap": "^5.8",
         "spatie/laravel-translatable": "^4.6",
         "spatie/opening-hours": "^2.10",
-        "stripe/stripe-php": "^7.60",
+        "stripe/stripe-php": "^9.9",
         "twilio/sdk": "^6.11",
         "unicodeveloper/laravel-paystack": "^1.0",
         "willvincent/laravel-rateable": "2.3.0"

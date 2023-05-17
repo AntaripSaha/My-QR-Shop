@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "005f9498c4afaab928ced37a96196797",
+    "content-hash": "6a8e3a48574f53441721df774b775ca3",
     "packages": [
         {
             "name": "akaunting/module",
@@ -521,11 +521,11 @@
         },
         {
             "name": "codedge/laravel-selfupdater",
-            "version": "dev-Asif",
+            "version": "dev-Antarip",
             "dist": {
                 "type": "path",
                 "url": "packages/codedge/laravel-selfupdater",
-                "reference": "f0c8700416f53060c2ab7d3d36aa09908f7ec95c"
+                "reference": "c91e833050fc7de52d622c1d2b60c88408bb7e91"
             },
             "require": {
                 "ext-json": "*",
@@ -2366,11 +2366,11 @@
         },
         {
             "name": "joedixon/laravel-translation",
-            "version": "dev-Asif",
+            "version": "dev-Antarip",
             "dist": {
                 "type": "path",
                 "url": "packages/joedixon/laravel-translation",
-                "reference": "a609b64deaa3732ab7ba4289f5853d80381ae0d0"
+                "reference": "bf7ff4765028aab6d8607c1facae6bf13c3f9faf"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0.0",
@@ -4193,11 +4193,11 @@
         },
         {
             "name": "mobidonia/laravel-dashboard-installer",
-            "version": "dev-Asif",
+            "version": "dev-Antarip",
             "dist": {
                 "type": "path",
                 "url": "packages/mobidonia/laravel-dashboard-installer",
-                "reference": "088a5d96c2b1a2d72227a7358d8aa523e5eaaea1"
+                "reference": "7373b88a1d3888bdd8065d082b2f6dd13f3bd2d9"
             },
             "require": {
                 "dacoto/laravel-setenv": "^2.0",
@@ -7632,16 +7632,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.128.0",
+            "version": "v9.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "c704949c49b72985c76cc61063aa26fefbd2724e"
+                "reference": "479b5c2136fde0debb93d290ceaf20dd161c358f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c704949c49b72985c76cc61063aa26fefbd2724e",
-                "reference": "c704949c49b72985c76cc61063aa26fefbd2724e",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/479b5c2136fde0debb93d290ceaf20dd161c358f",
+                "reference": "479b5c2136fde0debb93d290ceaf20dd161c358f",
                 "shasum": ""
             },
             "require": {
@@ -7652,6 +7652,7 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "3.5.0",
+                "php-coveralls/php-coveralls": "^2.5",
                 "phpstan/phpstan": "^1.2",
                 "phpunit/phpunit": "^5.7 || ^9.0",
                 "squizlabs/php_codesniffer": "^3.3"
@@ -7686,9 +7687,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v7.128.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v9.9.0"
             },
-            "time": "2022-05-05T17:18:02+00:00"
+            "time": "2022-11-08T20:25:52+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
