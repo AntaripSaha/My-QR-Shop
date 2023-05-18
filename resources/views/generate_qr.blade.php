@@ -20,6 +20,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       --}}
       <link href="./qr_gen_css/timeline.css" rel="stylesheet">
+      <link href="./qr_gen_css/qr-service.css" rel="stylesheet">
       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -48,6 +49,7 @@
          {
          flex-wrap: nowrap;
          }
+        
          @media (min-width: 268px) and (max-width: 768px) {
          .mobile{
          display: flex;
@@ -120,6 +122,7 @@
          font-weight: 600;
          color: #0648b3;
          }
+         
       </style>
    </head>
    <body class="qrcdr">
@@ -3726,6 +3729,96 @@
                   </div>
                </div>
             </section>
+         </div>
+      </div>
+      <div class="bg-white p-5">
+         <div class="container">
+            <h1 class="text-center mb-5">Create Different Types of QR Codes</h1>
+            <div class="qr-service">
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div> 
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               <div class="mx-auto bg-light p-2">
+                  <img src="./images/qr-slider/menu.svg" alt="">
+                  <h2>Menu</h2>
+               </div>
+               
+            </div>
+            <div class="qr-service-hero">
+               <div class="row">
+                  <div class="col-sm col-lg-6 bg-primary qr-service-hero-content-one">
+                     <img src="./images/qr-slider/cell-one.png" alt="">
+                     <button class="qr-service-btn"><</button>
+                  </div>
+                  <div class="col-sm col-lg-6 d-flex justify-content-center flex-column qr-service-hero-content-two">
+                    <h1>Menu</h1>
+                    <div>
+                     <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
+                    </div>
+                    <div>
+                     <a href="#qrgen">
+                     <button class="btn btn-primary btn-lg rounded-pill">
+                        Create QR Code
+                     </button>
+                     </a>
+                   </div>
+                   <button class="qr-service-btn">></button>
+                  </div>
+                </div>
+            </div>
          </div>
       </div>
       <div class="bg-white mt-4 mb-5 pb-5 mobile">

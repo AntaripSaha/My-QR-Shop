@@ -60,6 +60,10 @@ flex-wrap: nowrap;
     align-items: center;
 }
 
+.qr-service-hero img
+{
+    margin-top: -10px;
+}
 .hr-tag
 {
 width: 2px;
