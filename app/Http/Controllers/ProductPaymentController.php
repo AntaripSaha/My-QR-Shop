@@ -18,7 +18,7 @@ class ProductPaymentController extends Controller
     {
         if(isset(auth()->user()->id)){
             $product_item = Product::where('id', $id)->first();
-            return view('product_cart', compact('product_item'));
+            return view('productPayment.product_cart', compact('product_item'));
         }else{
             return redirect()->route('login');
         }
