@@ -218,7 +218,7 @@
          </div>
       </nav>
       {{-- Section QRGen Start --}}
-      <div class="bg-light mt-5 pt-5">
+      <div class="bg-white mt-5 pt-5">
          <input type="hidden" id="qrcdr-relative" value="">
          <div class="container pt-3"  id="qrgen">
             <h1 class="text-center">Generate Your QR Code</h1>
@@ -3716,7 +3716,7 @@
                      <div>
                         <a href="#qrgen">
                         <button class="btn btn-primary btn-lg rounded-pill">
-                        Create QR Code
+                           Create QR Code
                         </button>
                         </a>
                      </div>
@@ -3794,7 +3794,7 @@
       </div>
       --}}
       {{-- Section 5 Start --}}
-      <div class="bg-white mt-5 pt-5 pb-5">
+      <div class="bg-light mt-5 pt-5 pb-5">
          <div class="container">
             <h1 class="text-center mb-4">Do not leave with doubt
             </h1>
