@@ -232,6 +232,9 @@ return [
         Spatie\EloquentSortable\EloquentSortableServiceProvider::class,
         Unicodeveloper\Paystack\PaystackServiceProvider::class,
 
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
+
+
     ],
 
     /*
