@@ -1,0 +1,143 @@
+.card-main-container
+
+{
+   position: relative;
+}
+
+.slider-card-container {
+   width: 100%;
+   overflow-x: auto;
+   white-space: nowrap;
+   position: relative;
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+ }
+ .slider-card-container::-webkit-scrollbar {
+width: 5px; /* Width of the scroll bar */
+height: 3px;
+
+
+}
+
+.slider-card-container::-webkit-scrollbar-track {
+background-color: #f1f1f1; 
+
+}
+
+.slider-card-container::-webkit-scrollbar-thumb {
+   background: gray; /* Color of the scroll bar thumb */
+border: 2px none;
+border-radius: 5px;
+
+}
+
+ .slider-card {
+   display: inline-block;
+   width: 130px;
+   margin-right: 10px;
+   padding: 10px;
+   border: 2px solid rgb(228, 228, 228);
+   border-radius: 5px;
+   text-align: center;
+   cursor: pointer;
+ }
+ .slider-card-content
+ {
+   display: flex;
+   flex-direction: column;
+ }
+ .slider-card.active {
+   border: 2px solid blue;
+ }
+ 
+ .slider-card-icon {
+   font-size: 48px;
+   margin-bottom: 10px;
+   background: rgb(247, 247, 247);;
+ }
+ 
+ .slider-card-title {
+   font-size: 18px;
+ }
+ 
+ .hero-card {
+   display: none;
+   margin-top: 20px;
+   text-align: center;
+   width: 100%;
+ }
+ .hero-card-image
+ {
+   width: 50%;
+   background: blue;
+ }
+ .hero-image {
+ 
+   object-fit: cover;
+   margin-bottom: 10px;
+ }
+ .hero-container
+ {
+   width: 50%;
+   height: auto;
+   background: palegoldenrod;
+   text-align: left;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+ .hero-title {
+   font-size: 24px;
+   font-weight: bold;
+ }
+ 
+ .additional-div {
+   margin-top: 20px;
+   padding: 20px;
+   background-color: #f2f2f2;
+   text-align: center;
+ }
+ 
+ .additional-content {
+   font-size: 20px;
+   font-weight: bold;
+ }
+ 
+ .arrow {
+   position: absolute;
+   top: 70%;
+   right:50%;
+   transform: translateY(-50%);
+   width: 45px;
+   height: 45px;
+   background-color: black;
+   color: #fff;
+   font-size: 24px;
+   display: flex;
+   border-radius: 50%;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   transition: background-color 0.3s;
+
+ }
+ 
+ .arrow:hover {
+   background-color: rgba(0, 0, 0, 0.6);
+ }
+ 
+ .arrow.left {
+   left: -20px;
+ }
+ 
+ .arrow.right {
+   right: -20px;
+ }
+ .arrow-left
+ {
+   margin-bottom: 4px;
+ }
+ .arrow-right
+ {
+   margin-bottom: 4px;
+ }
