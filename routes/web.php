@@ -21,15 +21,7 @@ Route::get('/pdf-menu/download/{var?}', 'PdfController@pdfDownload')->name('pdf.
 Route::get('/pdf-customer/download/{var?}', 'PdfController@pdfDownloadUser')->name('pdf.user.download');
 Route::any('/default-pdf-menu', 'PdfController@defaultMenu')->name('default.pdf.menu');
 
-Route::get('/cart-checkout-product/{id?}', 'ProductPaymentController@index')->name('cart.checkout.product');
-Route::post('/payment-product/{id?}', 'ProductPaymentController@payment')->name('payment.product');
 
-Route::post('/order-product', 'OrderController@storeProduct')->name('order.product.store');
-
-
-Route::post('/checkout', 'ProductPaymentController@showCheckout')->name('checkout');
-Route::get('/checkout/success', 'ProductPaymentController@checkoutSuccess')->name('checkout.success');
-Route::get('/checkout/cancel', 'ProductPaymentController@checkoutCancel')->name('checkout.cancel');
 
 
 Route::get('/', 'FrontEndController@index')->name('front');
@@ -266,7 +258,6 @@ Route::group(['middleware' => ['auth','impersonate']], function () {
     if (config('app.isft')) {
         Route::get('/cart-checkout', 'CartController@cart')->middleware('verifiedphone')->name('cart.checkout');
     }
-
 
     Route::resource('plans', 'PlansController');
     Route::get('/plan', 'PlansController@current')->name('plans.current');
