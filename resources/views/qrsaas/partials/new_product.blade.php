@@ -27,7 +27,7 @@
                             <h6 class="mr-2 text-muted" style="text-decoration: Line-Through">${{$product->current_price}}</h6>
                             <h6 class="text-primary">${{$product->discounted_price}}</h6>
                         </div>
-                        <a href="/cart-checkout-product" class="btn btn-primary btn-sm d-flex justify-content-center text-center mt-2">
+                        <a href="{{route('cart.checkout.product', $product->id)}}" class="btn btn-primary btn-sm d-flex justify-content-center text-center mt-2">
                             Buy Now
                         </a>
                         
