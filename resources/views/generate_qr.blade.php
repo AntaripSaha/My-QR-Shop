@@ -3678,7 +3678,7 @@
       </div>
       {{-- Section 3 End --}}
       {{-- Section 4 Start --}}
-      <div class="bg-white p-5 desktop">
+      {{-- <div class="bg-white p-5 desktop">
          <div class="container">
             <h1 class="text-center mb-5">Create Different Types of QR Codes</h1>
             <section>
@@ -3963,7 +3963,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> --}}
       {{-- Section 4 End --}}
       {{-- 
       <div class="bg-primary position-relative">
@@ -3982,7 +3982,7 @@
       </div>
       --}}
       {{-- Section 5 Start --}}
-      <div class="bg-light mt-5 pt-5 pb-5">
+      <div class="bg-white mt-5 pt-5 pb-5">
          <div class="container">
             <h1 class="text-center mb-4">Do not leave with doubt
             </h1>
