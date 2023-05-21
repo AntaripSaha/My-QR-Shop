@@ -20,6 +20,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       --}}
       <link href="./qr_gen_css/timeline.css" rel="stylesheet">
+      <link href="./qr_gen_css/qr-service.css" rel="stylesheet">
       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -27,7 +28,7 @@
       <style>
          *
          {
-            scroll-margin-top: 90px;
+         scroll-margin-top: 90px;
          }
          .card-header:not(.collapsed) .rotate-icon {
          transform: rotate(180deg);
@@ -48,6 +49,7 @@
          {
          flex-wrap: nowrap;
          }
+        
          @media (min-width: 268px) and (max-width: 768px) {
          .mobile{
          display: flex;
@@ -120,6 +122,7 @@
          font-weight: 600;
          color: #0648b3;
          }
+         
       </style>
    </head>
    <body class="qrcdr">
@@ -217,324 +220,8 @@
             </button> --}}
          </div>
       </nav>
-      {{-- Section 1 Start --}}
-      <div class="pt-5 pb-2 bg-light">
-         <div class="container mt-5 mb-4">
-            <h1 class="text-center fw-bold">Create Your Own QR Codes and Boost Your Business.</h1>
-            <p class="text-center">Easily generate, manage and statistically track your QR codes.</p>
-            <div class="d-flex justify-content-center">
-               <a href="#qrgen">
-               <button class="btn btn-primary rounded-pill btn-lg">
-               Create QR Code
-               </button>
-               </a>
-            </div>
-            <div class="mt-3">
-               <img class="rounded" src="./images/qr_bg.png" alt="">
-            </div>
-         </div>
-      </div>
-      {{-- Section 1 End --}}
-      {{-- Section 2 Start--}}
-      <div class="container mt-5 mb-4">
-         <h1 class="text-center">Everything You Need to Know to Get Started</h1>
-         <p class="text-center">In this section you will find the basic concepts and the necessary steps to start enjoying the benefits of using QR.</p>
-         <div class="row mt-5 mb-5">
-            <div class="col-md-6 col-sm-12 mt-0">
-               <img class="rounded" width="350px" src="./images/qr_ico3.png" alt="">
-            </div>
-            <div class="col-md-6 col-sm-12 mt-5">
-               <div class="accordion" id="accordionExample">
-                  <div class="card">
-                     <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
-                        <h2 >What is a QR Code?</h2>
-                        <span class="accicon">
-                        <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
-                        </span>
-                     </div>
-                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
-                        <div class="card-body">
-                           The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        
-                        </div>
-                     </div>
-                  </div>
-                  <div class="card">
-                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <h2 >Know the benefits of using QR</h2>
-                        <span class="accicon">                     
-                        <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
-                        </span>
-                     </div>
-                     <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
-                        <div class="card-body">
-                           You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        
-                        </div>
-                     </div>
-                  </div>
-                  <div class="card">
-                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
-                        <h2>How to start using QR?</h2>
-                        <span class="accicon">                     
-                        <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
-                        </span>
-                     </div>
-                     <div id="collapseThree" class="collapse" data-parent="#accordionExample">
-                        <div class="card-body">
-                           Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      {{-- Section 2  End--}}
-      {{-- Section 3 Start--}}
-      <div class="pt-5 pb-4 bg-light">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-5 col-sm-12">
-                  <h1 class="text-center">MyQrShop Makes All the Difference</h1>
-                  <p>If you want to create your own QR code, a good tool for doing so is the MyQrShop QR generator, due to its ease of use and all the options it offers to make your ideas come true or your business grow.</p>
-                  <div class="d-flex justify-content-between gap-2 desktop">
-                     <div>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Unlimited QR codes
-                        </p>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Scan without limits
-                        </p>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Mass creation
-                        </p>
-                     </div>
-                     <div>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Add multiple users
-                        </p>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Complete monitoring
-                        </p>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           White label (CNAME)
-                        </p>
-                     </div>
-                  </div>
-                  <div class="mobile">
-                     <div>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Unlimited QR codes
-                        </p>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Scan without limits
-                        </p>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Mass creation
-                        </p>
-                     
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Add multiple users
-                        </p>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           Complete monitoring
-                        </p>
-                        <p>
-                           <img width="20px" src="./images/check-mark.png" alt="">
-                           White label (CNAME)
-                        </p>
-                     </div>
-                  </div>
-                  <a href="#qrgen">
-                  <button class="btn btn-primary btn-lg rounded-pill mt-4">
-                  Create QR Code
-                  </button>
-                  </a>
-               </div>
-               <div class="col-md-7 col-sm-12 mt-0 d-flex justify-content-end overflow-auto ">
-                  <div class="row desktop">
-                     <div class="col-md-6 col-sm-12  ">
-                        <div class="card mb-2 bg-light" style="width: 17rem;">
-                           <div class="card-body">
-                              <h5 class="card-title"><img src="./images/icons/qr-icon/qr_dinamico.svg" alt="" style="width: 48px; height:48px;"></h5>
-                              <h6 class="mb-2">Dynamic QR codes</h6>
-                              <p class="card-text">You can edit and manage the content without printing them again.</p>
-                           </div>
-                        </div>
-                        <div class="card bg-light" style="width: 17rem;">
-                           <div class="card-body">
-                              <h5 class="card-title"><img src="./images/icons/qr-icon/multiples_landings.svg" alt="" style="width: 48px; height:48px;"></h5>
-                              <h6 class="mb-2">Multiple landing pages</h6>
-                              <p class="card-text">Code customization with our design tool.</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-6 col-sm-12" style="margin-top: 20px">
-                        <div class="card mb-2 bg-light" style="width: 17rem;">
-                           <div class="card-body">
-                              <h5 class="card-title"><img src="./images/icons/qr-icon/estadisticas_completas.svg" alt="" style="width: 48px; height:48px;"></h5>
-                              <h6 class="mb-2">Complete statistics</h6>
-                              <p class="card-text">Exports all the information of the scans they have done.</p>
-                           </div>
-                        </div>
-                        <div class="card bg-light" style="width: 17rem;">
-                           <div class="card-body">
-                              <h5 class="card-title"><img src="./images/icons/qr-icon/personaliza_qr.svg" alt="" style="width: 48px; height:48px;"></h5>
-                              <h6 class="mb-2">Customize your QR code</h6>
-                              <p class="card-text">Customize your QR with your logo, colors and shapes.</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="container">
-         <div class="css-card mobile ">
-            <div class="css-card-body bg-light">
-               <h1><img src="./images/icons/qr-icon/qr_dinamico.svg" alt="" style="width: 48px; height:48px;"></h1>
-               <h2>Dynamic QR codes</h2>
-               <p>You can edit and manage the content without printing them again.</p>
-            </div>
-            <div class="css-card-body bg-light">
-               <h1><img src="./images/icons/qr-icon/multiples_landings.svg" alt="" style="width: 48px; height:48px;"></h1>
-               <h2>Multiple landing pages</h2>
-               <p>Code customization with our design tool.</p>
-            </div>
-            <div class="css-card-body bg-light">
-               <div>
-                  <h1><img src="./images/icons/qr-icon/estadisticas_completas.svg" alt="" style="width: 48px; height:48px;"></h1>
-                  <h2>Complete statistics</h2>
-                  <p>Exports all the information of the scans they have done.</p>
-               </div>
-            </div>
-            <div class="css-card-body bg-light">
-               <div>
-                  <h1><img src="./images/icons/qr-icon/personaliza_qr.svg" alt="" style="width: 48px; height:48px;"></h1>
-                  <h2>Customize your QR code</h2>
-                  <p>Customize your QR with your logo, colors and shapes.</p>
-               </div>
-            </div>
-         </div>
-      </div>
-      {{-- Section 3 End --}}
-      {{-- Section 4 Start --}}
-      <div class="bg-white p-5 desktop">
-         <div class="container">
-            <h1 class="text-center mb-5">Create Different Types of QR Codes</h1>
-            <section>
-               <div class="timeline-container" id="container-one">
-                  <div id="container-two">
-                     <h2>Choose the content of your QR code</h2>
-                     <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
-                  </div>
-                  <div class="timeline-class" id="container-three">
-                     <div class="timeline">1</div>
-                     <div class="hr-tag"></div>
-                  </div>
-                  <div id="container-four">
-                     <img src="./images/timeline/step1.png" alt="">
-                  </div>
-               </div>
-               <div class="timeline-container" id="container-one">
-                  <div id="container-two">
-                     <img src="./images/timeline/step2.png" alt="">
-                  </div>
-                  <div class="timeline-class" id="container-three">
-                     <div class="timeline">2</div>
-                     <div class="hr-tag"></div>
-                  </div>
-                  <div id="container-four">
-                     <h2>Choose the content of your QR code</h2>
-                     <p>SFill in all the information and use our QR generator to get a unique design</p>
-                  </div>
-               </div>
-               <div class="timeline-container" id="container-one">
-                  <div id="container-two">
-                     <h2>Customise and design it as you like</h2>
-                     <p>Fill in all the information and use our QR generator to get a unique design.</p>
-                  </div>
-                  <div id="container-three">
-                     <div class="timeline">3</div>
-                     <div class="hr-tag"></div>
-                     <div>
-                        <button>Create QR Code</button>
-                     </div>
-                  </div>
-                  <div id="container-four">
-                     <img src="./images/timeline/step3.png" alt="">
-                  </div>
-               </div>
-            </section>
-         </div>
-      </div>
-      <div class="bg-white mt-4 mb-5 pb-5 mobile">
-         <div class="container">
-            <h1 class="text-center mb-5 mt-4">Create Different Types of QR Codes</h1>
-            <div class="d-block">
-               <div class="mb-2">
-                  <div>
-                     <h2>Choose the content of your QR code</h2>
-                     <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
-                  </div>
-                  <div>
-                     <img src="./images/timeline/step1.bc4310cce85fdd039b61ce2e99b92531.svg" alt="">
-                  </div>
-               </div>
-               <div>
-                  <div >
-                     <h2>Choose the content of your QR code</h2>
-                     <p>SFill in all the information and use our QR generator to get a unique design</p>
-                  </div>
-                  <div>
-                     <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
-                  </div>
-               </div>
-               <div>
-                  <div >
-                     <h2>Customise and design it as you like</h2>
-                     <p>Fill in all the information and use our QR generator to get a unique design.</p>
-                  </div>
-                  <div>
-                     <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
-                  </div>
-                  <div>
-                     <div>
-                        <a href="#qrgen">
-                        <button class="mx-auto d-block" style="background: #1D59F9;
-                           padding: 15px 25px;
-                           border-radius: 30px;
-                           border: 10px none;
-                           color: white;
-                           font-size: 18px;
-                           margin-top:10px;
-                           flex-wrap: nowrap;">Create QR Code</button>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      {{-- Section 4 End --}}
-
-
       {{-- Section QRGen Start --}}
-      
-
-      <div class="bg-light">
+      <div class="bg-white mt-5 pt-5">
          <input type="hidden" id="qrcdr-relative" value="">
          <div class="container pt-3"  id="qrgen">
             <h1 class="text-center">Generate Your QR Code</h1>
@@ -3777,12 +3464,507 @@
             </div>
             <!-- row -->
          </div>
-
       </div>
       {{-- Section QRGen End --}}
-      
-
-
+      {{-- Section 1 Start --}}
+      <div class="pt-5 pb-2 bg-light">
+         <div class="container mt-5 mb-4">
+            <h1 class="text-center fw-bold">Create Your Own QR Codes and Boost Your Business.</h1>
+            <p class="text-center">Easily generate, manage and statistically track your QR codes.</p>
+            <div class="d-flex justify-content-center">
+               <a href="#qrgen">
+               <button class="btn btn-primary rounded-pill btn-lg">
+               Create QR Code
+               </button>
+               </a>
+            </div>
+            <div class="mt-3">
+               <img class="rounded" src="./images/qr_bg.png" alt="">
+            </div>
+         </div>
+      </div>
+      {{-- Section 1 End --}}
+      {{-- Section 2 Start--}}
+      <div class="container mt-5 mb-4">
+         <h1 class="text-center">Everything You Need to Know to Get Started</h1>
+         <p class="text-center">In this section you will find the basic concepts and the necessary steps to start enjoying the benefits of using QR.</p>
+         <div class="row mt-5 mb-5">
+            <div class="col-md-6 col-sm-12 mt-0">
+               <img class="rounded" width="350px" src="./images/qr_ico3.png" alt="">
+            </div>
+            <div class="col-md-6 col-sm-12 mt-5">
+               <div class="accordion" id="accordionExample">
+                  <div class="card">
+                     <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+                        <h2 >What is a QR Code?</h2>
+                        <span class="accicon">
+                        <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                        </span>
+                     </div>
+                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                        <div class="card-body">
+                           The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card">
+                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h2 >Know the benefits of using QR</h2>
+                        <span class="accicon">                     
+                        <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                        </span>
+                     </div>
+                     <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                        <div class="card-body">
+                           You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card">
+                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
+                        <h2>How to start using QR?</h2>
+                        <span class="accicon">                     
+                        <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
+                        </span>
+                     </div>
+                     <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                        <div class="card-body">
+                           Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{-- Section 2  End--}}
+      {{-- Section 3 Start--}}
+      <div class="pt-5 pb-4 bg-light">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-5 col-sm-12">
+                  <h1 class="text-center">MyQrShop Makes All the Difference</h1>
+                  <p>If you want to create your own QR code, a good tool for doing so is the MyQrShop QR generator, due to its ease of use and all the options it offers to make your ideas come true or your business grow.</p>
+                  <div class="d-flex justify-content-between gap-2 desktop">
+                     <div>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Unlimited QR codes
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Scan without limits
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Mass creation
+                        </p>
+                     </div>
+                     <div>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Add multiple users
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Complete monitoring
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           White label (CNAME)
+                        </p>
+                     </div>
+                  </div>
+                  <div class="mobile">
+                     <div>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Unlimited QR codes
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Scan without limits
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Mass creation
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Add multiple users
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           Complete monitoring
+                        </p>
+                        <p>
+                           <img width="20px" src="./images/check-mark.png" alt="">
+                           White label (CNAME)
+                        </p>
+                     </div>
+                  </div>
+                  <a href="#qrgen">
+                  <button class="btn btn-primary btn-lg rounded-pill mt-4">
+                  Create QR Code
+                  </button>
+                  </a>
+               </div>
+               <div class="col-md-7 col-sm-12 mt-0 d-flex justify-content-end overflow-auto ">
+                  <div class="row desktop">
+                     <div class="col-md-6 col-sm-12  ">
+                        <div class="card mb-2 bg-light" style="width: 17rem;">
+                           <div class="card-body">
+                              <h5 class="card-title"><img src="./images/icons/qr-icon/qr_dinamico.svg" alt="" style="width: 48px; height:48px;"></h5>
+                              <h6 class="mb-2">Dynamic QR codes</h6>
+                              <p class="card-text">You can edit and manage the content without printing them again.</p>
+                           </div>
+                        </div>
+                        <div class="card bg-light" style="width: 17rem;">
+                           <div class="card-body">
+                              <h5 class="card-title"><img src="./images/icons/qr-icon/multiples_landings.svg" alt="" style="width: 48px; height:48px;"></h5>
+                              <h6 class="mb-2">Multiple landing pages</h6>
+                              <p class="card-text">Code customization with our design tool.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-sm-12" style="margin-top: 20px">
+                        <div class="card mb-2 bg-light" style="width: 17rem;">
+                           <div class="card-body">
+                              <h5 class="card-title"><img src="./images/icons/qr-icon/estadisticas_completas.svg" alt="" style="width: 48px; height:48px;"></h5>
+                              <h6 class="mb-2">Complete statistics</h6>
+                              <p class="card-text">Exports all the information of the scans they have done.</p>
+                           </div>
+                        </div>
+                        <div class="card bg-light" style="width: 17rem;">
+                           <div class="card-body">
+                              <h5 class="card-title"><img src="./images/icons/qr-icon/personaliza_qr.svg" alt="" style="width: 48px; height:48px;"></h5>
+                              <h6 class="mb-2">Customize your QR code</h6>
+                              <p class="card-text">Customize your QR with your logo, colors and shapes.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="css-card mobile ">
+            <div class="css-card-body bg-light">
+               <h1><img src="./images/icons/qr-icon/qr_dinamico.svg" alt="" style="width: 48px; height:48px;"></h1>
+               <h2>Dynamic QR codes</h2>
+               <p>You can edit and manage the content without printing them again.</p>
+            </div>
+            <div class="css-card-body bg-light">
+               <h1><img src="./images/icons/qr-icon/multiples_landings.svg" alt="" style="width: 48px; height:48px;"></h1>
+               <h2>Multiple landing pages</h2>
+               <p>Code customization with our design tool.</p>
+            </div>
+            <div class="css-card-body bg-light">
+               <div>
+                  <h1><img src="./images/icons/qr-icon/estadisticas_completas.svg" alt="" style="width: 48px; height:48px;"></h1>
+                  <h2>Complete statistics</h2>
+                  <p>Exports all the information of the scans they have done.</p>
+               </div>
+            </div>
+            <div class="css-card-body bg-light">
+               <div>
+                  <h1><img src="./images/icons/qr-icon/personaliza_qr.svg" alt="" style="width: 48px; height:48px;"></h1>
+                  <h2>Customize your QR code</h2>
+                  <p>Customize your QR with your logo, colors and shapes.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{-- Section 3 End --}}
+      {{-- Section 4 Start --}}
+      <div class="bg-white p-5 desktop">
+         <div class="container">
+            <h1 class="text-center mb-5">Create Different Types of QR Codes</h1>
+            <section>
+               <div class="timeline-container" id="container-one">
+                  <div id="container-two">
+                     <h2>Choose the content of your QR code</h2>
+                     <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
+                  </div>
+                  <div class="timeline-class" id="container-three">
+                     <div class="timeline">1</div>
+                     <div class="hr-tag"></div>
+                  </div>
+                  <div id="container-four">
+                     <img src="./images/timeline/step1.png" alt="">
+                  </div>
+               </div>
+               <div class="timeline-container" id="container-one">
+                  <div id="container-two">
+                     <img src="./images/timeline/step2.png" alt="">
+                  </div>
+                  <div class="timeline-class" id="container-three">
+                     <div class="timeline">2</div>
+                     <div class="hr-tag"></div>
+                  </div>
+                  <div id="container-four">
+                     <h2>Choose the content of your QR code</h2>
+                     <p>SFill in all the information and use our QR generator to get a unique design</p>
+                  </div>
+               </div>
+               <div class="timeline-container" id="container-one">
+                  <div id="container-two">
+                     <h2>Customise and design it as you like</h2>
+                     <p>Fill in all the information and use our QR generator to get a unique design.</p>
+                  </div>
+                  <div id="container-three">
+                     <div class="timeline">3</div>
+                     <div class="hr-tag"></div>
+                     <div>
+                        <a href="#qrgen">
+                        <button class="btn btn-primary btn-lg rounded-pill">
+                           Create QR Code
+                        </button>
+                        </a>
+                     </div>
+                  </div>
+                  <div id="container-four">
+                     <img src="./images/timeline/step3.png" alt="">
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+      <div class="bg-white p-5">
+         <div class="container">
+            <h1 class="text-center mb-5">Create Different Types of QR Codes</h1>
+            <div class="card-main-container">
+               <div class="slider-card-container" id="slider-card-container">
+                 <div class="slider-card active" onclick="showHeroCard(1)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Menu</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(2)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">vCard Plus</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(3)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Business</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(4)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Website</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(5)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Apps</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(6)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Wifi</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(7)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Video</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(8)">
+                    <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">PDF</span>
+                    </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(9)">
+                    <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Images</span>
+                    </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(10)">
+                    <div  class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">List of links</span>
+                    </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(11)">
+                    <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">MP3</span>
+                    </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(12)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                   <span class="slider-card-title">Coupon</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(13)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Feedback</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(14)">
+                   <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Landing Page</span>
+                   </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(15)">
+                    <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                     <span class="slider-card-title">Playlist</span>
+                    </div>
+                 </div>
+                 <div class="slider-card" onclick="showHeroCard(16)">
+                    <div class="slider-card-content">
+                     <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
+                   <span class="slider-card-title">Text</span>
+                    </div>
+                 </div>
+               </div>
+               <!-- Repeat the above card structure for the remaining cards -->
+               <div class="arrow left" onclick="showPreviousCard()"><span class="arrow-left"><</span></div>
+               <div class="arrow right" onclick="showNextCard()"><span class="arrow-right">></span></div>
+             
+               <div class="hero-card" id="hero-card-1" style="display: flex;">
+                 <div class="hero-card-image">
+                  <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                 </div>
+                 <div class="hero-container">
+                   <h2 class="hero-title">Menu</h2>
+                   <div><p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p></div>
+                   <div>
+                     <a href="#qrgen">
+                     <button class="btn btn-primary btn-lg rounded-pill">
+                        Create QR Code
+                     </button>
+                     </a>
+                  </div>
+                 </div>
+               </div>
+             
+               <div class="hero-card" id="hero-card-2">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 2</h2>
+               </div>
+               <div class="hero-card" id="hero-card-3">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 3</h2>
+               </div>
+               <div class="hero-card" id="hero-card-4">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 4</h2>
+               </div>
+               <div class="hero-card" id="hero-card-5">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 5</h2>
+               </div>
+               <div class="hero-card" id="hero-card-6">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 6</h2>
+               </div>
+               <div class="hero-card" id="hero-card-7">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 7</h2>
+               </div>
+               <div class="hero-card" id="hero-card-8">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 8</h2>
+               </div>
+               <div class="hero-card" id="hero-card-9">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 9</h2>
+               </div>
+               <div class="hero-card" id="hero-card-10">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 10</h2>
+               </div>
+               <div class="hero-card" id="hero-card-11">
+                 <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                 <h2 class="hero-title">Hero Title 11</h2>
+               </div>
+                 <div class="hero-card" id="hero-card-12">
+                   <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                   <h2 class="hero-title">Hero Title 12</h2>
+                 </div>
+                 <div class="hero-card" id="hero-card-13">
+                   <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                   <h2 class="hero-title">Hero Title 13</h2>
+                 </div>
+                 <div class="hero-card" id="hero-card-14">
+                   <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                   <h2 class="hero-title">Hero Title 14</h2>
+                 </div>
+                 <div class="hero-card" id="hero-card-15">
+                   <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                   <h2 class="hero-title">Hero Title 15</h2>
+                 </div>
+                 <div class="hero-card" id="hero-card-16">
+                   <img src="hero-image2.jpg" alt="Hero Image 2" class="hero-image">
+                   <h2 class="hero-title">Hero Title 16</h2>
+                 </div>
+              </div>
+           </div>
+      <div class="bg-white mt-4 mb-5 pb-5 mobile">
+         <div class="container">
+            <h1 class="text-center mb-5 mt-4">Create Different Types of QR Codes</h1>
+            <div class="d-block">
+               <div class="mb-2">
+                  <div>
+                     <h2>Choose the content of your QR code</h2>
+                     <p>Select from a wide variety of options: PDF, menu, video, business cards, web, apps, etc.</p>
+                  </div>
+                  <div>
+                     <img src="./images/timeline/step1.bc4310cce85fdd039b61ce2e99b92531.svg" alt="">
+                  </div>
+               </div>
+               <div>
+                  <div >
+                     <h2>Choose the content of your QR code</h2>
+                     <p>SFill in all the information and use our QR generator to get a unique design</p>
+                  </div>
+                  <div>
+                     <img src="./images/timeline/step2.d6232df69e7f1e826445b7dc45913dc9.svg" alt="">
+                  </div>
+               </div>
+               <div>
+                  <div >
+                     <h2>Customise and design it as you like</h2>
+                     <p>Fill in all the information and use our QR generator to get a unique design.</p>
+                  </div>
+                  <div>
+                     <img src="./images/timeline/step3.fef0da4f15b57914d97ad316f52f6bab.svg" alt="">
+                  </div>
+                  <div>
+                     <div>
+                        <a href="#qrgen">
+                        <button class="mx-auto d-block" style="background: #1D59F9;
+                           padding: 15px 25px;
+                           border-radius: 30px;
+                           border: 10px none;
+                           color: white;
+                           font-size: 18px;
+                           margin-top:10px;
+                           flex-wrap: nowrap;">Create QR Code</button>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{-- Section 4 End --}}
       {{-- 
       <div class="bg-primary position-relative">
          <div class="overlay-gradient"></div>
@@ -3799,9 +3981,8 @@
          </div>
       </div>
       --}}
-
       {{-- Section 5 Start --}}
-      <div class="bg-white mt-5 pt-5 pb-5">
+      <div class="bg-light mt-5 pt-5 pb-5">
          <div class="container">
             <h1 class="text-center mb-4">Do not leave with doubt
             </h1>
@@ -3954,7 +4135,6 @@
          </div>
       </div>
       {{-- Section 5 End --}}
-
       {{-- Section 6 Start --}}
       <div class="bg-grad pt-4 pb-5">
       <div class="container pt-3">
@@ -4004,6 +4184,7 @@
          </div>
       </div>
       {{-- Section 6 End --}}
+      <script src="./js/slider/slider.js"></script>
       <script  type="text/javascript" src="js/popper.min.js"></script><script src="js/tempusdominus/js/tempus-dominus.min.js"></script><script src="js/qrcdr.min.js?v=5.3.4"></script><script src="js/call.js?v=5.3.4"></script>    
    </body>
 </html>
