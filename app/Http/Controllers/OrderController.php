@@ -1099,7 +1099,7 @@ class OrderController extends Controller
 
     public function success(Request $request)
     {   
-        $order = Order::findOrFail($request->order);
+         $order = Order::findOrFail($request->order);
         //If order is not paid - redirect to payment
         if($request->redirectToPayment.""=="1"&&$order->payment_status != 'paid'&&strlen($order->payment_link)>5){
             //Redirect to payment
@@ -1128,8 +1128,6 @@ class OrderController extends Controller
                 $showWhatsApp=false;
             }
         }
-
-        
         return view('orders.success', ['order' => $order,'showWhatsApp'=>$showWhatsApp]);
     }
 }
