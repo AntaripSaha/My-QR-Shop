@@ -24,7 +24,7 @@ use Akaunting\Module\Facade as Module;
 use App\Coupons;
 use App\Events\OrderAcceptedByAdmin;
 use App\Events\OrderAcceptedByVendor;
-use App\Models\Orderitems;
+use App\Models\Orderitems;  
 use App\Models\SimpleDelivery;
 
 class OrderController extends Controller

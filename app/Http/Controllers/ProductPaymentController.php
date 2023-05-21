@@ -75,7 +75,7 @@ class ProductPaymentController extends Controller
  
     
         // Redirect or display a success message
-        return redirect()->route('front')->with('Success','Purchase Completed');
+        return view('productPayment.success');
     }
 
     

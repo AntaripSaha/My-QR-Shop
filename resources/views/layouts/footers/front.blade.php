@@ -1,4 +1,4 @@
-<footer class="footer notranslate">
+<footer class="footer notranslate" >
     <div class="container">
       <div class="row align-items-center justify-content-md-between">
         <div class="col-md-6">
