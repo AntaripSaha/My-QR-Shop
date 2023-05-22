@@ -26,8 +26,6 @@ class ProductPaymentController extends Controller
     public function showCheckout(Request $request)
     {
         $product_item = Product::where('id', $request->id)->first();
-        // Set your Stripe secret key
-        //   Stripe::setApiKey('sk_test_51LZpTqSFrfnDBpn6AAKuqwnYh60DqCzlPa27ta84QkHoh67C2k2fbqTR0z7fo6zPl04QAS1b2j2ZRUQ3gxCes1B9001tCMISvy');
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
             // Store the product ID in the session
@@ -62,25 +60,25 @@ class ProductPaymentController extends Controller
 
     public function checkoutSuccess(Request $request)
     {
-         $paymentIntentId = $request->input('session_id');
-    //    Stripe::setApiKey('sk_test_51LZpTqSFrfnDBpn6AAKuqwnYh60DqCzlPa27ta84QkHoh67C2k2fbqTR0z7fo6zPl04QAS1b2j2ZRUQ3gxCes1B9001tCMISvy');
+        $product_quantity =  $request->session()->get('product_quantity');
+        if($product_quantity){
+            $product_quantity =  $request->session()->get('product_quantity');
+        }else{
+            $product_quantity = 1;
+        }
+        $paymentIntentId = $request->input('session_id');
         Stripe::setApiKey(env('STRIPE_SECRET'));
-       $paymentIntent = Session::retrieve($paymentIntentId);
-
+        $paymentIntent = Session::retrieve($paymentIntentId);
         $product_payment = new ProductPayment;
         $product_payment->product_id = $request->session()->get('product_id');
-        $product_payment->product_quantity = $request->session()->get('product_quantity');
+        $product_payment->product_quantity =  $product_quantity;
         $product_payment->user_id = auth()->user()->id;
         $product_payment->status = 1;
         $product_payment->stripe_id = $paymentIntent->payment_intent;
         $product_payment->save();
- 
-    
         // Redirect or display a success message
         return view('productPayment.success');
     }
-
-    
 
     public function checkoutCancel()
     {

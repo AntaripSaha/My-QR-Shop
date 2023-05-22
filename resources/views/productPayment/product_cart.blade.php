@@ -25,7 +25,7 @@
                      </div>
                   </div>
                   <!-- List of items -->
-                  <div id="" class="border-top">
+                  <div class="border-top">
                      <br />
                      <div class="items col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
                         <div class="clearfix">
@@ -85,6 +85,31 @@
                </div>
             </div>
          </div>
+      </div>
+      <div class="row">
+         <div class="col-12">
+            
+
+            <div class="card card-profile shadow p-3">
+               <div class="px-4">
+                  <div class="mt-5 d-flex justify-content-between">
+                     <h3>Description of The Product<span class="font-weight-light"></span></h3>
+                     
+                  </div>
+                  <!-- List of items -->
+                  <div class="border-top">
+                     <div class="d-flex justify-content-center">
+                        <h6 class="p-2 display-6">{{ $product_item->description }}</h6>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+            
+         </div>
+
       </div>
    </div>
 </section>
