@@ -5,111 +5,57 @@
    <!-- Circles background -->
    <img class="bg-image" src="/images/product_bg.jpg" style="width: 100%;">
    <!-- SVG separator -->
-   <div class="separator separator-bottom separator-skew">
-   </div>
+   <div class="separator separator-bottom separator-skew"></div>
 </section>
 
-<section class="section bg-secondary">
-   <div class="container">
-      <div class="row">
-         <!-- Left part -->
-         <div class="col-6">
-            <!-- List of items -->
-            <div class="card card-profile shadow mt--150 p-3">
-               <div class="px-4">
-                  <div class="mt-5 d-flex justify-content-between">
-                     <h3>{{ __('Items') }}<span class="font-weight-light"></span></h3>
-                     <div class="d-flex justify-content-center">
-                        <h6 class="mr-2 text-muted font-weight-bolder display-4" style="text-decoration: line-through">${{ $product_item->current_price }}</h6>
-                        <h6 class="text-primary font-weight-bolder display-4">${{ $product_item->discounted_price }}</h6>
-                     </div>
-                  </div>
-                  <!-- List of items -->
-                  <div class="border-top">
-                     <br />
-                     <div class="items col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
-                        <div class="clearfix">
-                           <div class="pull-left pt-3 pr-4">
-                              <figure>
-                                 <img src="{{ $product_item->image }}" class="rounded" width="150px" alt="">
-                              </figure>
-                           </div>
-                           <div class="p-2 text-left">
-                              <h6 class="product-item_title font-weight-bolder text-uppercase">{{ $product_item->name }}</h6>
-                              <span class="d-flex justify-content-around" style="max-width: 20%;">
-                                 <p class="quantity">1</p>x
-                                 <p class="price">{{ $product_item->discounted_price }}</p>
-                              </span>
-                           </div>
-                           <div class="row">
-                              <button type="button" onclick="cartMinus()" class="btn btn-outline-primary btn-icon btn-sm page-link btn-cart-radius">
-                                 <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
-                              </button>
-                              <button type="button" onclick="cartPlus()" class="btn btn-outline-primary btn-icon btn-sm page-link btn-cart-radius">
-                                 <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-plus"></i></span>
-                              </button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <br />
-            <!-- List of items -->
-         </div>
-         {{-- Right part --}}
-         <div class="col-6">
-            <div class="card card-profile shadow mt--150 p-3">
-               <div class="px-4">
-                  <div class="mt-5 d-flex justify-content-between">
-                     <h3>Total<span class="font-weight-light"></span></h3>
-                     <div class="d-flex justify-content-center">
-                        <h6 id="totalPrice" class="text-primary font-weight-bolder display-4">${{ $product_item->discounted_price }}</h6>
-                     </div>
-                  </div>
-                  <!-- List of items -->
-                  <div class="border-top">
-                     <br />
-                     <div class="items col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
-                        <div class="clearfix">
-                           <form action="{{ route('checkout') }}" method="POST" enctype="multipart/form-data">
-                              @csrf
-                              <input type="hidden" name="id" value="{{ $product_item->id }}">
-                              <input type="hidden" name="quantity" value="" id="hiddenQuantity">
-                              <input type="hidden" name="price" value="{{ $product_item->discounted_price }}" id="hiddenPrice">
-                              <button type="submit" class="btn btn-primary">Checkout</button>
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+<section class="section bg-white container mt-5">
+   <div class="row">
+      <div class="col-md-6 col-sm-12">
+         <div>
+            <figure>
+               <img src="{{ $product_item->image }}" class="rounded" height="1200px" width="auto" alt="">
+            </figure>
          </div>
       </div>
-      <div class="row">
-         <div class="col-12">
-            
-
-            <div class="card card-profile shadow p-3">
-               <div class="px-4">
-                  <div class="mt-5 d-flex justify-content-between">
-                     <h3>Description of The Product<span class="font-weight-light"></span></h3>
-                     
-                  </div>
-                  <!-- List of items -->
-                  <div class="border-top">
-                     <div class="d-flex justify-content-center">
-                        <h6 class="p-2 display-6">{{ $product_item->description }}</h6>
+      <div class="col-md-6 col-sm-12">
+         <div class="p-2 text-left">
+            <h2 class="product-item_title font-weight-bolder text-uppercase">{{ $product_item->name }}</h2>
+            <div class="d-flex justify-content-left">
+               <h5 class="product-item_title font-weight-bolder text-uppercase display-4">Total: <span class="font-weight-light"></span></h5>
+               <h6 id="totalPrice" class="ml-3 text-primary font-weight-bolder display-4">${{ $product_item->discounted_price }}</h6>
+            </div>
+            <h6 class="display-5 description-cus mb-3">{{ $product_item->description }}</h6>
+            <div class="border-top row">
+               <div class="col-12">
+                  <div class="pt-3 text-left">
+                     <h5 class="product-item_title font-weight-bolder text-uppercase">Select Quantity As per Need</h5>
+                     <span class="d-flex justify-content-around display-4" style="max-width: 50%;">
+                        <p class="price display-4 d-none">${{ $product_item->discounted_price }}</p>
+                     </span>
+                     <div class="row pl-3">
+                        <button type="button" onclick="cartMinus()" class="btn btn-outline-primary btn-icon btn-sm page-link">
+                           <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
+                        </button>
+                        <p class="m-3 quantity cus-quantity">1</p>
+                        
+                        <button type="button" onclick="cartPlus()" class="btn btn-outline-primary btn-icon btn-sm page-link ">
+                           <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-plus"></i></span>
+                        </button>
+                     </div>
+                     <div class="clearfix pt-3">
+                        <form action="{{ route('checkout') }}" method="POST" enctype="multipart/form-data">
+                           @csrf
+                           <input type="hidden" name="id" value="{{ $product_item->id }}">
+                           <input type="hidden" name="quantity" value="" id="hiddenQuantity">
+                           <input type="hidden" name="price" value="{{ $product_item->discounted_price }}" id="hiddenPrice">
+                           <button type="submit" class="btn btn-primary btn-lg">Proceed To Checkout</button>
+                        </form>
                      </div>
                   </div>
-               </div>
+               </div>              
+                       
             </div>
-
-
-
-            
          </div>
-
       </div>
    </div>
 </section>
@@ -119,15 +65,14 @@
 <script type="text/javascript">
    function cartPlus() {
       var quantity = document.querySelector('.quantity');
-      var mainPrice = document.querySelector('.price');
-      var price = parseFloat(mainPrice.innerHTML);
-      console.log('Original Price', price);
+      var mainPrice = document.querySelector('.price').innerText.replace('$', '');
+      var price = parseFloat(mainPrice);
       var value = parseInt(quantity.innerHTML);
       var updatedValue = value + 1;
       var updatedPrice = price * updatedValue;
       quantity.innerHTML = updatedValue;
       document.getElementById('totalPrice').innerText = '$' + updatedPrice.toFixed(2);
-      console.log("Quantity Added: ", updatedValue);
+      console.log("Quantity Added:", updatedValue);
 
       // Update hidden inputs
       document.getElementById('hiddenQuantity').value = updatedValue;
@@ -136,9 +81,9 @@
 
    function cartMinus() {
       var quantity = document.querySelector('.quantity');
-      var mainPrice = document.getElementById('totalPrice');
-      var price = parseFloat(mainPrice.innerText.replace('$', ''));
-      console.log('Price after minus', mainPrice);
+      var mainPrice = document.getElementById('totalPrice').innerText.replace('$', '');
+      var price = parseFloat(mainPrice);
+      console.log('Price after minus:', mainPrice);
 
       var value = parseInt(quantity.innerHTML);
       if (value > 1) {
@@ -146,7 +91,7 @@
          var updatedPrice = price / value * updatedValue;
          quantity.innerHTML = updatedValue;
          document.getElementById('totalPrice').innerText = '$' + updatedPrice.toFixed(2);
-         console.log("Quantity Removed: ", updatedValue);
+         console.log("Quantity Removed:", updatedValue);
 
          // Update hidden inputs
          document.getElementById('hiddenQuantity').value = updatedValue;
@@ -155,4 +100,16 @@
    }
 
 </script>
+
+<style>
+   .description-cus {
+      color: #999;
+      font-weight: 500;
+      font-style: normal;
+   }
+   .cus-quantity{
+      font-size: 15px;
+      font-weight: 700;
+   }
+</style>
 @endsection
