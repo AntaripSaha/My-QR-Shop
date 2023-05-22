@@ -32,6 +32,7 @@ class ProductPaymentController extends Controller
 
             // Store the product ID in the session
         session()->put('product_id', $request->id);
+        session()->put('product_quantity', $request->quantity);
 
         // Create a new Stripe Checkout session
         $session = Session::create([
@@ -40,7 +41,7 @@ class ProductPaymentController extends Controller
                 [
                     'price_data' => [
                         'currency' => 'usd',
-                        'unit_amount' => 100 * $product_item->discounted_price, // Amount in cents
+                        'unit_amount' => 100 * $request->price, // Amount in cents
                         'product_data' => [
                             'name' => $product_item->name,
                             'description' => $product_item->description,
@@ -61,13 +62,14 @@ class ProductPaymentController extends Controller
 
     public function checkoutSuccess(Request $request)
     {
-       $paymentIntentId = $request->input('session_id');
+         $paymentIntentId = $request->input('session_id');
     //    Stripe::setApiKey('sk_test_51LZpTqSFrfnDBpn6AAKuqwnYh60DqCzlPa27ta84QkHoh67C2k2fbqTR0z7fo6zPl04QAS1b2j2ZRUQ3gxCes1B9001tCMISvy');
         Stripe::setApiKey(env('STRIPE_SECRET'));
        $paymentIntent = Session::retrieve($paymentIntentId);
 
         $product_payment = new ProductPayment;
         $product_payment->product_id = $request->session()->get('product_id');
+        $product_payment->product_quantity = $request->session()->get('product_quantity');
         $product_payment->user_id = auth()->user()->id;
         $product_payment->status = 1;
         $product_payment->stripe_id = $paymentIntent->payment_intent;

@@ -13,7 +13,7 @@
       <div class="container">
 
 
-        <x:notify-messages />
+        {{-- <x:notify-messages /> --}}
 
           <div class="row">
 

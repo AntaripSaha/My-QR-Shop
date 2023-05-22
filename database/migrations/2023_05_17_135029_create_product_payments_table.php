@@ -16,6 +16,7 @@ class CreateProductPaymentsTable extends Migration
         Schema::create('product_payments', function (Blueprint $table) {
             $table->id();
             $table->string('product_id')->nullable();
+            $table->string('product_quantity')->default(0);
             $table->string('user_id')->nullable();
             $table->string('status')->nullable();
             $table->string('stripe_id')->nullable();
