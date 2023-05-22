@@ -1,5 +1,4 @@
 @extends('layouts.front', ['class' => ''])
-
 @section('content')
 <section class="section-profile-cover section-shaped my--1 d-none d-md-none d-lg-block d-lx-block">
    <!-- Circles background -->
@@ -7,7 +6,6 @@
    <!-- SVG separator -->
    <div class="separator separator-bottom separator-skew"></div>
 </section>
-
 <section class="section bg-white container mt-5">
    <div class="row">
       <div class="col-md-6 col-sm-12">
@@ -34,12 +32,11 @@
                      </span>
                      <div class="row pl-3">
                         <button type="button" onclick="cartMinus()" class="btn btn-outline-primary btn-icon btn-sm page-link">
-                           <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
+                        <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
                         </button>
                         <p class="m-3 quantity cus-quantity">1</p>
-                        
                         <button type="button" onclick="cartPlus()" class="btn btn-outline-primary btn-icon btn-sm page-link ">
-                           <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-plus"></i></span>
+                        <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-plus"></i></span>
                         </button>
                      </div>
                      <div class="clearfix pt-3">
@@ -52,16 +49,13 @@
                         </form>
                      </div>
                   </div>
-               </div>              
-                       
+               </div>
             </div>
          </div>
       </div>
    </div>
 </section>
-
 <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
-
 <script type="text/javascript">
    function cartPlus() {
       var quantity = document.querySelector('.quantity');
@@ -73,18 +67,18 @@
       quantity.innerHTML = updatedValue;
       document.getElementById('totalPrice').innerText = '$' + updatedPrice.toFixed(2);
       console.log("Quantity Added:", updatedValue);
-
+   
       // Update hidden inputs
       document.getElementById('hiddenQuantity').value = updatedValue;
       document.getElementById('hiddenPrice').value = updatedPrice.toFixed(2);
    }
-
+   
    function cartMinus() {
       var quantity = document.querySelector('.quantity');
       var mainPrice = document.getElementById('totalPrice').innerText.replace('$', '');
       var price = parseFloat(mainPrice);
       console.log('Price after minus:', mainPrice);
-
+   
       var value = parseInt(quantity.innerHTML);
       if (value > 1) {
          var updatedValue = value - 1;
@@ -92,24 +86,23 @@
          quantity.innerHTML = updatedValue;
          document.getElementById('totalPrice').innerText = '$' + updatedPrice.toFixed(2);
          console.log("Quantity Removed:", updatedValue);
-
+   
          // Update hidden inputs
          document.getElementById('hiddenQuantity').value = updatedValue;
          document.getElementById('hiddenPrice').value = updatedPrice.toFixed(2);
       }
    }
-
+   
 </script>
-
 <style>
    .description-cus {
-      color: #999;
-      font-weight: 500;
-      font-style: normal;
+   color: #999;
+   font-weight: 500;
+   font-style: normal;
    }
    .cus-quantity{
-      font-size: 15px;
-      font-weight: 700;
+   font-size: 15px;
+   font-weight: 700;
    }
 </style>
 @endsection
