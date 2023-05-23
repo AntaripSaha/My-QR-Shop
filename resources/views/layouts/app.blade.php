@@ -38,6 +38,9 @@
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       <!-- Range datepicker -->
       <link rel="stylesheet" type="text/css" href="{{ asset('vendor') }}/daterangepicker/daterangepicker.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" integrity="sha512-uYIu3l3bUXF9H2VxqIFgRiVWmbTH6nr9Fqr5pM8FyFGvT7eER/C6AjQQELATlvg8/5DgoMXr0hAD9wYxq7gDdA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js" integrity="sha512-wn2iMm0ivkryq6l7Xfrt4CRy8mR1CUOWbYgj3ryHxw9ZlFIPULZBFjDNjgRcK6r3h/JgrZXaJ8IJbADhcTSaSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
       @yield('head')
       @laravelPWA
       @include('layouts.rtl')

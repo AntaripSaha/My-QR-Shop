@@ -30,6 +30,15 @@
                                         </span>
                                     @endif
                                 </div>
+                                <div class="form-group{{ $errors->has('gallery_image') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="gallery_image">{{ __('Gallery Image') }}</label>
+                                    <input type="file" name="gallery_image[]" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Product Name here') }} ..." value="" autofocus multiple>
+                                    @if ($errors->has('gallery_image'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('gallery_image') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="name">{{ __('Product Name') }}</label>
                                     <input type="text" name="name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Product Name here') }} ..." value="" required autofocus>
@@ -40,55 +49,55 @@
                                     @endif
                                 </div>
                                 
-                                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="name">{{ __('Product Description') }}</label>
+                                <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="description">{{ __('Product Description') }}</label>
                                     <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('description'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('description') }}</strong>
                                         </span>
                                     @endif
                                 </div>
 
-                                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="name">{{ __('Main Price') }}</label>
+                                <div class="form-group{{ $errors->has('main_price') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="main_price">{{ __('Main Price') }}</label>
                                     <input type="number" name="main_price" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Main Price') }} ..." value="" required autofocus>
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('main_price'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('main_price') }}</strong>
                                         </span>
                                     @endif
                                 </div>
 
-                                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="name">{{ __('Discounted Price') }}</label>
+                                <div class="form-group{{ $errors->has('discount_price') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="discount_price">{{ __('Discounted Price') }}</label>
                                     <input type="number" name="discount_price" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Discounted Price') }} ..." value=""  autofocus>
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('discount_price'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('discount_price') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="name">{{ __('Rating') }}</label>
+                                <div class="form-group{{ $errors->has('rating') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="rating">{{ __('Rating') }}</label>
                                     <input type="number" name="rating" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Max Rating 5') }} ..." value=""  min="1" max="5" 
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     maxlength="1" required autofocus>
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('rating'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('rating') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="name">{{ __('Status') }}</label>
+                                <div class="form-group{{ $errors->has('status') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="status">{{ __('Status') }}</label>
                                     <select name="status">
                                         <option value="1">Active Product</option>
                                         <option value="0">Inactive Product</option>
                                     </select>
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('status'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('status') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -105,3 +114,5 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
+
+

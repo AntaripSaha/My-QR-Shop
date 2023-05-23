@@ -31,7 +31,7 @@
                         <p class="price display-4 d-none">${{ $product_item->discounted_price }}</p>
                      </span>
                      <div class="row pl-3">
-                        <button type="button" onclick="cartMinus()" class="btn btn-outline-primary btn-icon btn-sm page-link">
+                        <button type="button" onclick="cartMinus()" class="btn-outline-primary btn-icon btn-sm page-link">
                         <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
                         </button>
                         <p class="m-3 quantity cus-quantity">1</p>

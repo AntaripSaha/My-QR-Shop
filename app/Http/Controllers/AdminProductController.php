@@ -11,6 +11,7 @@ use App\Traits\Fields;
 use App\Restorant;
 
 use App\Models\Product;
+use App\Models\ProductGallery;
 
 
 class AdminProductController extends Controller
@@ -59,6 +60,7 @@ class AdminProductController extends Controller
             'discount_price' => ['required', 'string', 'max:20'],
             'rating' => ['required', 'string', 'max:20'],
             'status' => ['required', 'string', 'max:5'],
+            'gallery_image.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $product = new Product;
         $imageName = time().'.'.$request->image->extension();
@@ -70,6 +72,19 @@ class AdminProductController extends Controller
         $product->discounted_price = $request->discount_price;
         $product->rating = $request->rating;
         $product->status = $request->status;
+        $product->save();
+
+        if ($request->hasFile('gallery_image')) {
+            foreach ($request->file('gallery_image') as $file) {
+                $galleryImage = time() . '_' . $file->getClientOriginalName();
+                $file->storeAs('gallery', $galleryImage, 'public');
+    
+                $productGallery = new ProductGallery();
+                $productGallery->product_id = $product->id;
+                $productGallery->image = $galleryImage;
+                $productGallery->save();
+            }
+        }
         if($product->save()){
             return redirect()->route('admin.product.index')->withStatus(__('Product Saved.')) ;
         }else{
