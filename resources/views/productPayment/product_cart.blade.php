@@ -29,8 +29,6 @@
                   @endforeach
                   @endif
                </div>
-               <br>
-               <div class="swiper-pagination"></div>
             </div>
          </div>
       </div>
