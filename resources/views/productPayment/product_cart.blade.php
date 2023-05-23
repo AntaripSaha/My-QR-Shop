@@ -1,4 +1,6 @@
 @extends('layouts.front', ['class' => ''])
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 @section('content')
 <section class="section-profile-cover section-shaped my--1 d-none d-md-none d-lg-block d-lx-block">
    <!-- Circles background -->
@@ -9,10 +11,23 @@
 <section class="section bg-white container mt-5">
    <div class="row">
       <div class="col-md-6 col-sm-12">
-         <div>
+         <div class="main-image">
             <figure>
-               <img src="{{ $product_item->image }}" class="rounded" height="1200px" width="auto" alt="">
+               <img id="mainImage" src="{{ $product_item->image }}" class="rounded" height="1200px" width="auto" alt="">
             </figure>
+         </div>
+         <div class="gallery-slider">
+            <div class="swiper-container overflow-hidden">
+               <div class="swiper-wrapper">
+                  @foreach ($product_item->gallery as $galleryImage)
+                  <div class="swiper-slide">
+                     <img src="{{ $galleryImage->image }}" class="rounded gallery-image" width="150px" height="auto" alt="">
+                  </div>
+                  @endforeach
+               </div>
+               <br>
+               <div class="swiper-pagination"></div>
+            </div>
          </div>
       </div>
       <div class="col-md-6 col-sm-12">
@@ -32,11 +47,11 @@
                      </span>
                      <div class="row pl-3">
                         <button type="button" onclick="cartMinus()" class="btn-outline-primary btn-icon btn-sm page-link">
-                        <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
+                           <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
                         </button>
                         <p class="m-3 quantity cus-quantity">1</p>
                         <button type="button" onclick="cartPlus()" class="btn btn-outline-primary btn-icon btn-sm page-link ">
-                        <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-plus"></i></span>
+                           <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-plus"></i></span>
                         </button>
                      </div>
                      <div class="clearfix pt-3">
@@ -55,7 +70,10 @@
       </div>
    </div>
 </section>
+
 <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript">
    function cartPlus() {
       var quantity = document.querySelector('.quantity');
@@ -93,16 +111,45 @@
       }
    }
    
+   // Initialize Swiper
+   var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 4,
+      speed: 500, // Transition speed in milliseconds
+      transitionDuration: 1000, // Duration of the transition effect
+      spaceBetween: 10,
+      navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+         el: '.swiper-pagination',
+         clickable: true,
+      },
+   });
+    // Gallery image click event handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryImages = document.querySelectorAll('.gallery-image');
+      const mainImage = document.getElementById('mainImage');
+
+      galleryImages.forEach(function(image) {
+         image.addEventListener('click', function() {
+            swiper.slideTo(Array.from(galleryImages).indexOf(image), 900, false); // Slide to the clicked image
+
+            mainImage.src = image.src;
+         });
+      });
+   });
 </script>
+
 <style>
    .description-cus {
-   color: #999;
-   font-weight: 500;
-   font-style: normal;
+      color: #999;
+      font-weight: 500;
+      font-style: normal;
    }
-   .cus-quantity{
-   font-size: 15px;
-   font-weight: 700;
+   .cus-quantity {
+      font-size: 15px;
+      font-weight: 700;
    }
 </style>
 @endsection

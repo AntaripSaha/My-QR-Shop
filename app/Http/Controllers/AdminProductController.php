@@ -48,12 +48,11 @@ class AdminProductController extends Controller
     public function create(){
         return view('restorants.product_create');
     }
-
-    public function store(Request $request){
-        // return $request;
-        //Validate
+    
+    public function store(Request $request)
+    {
         $request->validate([
-            'image' =>  ['required','image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'main_price' => ['required', 'string', 'max:20'],
@@ -62,10 +61,11 @@ class AdminProductController extends Controller
             'status' => ['required', 'string', 'max:5'],
             'gallery_image.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+    
         $product = new Product;
-        $imageName = time().'.'.$request->image->extension();
+        $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('images/product'), $imageName);
-        $product->image = "/images/product/".$imageName;
+        $product->image = "/images/product/" . $imageName;
         $product->name = $request->name;
         $product->description = $request->description;
         $product->current_price = $request->main_price;
@@ -73,24 +73,27 @@ class AdminProductController extends Controller
         $product->rating = $request->rating;
         $product->status = $request->status;
         $product->save();
-
+    
         if ($request->hasFile('gallery_image')) {
-            foreach ($request->file('gallery_image') as $file) {
-                $galleryImage = time() . '_' . $file->getClientOriginalName();
-                $file->storeAs('gallery', $galleryImage, 'public');
+            $galleryImages = $request->file('gallery_image');
+            foreach ($galleryImages as $index => $file) {
+                $galleryImageName = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('images/product'), $galleryImageName);
     
                 $productGallery = new ProductGallery();
                 $productGallery->product_id = $product->id;
-                $productGallery->image = $galleryImage;
+                $productGallery->image = "/images/product/" . $galleryImageName;
                 $productGallery->save();
             }
         }
-        if($product->save()){
-            return redirect()->route('admin.product.index')->withStatus(__('Product Saved.')) ;
-        }else{
-            return redirect()->route('admin.product.index')->withError(__('Something Went Wrong.')) ;
+    
+        if ($product->save()) {
+            return redirect()->route('admin.product.index')->withStatus(__('Product Saved.'));
+        } else {
+            return redirect()->route('admin.product.index')->withError(__('Something Went Wrong.'));
         }
     }
+    
 
     public function status($id, $status, Request $request)
     {

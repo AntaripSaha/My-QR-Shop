@@ -10,6 +10,7 @@ use Stripe\Checkout\Session;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use App\Models\Product;
+use App\Models\ProductGallery;
 use App\Models\ProductPayment;
 
 class ProductPaymentController extends Controller
@@ -17,7 +18,7 @@ class ProductPaymentController extends Controller
     public function index($id)
     {
         if(isset(auth()->user()->id)){
-            $product_item = Product::where('id', $id)->first();
+            $product_item = Product::with('gallery')->where('id', $id)->first();
             return view('productPayment.product_cart', compact('product_item'));
         }else{
             return redirect()->route('login');
