@@ -1,4 +1,4 @@
-<footer class="footer notranslate" >
+<footer class="footer notranslate fixed-bottom" >
     <div class="container">
       <div class="row align-items-center justify-content-md-between">
         <div class="col-md-6">
@@ -28,3 +28,11 @@
       </div>
     </div>
   </footer>
+
+  <style>
+     @media (min-width: 268px) and (max-width: 767.98px){
+      .footer{
+        display: none;
+      }
+   }
+  </style>

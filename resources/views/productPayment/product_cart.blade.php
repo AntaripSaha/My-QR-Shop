@@ -1,6 +1,5 @@
 @extends('layouts.front', ['class' => ''])
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
 @section('content')
 <section class="section-profile-cover section-shaped my--1 d-none d-md-none d-lg-block d-lx-block">
    <!-- Circles background -->
@@ -13,17 +12,22 @@
       <div class="col-md-6 col-sm-12">
          <div class="main-image">
             <figure>
-               <img id="mainImage" src="{{ $product_item->image }}" class="rounded" height="1200px" width="auto" alt="">
+               <img id="mainImage" src="{{ $product_item->image }}" class="rounded img-cus-product-main" height="1200px" width="auto" alt="">
             </figure>
          </div>
          <div class="gallery-slider">
             <div class="swiper-container overflow-hidden">
                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <img src="{{ $product_item->image}}" class="rounded gallery-image img-cus-gallery mr-2" alt="">
+                  </div>
+                  @if ($product_item->gallery)
                   @foreach ($product_item->gallery as $galleryImage)
                   <div class="swiper-slide">
-                     <img src="{{ $galleryImage->image }}" class="rounded gallery-image" width="150px" height="auto" alt="">
+                     <img src="{{ $galleryImage->image }}" class="rounded gallery-image img-cus-gallery" alt="">
                   </div>
                   @endforeach
+                  @endif
                </div>
                <br>
                <div class="swiper-pagination"></div>
@@ -37,7 +41,12 @@
                <h5 class="product-item_title font-weight-bolder text-uppercase display-4">Total: <span class="font-weight-light"></span></h5>
                <h6 id="totalPrice" class="ml-3 text-primary font-weight-bolder display-4">${{ $product_item->discounted_price }}</h6>
             </div>
-            <h6 class="display-5 description-cus mb-3">{{ $product_item->description }}</h6>
+            <h6 class="display-5 description-cus mb-3">
+               <p id="descriptionShort" class="short-description">{{ substr($product_item->description, 0, 500) }}...</p>
+               <p id="descriptionFull" class="full-description" style="display: none;">{{ $product_item->description }}</p>
+               <button id="readMoreBtn" class="btn btn-link">Read More</button>
+               <button id="showLessBtn" class="btn btn-link" style="display: none;">Show Less</button>
+            </h6>
             <div class="border-top row">
                <div class="col-12">
                   <div class="pt-3 text-left">
@@ -47,11 +56,11 @@
                      </span>
                      <div class="row pl-3">
                         <button type="button" onclick="cartMinus()" class="btn-outline-primary btn-icon btn-sm page-link">
-                           <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
+                        <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
                         </button>
                         <p class="m-3 quantity cus-quantity">1</p>
                         <button type="button" onclick="cartPlus()" class="btn btn-outline-primary btn-icon btn-sm page-link ">
-                           <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-plus"></i></span>
+                        <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-plus"></i></span>
                         </button>
                      </div>
                      <div class="clearfix pt-3">
@@ -70,7 +79,6 @@
       </div>
    </div>
 </section>
-
 <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -125,31 +133,87 @@
          el: '.swiper-pagination',
          clickable: true,
       },
+      breakpoints: {
+         // when window width is >= 320px
+         320: {
+            slidesPerView: 3,
+            spaceBetween: 10
+         },
+         // when window width is >= 480px
+         480: {
+            slidesPerView: 4,
+            spaceBetween: 10
+         },
+      },
+   
    });
-    // Gallery image click event handler
-    document.addEventListener('DOMContentLoaded', function() {
+   
+   // Gallery image click event handler
+   document.addEventListener('DOMContentLoaded', function() {
       const galleryImages = document.querySelectorAll('.gallery-image');
       const mainImage = document.getElementById('mainImage');
-
+   
       galleryImages.forEach(function(image) {
          image.addEventListener('click', function() {
             swiper.slideTo(Array.from(galleryImages).indexOf(image), 900, false); // Slide to the clicked image
-
+   
             mainImage.src = image.src;
          });
       });
    });
+   // Read More button click event handler
+   document.addEventListener('DOMContentLoaded', function() {
+      const readMoreBtn = document.getElementById('readMoreBtn');
+      const showLessBtn = document.getElementById('showLessBtn');
+      const descriptionShort = document.getElementById('descriptionShort');
+      const descriptionFull = document.getElementById('descriptionFull');
+   
+      readMoreBtn.addEventListener('click', function() {
+         descriptionShort.style.display = 'none';
+         descriptionFull.style.display = 'block';
+   
+         readMoreBtn.style.display = 'none';
+         showLessBtn.style.display = 'inline';
+      });
+   
+      showLessBtn.addEventListener('click', function() {
+         descriptionShort.style.display = 'block';
+         descriptionFull.style.display = 'none';
+   
+         readMoreBtn.style.display = 'inline';
+         showLessBtn.style.display = 'none';
+      });
+   });
 </script>
-
 <style>
    .description-cus {
-      color: #999;
-      font-weight: 500;
-      font-style: normal;
+   color: #999;
+   font-weight: 500;
+   font-style: normal;
    }
    .cus-quantity {
-      font-size: 15px;
-      font-weight: 700;
+   font-size: 15px;
+   font-weight: 700;
+   }
+   .img-cus-gallery{
+   height: 93px !important;
+   width: 150px !important;
+   }
+   .img-cus-product-main{
+   width: 620px;
+   height: 440px;
+   object-fit: cover;
+   }
+   @media (min-width: 268px) and (max-width: 767.98px){
+      .img-cus-product-main{
+      width: 520px;
+      height: 280px;
+      object-fit: cover;
+      }
+      .img-cus-gallery{
+      height: 75px !important;
+      width: 150px !important;
+      }
    }
 </style>
 @endsection
