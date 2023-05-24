@@ -62,13 +62,7 @@
                         </button>
                      </div>
                      <div class="clearfix pt-3">
-                        <form action="{{ route('checkout') }}" method="POST" enctype="multipart/form-data">
-                           @csrf
-                           <input type="hidden" name="id" value="{{ $product_item->id }}">
-                           <input type="hidden" name="quantity" value="" id="hiddenQuantity">
-                           <input type="hidden" name="price" value="{{ $product_item->discounted_price }}" id="hiddenPrice">
-                           <button type="submit" class="btn btn-primary btn-lg">Proceed To Checkout</button>
-                        </form>
+                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#checkoutModal">Proceed To Checkout</button>
                      </div>
                   </div>
                </div>
@@ -76,6 +70,34 @@
          </div>
       </div>
    </div>
+
+   <!-- Add the necessary modal HTML markup -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="checkoutModalLabel">Delivery Address</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <form action="{{ route('checkout') }}" method="POST" enctype="multipart/form-data">
+               @csrf
+               <div class="form-group">
+                  <label for="address">Address</label>
+                  <textarea class="form-control" id="address" name="delivery_address" rows="3" required></textarea>
+               </div>
+               <!-- Add more form fields for other details if needed -->
+               <input type="hidden" name="id" value="{{ $product_item->id }}">
+               <input type="hidden" name="quantity" value="" id="hiddenQuantity">
+               <input type="hidden" name="price" value="{{ $product_item->discounted_price }}" id="hiddenPrice">
+               <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
 </section>
 <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

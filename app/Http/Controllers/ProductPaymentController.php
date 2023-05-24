@@ -33,6 +33,7 @@ class ProductPaymentController extends Controller
             // Store the product ID in the session
         session()->put('product_id', $request->id);
         session()->put('product_quantity', $request->quantity);
+        session()->put('delivery_address', $request->delivery_address);
         // Create a new Stripe Checkout session
          $session = Session::create([
             'payment_method_types' => ['card'],
@@ -73,6 +74,7 @@ class ProductPaymentController extends Controller
         $product_payment = new ProductPayment;
         $product_payment->product_id = $request->session()->get('product_id');
         $product_payment->product_quantity = $product_quantity;
+        $product_payment->delivery_address = $request->session()->get('delivery_address');
         $product_payment->total_paid = $paymentIntent->amount_total / 100;
         $product_payment->user_id = auth()->user()->id;
         $product_payment->status = 1;
