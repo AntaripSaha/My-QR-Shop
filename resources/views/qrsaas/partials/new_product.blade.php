@@ -23,7 +23,7 @@
                                 <span class="text-warning mr-2"><i class="star fas fa-star"></i></span>
                                 <span class="text-muted"><i class="star fas fa-star"></i></span>
                             </div>
-                            <h5 class="d-flex justify-content-center">{{Str::limit($product->name, 16)}}</h5>
+                            <h5 class="d-flex justify-content-center">{{Str::limit($product->name, 15)}}</h5>
                             <p class="card-text text-center">{{Str::limit($product->description, 36)}}</p>
                             <div class="d-flex justify-content-center">
                                 <h6 class="mr-2 text-muted" style="text-decoration: Line-Through">${{$product->current_price}}</h6>

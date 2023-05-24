@@ -12,6 +12,8 @@ use Stripe\PaymentIntent;
 use App\Models\Product;
 use App\Models\ProductGallery;
 use App\Models\ProductPayment;
+use Illuminate\Support\Str;
+
 
 class ProductPaymentController extends Controller
 {
@@ -28,13 +30,11 @@ class ProductPaymentController extends Controller
     {
         $product_item = Product::where('id', $request->id)->first();
         Stripe::setApiKey(env('STRIPE_SECRET'));
-
             // Store the product ID in the session
         session()->put('product_id', $request->id);
         session()->put('product_quantity', $request->quantity);
-
         // Create a new Stripe Checkout session
-        $session = Session::create([
+         $session = Session::create([
             'payment_method_types' => ['card'],
             'line_items' => [
                 [
@@ -43,8 +43,9 @@ class ProductPaymentController extends Controller
                         'unit_amount' => 100 * $request->price, // Amount in cents
                         'product_data' => [
                             'name' => $product_item->name,
-                            'description' => $product_item->description,
+                            'description' => Str::limit($product_item->description, 250),
                              // Add the product image URL here
+                             'images' => [url($product_item->image)],
                         ],
                     ],
                     'quantity' => 1,
