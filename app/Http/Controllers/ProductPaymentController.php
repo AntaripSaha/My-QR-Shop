@@ -55,7 +55,6 @@ class ProductPaymentController extends Controller
             'success_url' => route('checkout.success').'?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url' => route('checkout.cancel'),
         ]);
-
         // Redirect the user to the Stripe Checkout page
         return redirect($session->url);
     }
@@ -73,7 +72,8 @@ class ProductPaymentController extends Controller
         $paymentIntent = Session::retrieve($paymentIntentId);
         $product_payment = new ProductPayment;
         $product_payment->product_id = $request->session()->get('product_id');
-        $product_payment->product_quantity =  $product_quantity;
+        $product_payment->product_quantity = $product_quantity;
+        $product_payment->total_paid = $paymentIntent->amount_total / 100;
         $product_payment->user_id = auth()->user()->id;
         $product_payment->status = 1;
         $product_payment->stripe_id = $paymentIntent->payment_intent;

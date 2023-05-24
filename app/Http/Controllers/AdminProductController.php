@@ -12,7 +12,8 @@ use App\Restorant;
 
 use App\Models\Product;
 use App\Models\ProductGallery;
-
+use App\Models\ProductPayment;
+use App\User;
 
 class AdminProductController extends Controller
 {
@@ -105,6 +106,13 @@ class AdminProductController extends Controller
     public function remove($id){
        Product::where('id', $id)->delete();
        return redirect()->route('admin.product.index')->withStatus(__('Product Deleted.'));
+    }
+
+    public function purchaseList(){
+        $purchases =  ProductPayment::with('product', 'user', 'restaurant')->paginate(10);        
+        if (auth()->user()->hasRole('admin')) {
+            return view('restorants.product_purchase_list', compact('purchases'));
+        }
     }
 
 }

@@ -42,10 +42,26 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.product.index') }}">
-            <i class="ni ni-cart text-info"></i> {{ __('Products') }}
+        <a class="nav-link" href="#navbar-product" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
+            <i class="ni ni-cart text-info"></i>
+            <span class="nav-link-text">{{ __('Products') }}</span>
         </a>
+        <div class="collapse" id="navbar-product" style="">
+            <ul class="nav nav-sm flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.product.index') }}">
+                        <i class="ni ni-basket text-success"></i> {{ __('Product List') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.product.purchase.list') }}">
+                        <i class="ni ni-collection text-danger"></i> {{ __('Purchase List') }}
+                    </a>
+                </li>
+            </ul>
+        </div>
     </li>
+
     @if(config('settings.multi_city'))
         <li class="nav-item">
             <a class="nav-link" href="{{ route('cities.index') }}">

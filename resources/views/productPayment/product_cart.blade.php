@@ -196,6 +196,7 @@
    .img-cus-gallery{
    height: 93px !important;
    width: 150px !important;
+   object-fit: cover;
    }
    .img-cus-product-main{
    width: 620px;
@@ -211,6 +212,7 @@
       .img-cus-gallery{
       height: 75px !important;
       width: 150px !important;
+      object-fit: cover;
       }
    }
 </style>

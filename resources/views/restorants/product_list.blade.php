@@ -31,9 +31,6 @@
                             </div>
                         </div>
                         
-
-
-
                         <div class="tab-content orders-filters">
                             <br />
                             <div class="row">
@@ -43,14 +40,10 @@
                                         @foreach ( $allRes as $key => $res)
                                                 <option value="{{$key}}" >{{$res}}</option>
                                         @endforeach
-                                      
                                     </select>
                                 </div>
                             </div>
-                        
                         </div>
-
-
                     </div>
 
                     <div class="col-12">
@@ -76,7 +69,7 @@
                                             <td><a href="{{ route('admin.restaurants.edit', $product) }}">{{ $product->name }}</a></td>
                                         @endif
                                        
-                                        <td><img class="rounded" src={{ $product->image }} width="50px" height="50px"></img></td>
+                                        <td><img class="rounded" src={{ $product->image }} width="50px" height="auto" ></td>
                                
                                      
                                         <td>{{ $product->created_at->locale(Config::get('app.locale'))->isoFormat('LLLL') }}</td>
@@ -123,7 +116,6 @@
                 </div>
             </div>
         </div>
-
         @include('layouts.footers.auth')
     </div>
     <script type="text/javascript">

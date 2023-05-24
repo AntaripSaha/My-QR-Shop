@@ -17,6 +17,7 @@ class CreateProductPaymentsTable extends Migration
             $table->id();
             $table->string('product_id')->nullable();
             $table->string('product_quantity')->default(0);
+            $table->string('total_paid')->default(0);
             $table->string('user_id')->nullable();
             $table->string('status')->nullable();
             $table->string('stripe_id')->nullable();
