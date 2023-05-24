@@ -20,6 +20,7 @@ class CreateProductPaymentsTable extends Migration
             $table->string('total_paid')->default(0);
             $table->string('user_id')->nullable();
             $table->string('status')->nullable();
+            $table->string('delivery_address')->nullable();
             $table->string('stripe_id')->nullable();
             $table->timestamps();
         });
