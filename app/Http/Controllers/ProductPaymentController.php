@@ -54,7 +54,7 @@ class ProductPaymentController extends Controller
             ],
             'mode' => 'payment',
             'success_url' => route('checkout.success').'?session_id={CHECKOUT_SESSION_ID}',
-            'cancel_url' => route('checkout.cancel'),
+            'cancel_url' => route('front'),
         ]);
         // Redirect the user to the Stripe Checkout page
         return redirect($session->url);

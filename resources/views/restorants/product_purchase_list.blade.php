@@ -42,25 +42,19 @@
                             <tbody>
                                 @foreach ($purchases as $purchase)
                                     <tr>
-                                      
-                                        {{-- <td>{{ $purchase->user->name }}</td> --}}
+                                        @if ( $purchase->restaurant)
                                         <td><a href="{{ route('admin.restaurants.edit', $purchase->restaurant->id) }}">{{ $purchase->user->name }}</a></td>
+                                        @else
+                                        <td><a href="#">{{ $purchase->user->name }}</a></td>
+                                        @endif
                                         <td>{{ $purchase->user->email }}</td>
-                                        <td>{{ $purchase->restaurant->phone }}</td>
+                                        <td>{{ $purchase->user->phone }}</td>
                                         <td><img class="rounded" src={{ $purchase->product->image }} width="70px" height="auto" ></td>
                                         <td>{{ $purchase->product_quantity }}</td>
                                         <td>{{ $purchase->total_paid }}</td>
                                         <td>{{ $purchase->created_at->locale(Config::get('app.locale'))->isoFormat('LLLL') }}</td>
                                         <td>{{ $purchase->delivery_address }}</td>
                                         <td>{{ $purchase->stripe_id }}</td>
-                                        {{-- <td>
-                                           @if( $purchase->total_paid > 0)
-                                                <span class="badge badge-success">{{ __('Paid') }}</span>
-                                           @else
-                                                <span class="badge badge-warning">{{ __('Not Paid') }}</span>
-                                           @endif
-                                        </td>
-                                  --}}
                                     </tr>
                                 @endforeach
                             </tbody>
