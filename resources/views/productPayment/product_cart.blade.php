@@ -63,7 +63,7 @@
                         </button>
                      </div>
                      <div class="clearfix pt-3">
-                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#checkoutModal">Proceed To Checkout</button>
+                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#checkoutModal">Get The Product</button>
                      </div>
                   </div>
                </div>
@@ -74,10 +74,10 @@
 
    <!-- Add the necessary modal HTML markup -->
    <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="checkoutModalLabel">Delivery Address</h5>
+               <h5 class="modal-title" id="checkoutModalLabel">Enter Your Delivery Address</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                </button>
@@ -105,7 +105,7 @@
                   <input type="hidden" name="id" value="{{ $product_item->id }}">
                   <input type="hidden" name="quantity" value="" id="hiddenQuantity">
                   <input type="hidden" name="price" value="{{ $product_item->discounted_price }}" id="hiddenPrice">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Proceed To Checkout</button>
                </form>
             </div>
          </div>
@@ -219,6 +219,7 @@
          showLessBtn.style.display = 'none';
       });
    });
+ 
 </script>
 
 <style>
