@@ -4,6 +4,11 @@
         <a class="nav-link" href="{{ route('orders.index') }}">
             <i class="ni ni-basket text-orange"></i> {{ __('My Orders') }}
         </a>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('purchase.list') }}">
+                <i class="ni ni-cart text-info"></i> {{ __('Purchase List') }}
+            </a>
+        </li>
     </li>
     @endif
     @if (config('app.isft'))

@@ -109,8 +109,11 @@ class AdminProductController extends Controller
     }
 
     public function purchaseList(){
-        $purchases =  ProductPayment::with('product', 'user', 'restaurant')->paginate(10);        
+       $purchases =  ProductPayment::with('product', 'user', 'restaurant')->orderBy('id', 'desc')->paginate(10);        
         if (auth()->user()->hasRole('admin')) {
+            return view('restorants.product_purchase_list', compact('purchases'));
+        }else{
+            $purchases =  ProductPayment::where('user_id', auth()->user()->id)->with('product', 'user', 'restaurant')->paginate(10);        
             return view('restorants.product_purchase_list', compact('purchases'));
         }
     }

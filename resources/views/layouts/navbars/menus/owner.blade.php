@@ -45,6 +45,11 @@
                 <i class="ni ni-books text-success"></i> {{ __('Pdf Menu') }}
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('purchase.list') }}">
+                <i class="ni ni-cart text-info"></i> {{ __('Purchase List') }}
+            </a>
+        </li>
     @endif
     @if(config('app.isft'))
         <li class="nav-item">

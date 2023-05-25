@@ -1,5 +1,6 @@
 @extends('layouts.front', ['class' => ''])
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 @section('content')
 <section class="section-profile-cover section-shaped my--1 d-none d-md-none d-lg-block d-lx-block">
    <!-- Circles background -->
@@ -72,36 +73,50 @@
    </div>
 
    <!-- Add the necessary modal HTML markup -->
-<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header">
-            <h5 class="modal-title" id="checkoutModalLabel">Delivery Address</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-            </button>
-         </div>
-         <div class="modal-body">
-            <form action="{{ route('checkout') }}" method="POST" enctype="multipart/form-data">
-               @csrf
-               <div class="form-group">
-                  <label for="address">Address</label>
-                  <textarea class="form-control" id="address" name="delivery_address" rows="3" required></textarea>
-               </div>
-               <!-- Add more form fields for other details if needed -->
-               <input type="hidden" name="id" value="{{ $product_item->id }}">
-               <input type="hidden" name="quantity" value="" id="hiddenQuantity">
-               <input type="hidden" name="price" value="{{ $product_item->discounted_price }}" id="hiddenPrice">
-               <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+   <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="checkoutModalLabel">Delivery Address</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form action="{{ route('checkout') }}" method="POST" enctype="multipart/form-data">
+                  @csrf
+                  <div class="form-group">
+                     <label for="address">Address</label>
+                     <input type="text" class="form-control" id="address" name="address" required>
+                  </div>
+                  <div class="form-group">
+                     <label for="city">City</label>
+                     <input type="text" class="form-control" id="city" name="city" required>
+                  </div>
+                  <div class="form-group">
+                     <label for="state">State / Province / Division</label>
+                     <input type="text" class="form-control" id="state" name="state" required>
+                  </div>
+                  <div class="form-group">
+                     <label for="zipcode">Zip Code</label>
+                     <input type="text" class="form-control" id="zipcode" name="zipcode" required>
+                  </div>
+                  <!-- Add more form fields for other details if needed -->
+                  <input type="hidden" name="id" value="{{ $product_item->id }}">
+                  <input type="hidden" name="quantity" value="" id="hiddenQuantity">
+                  <input type="hidden" name="price" value="{{ $product_item->discounted_price }}" id="hiddenPrice">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+               </form>
+            </div>
          </div>
       </div>
    </div>
-</div>
 </section>
+
 <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <script type="text/javascript">
    function cartPlus() {
       var quantity = document.querySelector('.quantity');
@@ -113,18 +128,18 @@
       quantity.innerHTML = updatedValue;
       document.getElementById('totalPrice').innerText = '$' + updatedPrice.toFixed(2);
       console.log("Quantity Added:", updatedValue);
-   
+
       // Update hidden inputs
       document.getElementById('hiddenQuantity').value = updatedValue;
       document.getElementById('hiddenPrice').value = updatedPrice.toFixed(2);
    }
-   
+
    function cartMinus() {
       var quantity = document.querySelector('.quantity');
       var mainPrice = document.getElementById('totalPrice').innerText.replace('$', '');
       var price = parseFloat(mainPrice);
       console.log('Price after minus:', mainPrice);
-   
+
       var value = parseInt(quantity.innerHTML);
       if (value > 1) {
          var updatedValue = value - 1;
@@ -132,13 +147,13 @@
          quantity.innerHTML = updatedValue;
          document.getElementById('totalPrice').innerText = '$' + updatedPrice.toFixed(2);
          console.log("Quantity Removed:", updatedValue);
-   
+
          // Update hidden inputs
          document.getElementById('hiddenQuantity').value = updatedValue;
          document.getElementById('hiddenPrice').value = updatedPrice.toFixed(2);
       }
    }
-   
+
    // Initialize Swiper
    var swiper = new Swiper('.swiper-container', {
       slidesPerView: 4,
@@ -165,77 +180,69 @@
             spaceBetween: 10
          },
       },
-   
    });
-   
+
    // Gallery image click event handler
    document.addEventListener('DOMContentLoaded', function() {
       const galleryImages = document.querySelectorAll('.gallery-image');
       const mainImage = document.getElementById('mainImage');
-   
+
       galleryImages.forEach(function(image) {
          image.addEventListener('click', function() {
             swiper.slideTo(Array.from(galleryImages).indexOf(image), 900, false); // Slide to the clicked image
-   
+
             mainImage.src = image.src;
          });
       });
    });
+
    // Read More button click event handler
    document.addEventListener('DOMContentLoaded', function() {
       const readMoreBtn = document.getElementById('readMoreBtn');
       const showLessBtn = document.getElementById('showLessBtn');
       const descriptionShort = document.getElementById('descriptionShort');
       const descriptionFull = document.getElementById('descriptionFull');
-   
+
       readMoreBtn.addEventListener('click', function() {
          descriptionShort.style.display = 'none';
          descriptionFull.style.display = 'block';
-   
+
          readMoreBtn.style.display = 'none';
          showLessBtn.style.display = 'inline';
       });
-   
+
       showLessBtn.addEventListener('click', function() {
          descriptionShort.style.display = 'block';
          descriptionFull.style.display = 'none';
-   
+
          readMoreBtn.style.display = 'inline';
          showLessBtn.style.display = 'none';
       });
    });
 </script>
+
 <style>
    .description-cus {
-   color: #999;
-   font-weight: 500;
-   font-style: normal;
+      color: #999;
+      font-weight: 500;
+      font-style: normal;
    }
+
    .cus-quantity {
-   font-size: 15px;
-   font-weight: 700;
+      font-size: 15px;
+      font-weight: 700;
    }
-   .img-cus-gallery{
-   height: 93px !important;
-   width: 150px !important;
-   object-fit: cover;
-   }
-   .img-cus-product-main{
-   width: 620px;
-   height: 440px;
-   object-fit: cover;
-   }
-   @media (min-width: 268px) and (max-width: 767.98px){
-      .img-cus-product-main{
-      width: 520px;
-      height: 280px;
-      object-fit: cover;
-      }
-      .img-cus-gallery{
-      height: 75px !important;
+
+   .img-cus-gallery {
+      height: 93px !important;
       width: 150px !important;
       object-fit: cover;
-      }
+   }
+
+   .img-cus-product-main {
+      width: 620px;
+      height: 480px;
+      object-fit: cover;
    }
 </style>
 @endsection

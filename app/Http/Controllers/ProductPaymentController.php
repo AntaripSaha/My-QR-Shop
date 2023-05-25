@@ -28,12 +28,14 @@ class ProductPaymentController extends Controller
     }
     public function showCheckout(Request $request)
     {
+        
+        $delivery_address = $request->address.'; '.$request->city.'; '.$request->state.'; '.$request->zipcode;
         $product_item = Product::where('id', $request->id)->first();
         Stripe::setApiKey(env('STRIPE_SECRET'));
             // Store the product ID in the session
         session()->put('product_id', $request->id);
         session()->put('product_quantity', $request->quantity);
-        session()->put('delivery_address', $request->delivery_address);
+        session()->put('delivery_address', $delivery_address);
         // Create a new Stripe Checkout session
          $session = Session::create([
             'payment_method_types' => ['card'],
@@ -62,6 +64,7 @@ class ProductPaymentController extends Controller
 
     public function checkoutSuccess(Request $request)
     {
+        
         $product_quantity =  $request->session()->get('product_quantity');
         if($product_quantity){
             $product_quantity =  $request->session()->get('product_quantity');
@@ -82,12 +85,5 @@ class ProductPaymentController extends Controller
         $product_payment->save();
         // Redirect or display a success message
         return view('productPayment.success');
-    }
-
-    public function checkoutCancel()
-    {
-        // Logic for cancelled payment
-        // This is the route defined as the cancel URL in the Stripe session
-        return view('checkout.cancel');
     }
 }

@@ -26,6 +26,9 @@ Route::post('/payment-product/{id?}', 'ProductPaymentController@payment')->name(
 
 Route::post('/order-product', 'OrderController@storeProduct')->name('order.product.store');
 
+    //Admin, Restaurant, User Product Purchase List
+    Route::get('purchase-list', 'AdminProductController@purchaseList')->name('purchase.list');
+
 
 Route::post('/checkout', 'ProductPaymentController@showCheckout')->name('checkout');
 Route::get('/checkout/success', 'ProductPaymentController@checkoutSuccess')->name('checkout.success');
@@ -84,10 +87,9 @@ Route::group(['middleware' => ['auth','impersonate']], function () {
         Route::post('product_store', 'AdminProductController@store')->name('product.store');
         Route::get('product_status/{id?}/{status?}', 'AdminProductController@status')->name('product.status');
         Route::get('product_remove/{id?}', 'AdminProductController@remove')->name('product.remove');
-
+        //Admin, Product Purchase List
         Route::get('product-purchase-list', 'AdminProductController@purchaseList')->name('product.purchase.list');
 
- 
         // Landing page settings 
         Route::get('landing', 'SettingsController@landing')->name('landing');
         Route::prefix('landing')->name('landing.')->group(function () {

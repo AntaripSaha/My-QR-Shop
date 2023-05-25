@@ -3,6 +3,7 @@
 @section('admin_title')
     {{__('Purchase History')}}
 @endsection
+
 @section('content')
     @include('restorants.partials.modals')
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
@@ -24,6 +25,7 @@
                     </div>
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
+                            <!-- Table headers and rows go here -->
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">{{ __('Name') }}</th>
@@ -53,7 +55,7 @@
                                         <td>{{ $purchase->product_quantity }}</td>
                                         <td>{{ $purchase->total_paid }}</td>
                                         <td>{{ $purchase->created_at->locale(Config::get('app.locale'))->isoFormat('LLLL') }}</td>
-                                        <td>{{ $purchase->delivery_address }}</td>
+                                        <td style="width: 6rem; white-space: pre-wrap !important;">{{ $purchase->delivery_address }}</td>
                                         <td>{{ $purchase->stripe_id }}</td>
                                     </tr>
                                 @endforeach
@@ -71,6 +73,6 @@
         @include('layouts.footers.auth')
     </div>
     <script type="text/javascript">
-        var resUrl="{{ route('admin.restaurants.edit', 0) }}";
+        var resUrl = "{{ route('admin.restaurants.edit', 0) }}";
     </script>
 @endsection
