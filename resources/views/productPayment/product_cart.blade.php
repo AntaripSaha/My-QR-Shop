@@ -1,4 +1,4 @@
-@extends('layouts.front', ['class' => ''])
+@extends('productPayment.lay', ['class' => ''])
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 @section('content')

@@ -1,4 +1,4 @@
-<section id="product" class="section section-sm">
+<section id="" class="section section-sm">
     <div class="container">
         <div class="row justify-content-center mb-2 mb-md-2">
             <div class="col-12 col-md-8 text-center">

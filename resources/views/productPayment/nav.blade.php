@@ -1,9 +1,8 @@
-<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg headroom py-lg-3 px-lg-6 navbar-light navbar-theme-primary">
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg headroom py-lg-3 px-lg-6 navbar-light navbar-theme-primary bg-primary fixed-top">
     <div class="container">
         <a class="navbar-brand @@logo_classes" href="/">
             <img class="navbar-brand-dark common" src="{{ config('global.site_logo_dark') }}" height="35" alt="Logo">
-            <img class="navbar-brand-light common" src="{{ config('global.site_logo') }}" height="35" alt="Logo">
-        </a>
+         </a>
         <div class="navbar-collapse collapse" id="navbar_global">
             <div class="navbar-collapse-header">
                 <div class="row">
@@ -21,20 +20,20 @@
             </div>
             <ul class="navbar-nav navbar-nav-hover justify-content-center">
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#product" class="nav-link">{{ __('qrlanding.product') }}</a>
+                    <a data-scroll href="{{route('front')}}#product" class="nav-link text-white" style="font-size: 16px;">{{ __('qrlanding.product') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#pricing" class="nav-link" >{{ __('qrlanding.pricing') }}</a>
+                    <a data-scroll href="{{route('front')}}#pricing" class="nav-link text-white" style="font-size: 16px;" >{{ __('qrlanding.pricing') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#testimonials" class="nav-link">{{ __('qrlanding.testimonials') }}</a>
+                    <a data-scroll href="{{route('front')}}#testimonials" class="nav-link text-white" style="font-size: 16px;">{{ __('qrlanding.testimonials') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#demo" class="nav-link">{{ __('qrlanding.demo') }}</a>
+                    <a data-scroll href="{{route('front')}}#demo" class="nav-link text-white" style="font-size: 16px;">{{ __('qrlanding.demo') }}</a>
                 </li>
                
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="{{route('generateqr')}}" class="nav-link">QrGenerator</a>
+                    <a data-scroll href="{{route('generateqr')}}" class="nav-link text-white" style="font-size: 16px;">QrGenerator</a>
                 </li>
                 
                 @if(!empty(config('global.facebook')))
@@ -76,3 +75,4 @@
         </div>
     </div>
 </nav>
+
