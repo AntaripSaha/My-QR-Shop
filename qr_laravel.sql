@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 11, 2023 at 04:31 AM
+-- Generation Time: May 25, 2023 at 06:25 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.1.13
 
@@ -114,10 +114,10 @@ CREATE TABLE IF NOT EXISTS `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `restorant_id`, `created_at`, `updated_at`, `order_index`, `active`, `deleted_at`) VALUES
-(1, 'Salads', 1, '2023-03-30 08:25:56', '2023-05-01 23:51:47', 3, 1, NULL),
-(2, 'Pizza', 1, '2023-03-30 08:25:56', '2023-05-08 00:56:04', 1, 1, NULL),
-(3, 'Fresh Pasta and Risotto', 1, '2023-03-30 08:25:57', '2023-05-01 23:51:39', 4, 1, NULL),
-(4, 'Lasagna', 1, '2023-03-30 08:25:57', '2023-05-08 00:56:04', 2, 1, NULL),
+(1, 'Salads', 1, '2023-03-30 08:25:56', '2023-04-27 13:08:36', 2, 1, NULL),
+(2, 'Pizza', 1, '2023-03-30 08:25:56', '2023-04-27 13:08:36', 1, 1, NULL),
+(3, 'Fresh Pasta and Risotto', 1, '2023-03-30 08:25:57', '2023-04-02 11:18:56', 3, 1, NULL),
+(4, 'Lasagna', 1, '2023-03-30 08:25:57', '2023-04-02 11:18:56', 4, 1, NULL),
 (5, 'Burgers', 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 0, 1, NULL),
 (6, 'Garnish', 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 0, 1, NULL),
 (7, 'Salads', 2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 0, 1, NULL),
@@ -184,7 +184,7 @@ INSERT INTO `categories` (`id`, `name`, `restorant_id`, `created_at`, `updated_a
 (68, 'Pizza', 16, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 0, 1, NULL),
 (69, 'Milk', 27, '2023-04-03 10:21:27', '2023-04-03 10:21:27', 1, 1, NULL),
 (70, 'burger', 26, '2023-04-04 09:26:04', '2023-04-04 09:26:04', 1, 1, NULL),
-(71, 'Rice', 1, '2023-05-07 23:42:54', '2023-05-07 23:42:54', 5, 1, NULL);
+(71, 'Biriyani', 1, '2023-05-09 14:02:06', '2023-05-09 14:02:06', 5, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -274,20 +274,20 @@ CREATE TABLE IF NOT EXISTS `companies` (
   UNIQUE KEY `restorants_name_unique` (`name`),
   UNIQUE KEY `restorants_subdomain_unique` (`subdomain`),
   KEY `restorants_user_id_foreign` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `companies`
 --
 
 INSERT INTO `companies` (`id`, `created_at`, `updated_at`, `name`, `subdomain`, `logo`, `cover`, `active`, `user_id`, `lat`, `lng`, `address`, `phone`, `minimum`, `description`, `fee`, `static_fee`, `radius`, `is_featured`, `city_id`, `views`, `can_pickup`, `can_deliver`, `self_deliver`, `free_deliver`, `whatsapp_phone`, `fb_username`, `do_covertion`, `currency`, `payment_info`, `mollie_payment_key`, `deleted_at`, `can_dinein`) VALUES
-(1, '2023-03-30 08:25:56', '2023-05-11 00:25:18', 'Ovenstory', 'ovenstory', '1e1d0803-19d0-4862-82b6-5b609a740d96', '672827ed-8852-4444-bb91-79047bc2cbe5', 1, 2, '40.654509', '-73.948990', '6 Yukon Drive Raeford, NC 28376', '+15306259694', '10', 'italian, pasta, pizza', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 79, 1, 1, 0, 0, '+38971605048', NULL, 1, 'USD', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
+(1, '2023-03-30 08:25:56', '2023-05-24 05:36:23', 'Ovenstory', 'ovenstory', '3b0b19dc-9a2f-4eba-83b9-7b914da0ff27', '672827ed-8852-4444-bb91-79047bc2cbe5', 1, 2, '40.654509', '-73.948990', '6 Yukon Drive Raeford, NC 28376', '+15306259694', '10', 'italian, pasta, pizza', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 64, 1, 1, 0, 0, '+38971605048', NULL, 1, 'USD', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (2, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 'Oasis Burgers', 'oasisburgers', 'https://foodtiger.mobidonia.com/uploads/restorants/c8d27bcc-54da-4c18-b8e6-f1414c71612c', '', 1, 2, '40.588894', '-73.939175', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'burgers, drinks, best chicken', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (3, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 'Brooklyn Taco', 'brooklyntaco', 'https://foodtiger.mobidonia.com/uploads/restorants/3e571ad8-e161-4245-91d9-88b47d6d6770', '', 1, 2, '40.607402', '-73.987272', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'yummy taco, wraps, fast food', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (4, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 'The Brooklyn tree', 'thebrooklyntree', 'https://foodtiger.mobidonia.com/uploads/restorants/6fa5233f-00f3-4f52-950c-5a1705583dfc', '', 1, 2, '40.621997', '-73.938831', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'drinks, lunch, bbq', 0.00, 0.00, '[{\"lat\": 40.61811135844185, \"lng\": -74.04154967363282}, {\"lat\": 40.593088644275994, \"lng\": -74.00447081621094}, {\"lat\": 40.57483700944677, \"lng\": -74.01271056230469}, {\"lat\": 40.57222922648421, \"lng\": -73.94816588457032}, {\"lat\": 40.58318123192112, \"lng\": -73.87812804277344}, {\"lat\": 40.620196161732025, \"lng\": -73.89117430742188}, {\"lat\": 40.64520872605633, \"lng\": -73.85340880449219}, {\"lat\": 40.71862893820799, \"lng\": -73.96327208574219}, {\"lat\": 40.680627151592745, \"lng\": -74.01957701738282}, {\"lat\": 40.66552453494284, \"lng\": -74.00447081621094}]', 0, 2, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (5, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 'Awang Italian Restorant', 'awangitalianrestorant', 'https://foodtiger.mobidonia.com/uploads/restorants/4a2067cb-f39c-4b26-83ef-9097512d3328', '', 1, 2, '40.716729', '-73.793035', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'italian, pasta, pizza', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (6, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 'Wendy Taco', 'wendytaco', 'https://foodtiger.mobidonia.com/uploads/restorants/6f9e8892-4a28-4c99-ab24-57179a1424b9', '', 1, 2, '40.751418', '-73.809531', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'yummy taco, wraps, fast food', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
-(7, '2023-03-30 08:25:58', '2023-04-29 23:16:45', 'Burger 2Go', 'burger2go', 'https://foodtiger.mobidonia.com/uploads/restorants/80a49037-07e9-4e28-b23e-66fd641c1c77', '', 1, 2, '40.753759', '-73.799224', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'burgers, drinks, best chicken', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 87, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
+(7, '2023-03-30 08:25:58', '2023-04-27 08:00:23', 'Burger 2Go', 'burger2go', 'https://foodtiger.mobidonia.com/uploads/restorants/80a49037-07e9-4e28-b23e-66fd641c1c77', '', 1, 2, '40.753759', '-73.799224', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'burgers, drinks, best chicken', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 86, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (8, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 'Titan Foods', 'titanfoods', 'https://foodtiger.mobidonia.com/uploads/restorants/56e90ea7-5321-4cfd-8b2c-918ccd3c3f77', '', 1, 2, '40.749078', '-73.812623', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'drinks, lunch, bbq', 0.00, 0.00, '[{\"lat\": 40.72538611607021, \"lng\": -73.96387365315225}, {\"lat\": 40.65093145404635, \"lng\": -73.85195043537881}, {\"lat\": 40.62175171970407, \"lng\": -73.76680639241006}, {\"lat\": 40.64051158441822, \"lng\": -73.71462133381631}, {\"lat\": 40.670724724281335, \"lng\": -73.67891576741006}, {\"lat\": 40.76388243617103, \"lng\": -73.74758031819131}, {\"lat\": 40.79351981360113, \"lng\": -73.84851720783975}, {\"lat\": 40.78728146460242, \"lng\": -73.91100194905069}]', 0, 3, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (9, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 'Pizza Manhattn', 'pizzamanhattn', 'https://foodtiger.mobidonia.com/uploads/restorants/0102bebe-b6c4-46b0-9195-ee06bca71a37', '', 1, 2, '40.726358', '-73.996879', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'italian, international, pasta', 0.00, 0.00, '[{\"lat\": 40.70279189834177, \"lng\": -74.01818193403926}, {\"lat\": 40.711640621663136, \"lng\": -73.97972978560176}, {\"lat\": 40.798503799354734, \"lng\": -73.91381181685176}, {\"lat\": 40.83487975446948, \"lng\": -73.94745744673457}, {\"lat\": 40.750665070026194, \"lng\": -74.01200212446895}]', 0, 4, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
 (10, '2023-03-30 08:25:58', '2023-03-30 08:25:58', 'il Buco', 'ilbuco', 'https://foodtiger.mobidonia.com/uploads/restorants/4384df9b-9656-49d1-bfc1-9b5e85e1193a', '', 1, 2, '40.724883', '-74.001985', '6 Yukon Drive Raeford, NC 28376', '(530) 625-9694', '10', 'tacos, wraps, Quesadilla', 0.00, 0.00, '[{\"lat\": 40.70279189834177, \"lng\": -74.01818193403926}, {\"lat\": 40.711640621663136, \"lng\": -73.97972978560176}, {\"lat\": 40.798503799354734, \"lng\": -73.91381181685176}, {\"lat\": 40.83487975446948, \"lng\": -73.94745744673457}, {\"lat\": 40.750665070026194, \"lng\": -74.01200212446895}]', 0, 4, 0, 1, 1, 0, 0, '+38971605048', NULL, 1, '', 'We accept Cash On Deliver and direct payments. DEMO PAYMENT', 'test_W7vgVS4bUTVarzBm39wjUk7SRV3Aek', NULL, 1),
@@ -306,12 +306,13 @@ INSERT INTO `companies` (`id`, `created_at`, `updated_at`, `name`, `subdomain`, 
 (23, '2023-04-02 05:53:05', '2023-04-02 05:53:05', 'Test Antatrip', 'testantatrip', '', '', 1, 41, '0', '0', '', '+8801713702979', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
 (24, '2023-04-02 07:36:30', '2023-04-02 07:36:30', 'testtwoAn', 'testtwoan', '', '', 1, 42, '0', '0', '', '+1524154648844', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
 (25, '2023-04-02 07:39:45', '2023-04-03 10:18:30', 'tryone', 'tryone', '', '', 1, 43, '23.7489649', '90.3850897', '', '+1524154648844', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', '2023-04-03 10:18:30', 1),
-(26, '2023-04-03 09:15:33', '2023-04-18 04:20:02', 'test', 'test', '', '', 1, 44, '0', '0', '', '+101626060097', '0', '', 0.00, 0.00, '{}', 0, NULL, 5, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
+(26, '2023-04-03 09:15:33', '2023-05-18 09:42:50', 'test', 'test', '', '', 1, 44, '0', '0', '', '+101626060097', '0', '', 0.00, 0.00, '{}', 0, NULL, 11, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
 (27, '2023-04-03 10:18:45', '2023-04-19 05:03:59', 'Antarip Saha', 'antaripsaha', '', '', 1, 45, '23.7489417', '90.3850897', '', '+101713702979', '0', '', 0.00, 0.00, '{}', 0, NULL, 1, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
 (28, '2023-04-06 04:59:08', '2023-04-06 11:35:03', 'abc', 'abc', '', '', 1, 46, '0', '0', '', '+880131965745', '0', '', 0.00, 0.00, '{}', 0, NULL, 1, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
-(29, '2023-04-19 05:07:39', '2023-04-19 05:07:39', 'ddd', 'ddd', '', '', 1, 48, '0', '0', '', '+101713702979', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
+(29, '2023-04-19 05:07:39', '2023-05-25 00:23:43', 'New Ovenstory Dhaka', 'ddd', '', '', 1, 48, '23.7505189', '90.3864142', 'Uttara 10, Dhaka', '+8801713702979', '0', 'Test Purpose', 0.00, 0.00, '{}', 0, NULL, 1, 1, 1, 0, 0, NULL, NULL, 1, 'USD', '', '', NULL, 1),
 (30, '2023-04-26 14:02:18', '2023-04-26 14:02:18', 'Customer\'s New Resto', 'customersnewresto', '', '', 1, 50, '0', '0', '', '+11221215454', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
-(31, '2023-04-27 05:43:36', '2023-04-27 07:09:47', 'SHadow', 'shadow', '', '', 1, 51, '23.7491475', '90.3864694', '', '+8801947295072', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1);
+(31, '2023-04-27 05:43:36', '2023-04-27 07:09:47', 'SHadow', 'shadow', '', '', 1, 51, '23.7491475', '90.3864694', '', '+8801947295072', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1),
+(32, '2023-05-16 12:25:20', '2023-05-24 05:05:21', 'Barrett Short', 'barrettshort', '', '', 1, 52, '23.7505189', '90.3864142', '', '+17468312832', '0', '', 0.00, 0.00, '{}', 0, NULL, 0, 1, 1, 0, 0, NULL, NULL, 1, '', '', '', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -329,7 +330,7 @@ CREATE TABLE IF NOT EXISTS `configs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `configs`
@@ -372,8 +373,13 @@ INSERT INTO `configs` (`id`, `value`, `key`, `model_type`, `model_id`, `created_
 (34, '30', 'delivery_interval_in_minutes', 'App\\Restorant', 1, '2023-04-27 05:36:43', '2023-04-27 05:36:43'),
 (35, '0', 'disable_callwaiter', 'App\\Restorant', 31, '2023-04-27 05:43:36', '2023-04-27 05:43:36'),
 (36, '0', 'disable_ordering', 'App\\Restorant', 31, '2023-04-27 05:43:36', '2023-04-27 05:43:36'),
-(37, 'daf1a781-0e49-499e-a9e7-2c87b6d558ae', 'resto_wide_logo', 'App\\Restorant', 1, '2023-04-27 06:06:15', '2023-04-27 02:30:55'),
-(38, '2391897b-1522-49b4-9b10-8cacdc7261bf', 'resto_wide_logo_dark', 'App\\Restorant', 1, '2023-04-27 06:06:15', '2023-04-27 02:30:55');
+(37, '84324967-3f14-46fd-8040-79711fb108e5', 'resto_wide_logo', 'App\\Restorant', 1, '2023-04-27 06:06:15', '2023-05-03 06:00:25'),
+(38, '314cf153-1800-442f-8b96-225893a74f28', 'resto_wide_logo_dark', 'App\\Restorant', 1, '2023-04-27 06:06:15', '2023-05-03 06:00:25'),
+(39, '0', 'disable_callwaiter', 'App\\Restorant', 32, '2023-05-16 12:25:20', '2023-05-16 12:25:20'),
+(40, '0', 'disable_ordering', 'App\\Restorant', 32, '2023-05-16 12:25:20', '2023-05-16 12:25:20'),
+(41, '0', 'disable_continues_ordering', 'App\\Restorant', 29, '2023-05-24 04:30:26', '2023-05-24 04:30:26'),
+(42, '0', 'time_to_prepare_order_in_minutes', 'App\\Restorant', 29, '2023-05-24 04:30:26', '2023-05-24 04:30:26'),
+(43, '30', 'delivery_interval_in_minutes', 'App\\Restorant', 29, '2023-05-24 04:30:26', '2023-05-24 04:30:26');
 
 -- --------------------------------------------------------
 
@@ -1056,7 +1062,7 @@ CREATE TABLE IF NOT EXISTS `hours` (
   `restorant_id` bigint UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   KEY `hours_restorant_id_foreign` (`restorant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `hours`
@@ -1093,7 +1099,8 @@ INSERT INTO `hours` (`id`, `created_at`, `updated_at`, `0_from`, `0_to`, `1_from
 (28, '2023-04-06 04:59:08', '2023-04-06 04:59:08', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 28),
 (29, '2023-04-19 05:07:39', '2023-04-19 05:07:39', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 29),
 (30, '2023-04-26 14:02:18', '2023-04-26 14:02:18', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 30),
-(31, '2023-04-27 05:43:36', '2023-04-27 05:43:36', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 31);
+(31, '2023-04-27 05:43:36', '2023-04-27 05:43:36', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 31),
+(32, '2023-05-16 12:25:20', '2023-05-16 12:25:20', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', '9:00 AM', '5:00 AM', 32);
 
 -- --------------------------------------------------------
 
@@ -1119,7 +1126,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `discounted_price` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `items_category_id_foreign` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=352 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=344 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `items`
@@ -1469,16 +1476,7 @@ INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id
 (340, 'Marco Polo Pizza', 'tomato sauce, Sabelli mozzarella, chicken fillet, smoked cheese, corn, extra virgin olive oil', 'https://foodtiger.mobidonia.com/uploads/restorants/f77218a9-676e-434e-ac5b-4ae3dc5795b3', 14.99, 68, '2023-03-30 08:26:00', '2023-03-30 08:26:00', 1, 1, 21.00, NULL, 0, 0),
 (341, 'Dano', 'dd', 'e89dddeb-6ec6-45c2-913b-d48aab0d70c4', 10, 69, '2023-04-03 10:21:59', '2023-04-03 10:21:59', 1, 0, 0.00, NULL, 0, 0),
 (342, 'hi', 'nhfghgfc', '', 123, 70, '2023-04-04 09:26:26', '2023-04-04 09:26:26', 1, 0, 0.00, NULL, 0, 0),
-(343, 'Pasta Basta', 'Oven Baked Pasta Basta', '7240d514-9889-4727-acff-ee166fa4912a', 5, 1, '2023-04-30 06:05:47', '2023-04-30 06:05:47', 1, 0, 0.00, NULL, 0, 0);
-INSERT INTO `items` (`id`, `name`, `description`, `image`, `price`, `category_id`, `created_at`, `updated_at`, `available`, `has_variants`, `vat`, `deleted_at`, `enable_system_variants`, `discounted_price`) VALUES
-(344, 'fried rice', 'fried rice', '146d0344-6081-4793-bcff-709382954a62', 10, 71, '2023-05-07 23:45:24', '2023-05-07 23:45:24', 1, 0, 0.00, NULL, 0, 0),
-(345, 'fried rice  2', 'fried rice 2', '87004045-fbbb-4e4a-afa5-21636c5aec6a', 12, 71, '2023-05-07 23:45:39', '2023-05-07 23:45:39', 1, 0, 0.00, NULL, 0, 0),
-(346, 'fried rice 3', 'fried rice 3', '82503504-c9c7-458c-86c4-febdbe27d470', 12, 71, '2023-05-07 23:46:00', '2023-05-07 23:46:00', 1, 0, 0.00, NULL, 0, 0),
-(347, 'fried rice 4', 'fried rice 4', '1f139e9d-313a-4cc4-8fa9-ab205f170a3e', 11, 71, '2023-05-07 23:46:17', '2023-05-07 23:46:17', 1, 0, 0.00, NULL, 0, 0),
-(348, 'fried rice 5', 'fried rice 5', '4f18137b-ea73-450d-8fb3-5b8a13142b26', 10, 71, '2023-05-07 23:46:36', '2023-05-07 23:46:36', 1, 0, 0.00, NULL, 0, 0),
-(349, 'fried rice 6', 'fried rice 6', '4d11ab95-8086-41ab-bdfe-51bc0911852f', 11, 71, '2023-05-07 23:47:13', '2023-05-07 23:47:13', 1, 0, 0.00, NULL, 0, 0),
-(350, 'fried rice  7', 'fried rice 7', '6f902b3f-5bdd-4988-8b10-0a0c743b6ecc', 11, 71, '2023-05-07 23:47:49', '2023-05-07 23:47:49', 1, 0, 0.00, NULL, 0, 0),
-(351, 'fried rice 8', 'fried rice 6', '24c5c591-d067-4077-ab6b-4960489dde9a', 12, 71, '2023-05-07 23:48:09', '2023-05-07 23:48:09', 1, 0, 0.00, NULL, 0, 0);
+(343, 'Kacci', 'Mutton special kacco biriyani.', '730b368b-eeb1-4209-b411-b60e4260e842', 200, 71, '2023-05-09 14:02:40', '2023-05-09 14:02:40', 1, 0, 0.00, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1543,7 +1541,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -1647,9 +1645,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (95, '2022_12_23_100529_update_orders_with_id_per_vendor', 2),
 (96, '2022_12_27_012420_update_posts_description_table', 2),
 (97, '2023_01_23_175344_large_numbers', 2),
-(98, '2025_07_21_162114_make_pure_saas', 2),
-(99, '2023_04_26_125306_create_products_table', 3),
-(100, '2023_05_10_081951_create_restaurant_menus_table', 3);
+(98, '2025_07_21_162114_make_pure_saas', 2);
 
 -- --------------------------------------------------------
 
@@ -1736,7 +1732,9 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (2, 'App\\User', 48),
 (4, 'App\\User', 49),
 (2, 'App\\User', 50),
-(2, 'App\\User', 51);
+(2, 'App\\User', 51),
+(2, 'App\\User', 52),
+(4, 'App\\User', 53);
 
 -- --------------------------------------------------------
 
@@ -1757,6 +1755,17 @@ CREATE TABLE IF NOT EXISTS `notifications` (
   PRIMARY KEY (`id`),
   KEY `notifications_notifiable_type_notifiable_id_index` (`notifiable_type`,`notifiable_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `notifications`
+--
+
+INSERT INTO `notifications` (`id`, `type`, `notifiable_type`, `notifiable_id`, `data`, `read_at`, `created_at`, `updated_at`) VALUES
+('0cb02b31-d13d-4f97-86d3-274ee1e45315', 'App\\Notifications\\OrderNotification', 'App\\User', 2, '{\"title\":\"There is new order\",\"body\":\"You have just received an order\"}', NULL, '2023-05-18 12:49:32', '2023-05-18 12:49:32'),
+('11b173ad-7308-4c34-9981-0b4aacb651de', 'App\\Notifications\\OrderNotification', 'App\\User', 2, '{\"title\":\"There is new order\",\"body\":\"You have just received an order\"}', NULL, '2023-05-21 07:11:49', '2023-05-21 07:11:49'),
+('18a411ef-0ac2-42c2-81d6-ed837fccc80d', 'App\\Notifications\\OrderNotification', 'App\\User', 2, '{\"title\":\"There is new order\",\"body\":\"You have just received an order\"}', NULL, '2023-05-18 12:48:33', '2023-05-18 12:48:33'),
+('b6c043f7-24ea-4829-8095-06784ec1e48d', 'App\\Notifications\\OrderNotification', 'App\\User', 2, '{\"title\":\"There is new order\",\"body\":\"You have just received an order\"}', NULL, '2023-05-21 07:15:55', '2023-05-21 07:15:55'),
+('c98d05f5-87fa-4bf9-9ca4-18b73c1542b0', 'App\\Notifications\\OrderNotification', 'App\\User', 2, '{\"title\":\"There is new order\",\"body\":\"You have just received an order\"}', NULL, '2023-05-24 05:24:35', '2023-05-24 05:24:35');
 
 -- --------------------------------------------------------
 
@@ -2007,7 +2016,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   KEY `orders_restorant_id_foreign` (`restorant_id`),
   KEY `orders_driver_id_foreign` (`driver_id`),
   KEY `orders_employee_id_foreign` (`employee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=601 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=606 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `orders`
@@ -2617,7 +2626,12 @@ INSERT INTO `orders` (`id`, `created_at`, `updated_at`, `address_id`, `client_id
 (597, '2023-03-29 16:56:20', '2023-03-30 08:26:01', NULL, NULL, 2, NULL, 0, 43, NULL, 'paid', 'Recusandae omnis eum rerum occaecati libero. Eos sunt aliquid autem itaque aliquam ut assumenda.', NULL, NULL, NULL, 0.00, 0, 0, 1, '', 0, 0.00, NULL, 26, NULL, NULL, '', NULL, NULL, '', NULL, 0, 0, '000216'),
 (598, '2023-03-30 05:37:27', '2023-03-30 08:26:01', NULL, NULL, 1, NULL, 0, 57, NULL, 'paid', 'Sapiente id soluta tenetur error. Tempora omnis amet eveniet numquam. Laudantium et aut non deleniti aliquam aliquam quia temporibus. Repellendus voluptas quam nesciunt cum dolorem repudiandae quia.', NULL, NULL, NULL, 0.00, 0, 0, 1, '', 0, 0.00, NULL, 9, NULL, NULL, '', NULL, NULL, '', NULL, 0, 0, '000191'),
 (599, '2023-03-30 01:08:51', '2023-03-30 08:26:01', NULL, NULL, 2, NULL, 0, 67, NULL, 'paid', 'Velit et est reprehenderit aut non. Rem exercitationem ipsum iusto et alias. Perferendis ea quia porro voluptatibus. Eum sed est dolores ipsum est modi.', NULL, NULL, NULL, 0.00, 0, 0, 1, '', 0, 0.00, NULL, 27, NULL, NULL, '', NULL, NULL, '', NULL, 0, 0, '000217'),
-(600, '2023-03-29 14:28:25', '2023-03-30 08:26:01', NULL, NULL, 1, NULL, 0, 49, NULL, 'paid', 'Culpa quaerat inventore cum voluptate totam vel quasi. Dolorum dolorum at aut rem. Reiciendis et autem est aut et accusamus eos repellendus.', NULL, NULL, NULL, 0.00, 0, 0, 1, '', 0, 0.00, NULL, 12, NULL, NULL, '', NULL, NULL, '', NULL, 0, 0, '000192');
+(600, '2023-03-29 14:28:25', '2023-03-30 08:26:01', NULL, NULL, 1, NULL, 0, 49, NULL, 'paid', 'Culpa quaerat inventore cum voluptate totam vel quasi. Dolorum dolorum at aut rem. Reiciendis et autem est aut et accusamus eos repellendus.', NULL, NULL, NULL, 0.00, 0, 0, 1, '', 0, 0.00, NULL, 12, NULL, NULL, '', NULL, NULL, '', NULL, 0, 0, '000192'),
+(601, '2023-05-18 12:48:32', '2023-05-18 12:48:33', NULL, NULL, 1, NULL, 0, 11.99, 'stripe', 'unpaid', ' ', NULL, NULL, NULL, 0.00, 0, 0, 3, '', 2.08, 0.00, NULL, 2, NULL, NULL, 'https://myqrshop.com/stripe/payment/pi_3N94NpSFrfnDBpn60Ei6InoR?redirect=https%3A%2F%2Fmyqrshop.com%2FhandleOrderPaymentStripe%2F601', NULL, NULL, 'b2f627fff19fda463cb386442eac2b3d', NULL, 0, 0, '000193'),
+(602, '2023-05-18 12:49:32', '2023-05-18 12:49:32', NULL, NULL, 1, NULL, 0, 11.99, 'cod', 'unpaid', ' ', NULL, NULL, NULL, 0.00, 0, 0, 3, '', 2.08, 0.00, NULL, 4, NULL, NULL, '', NULL, NULL, 'c3992e9a68c5ae12bd18488bc579b30d', NULL, 0, 0, '000194'),
+(603, '2023-05-21 07:11:48', '2023-05-21 07:11:49', NULL, NULL, 1, NULL, 0, 11.99, 'stripe', 'unpaid', ' ', NULL, NULL, NULL, 0.00, 0, 0, 3, '', 2.08, 0.00, NULL, 3, NULL, NULL, 'https://myqrshop.com/stripe/payment/pi_3NA4YaSFrfnDBpn60T9B6ABx?redirect=https%3A%2F%2Fmyqrshop.com%2FhandleOrderPaymentStripe%2F603', NULL, NULL, 'd86ea612dec96096c5e0fcc8dd42ab6d', NULL, 0, 0, '000195'),
+(604, '2023-05-21 07:15:53', '2023-05-21 07:15:55', NULL, NULL, 1, NULL, 0, 11.99, 'stripe', 'unpaid', ' ', NULL, NULL, NULL, 0.00, 0, 0, 3, '', 2.08, 0.00, NULL, 2, NULL, NULL, 'https://myqrshop.com/stripe/payment/pi_3NA4cYSFrfnDBpn61pyDBoDn?redirect=https%3A%2F%2Fmyqrshop.com%2FhandleOrderPaymentStripe%2F604', NULL, NULL, '9cf81d8026a9018052c429cc4e56739b', NULL, 0, 0, '000196'),
+(605, '2023-05-24 05:24:34', '2023-05-24 05:24:35', NULL, NULL, 1, NULL, 0, 11.99, 'stripe', 'unpaid', ' ', NULL, NULL, NULL, 0.00, 0, 0, 3, '', 2.08, 0.00, NULL, 3, NULL, NULL, 'https://myqrshop.com/stripe/payment/pi_3NB8JTSFrfnDBpn61RYQkpZc?redirect=https%3A%2F%2Fmyqrshop.com%2FhandleOrderPaymentStripe%2F605', NULL, NULL, 'c361bc7b2c033a83d663b8d9fb4be56e', NULL, 0, 0, '000197');
 
 -- --------------------------------------------------------
 
@@ -2642,7 +2656,18 @@ CREATE TABLE IF NOT EXISTS `order_has_items` (
   PRIMARY KEY (`id`),
   KEY `order_has_items_order_id_foreign` (`order_id`),
   KEY `order_has_items_item_id_foreign` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `order_has_items`
+--
+
+INSERT INTO `order_has_items` (`id`, `created_at`, `updated_at`, `order_id`, `item_id`, `qty`, `extras`, `vat`, `vatvalue`, `variant_price`, `variant_name`, `kds_finished`) VALUES
+(1, NULL, NULL, 601, 20, 1, '[]', 21.00, 2.08, 11.99, '', 0),
+(2, NULL, NULL, 602, 26, 1, '[]', 21.00, 2.08, 11.99, '', 0),
+(3, NULL, NULL, 603, 23, 1, '[]', 21.00, 2.08, 11.99, '', 0),
+(4, NULL, NULL, 604, 23, 1, '[]', 21.00, 2.08, 11.99, '', 0),
+(5, NULL, NULL, 605, 19, 1, '[]', 21.00, 2.08, 11.99, '', 0);
 
 -- --------------------------------------------------------
 
@@ -2663,7 +2688,18 @@ CREATE TABLE IF NOT EXISTS `order_has_status` (
   KEY `order_has_status_order_id_foreign` (`order_id`),
   KEY `order_has_status_status_id_foreign` (`status_id`),
   KEY `order_has_status_user_id_foreign` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `order_has_status`
+--
+
+INSERT INTO `order_has_status` (`id`, `created_at`, `updated_at`, `order_id`, `status_id`, `user_id`, `comment`) VALUES
+(1, '2023-05-18 12:48:33', NULL, 601, 1, 2, 'Local order'),
+(2, '2023-05-18 12:49:32', NULL, 602, 1, 2, 'Local order'),
+(3, '2023-05-21 07:11:49', NULL, 603, 1, 2, 'Local order'),
+(4, '2023-05-21 07:15:55', NULL, 604, 1, 2, 'Local order'),
+(5, '2023-05-24 05:24:35', NULL, 605, 1, 2, 'Local order');
 
 -- --------------------------------------------------------
 
@@ -2853,18 +2889,98 @@ CREATE TABLE IF NOT EXISTS `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `image`, `rating`, `name`, `description`, `discounted_price`, `current_price`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '/images/product/p1.jpg', '1', 'test 1', 'test 1 description Lorem description Lorem description Lorem description Lorem description Lorem ', '1', '12', '1', '2023-04-26 07:00:05', '2023-04-26 07:12:00', NULL),
-(2, '/images/product/p2.jpg', '5', 'test 2', 'test 2 description description Lorem ', '10', '12', '1', '2023-04-26 07:09:00', '2023-04-26 07:09:26', NULL),
-(3, '/images/product/p3.jpg', '1', 'test 3', 'test 3 description description Lorem ', '1', '12', '1', '2023-04-26 07:00:05', '2023-04-26 07:12:00', NULL),
-(4, '/images/product/p4.jpg', '1', 'test 4', 'test 4 description description Lorem ', '10', '12', '1', '2023-04-26 07:00:05', '2023-04-26 07:12:00', NULL),
-(5, '/images/product/1682832356.jpg', '4', 'test 5', 'There are platforms where you can make QR code, but no menu. There are platforms where you can create a menu but not design your QR', '20', '40', '1', '2023-04-30 01:25:56', '2023-05-11 00:06:16', NULL);
+(14, '/images/product/1684838506.png', '5', 'DIGITAL MENU', 'A digital menu refers to a digitalized version of a menu that is accessible on electronic devices such as smartphones, tablets, or digital displays. Here\'s a brief explanation of what a digital menu entails: Digital Format: A digital menu replaces traditional printed menus with a visually appealing and interactive electronic format. It can be accessed through various mediums, including dedicated mobile apps, websites, QR codes, or digital signage displays. Menu Display: Digital menus showcase the available items, food or beverage descriptions, prices, and any other relevant information. They may include enticing visuals like images or videos to enhance the presentation of the offerings. Accessibility and Convenience: Customers can access the digital menu through their personal devices or screens provided by the establishment. It offers the convenience of browsing the menu at any time, allowing customers to explore the options, view ingredients, and make informed choices. Dynamic Updates: One of the advantages of digital menus is their ability to be updated in real-time. It allows businesses to easily modify menu items, prices, or daily specials, ensuring accurate and up-to-date information for customers. This flexibility also enables instant adjustments for changes in availability or seasonal offerings. Customization and Filtering: Digital menus often provide filtering options, allowing customers to narrow down their choices based on dietary preferences, allergens, or specific requirements. This feature enhances the customer experience by helping them find suitable options more efficiently. Upselling and Promotion: Digital menus can incorporate marketing techniques by strategically promoting high-margin items, combos, or limited-time offers. They can display enticing visuals, suggestive pairings, or interactive elements that encourage customers to explore additional menu items or upgrades. Multilingual and Accessibility Options: Digital menus can support multiple languages, catering to diverse customer bases. Additionally, they can incorporate accessibility features such as adjustable font sizes, text-to-speech capabilities, or alternative language options for better inclusivity. Ordering and Integration: Some digital menus may integrate ordering functionality, allowing customers to place their orders directly through the digital interface. This streamlines the ordering process, reduces wait times, and can be synchronized with the establishment\'s kitchen or point-of-sale systems. Digital menus have gained popularity in various industries, including restaurants, cafes, bars, and hotels, due to their versatility, flexibility, and ability to enhance the customer experience.', '320', '325', '1', '2023-05-23 12:41:46', '2023-05-23 12:41:46', NULL),
+(13, '/images/product/1684838436.png', '5', 'COFFEE SHOPS SCAN ORDERS AND PAY', 'Coffee shops scan orders and pay refers to a convenient method for customers to place their orders and make payments at a coffee shop using their smartphones or mobile devices. Here\'s a short explanation of how the process typically works: 1. Mobile App or QR Code: The coffee shop usually has a dedicated mobile app or a QR code that customers can scan using their smartphone\'s camera. This allows them to access the menu and place their orders digitally. 2. Menu Selection: Once the customer scans the QR code or opens the coffee shop\'s mobile app, they can browse through the menu items and make their selections. The app or digital interface typically provides details about the available beverages, sizes, customization options, and pricing. 3. Customization and Special Requests: Customers can often customize their orders by specifying preferences such as the type of milk, sweetness level, or additional ingredients. They may also have the option to add special requests or instructions for their drinks. 4. Order Confirmation: After selecting their desired items, customers review their order on the app or digital interface. They can verify the items, quantities, and any customizations they made. Once they are satisfied with the order, they proceed to confirm and submit it. 5. Payment Authorization: Following the order confirmation, customers are prompted to select their preferred payment method within the app. They can typically choose from options such as credit/debit cards, mobile payment apps, or stored payment information. 6. Transaction Confirmation: Once the payment is authorized, the customer receives a confirmation of the completed transaction on their device. This confirmation may include an order number or a digital receipt for reference. 7. Order Preparation: The coffee shop receives the digital order and payment information. The baristas then prepare the requested beverages according to the order details. 8. Order Pickup: Once the drinks are ready, customers can proceed to the designated pickup counter or area to collect their orders. Some coffee shops may display the order number or provide notifications through the app to alert customers when their order is ready for pickup. It\'s important to note that the specific process may vary depending on the coffee shop\'s systems and the mobile app or platform they use for scan order and pay. Additionally, not all coffee shops offer this feature, so availability may differ from one establishment to another.', '180', '185', '1', '2023-05-23 12:40:36', '2023-05-23 12:40:36', NULL),
+(12, '/images/product/1684838375.jpg', '5', 'TAP FOR WI-FI SCAN FOR MENU', 'Tap for Wi-Fi scan for menu is a feature found on some mobile devices that allows users to quickly access the Wi-Fi scanning menu. Here\'s a short explanation of this feature: Convenience: The \"Tap for Wi-Fi scan for menu\" feature offers a convenient way to access the Wi-Fi scanning menu on your smartphone or mobile device. Instead of navigating through various settings menus, this feature allows you to access the Wi-Fi scanning functionality with a single tap. Quick Access: By tapping on the designated area or icon, typically found in the notification center or control center, users can instantly trigger a scan for available Wi-Fi networks in their vicinity. This eliminates the need to go through multiple steps in the settings menu to initiate a Wi-Fi scan. Network Discovery: When the Wi-Fi scan is activated, the device actively searches for nearby Wi-Fi networks. Once the scan is complete, the device presents a list of available networks, along with information such as network names (SSIDs), signal strength, and encryption status. This allows users to easily identify and connect to the desired Wi-Fi network. Enhanced Connectivity: The \"Tap for Wi-Fi scan for menu\" feature aids in establishing a connection to Wi-Fi networks more efficiently. Users can quickly scan for networks, evaluate their signal strength, and choose the most suitable one based on their preferences, whether it\'s for faster internet speeds or a more stable connection. Customization: Depending on the device and operating system, users may have the ability to customize the placement or appearance of the \"Tap for Wi-Fi scan for menu\" feature. This allows for personalization and easy access to Wi-Fi scanning based on individual preferences. It\'s important to note that the availability and functionality of the \"Tap for Wi-Fi scan for menu\" feature may vary depending on the device manufacturer, model, and operating system version.', '245', '250', '1', '2023-05-23 12:39:35', '2023-05-23 12:39:35', NULL),
+(10, '/images/product/1684837268.jpg', '5', 'SCAN AND PAY METHOD', 'Scan and pay is a convenient payment method that allows customers to make purchases using their smartphones or mobile devices. Instead of using cash or physical cards, scan and pay enables users to scan a QR code or barcode associated with a product or merchant and complete the payment electronically. Here\'s a brief explanation of how scan and pay works: 1. Mobile App: To use scan and pay, customers need to download and install a compatible mobile app provided by the payment service or platform. Examples include popular apps like Apple Pay, Google Pay, or specific payment apps offered by retailers. 2. QR Code/Barcode Scanning: When making a purchase, the customer scans the QR code or barcode displayed by the merchant using their smartphone\'s camera. The code may be found on a product, a digital display, or a printed receipt. 3. Payment Authorization: After scanning the code, the payment app processes the information and securely connects to the user\'s payment source, such as a linked credit or debit card, or a digital wallet. The user may need to authenticate the transaction using biometric features like fingerprint or face recognition or by entering a PIN. 4. Transaction Confirmation: Once the payment is authorized, the customer receives a confirmation of the transaction on their device, and the merchant is notified of the successful payment. 5. Security and Encryption: Scan and pay systems typically employ strong encryption and security measures to protect the user\'s payment information and ensure secure transactions. 6. Benefits: Scan and pay offers several advantages, including convenience, speed, and contactless payments, which have become especially important during situations like the COVID-19 pandemic. It eliminates the need to carry physical cards or cash and simplifies the payment process for customers. It\'s worth noting that specific features, compatibility, and availability of scan and pay may vary depending on the payment service, merchant, or country.', '115', '120', '1', '2023-05-23 12:21:08', '2023-05-23 12:36:49', '2023-05-23 12:36:49'),
+(11, '/images/product/1684838268.jpg', '5', 'SCAN AND PAY METHOD', 'Scan and pay is a convenient payment method that allows customers to make purchases using their smartphones or mobile devices. Instead of using cash or physical cards, scan and pay enables users to scan a QR code or barcode associated with a product or merchant and complete the payment electronically. Here\'s a brief explanation of how scan and pay works: 1. Mobile App: To use scan and pay, customers need to download and install a compatible mobile app provided by the payment service or platform. Examples include popular apps like Apple Pay, Google Pay, or specific payment apps offered by retailers. 2. QR Code/Barcode Scanning: When making a purchase, the customer scans the QR code or barcode displayed by the merchant using their smartphone\'s camera. The code may be found on a product, a digital display, or a printed receipt. 3. Payment Authorization: After scanning the code, the payment app processes the information and securely connects to the user\'s payment source, such as a linked credit or debit card, or a digital wallet. The user may need to authenticate the transaction using biometric features like fingerprint or face recognition or by entering a PIN. 4. Transaction Confirmation: Once the payment is authorized, the customer receives a confirmation of the transaction on their device, and the merchant is notified of the successful payment. 5. Security and Encryption: Scan and pay systems typically employ strong encryption and security measures to protect the user\'s payment information and ensure secure transactions. 6. Benefits: Scan and pay offers several advantages, including convenience, speed, and contactless payments, which have become especially important during situations like the COVID-19 pandemic. It eliminates the need to carry physical cards or cash and simplifies the payment process for customers. It\'s worth noting that specific features, compatibility, and availability of scan and pay may vary depending on the payment service, merchant, or country.', '140', '150', '1', '2023-05-23 12:37:48', '2023-05-23 12:37:48', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_galleries`
+--
+
+DROP TABLE IF EXISTS `product_galleries`;
+CREATE TABLE IF NOT EXISTS `product_galleries` (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `product_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_galleries`
+--
+
+INSERT INTO `product_galleries` (`id`, `product_id`, `image`, `created_at`, `updated_at`) VALUES
+(29, '11', '/images/product/1684838268_8.jpg', '2023-05-23 12:37:48', '2023-05-23 12:37:48'),
+(27, '10', '/images/product/1684837268_gh.jpg', '2023-05-23 12:21:08', '2023-05-23 12:21:08'),
+(28, '11', '/images/product/1684838268_9.jpg', '2023-05-23 12:37:48', '2023-05-23 12:37:48'),
+(26, '10', '/images/product/1684837268_ggh.jpg', '2023-05-23 12:21:08', '2023-05-23 12:21:08'),
+(25, '10', '/images/product/1684837268_hgh.jpg', '2023-05-23 12:21:08', '2023-05-23 12:21:08'),
+(23, '10', '/images/product/1684837268_bgh.jpg', '2023-05-23 12:21:08', '2023-05-23 12:21:08'),
+(24, '10', '/images/product/1684837268_agh.jpg', '2023-05-23 12:21:08', '2023-05-23 12:21:08'),
+(30, '11', '/images/product/1684838268_6.jpg', '2023-05-23 12:37:48', '2023-05-23 12:37:48'),
+(31, '11', '/images/product/1684838268_5.jpg', '2023-05-23 12:37:48', '2023-05-23 12:37:48'),
+(32, '11', '/images/product/1684838268_3.jpg', '2023-05-23 12:37:48', '2023-05-23 12:37:48'),
+(33, '12', '/images/product/1684838375_8.jpg', '2023-05-23 12:39:35', '2023-05-23 12:39:35'),
+(34, '12', '/images/product/1684838375_7.jpg', '2023-05-23 12:39:35', '2023-05-23 12:39:35'),
+(35, '12', '/images/product/1684838375_4.jpg', '2023-05-23 12:39:35', '2023-05-23 12:39:35'),
+(36, '12', '/images/product/1684838375_2.jpg', '2023-05-23 12:39:35', '2023-05-23 12:39:35'),
+(37, '12', '/images/product/1684838375_1.jpg', '2023-05-23 12:39:35', '2023-05-23 12:39:35'),
+(38, '13', '/images/product/1684838436_10.jpg', '2023-05-23 12:40:36', '2023-05-23 12:40:36'),
+(39, '13', '/images/product/1684838436_8.jpg', '2023-05-23 12:40:36', '2023-05-23 12:40:36'),
+(40, '13', '/images/product/1684838436_6.jpg', '2023-05-23 12:40:36', '2023-05-23 12:40:36'),
+(41, '13', '/images/product/1684838436_4.jpg', '2023-05-23 12:40:36', '2023-05-23 12:40:36'),
+(42, '13', '/images/product/1684838436_1.jpg', '2023-05-23 12:40:36', '2023-05-23 12:40:36'),
+(43, '14', '/images/product/1684838506_9.jpg', '2023-05-23 12:41:46', '2023-05-23 12:41:46'),
+(44, '14', '/images/product/1684838506_8.jpg', '2023-05-23 12:41:46', '2023-05-23 12:41:46'),
+(45, '14', '/images/product/1684838506_6.jpg', '2023-05-23 12:41:46', '2023-05-23 12:41:46'),
+(46, '14', '/images/product/1684838506_5.jpg', '2023-05-23 12:41:46', '2023-05-23 12:41:46'),
+(47, '14', '/images/product/1684838506_1.jpg', '2023-05-23 12:41:46', '2023-05-23 12:41:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_payments`
+--
+
+DROP TABLE IF EXISTS `product_payments`;
+CREATE TABLE IF NOT EXISTS `product_payments` (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `product_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_quantity` int NOT NULL DEFAULT '0',
+  `total_paid` int NOT NULL DEFAULT '0',
+  `user_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `delivery_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stripe_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_payments`
+--
+
+INSERT INTO `product_payments` (`id`, `product_id`, `product_quantity`, `total_paid`, `user_id`, `status`, `delivery_address`, `stripe_id`, `created_at`, `updated_at`) VALUES
+(65, '11', 20, 500, '1', '1', 'Dhaka, Banglamotor', 'pi_3NBBaNSFrfnDBpn61o9KIcwG', '2023-05-24 02:54:20', '2023-05-24 02:54:20'),
+(66, '12', 10, 2450, '2', '1', 'Gulshan, Dhaka', 'pi_3NBD8fSFrfnDBpn60zE4PEzo', '2023-05-24 04:39:16', '2023-05-24 04:39:16'),
+(67, '14', 1, 320, '48', '1', 'uttara 10', 'pi_3NBFSMSFrfnDBpn60bYUHJXs', '2023-05-24 07:02:18', '2023-05-24 07:02:18'),
+(68, '13', 10, 1800, '53', '1', 'Rajshahi', 'pi_3NBVmzSFrfnDBpn6018hUYkH', '2023-05-25 00:28:41', '2023-05-25 00:28:41'),
+(69, '12', 6, 1470, '53', '1', 'vghgh d', 'pi_3NBVwaSFrfnDBpn61I45hrku', '2023-05-25 00:38:35', '2023-05-25 00:38:35'),
+(70, '13', 2, 360, '1', '1', 'Balia-Pukur, Besides Sericulture, Before Choto-Bot_tola,  Green Bangladesh Tower (10 storied Building), Flat-8A..; Rajshahi; Rajshahi; 6000', 'pi_3NBWV5SFrfnDBpn61EYIRTS2', '2023-05-25 01:14:15', '2023-05-25 01:14:15');
 
 -- --------------------------------------------------------
 
@@ -2900,11 +3016,11 @@ CREATE TABLE IF NOT EXISTS `ratings` (
 DROP TABLE IF EXISTS `restaurant_menus`;
 CREATE TABLE IF NOT EXISTS `restaurant_menus` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `restaurant_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subdomain` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'restaurant name',
-  `pdf_no` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `restaurant_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subdomain` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'restaurant name',
+  `pdf_no` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -2915,7 +3031,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_menus` (
 --
 
 INSERT INTO `restaurant_menus` (`id`, `user_id`, `restaurant_id`, `subdomain`, `pdf_no`, `status`, `created_at`, `updated_at`) VALUES
-(4, '2', '1', 'ovenstory', '1', '1', '2023-05-10 06:52:21', '2023-05-10 06:52:53');
+(4, '2', '1', 'ovenstory', '2', '1', '2023-05-10 06:52:21', '2023-05-16 12:06:35');
 
 -- --------------------------------------------------------
 
@@ -3070,7 +3186,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 --
 
 INSERT INTO `settings` (`id`, `created_at`, `updated_at`, `site_name`, `site_logo`, `search`, `restorant_details_image`, `restorant_details_cover_image`, `description`, `header_title`, `header_subtitle`, `currency`, `facebook`, `instagram`, `playstore`, `appstore`, `maps_api_key`, `delivery`, `typeform`, `mobile_info_title`, `mobile_info_subtitle`, `order_options`, `site_logo_dark`, `order_fields`) VALUES
-(1, '2023-03-30 08:25:56', '2023-04-19 11:45:05', 'My QR Shop', 'b609a738-b9b9-4614-9306-951437e8c1cf', '/default/cover.jpg', 'ef43fa58-867c-4830-a14d-fae235cdc41c', '2964123c-4a53-4e6f-832d-5bf2224398b3', 'Food Delivery from best restaurants', '', '', 'USD', '', '', '', '', 'AIzaSyCZhq0g1x1ttXPa1QB3ylcDQPTAzp_KUgA', 0.00, '', '', '', '{}', 'c9303bcc-a7b8-48f8-a7ae-9941665072f7', NULL);
+(1, '2023-03-30 08:25:56', '2023-05-18 12:26:37', 'My QR Shop', 'b609a738-b9b9-4614-9306-951437e8c1cf', '/default/cover.jpg', 'ef43fa58-867c-4830-a14d-fae235cdc41c', '2964123c-4a53-4e6f-832d-5bf2224398b3', 'Food Delivery from best restaurants', '', '', 'USD', '', '', '', '', 'AIzaSyCZhq0g1x1ttXPa1QB3ylcDQPTAzp_KUgA', 0.00, '', '', '', '{}', 'c9303bcc-a7b8-48f8-a7ae-9941665072f7', NULL);
 
 -- --------------------------------------------------------
 
@@ -3579,15 +3695,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_verification_code_unique` (`verification_code`),
   KEY `users_stripe_id_index` (`stripe_id`),
   KEY `users_restaurant_id_foreign` (`restaurant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `google_id`, `fb_id`, `name`, `email`, `email_verified_at`, `password`, `api_token`, `phone`, `remember_token`, `created_at`, `updated_at`, `active`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`, `verification_code`, `phone_verified_at`, `plan_id`, `plan_status`, `cancel_url`, `update_url`, `checkout_id`, `subscription_plan_id`, `stripe_account`, `birth_date`, `lat`, `lng`, `working`, `onorder`, `numorders`, `rejectedorders`, `paypal_subscribtion_id`, `mollie_customer_id`, `mollie_mandate_id`, `tax_percentage`, `extra_billing_information`, `mollie_subscribtion_id`, `paystack_subscribtion_id`, `paystack_trans_id`, `restaurant_id`, `deleted_at`, `expotoken`, `pm_type`, `pm_last_four`) VALUES
-(1, NULL, NULL, 'Admin Admin', 'admin@gmail.com', '2023-03-30 08:25:56', '$2y$10$MkNC/5mVJ4Fyts5pVKJ3j.J3u6bcbX9DmTjpBVR74yWcA9Rzl/6FW', 'alIlz776GWvRsWkuOqzGhNU2MVprczYJ7K0TA4hwf0kHREfkXxKtPsraAtVsPrLdaOUkhkSNeRzx7RMh', '', 'sQsIB5TJJUuunHz47efuTkXI3xsBd1GLj7iMKDIYHFHujFd4rj3u3SbXpuF3', '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, NULL, NULL, NULL, NULL, NULL, NULL, 4, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, NULL, 'Demo Owner', 'owner@example.com', '2023-03-30 08:25:56', '$2y$10$MkNC/5mVJ4Fyts5pVKJ3j.J3u6bcbX9DmTjpBVR74yWcA9Rzl/6FW', 'IxeAsvx5OACSqhdn61zIuPhfTyuwKSus8GT64Tze8jbpmHmBDwvfW0w9FBz3HVQ62MExjXPQrV0B3jsn', '', 'tjZ6WApTVhXExfLweeHt6S71KzB8CbsAaUAy8PthMEvLB2uCuD1qyqTvBBgR', '2023-03-30 08:25:56', '2023-04-02 11:18:48', 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
+(1, NULL, NULL, 'Admin Admin', 'admin@gmail.com', '2023-03-30 08:25:56', '$2y$10$MkNC/5mVJ4Fyts5pVKJ3j.J3u6bcbX9DmTjpBVR74yWcA9Rzl/6FW', 'alIlz776GWvRsWkuOqzGhNU2MVprczYJ7K0TA4hwf0kHREfkXxKtPsraAtVsPrLdaOUkhkSNeRzx7RMh', '+1121211', '68tZ4b3bwltBub4La4XNjEb4BRRiVCxBNdCBrs8SF77S3XkxdGSXDSzmAKzU', '2023-03-30 08:25:56', '2023-05-24 23:55:33', 1, NULL, NULL, NULL, NULL, NULL, NULL, 4, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, NULL, 'Demo Owner', 'owner@example.com', '2023-03-30 08:25:56', '$2y$10$MkNC/5mVJ4Fyts5pVKJ3j.J3u6bcbX9DmTjpBVR74yWcA9Rzl/6FW', 'IxeAsvx5OACSqhdn61zIuPhfTyuwKSus8GT64Tze8jbpmHmBDwvfW0w9FBz3HVQ62MExjXPQrV0B3jsn', '+154545454544', '8amyGIAGV17Kk1UXWzEtTsrImHQmKbxPl3XOYx0XMhBhGx1ex7kc9enNYUsy', '2023-03-30 08:25:56', '2023-05-24 23:56:52', 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
 (3, NULL, NULL, 'Demo Staff 1', 'staff@example.com', '2023-03-30 08:25:56', '$2y$10$ougBnvw0w2/9zTq9CmMcVetqCnv52Sxu312Un3775IZNLpAajGge2', 'WyxJwejuZaYnYqgadHzVZ6z2zuNAIQ7TZJKDTgJVt2150B50y0V027gYsn0zeE3RDvowSEHznl5wRfde', '', NULL, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
 (4, NULL, NULL, 'Demo Staff 2', 'staff2_1@example.com', '2023-03-30 08:25:56', '$2y$10$W4qiJxLD4kqkuBMVp3uVYuSGPMkN0gjHhmsY02e.P3l2/LRdQs94i', 'HYYOmeCmlW3O3CyOCwPvkZQiafNCoAab39EAQ9g31cTaCUFIlMmvGyHxm5MZpHk4GY9QhSUtAzjQsPmK', '', NULL, '2023-03-30 08:25:56', '2023-03-30 08:25:56', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
 (5, NULL, NULL, 'Demo Staff 1', 'staff1_2@example.com', '2023-03-30 08:25:57', '$2y$10$NRHYRdI57DL2QSgzi8cUWeX6qeFeNxw29H26uC/H4dM1FzCnGvBdW', 'GP4LvRFDwLe3sCgEr5cTfUK93DeOOqrZWyBlrhXQcTPVHSu0CwrVxA7EgN6JVZlwNVQICP2qjHwJgYio', '', NULL, '2023-03-30 08:25:57', '2023-03-30 08:25:57', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
@@ -3626,10 +3742,12 @@ INSERT INTO `users` (`id`, `google_id`, `fb_id`, `name`, `email`, `email_verifie
 (45, NULL, NULL, 'Antarip Saha', 'antarip1@gmail.com', NULL, '$2y$10$FLuph9odvoKKHNy.wwY3S.qqpwgRb/oOhmvPI5UstghD53BSjWdLG', 'SETUAWy5BQLy7otmwtpEpbE8r2dgdli39SYVh9BqnDomeTvrRAW8dewsC3UNDbOKVo8E14OCkmnpWqej', '+101713702979', 'wYDW93HnqvxJafzauDHuWNODph9xJybXvvBPGJ5Gb9rJLcKe3tJJF8mL5LHP', '2023-04-03 10:18:45', '2023-04-19 05:02:10', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, 27, NULL, NULL, NULL, NULL),
 (46, NULL, NULL, 'abc', 'abd@gmail.com', NULL, '$2y$10$MSjHY3CYqNtUG5arKakppeGCdUpWiL8vCx2QkgTJQXq8bfSQen0ua', 'Ih76EKHkj9DkoHSym0fcF36xLD8l6sqj78YhrCh46y2MQ0pbtTMjvnTjRRsazjcWJBvRNng1Bja6DnHn', '+880131965745', NULL, '2023-04-06 04:59:08', '2023-04-06 04:59:08', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (47, NULL, NULL, 'Delcado clarke', 'kuemart20@gmail.com', NULL, '$2y$10$5bNlUIpYz1JT1P.sqXs5D.J/11foDGfjbL3oQr97/Z7RhKQFZ4jOu', 'aT5UDPrIraFygK6PPzzoMNfxIKXL733fyNfFz2l7cxhD8rSGiOBeNumAv7FEzBIV1gBWArusM4SiD2FH', '+16463878617', NULL, '2023-04-17 08:21:06', '2023-04-17 08:21:06', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(48, NULL, NULL, 'Antarip Saha', 'antaripsaha0@gmail.com', NULL, '$2y$10$VMuF8NxB36rz32pHvbzeseuhv3boFxvNvqgweSP66W7MXoEIkwErq', 'hgkbJmQD0YqSPfe3fL58aLkosgEX9yZjaoC4L2ygSC12h68T79ZNOxkIMc72juHGuSb4nSU9SIFVUTlu', '+101713702979', 'YD3rn6NrRRevluCnWzKpPqoFOAm9fQ6JZkCeA25Lq5LCAbgFEIXdvOVUuH9j', '2023-04-19 05:07:39', '2023-04-19 05:07:39', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, NULL, NULL, 'Antarip Saha', 'antaripsaha0@gmail.com', NULL, '$2y$10$MkNC/5mVJ4Fyts5pVKJ3j.J3u6bcbX9DmTjpBVR74yWcA9Rzl/6FW', 'hgkbJmQD0YqSPfe3fL58aLkosgEX9yZjaoC4L2ygSC12h68T79ZNOxkIMc72juHGuSb4nSU9SIFVUTlu', '+101713702979', 'OCp7hwyXn0CNI3PTxrphGlGQhTbaIzIdvWuC2WKSksSHgZD9nV0YUBe9XNcr', '2023-04-19 05:07:39', '2023-04-19 05:07:39', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (49, NULL, NULL, 'customer', 'customer@gmail.com', NULL, '$2y$10$X.m/ZsIFX0FvJE05gV7KGeEGGBOiScxoNPP7AtA0mUQfqPCivXJeS', 'AqgdmBge8yuVqytSNnjwmtmTxApwH6nNYcquNSM3GYU7ZSrd2zQvJGddbmLGiETsBBqia1CyvGhHCNW3', '+1123456789', NULL, '2023-04-26 13:59:01', '2023-04-26 13:59:01', 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (50, NULL, NULL, 'Customer', 'antarip15@gmail.com', NULL, '$2y$10$CUyvfm/ENXTqKBLcNMXIOuyrGzegjtmUuNYXkBYH6CU2jOCdvfLra', 'BLtxJMFLDtPDVF8YFXQJFkl7JNzyer4ZaPNnlPudVDJ6RWIg22eh8RxoWii7DpSsluIWISFXep9dbit3', '+11221215454', 'XFgaxfntH8nOH2cyL68LpPglDpRtCJFDjkIoQWifQfpiuYGrZieoRT1pxCZK', '2023-04-26 14:02:18', '2023-04-26 14:02:18', 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(51, NULL, NULL, 'Hunter', 'suntonu.pal@gmail.com', NULL, '$2y$10$wkacvEiala000CiMVkENAud2c8QUbfJpEetoouvgp38neoiRwuOHa', 'qPTKhaRqJVL9DAZMQfp5N8FQUuymxDCQ2QJw7MGiLqWZJ8a2c0i2paNnMuTwj8dmECLNqX9PYmQSUIeU', '+8801947295072', NULL, '2023-04-27 05:43:36', '2023-04-27 05:43:36', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(51, NULL, NULL, 'Hunter', 'suntonu.pal@gmail.com', NULL, '$2y$10$wkacvEiala000CiMVkENAud2c8QUbfJpEetoouvgp38neoiRwuOHa', 'qPTKhaRqJVL9DAZMQfp5N8FQUuymxDCQ2QJw7MGiLqWZJ8a2c0i2paNnMuTwj8dmECLNqX9PYmQSUIeU', '+8801947295072', NULL, '2023-04-27 05:43:36', '2023-04-27 05:43:36', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, NULL, NULL, 'Moses Madden', 'devenam906@glumark.com', NULL, '$2y$10$qhuhg2xl/uAzaLxKcmbqfum5xypVqyd.V8QEpmXbdsyHz9HyayLv2', 'xxISwti8XMFN2W14XUEQQPF93vbHQJ4hIXPD4YrkwoyIPjMrprMfTX5ndDH74bn6TrYSIHNQroO6B1Yk', '+17468312832', NULL, '2023-05-16 12:25:20', '2023-05-16 12:25:20', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, NULL, NULL, 'Normal User', 'user10@gmail.com', NULL, '$2y$10$vJTbhTpLrUYAEVyepPlFqeEyYX7Iq4fdaOMPIwbhzavRdXmW2uFl6', 'dMOxq3mXTpeDR4QHVhRb5EsdRnnYFB4rohuNcIMzB9oUTsiiBrXXQ4IS2adW8l2aFZi9LjEexOw1nSry', '+15451212121', NULL, '2023-05-25 00:24:59', '2023-05-25 00:24:59', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, NULL, 1, NULL, 0, 0, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
