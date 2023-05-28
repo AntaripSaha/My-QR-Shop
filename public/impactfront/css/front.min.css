@@ -20324,7 +20324,7 @@ button.section-gray-800:hover {
     letter-spacing: 0;
     font-weight: 400;
     transition: all 0.8s cubic-bezier(0.34, 1.45, 0.7, 1);
-    color: white !important;
+    color: white;
 }
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link {

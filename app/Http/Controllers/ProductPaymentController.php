@@ -29,8 +29,9 @@ class ProductPaymentController extends Controller
     public function showCheckout(Request $request)
     {
         
-        $delivery_address = $request->address.'; '.$request->city.'; '.$request->state.'; '.$request->zipcode;
+        $delivery_address = $request->address.'; '.$request->city.'; '.$request->state.'; '.$request->zipcode.'; '.$request->country;
         $product_item = Product::where('id', $request->id)->first();
+        // Stripe::setApiKey('sk_test_51LZpTqSFrfnDBpn6AAKuqwnYh60DqCzlPa27ta84QkHoh67C2k2fbqTR0z7fo6zPl04QAS1b2j2ZRUQ3gxCes1B9001tCMISvy');
         Stripe::setApiKey(env('STRIPE_SECRET'));
             // Store the product ID in the session
         session()->put('product_id', $request->id);

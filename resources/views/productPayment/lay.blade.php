@@ -104,7 +104,7 @@ Coded by www.creative-tim.com
     <div class="wrapper">
         @yield('content')
         @include('layouts.navbars.cartSideMenu')
-        @include('layouts.footers.front')
+        @include('productPayment.footer')
         @if(request()->get('location') )
             @include('layouts.headers.modallocation')
         @endif

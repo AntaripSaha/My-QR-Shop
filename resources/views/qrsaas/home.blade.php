@@ -112,7 +112,8 @@
         @include('qrsaas.partials.demo')
 
         <!-- Footer -->
-        @include('qrsaas.partials.footer')
+        @include('productPayment.footer')
+        {{-- @include('qrsaas.partials.footer') --}}
 
     </main>
 

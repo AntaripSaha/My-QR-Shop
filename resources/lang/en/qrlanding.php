@@ -7,7 +7,7 @@ return array (
   'dashboard' => 'Dashboard',
   'demo' => 'Demo',
   'demo_button' => 'Create a menu for you, now!',
-  'demo_subtitle' => 'Just open the camera on your phone and scan the',
+  'demo_subtitle' => 'Just open the camera on your phone and scan the QR code below!',
   'demo_title' => 'See a demo online menu',
   'edit' => 'Edit Page',
   'featured_clients' => 'Featured clients',

@@ -2,22 +2,22 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 @section('content')
-<section class="section-profile-cover section-shaped my--1 d-none d-md-none d-lg-block d-lx-block">
+{{-- <section class="section-profile-cover section-shaped my--1 d-none d-md-none d-lg-block d-lx-block">
    <!-- Circles background -->
    <img class="bg-image" src="/images/product_bg.jpg" style="width: 100%;">
    <!-- SVG separator -->
    <div class="separator separator-bottom separator-skew"></div>
-</section>
-<section class="section bg-white container mt-5">
-   <div class="row">
-      <div class="col-md-6 col-sm-12">
+</section> --}}
+<section class="section bg-white container mt-5 content-pb">
+   <div class="row pt-5">
+      <div class="col-md-6 col-sm-12 overflow-hidden">
          <div class="main-image">
             <figure>
                <img id="mainImage" src="{{ $product_item->image }}" class="rounded img-cus-product-main" height="1200px" width="auto" alt="">
             </figure>
          </div>
-         <div class="gallery-slider">
-            <div class="swiper-container overflow-hidden">
+         <div class="gallery-slider pb-5">
+            <div class="swiper-container" >
                <div class="swiper-wrapper">
                   <div class="swiper-slide">
                      <img src="{{ $product_item->image}}" class="rounded gallery-image img-cus-gallery mr-2" alt="">
@@ -33,18 +33,18 @@
             </div>
          </div>
       </div>
-      <div class="col-md-6 col-sm-12">
-         <div class="p-2 text-left">
-            <h2 class="product-item_title font-weight-bolder text-uppercase">{{ $product_item->name }}</h2>
+       <div class="col-md-6 col-sm-12">
+         <div class="p-2 text-left mt--3">
+            <h2 class="product-item_title font-weight-bolder text-uppercase mt--1">{{ $product_item->name }}</h2>
             <div class="d-flex justify-content-left">
-               <h5 class="product-item_title font-weight-bolder text-uppercase display-4">Total: <span class="font-weight-light"></span></h5>
-               <h6 id="totalPrice" class="ml-3 text-primary font-weight-bolder display-4">${{ $product_item->discounted_price }}</h6>
+               <h2 class="product-item_title font-weight-bolder text-uppercase">Total: <span class="font-weight-light"></span></h2>
+               <h2 id="totalPrice" class="ml-3 text-primary font-weight-bolder">${{ $product_item->discounted_price }}</h2>
             </div>
             <h6 class="display-5 description-cus mb-3">
-               <p id="descriptionShort" class="short-description">{{ substr($product_item->description, 0, 500) }}...</p>
+               <p id="descriptionShort" class="short-description">{{ substr($product_item->description, 0, 700) }}...</p>
                <p id="descriptionFull" class="full-description" style="display: none;">{{ $product_item->description }}</p>
-               <button id="readMoreBtn" class="btn btn-link">Read More</button>
-               <button id="showLessBtn" class="btn btn-link" style="display: none;">Show Less</button>
+               <button id="readMoreBtn" class="btn btn-md text-primary">Read More</button>
+               <button id="showLessBtn" class="btn btn-md text-primary" style="display: none;">Show Less</button>
             </h6>
             <div class="border-top row">
                <div class="col-12">
@@ -101,6 +101,10 @@
                      <label for="zipcode">Zip Code</label>
                      <input type="text" class="form-control" id="zipcode" name="zipcode" required>
                   </div>
+                  <div class="form-group">
+                     <label for="country">Country</label>
+                     <input type="text" class="form-control" id="country" name="country" required>
+                  </div>
                   <!-- Add more form fields for other details if needed -->
                   <input type="hidden" name="id" value="{{ $product_item->id }}">
                   <input type="hidden" name="quantity" value="" id="hiddenQuantity">
@@ -116,6 +120,10 @@
 <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+ 
+
 
 <script type="text/javascript">
    function cartPlus() {
@@ -219,6 +227,18 @@
          showLessBtn.style.display = 'none';
       });
    });
+
+  // Add the blur and dim effect on modal show
+  document.getElementById('checkoutModal').addEventListener('show.bs.modal', function () {
+      document.body.classList.add('blur-background');
+      document.querySelector('.container').classList.add('dim-background');
+   });
+
+   // Remove the blur and dim effect on modal hide
+   document.getElementById('checkoutModal').addEventListener('hidden.bs.modal', function () {
+      document.body.classList.remove('blur-background');
+      document.querySelector('.container').classList.remove('dim-background');
+   });
  
 </script>
 
@@ -239,11 +259,11 @@
       width: 150px !important;
       object-fit: cover;
    }
-
    .img-cus-product-main {
       width: 620px;
       height: 480px;
       object-fit: cover;
    }
+
 </style>
 @endsection

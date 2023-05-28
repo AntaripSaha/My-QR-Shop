@@ -21,20 +21,20 @@
             </div>
             <ul class="navbar-nav navbar-nav-hover justify-content-center">
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#product" class="nav-link">{{ __('qrlanding.product') }}</a>
+                    <a data-scroll href="#product" class="nav-link mobile">{{ __('qrlanding.product') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#pricing" class="nav-link" >{{ __('qrlanding.pricing') }}</a>
+                    <a data-scroll href="#pricing" class="nav-link mobile" >{{ __('qrlanding.pricing') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#testimonials" class="nav-link">{{ __('qrlanding.testimonials') }}</a>
+                    <a data-scroll href="#testimonials" class="nav-link mobile">{{ __('qrlanding.testimonials') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#demo" class="nav-link">{{ __('qrlanding.demo') }}</a>
+                    <a data-scroll href="#demo" class="nav-link mobile">{{ __('qrlanding.demo') }}</a>
                 </li>
                
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="{{route('generateqr')}}" class="nav-link">QrGenerator</a>
+                    <a data-scroll href="{{route('generateqr')}}" class="nav-link mobile">QrGenerator</a>
                 </li>
                 
                 @if(!empty(config('global.facebook')))
@@ -56,7 +56,7 @@
             </ul>
         </div>
         <div class=" @@cta_button_classes">
-            <a data-scroll href="/login" class="btn btn-md btn-docs btn-white animate-up-2 mr-3"><i class="fas fa-th-large mr-2"></i>
+            <a data-scroll href="/login" class="btn btn-md btn-docs bg-white animate-up-2 mr-3"><i class="fas fa-th-large mr-2"></i>
                 @auth()
                     {{ __('qrlanding.dashboard')}}
                 @endauth
@@ -76,3 +76,10 @@
         </div>
     </div>
 </nav>
+<style>
+    @media (min-width: 268px) and (max-width: 568px) {
+        .mobile{
+            color: #0648b3 !important; 
+        }    
+    }
+</style>
