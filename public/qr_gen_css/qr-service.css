@@ -62,14 +62,21 @@ border-radius: 5px;
  
  .hero-card {
    display: none;
-   margin-top: 20px;
+   margin-top: 40px;
    text-align: center;
    width: 100%;
  }
+
  .hero-card-image
  {
    width: 50%;
-   background: blue;
+   background-image: linear-gradient(to top,#457b52, #9fc9a9) ;
+   border-radius: 5px;
+   border: 5px none;
+ }
+ .hero-card-image img
+ {
+   margin-top: -100px;
  }
  .hero-image {
  
@@ -80,14 +87,20 @@ border-radius: 5px;
  {
    width: 50%;
    height: auto;
-   background: palegoldenrod;
+   background: #f8f8f9;
+   padding: 20px;
    text-align: left;
    display: flex;
    flex-direction: column;
    justify-content: center;
  }
+
+ .hero-container span
+ {
+   font-size: 30px;
+ }
  .hero-title {
-   font-size: 24px;
+   font-size: 40px;
    font-weight: bold;
  }
  
@@ -105,7 +118,7 @@ border-radius: 5px;
  
  .arrow {
    position: absolute;
-   top: 70%;
+   top: 65%;
    right:50%;
    transform: translateY(-50%);
    width: 45px;
@@ -141,3 +154,35 @@ border-radius: 5px;
  {
    margin-bottom: 4px;
  }
+.hero-image-two
+{
+  display: none;
+}
+ @media only screen and (max-width: 1199px) {
+  .hero-card-image img
+ {
+   margin-top: -80px;
+ }
+ 
+}
+@media only screen and (max-width: 832px) {
+
+  .arrow
+  {
+    display: none;
+  }
+  .hero-card-image
+  {
+    display: none;
+  }
+  .hero-image-two
+{
+  display: block;
+}
+
+  .hero-container
+  {
+    width:100% ;
+  }
+ 
+}
