@@ -4,9 +4,14 @@
             display: none !important;
         }
     }
+    @media (min-width: 769px){
+        .mobile{
+            display: none !important;
+        }
+    }
     .cus-bg{
     /* margin-top: 100px; */
-    background-color: #282932;
+    background-color: #04093c;
     background-image: url('/images/footer-bg-1.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -80,10 +85,19 @@
     left: -42px;
     transform: translate(0px, -50%);
 }
+.icon-custom{
+    background: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    padding: 8px;
+}
 
  </style>
 
 
+<br>
+<br><br><br><br>
 
 <footer class="footer cus-bg mt-auto">
     <div class="pattern pattern-soft top container"></div>
@@ -131,16 +145,65 @@
                 <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>QRGenerator</a>
              </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-             <h2 class="text-white footer-title">My Account</h2>
-             <div class="footer-link">
-                <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Dashboard</a>
+          <div class="col-lg-3 col-md-4 col-sm-6 desktop">
+             <h2 class="text-white footer-title text-left">Get The Latest News</h2>
+             <div class="footer-link d-flex justify-content-left">
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-facebook-f icon-custom"></i></a>
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-twitter icon-custom"></i></a>
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-youtube icon-custom"></i></a>
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-linkedin-in icon-custom"></i></a>
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-instagram icon-custom"></i></a>
+             </div>
+             <div>
+                <p class="text-white text-left">Subscribe to keep up with the latest industry news. Ritevolt updates, events, and more !</p>
+             </div>
+             <div class=" d-flex justify-content-left">
+                <button class="btn btn-primary">
+                     Contact Us
+                    <i aria-hidden="true" class="pl-1 fa fa-phone"></i>
+                </button>
+             </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mobile">
+             <h2 class="text-white footer-title ">Get The Latest News</h2>
+             <div class="footer-link d-flex justify-content-left">
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-facebook-f icon-custom"></i></a>
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-twitter icon-custom"></i></a>
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-youtube icon-custom"></i></a>
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-linkedin-in icon-custom"></i></a>
+                <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-instagram icon-custom"></i></a>
+             </div>
+             <div>
+                <p class="text-white">Subscribe to keep up with the latest industry news. Ritevolt updates, events, and more !</p>
+             </div>
+             <div>
+                <button class="btn btn-primary">
+                     Contact Us
+                    <i aria-hidden="true" class="pl-1 fa fa-phone"></i>
+                </button>
              </div>
           </div>
        </div>
     </div>
     <hr class="bg-white">
-    <div class="text-center">
-        {{-- <p class="text-white">hello00000000</p> --}}
+    <div class="d-flex justify-content-between pl-5 pr-5 desktop">
+        <div class="">
+            <img src="/images/payment_methods.png" width="350px" alt="">
+        </div>
+        <div class="text-white">
+            <p>
+                © Copyright  2023. All rights reserved My QR Shop. 
+            </p>
+        </div>
+    </div>
+    <div class=" mobile">
+        <div class="d-flex justify-content-center">
+            <img src="/images/payment_methods.png" width="350px" alt="">
+        </div>
+        <div class="text-white text-center">
+            <p>
+                © Copyright  2023. All rights reserved My QR Shop. 
+            </p>
+        </div>
     </div>
  </footer>
