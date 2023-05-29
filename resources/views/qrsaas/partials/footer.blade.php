@@ -151,7 +151,7 @@ main,
                 <div class="footer-link">
                    <a class="d-block" href="{{route('front')}}#product"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Product</a>
                    <a class="d-block" href="{{route('front')}}#pricing"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Pricing</a>
-                   <a class="d-block" href="{{route('front')}}#testimonial"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Testimonials</a>
+                   <a class="d-block" href="{{route('front')}}#testimonials"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Testimonials</a>
                    <a class="d-block" href="{{route('generateqr')}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>QRGenerator</a>
                 </div>
             </div>
