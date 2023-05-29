@@ -9,16 +9,6 @@
     /* height: 800px; */
     bottom: 0 !important;
     }
-    @media (min-width: 168px) and (max-width: 768px){
-        .desktop{
-            display: none !important;
-        }
-    }
-    @media (min-width: 769px){
-        .mobile{
-            display: none !important;
-        }
-    }
 
     .footer-link a {
     font-size: 18px;
@@ -39,10 +29,6 @@
     padding: 8px;
 }
 
-
-h1{
-    color: white !important;
-    }
 main,
     .wrapper{
         display: flex;
@@ -109,17 +95,23 @@ main,
 }
 
 
-
-
-
-
-
-
+@media (min-width: 168px) and (max-width: 768px){
+        .desktop-cus{
+            display: none !important;
+        }
+    
+    }
+    @media (min-width: 769px){
+        .mobile-cus{
+            display: none !important;
+        }
+      
+    }
 </style>
 
 <div class="cus-bg mt-auto">
     <div class="container p-3">
-        <div class="pattern pattern-soft top container"></div>
+        <div class="    top container"></div>
         <div class="container">
             <div class="support-content overflow-hidden">
             <div class="row g-0">
@@ -128,7 +120,7 @@ main,
                 </div>
                 <div class="col-sm-6">
                     <div class="icon-animation">
-                        <img src="/images/support/icon-animation.gif" alt="" class="img-fluid desktop">
+                        <img src="/images/support/icon-animation.gif" alt="" class="img-fluid desktop-cus">
                     </div>
                     <div class="support-text__content text-white text-center">
                         <h3 class="support-title text-uppercase text-white">Talk to an expert</h3>
@@ -149,18 +141,18 @@ main,
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h2 class="text-white footer-title">Helpful Links</h2>
                 <div class="footer-link">
-                   <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Terms and conditions</a>
-                   <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Privacy Policy</a>
-                   <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>FAQ's</a>
+                   <a class="d-block" href="{{url('/blog/Terms-and-conditions')}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Terms and conditions</a>
+                   <a class="d-block" href="{{url('/blog/Privacy-Policy')}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Privacy Policy</a>
+                   <a class="d-block" href="{{url("/blog/FAQ's")}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>FAQ's</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h2 class="text-white footer-title">Pages</h2>
                 <div class="footer-link">
-                   <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Product</a>
-                   <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Pricing</a>
-                   <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Testimonials</a>
-                   <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>QRGenerator</a>
+                   <a class="d-block" href="{{route('front')}}#product"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Product</a>
+                   <a class="d-block" href="{{route('front')}}#pricing"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Pricing</a>
+                   <a class="d-block" href="{{route('front')}}#testimonial"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Testimonials</a>
+                   <a class="d-block" href="{{route('generateqr')}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>QRGenerator</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
@@ -173,7 +165,7 @@ main,
                     <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-instagram icon-custom"></i></a>
                  </div>
                  <div>
-                    <p class="text-white text-left">Subscribe to keep up with the latest industry news. Ritevolt updates, events, and more !</p>
+                    <p class="text-white text-left">Subscribe to keep up with the latest industry news. My QR Shop updates, events, and more !</p>
                  </div>
                  <div class=" d-flex justify-content-left">
                     <button class="btn btn-primary">
@@ -186,7 +178,7 @@ main,
       
     </div>
     <hr class="bg-white">
-    <div class="d-flex justify-content-between pl-5 pr-5 desktop">
+    <div class="d-flex justify-content-between pl-5 pr-5 desktop-cus">
         <div class="">
             <img src="/images/payment_methods.png" width="350px" alt="">
         </div>
@@ -196,7 +188,7 @@ main,
             </p>
         </div>
     </div>
-    <div class=" mobile">
+    <div class=" mobile-cus">
         <div class="d-flex justify-content-center">
             <img src="/images/payment_methods.png" width="350px" alt="">
         </div>

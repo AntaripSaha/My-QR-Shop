@@ -131,18 +131,18 @@
           <div class="col-lg-3 col-md-4 col-sm-6">
              <h2 class="text-white footer-title">Helpful Links</h2>
              <div class="footer-link">
-                <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Terms and conditions</a>
-                <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Privacy Policy</a>
-                <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>FAQ's</a>
+                <a class="d-block" href="{{url('/blog/Terms-and-conditions')}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Terms and conditions</a>
+                <a class="d-block" href="{{url('/blog/Privacy-Policy')}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Privacy Policy</a>
+                <a class="d-block" href="{{url("/blog/FAQ's")}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>FAQ's</a>
              </div>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
              <h2 class="text-white footer-title">Pages</h2>
              <div class="footer-link">
-                <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Product</a>
-                <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Pricing</a>
-                <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>Testimonials</a>
-                <a class="d-block" href="#"><i aria-hidden="true" class="fas fa-chevron-circle-right"></i>QRGenerator</a>
+                <a class="d-block" href="{{route('front')}}#product"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Product</a>
+                   <a class="d-block" href="{{route('front')}}#pricing"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Pricing</a>
+                   <a class="d-block" href="{{route('front')}}#testimonial"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>Testimonials</a>
+                   <a class="d-block" href="{{route('generateqr')}}"><i aria-hidden="true" class="fas fa-chevron-circle-right text-white"></i>QRGenerator</a>
              </div>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 desktop">
@@ -174,7 +174,7 @@
                 <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-instagram icon-custom"></i></a>
              </div>
              <div>
-                <p class="text-white">Subscribe to keep up with the latest industry news. Ritevolt updates, events, and more !</p>
+                <p class="text-white">Subscribe to keep up with the latest industry news. My QR Shop updates, events, and more !</p>
              </div>
              <div>
                 <button class="btn btn-primary">
