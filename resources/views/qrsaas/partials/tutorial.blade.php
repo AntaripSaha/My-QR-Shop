@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <!-- Data Call From Frontend Controller -->
-            <img src="./" alt="">
+            <img src="./images/tutorial.jpg" alt="">
        
         </div>
     </div>

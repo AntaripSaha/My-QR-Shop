@@ -168,10 +168,10 @@ main,
                     <p class="text-white text-left">Subscribe to keep up with the latest industry news. My QR Shop updates, events, and more !</p>
                  </div>
                  <div class=" d-flex justify-content-left">
-                    <button class="btn btn-primary">
+                    {{-- <button class="btn btn-primary">
                          Contact Us
                         <i aria-hidden="true" class="pl-1 fa fa-phone"></i>
-                    </button>
+                    </button> --}}
                  </div>
             </div>
         </div>

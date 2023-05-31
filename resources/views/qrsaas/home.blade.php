@@ -92,11 +92,13 @@
 
         <!-- Hero 1 -->
         @include('qrsaas.partials.hero')
+        <div class="pb-5"></div>
+        @include('qrsaas.partials.tutorial')
+
 
         <!-- Product -->
         @include('qrsaas.partials.product')
         @include('qrsaas.partials.new_product')
-        @include('qrsaas.partials.tutorial')
 
         <!-- Pricing -->
         @include('qrsaas.partials.pricing')
