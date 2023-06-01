@@ -16,7 +16,7 @@
                <img id="mainImage" src="{{ $product_item->image }}" class="rounded img-cus-product-main" height="1200px" width="auto" alt="">
             </figure>
          </div>
-         <div class="gallery-slider pb-5">
+         <div class="gallery-slider pb-5 overflow-hidden">
             <div class="swiper-container" >
                <div class="swiper-wrapper">
                   <div class="swiper-slide">

@@ -26,6 +26,9 @@
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
+                      <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
                 <div class="col-12 text-center pb-5 pt-4">
                     <!-- Button Modal -->

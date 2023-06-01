@@ -29,5 +29,5 @@
               </div>
         </div>
     </div>
-    <div class="pattern bottom"></div>
+    <div class="bottom"></div>
 </section>
