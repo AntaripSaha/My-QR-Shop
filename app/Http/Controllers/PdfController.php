@@ -265,6 +265,7 @@ class PdfController extends Controller
       // Find all img tags in the HTML
       $doc = new \DOMDocument();
       $doc->loadHTML($html);
+    
       $images = $doc->getElementsByTagName('img');
   
       // Loop through each image and convert it to base64

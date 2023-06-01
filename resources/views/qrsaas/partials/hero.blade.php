@@ -1,4 +1,4 @@
-<section class="section-header pb-7 pb-lg-11 bg-soft">
+<section class="section-header  bg-soft">
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-12 col-md-6 order-2 order-lg-1">

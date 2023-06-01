@@ -1,3 +1,15 @@
+<style>
+   a.card-link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: calc(100% - 192px);
+    width: calc(100% - 30px);
+    z-index: 10;
+    left: 15px;
+}
+</style>
+
 @extends('layouts.app', ['title' => __('Restaurant Menu Management')])
 @section('admin_title')
 {{__('Menu')}}
@@ -61,22 +73,22 @@
                <div class="row justify-content-center">
                   <div class="col-lg-12">
                      <div class="row row-grid">
-                        <div class="col-lg-3">
-                           <a href="{{ route('pdf.menu', [1]) }}">
-                              <div class="card">
-                                 <input type="hidden" name="layout_numbers" value="1">
-                                 <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
-                                 <div class="card-body">
-                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
-                                       <p class="mt-3 mb-0 text-sm  d-flex justify-between">
-                                          <span class="text-success mr-2">{{ __("AVAILABLE") }}</span>
-                                          <a href="{{route('pdf.menu.download', [1])}}">
-                                             <span class="btn btn-success btn-sm"> Download</span>
+                        {{-- number 1 --}}
+                        <div class="col-lg-3 position-relative">
+                           <a class="card-link" href="{{ route('pdf.menu', [1]) }}">                           
+                           </a>
+                           <div class="card">
+                              <input type="hidden" name="layout_numbers" value="1">
+                              <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
+                              <div class="card-body d-flex justify-content-between">
+                                 {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                 <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
+                                        <div>
+                                          <a  href="{{route('pdf.menu.download', [1])}}">
+                                             <span class="btn btn-outline-info"> Download</span>
                                           </a>
-                                          {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
-                                       </p>
-                                       <div class="mt-3">
+                                       </div>
+                                       <div>
                                           <form action="{{route('default.pdf.menu')}}" method="post">
                                              @csrf
                                              <input type="hidden" name="pdf_no" value="1">
@@ -95,115 +107,180 @@
                                              @endif
                                           </form>
                                        </div>
-                                  </div>
-                              </div>
-                              <br/>
-                           </a>
-                        </div>
-                        <div class="col-lg-3">
-                           <a href="{{ route('pdf.menu', [2]) }}">
-                              <div class="card">
-                                 <img class="card-img-top" src="/images/pdf/menu-demo2.png" alt="...">
-                                 <div class="card-body">
-                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
-                                    <p class="mt-3 mb-0 text-sm  d-flex justify-between">
-                                       <span class="text-success mr-2">{{ __("AVAILABLE") }}</span>
-                                       <a href="{{route('pdf.menu.download', [2])}}">
-                                          <span class="btn btn-success btn-sm"> Download</span>
-                                       </a>
-
+                                        
+                                       
                                        {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
-                                    </p>
-                                    <div class="mt-3">
-                                       <form action="{{route('default.pdf.menu')}}" method="post">
-                                          @csrf
-                                          <input type="hidden" name="pdf_no" value="2">
-                                          @if ($active_template && $active_template->pdf_no == 2)
-                                             <button class="btn btn-outline-success" type="submit">
-                                                Active Menu
-                                             </button>
-                                          @elseif ($active_template && $active_template->pdf_no != 2)
-                                             <button class="btn btn-outline-danger" type="submit">
-                                                Inactive
-                                             </button>
-                                          @else
-                                             <button class="btn btn-outline-info" type="submit">
-                                                Make Default Menu
-                                             </button>
-                                          @endif
+                                   
+                               </div>
+                           </div>
+                           <br/>
+                        </div>
+                        {{-- number 2 --}}
+                        <div class="col-lg-3 position-relative">
+                           <a class="card-link" href="{{ route('pdf.menu', [2]) }}">                           
+                           </a>
+                           <div class="card">
+                              <input type="hidden" name="layout_numbers" value="1">
+                              <img class="card-img-top" src="/images/pdf/menu-demo2.png" alt="...">
+                              <div class="card-body d-flex justify-content-between">
+                                 {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                 <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
+                                        <div>
+                                          <a  href="{{route('pdf.menu.download', [2])}}">
+                                             <span class="btn btn-outline-info"> Download</span>
+                                          </a>
+                                       </div>
+                                       <div>
+                                          <form action="{{route('default.pdf.menu')}}" method="post">
+                                             @csrf
+                                             <input type="hidden" name="pdf_no" value="2">
+                                             @if ($active_template && $active_template->pdf_no == 2)
+                                                <button class="btn btn-outline-success" type="submit">
+                                                   Active Menu
+                                                </button>
+                                             @elseif ($active_template && $active_template->pdf_no != 2)
+                                                <button class="btn btn-outline-danger" type="submit">
+                                                   Inactive
+                                                </button>
+                                             @else
+                                                <button class="btn btn-outline-info" type="submit">
+                                                   Make Default Menu
+                                                </button>
+                                             @endif
+                                          </form>
+                                       </div>
+                                        
+                                       
+                                       {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
+                                   
+                               </div>
+                           </div>
+                           <br/>
+                        </div>
+                        <div class="col-lg-3 position-relative">
+                           <a class="card-link" href="{{ route('pdf.menu', [2]) }}">                           
+                           </a>
+                           <div class="card">
+                              <input type="hidden" name="layout_numbers" value="1">
+                              <img class="card-img-top" src="/images/pdf/menu-demo2.png" alt="...">
+                              <div class="card-body d-flex justify-content-between">
+                                 {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                 <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
+                                        <div>
+                                          <a  href="{{route('pdf.menu.download', [2])}}">
+                                             <span class="btn btn-outline-info"> Download</span>
+                                          </a>
+                                       </div>
+                                       <div>
+                                          <form action="{{route('default.pdf.menu')}}" method="post">
+                                             @csrf
+                                             <input type="hidden" name="pdf_no" value="2">
+                                             @if ($active_template && $active_template->pdf_no == 2)
+                                                <button class="btn btn-outline-success" type="submit">
+                                                   Active Menu
+                                                </button>
+                                             @elseif ($active_template && $active_template->pdf_no != 2)
+                                                <button class="btn btn-outline-danger" type="submit">
+                                                   Inactive
+                                                </button>
+                                             @else
+                                                <button class="btn btn-outline-info" type="submit">
+                                                   Make Default Menu
+                                                </button>
+                                             @endif
+                                          </form>
+                                       </div>
+                                        
+                                       
+                                       {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
+                                   
+                               </div>
+                           </div>
+                           <br/>
+                        </div>
+                        <div class="col-lg-3 position-relative">
+                           <a class="card-link" href="{{ route('pdf.menu', [2]) }}">                           
+                           </a>
+                           <div class="card">
+                              <input type="hidden" name="layout_numbers" value="1">
+                              <img class="card-img-top" src="/images/pdf/menu-demo2.png" alt="...">
+                              <div class="card-body d-flex justify-content-between">
+                                 {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                 <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
+                                        <div>
+                                          <a  href="{{route('pdf.menu.download', [2])}}">
+                                             <span class="btn btn-outline-info"> Download</span>
+                                          </a>
+                                       </div>
+                                       <div>
+                                          <form action="{{route('default.pdf.menu')}}" method="post">
+                                             @csrf
+                                             <input type="hidden" name="pdf_no" value="2">
+                                             @if ($active_template && $active_template->pdf_no == 2)
+                                                <button class="btn btn-outline-success" type="submit">
+                                                   Active Menu
+                                                </button>
+                                             @elseif ($active_template && $active_template->pdf_no != 2)
+                                                <button class="btn btn-outline-danger" type="submit">
+                                                   Inactive
+                                                </button>
+                                             @else
+                                                <button class="btn btn-outline-info" type="submit">
+                                                   Make Default Menu
+                                                </button>
+                                             @endif
+                                          </form>
+                                       </div>
+                                        
+                                       
+                                       {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
+                                   
+                               </div>
+                           </div>
+                           <br/>
+                        </div>
+                        <div class="col-lg-3 position-relative">
+                           <a class="card-link" href="{{ route('pdf.menu', [2]) }}">                           
+                           </a>
+                           <div class="card">
+                              <input type="hidden" name="layout_numbers" value="1">
+                              <img class="card-img-top" src="/images/pdf/menu-demo2.png" alt="...">
+                              <div class="card-body d-flex justify-content-between">
+                                 {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
+                                 <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
+                                        <div>
+                                          <a  href="{{route('pdf.menu.download', [2])}}">
+                                             <span class="btn btn-outline-info"> Download</span>
+                                          </a>
+                                       </div>
+                                       <div>
+                                          <form action="{{route('default.pdf.menu')}}" method="post">
+                                             @csrf
+                                             <input type="hidden" name="pdf_no" value="2">
+                                             @if ($active_template && $active_template->pdf_no == 2)
+                                                <button class="btn btn-outline-success" type="submit">
+                                                   Active Menu
+                                                </button>
+                                             @elseif ($active_template && $active_template->pdf_no != 2)
+                                                <button class="btn btn-outline-danger" type="submit">
+                                                   Inactive
+                                                </button>
+                                             @else
+                                                <button class="btn btn-outline-info" type="submit">
+                                                   Make Default Menu
+                                                </button>
+                                             @endif
+                                          </form>
+                                       </div>
+                                        
+                                       
+                                       {{-- <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span> --}}
+                                   
+                               </div>
+                           </div>
+                           <br/>
+                        </div>
 
-                                       </form>
-
-                                    </div>
-                                 </div>
-                              </div>
-                              <br/>
-                           </a>
-                        </div>
-                        <div class="col-lg-3">
-                           <a href="#">
-                              <div class="card">
-                                 <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
-                                 <div class="card-body">
-                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
-                                    <p class="mt-3 mb-0 text-sm">
-                                       {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
-                                       <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
-                                    </p>
-                                    <div class="mt-3">
-                                       <button class="btn btn-outline-info" type="submit">
-                                          Make Default Menu
-                                       </button>
-                                    </div>
-                                 </div>
-                              </div>
-                              <br/>
-                           </a>
-                        </div>
-                        <div class="col-lg-3">
-                           <a href="#">
-                              <div class="card">
-                                 <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
-                                 <div class="card-body">
-                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
-                                    <p class="mt-3 mb-0 text-sm">
-                                       {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
-                                       <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
-                                    </p>
-                                    <div class="mt-3">
-                                       <button class="btn btn-outline-info" type="submit">
-                                          Make Default Menu
-                                       </button>
-                                    </div>
-                                 </div>
-                              </div>
-                              <br/>
-                           </a>
-                        </div>
-                        <div class="col-lg-3">
-                           <a href="#">
-                              <div class="card">
-                                 <img class="card-img-top" src="/images/pdf/menu-demo1.png" alt="...">
-                                 <div class="card-body">
-                                    {{-- <h3 class="card-title text-primary text-uppercase">fff</h3>
-                                    <p class="card-text description mt-3">dfdfg dfgdfgdf gdfg fdgdfg </p> --}}
-                                    <p class="mt-3 mb-0 text-sm">
-                                       {{-- <span class="text-success mr-2">{{ __("AVAILABLE") }}</span> --}}
-                                       <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
-                                    </p>
-                                    <div class="mt-3">
-                                       <button class="btn btn-outline-info" type="submit">
-                                          Make Default Menu
-                                       </button>
-                                    </div>
-                                 </div>
-                              </div>
-                              <br/>
-                           </a>
-                        </div>
                      </div>
                   </div>
                </div>

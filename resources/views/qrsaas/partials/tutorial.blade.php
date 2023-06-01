@@ -1,12 +1,12 @@
 <style>
     @media (min-width: 168px) and (max-width: 768px){
-        .desktop{
+        .desktop-cus-two{
             display: none !important;
         }
     
     }
     @media (min-width: 769px){
-        .mobile{
+        .mobile-cus-two{
             display: none !important;
         }
       
@@ -22,8 +22,8 @@
         </div>
         <div class="row p-2">
             <!-- Data Call From Frontend Controller -->
-            <img class="mobile" src="./images/tutorial.jpg" alt="">
-            <img class="desktop" src="./images/tutorial_desktop.jpg" alt="">
+            <img class="mobile-cus-two" src="./images/tutorial.jpg" alt="">
+            <img class="desktop-cus-two" src="./images/tutorial_desktop.jpg" alt="">
             {{-- <img src="./images/tutorials_phone.svg" alt=""> --}}
        
         </div>

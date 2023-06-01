@@ -9,19 +9,19 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img style="width:300px" class="rounded" src="{{ asset('impactfront') }}/img/qrdemo.png" />
+                            <img style="width:300px" class="rounded" src="{{ asset('images') }}/demo/1.png" />
                         </div>
                         <div class="swiper-slide">
-                            <img style="width:300px" class="rounded" src="{{ asset('impactfront') }}/img/qrdemo.png" />
+                            <img style="width:300px" class="rounded" src="{{ asset('images') }}/demo/2.png" />
                         </div>
                         <div class="swiper-slide">
-                            <img style="width:300px" class="rounded" src="{{ asset('impactfront') }}/img/qrdemo.png" />
+                            <img style="width:300px" class="rounded" src="{{ asset('images') }}/demo/3.png" />
                         </div>
                         <div class="swiper-slide">
-                            <img style="width:300px" class="rounded" src="{{ asset('impactfront') }}/img/qrdemo.png" />
+                            <img style="width:300px" class="rounded" src="{{ asset('images') }}/demo/4.png" />
                         </div>
                         <div class="swiper-slide">
-                            <img style="width:300px" class="rounded" src="{{ asset('impactfront') }}/img/qrdemo.png" />
+                            <img style="width:300px" class="rounded" src="{{ asset('images') }}/demo/5.png" />
                         </div>
                     </div>
                     <!-- Add Pagination -->

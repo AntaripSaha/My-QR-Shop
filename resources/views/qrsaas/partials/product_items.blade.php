@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 col-lg-4 mb-5 ">
+<div class="col-12 col-md-6 col-lg-4 mb-5">
     <div class="card shadow-soft border-light">
         <div class="card-header p-0">
         <img src="{{ $image}}" class="card-img-top rounded-top" alt="image">
