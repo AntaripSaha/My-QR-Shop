@@ -1068,7 +1068,6 @@ class FrontEndController extends Controller
 
     public function restorant($alias)
     {
-       
         //Do we have impressum app
         $doWeHaveImpressumApp=Module::has('impressum');
 
@@ -1195,7 +1194,7 @@ class FrontEndController extends Controller
 
            session(['last_visited_restaurant_alias' => $restorant->alias]);
           
-           $viewData=[
+            $viewData=[
                 'wh'=>$wh,
                 'allergens'=>in_array("allergens", config('global.modules',[]))?Allergens::where('post_type','allergen')->get():[],
                 'currentDay'=>strtolower((new DateTime())->format('l')),
@@ -1223,7 +1222,6 @@ class FrontEndController extends Controller
            }else{
                 $response->withCookie(cookie('tid',"", 360));
            }
-
             return $response;
         } else {
             return abort(404,__('The selected restaurant is not active at this moment!'));
