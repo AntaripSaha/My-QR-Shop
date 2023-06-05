@@ -3743,97 +3743,85 @@
                         <div class="slider-card active" onclick="showHeroCard(1)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Menu</span>
+                              <span class="slider-card-title">Link</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(2)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">vCard Plus</span>
+                              <span class="slider-card-title">Text</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(3)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Business</span>
+                              <span class="slider-card-title">E-mail</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(4)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Website</span>
+                              <span class="slider-card-title">Location</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(5)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Apps</span>
+                              <span class="slider-card-title">Phone</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(6)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Wifi</span>
+                              <span class="slider-card-title">SMS</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(7)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Video</span>
+                              <span class="slider-card-title">WhatsApp</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(8)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">PDF</span>
+                              <span class="slider-card-title">Skype</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(9)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Images</span>
+                              <span class="slider-card-title">Zoom</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(10)">
                            <div  class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">List of links</span>
+                              <span class="slider-card-title">WI-FI</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(11)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">MP3</span>
+                              <span class="slider-card-title">V-Card</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(12)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Coupon</span>
+                              <span class="slider-card-title">Event</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(13)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Feedback</span>
+                              <span class="slider-card-title">PayPal</span>
                            </div>
                         </div>
                         <div class="slider-card" onclick="showHeroCard(14)">
                            <div class="slider-card-content">
                               <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Landing Page</span>
-                           </div>
-                        </div>
-                        <div class="slider-card" onclick="showHeroCard(15)">
-                           <div class="slider-card-content">
-                              <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Playlist</span>
-                           </div>
-                        </div>
-                        <div class="slider-card" onclick="showHeroCard(16)">
-                           <div class="slider-card-content">
-                              <span class="slider-card-icon"><img src="./images/qr-slider/circle_menu.svg" alt="" style="width: 80px; height: 80px;"></span>
-                              <span class="slider-card-title">Text</span>
+                              <span class="slider-card-title">BitCoin</span>
                            </div>
                         </div>
                      </div>
@@ -3843,11 +3831,11 @@
                      <div class="arrow right" onclick="showNextCard()"><span class="arrow-right"><i class="fa fa-arrow-right"></i></span></div>
                      <div class="hero-card" id="hero-card-1" style="display: flex">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/link.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image-two">
-                           <h2 class="hero-title">Menu</h2>
+                           <img src="./images/qr-slider/link.png" alt="Hero Image" class="hero-image-two">
+                           <h2 class="hero-title">Link</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -3862,10 +3850,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-2">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/text.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">vCard Plus</h2>
+                           <h2 class="hero-title">Text</h2>
                            <div>
                               <p></p>
                            </div>
@@ -3880,10 +3868,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-3">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/email.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">E-mail</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -3898,10 +3886,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-4">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/location.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">Location</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -3916,10 +3904,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-5">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/phone.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">Phone</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -3934,10 +3922,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-6">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/sms.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">SMS</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -3952,10 +3940,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-7">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/whatsapp.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">WhatsApp</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -3970,10 +3958,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-8">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/skype.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">Skype</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -3988,10 +3976,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-9">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/zoom.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">Zoom</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -4006,10 +3994,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-10">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/wifi.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">WI-FI</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -4024,10 +4012,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-11">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/v-card.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">V-Card</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -4042,10 +4030,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-12">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/event.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">Event</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -4060,10 +4048,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-13">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/paypal.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">PayPal</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -4078,28 +4066,10 @@
                      </div>
                      <div class="hero-card" id="hero-card-14">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/bitcoin.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
-                           <div>
-                              <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
-                           </div>
-                           <div>
-                              <a href="#qrgen">
-                              <button class="btn btn-primary btn-lg rounded-pill">
-                              Create QR Code
-                              </button>
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="hero-card" id="hero-card-15">
-                        <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
-                        </div>
-                        <div class="hero-container">
-                           <h2 class="hero-title">Menu</h2>
+                           <h2 class="hero-title">BitCoin</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
                            </div>
@@ -4114,7 +4084,7 @@
                      </div>
                      <div class="hero-card" id="hero-card-16">
                         <div class="hero-card-image">
-                           <img src="./images/qr-slider/cell-one.png" alt="Hero Image" class="hero-image">
+                           <img src="./images/qr-slider/event.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
                            <h2 class="hero-title">Menu</h2>
