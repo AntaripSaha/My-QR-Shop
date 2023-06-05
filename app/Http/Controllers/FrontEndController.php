@@ -1068,6 +1068,7 @@ class FrontEndController extends Controller
 
     public function restorant($alias)
     {
+        // return $alias;
         //Do we have impressum app
         $doWeHaveImpressumApp=Module::has('impressum');
 
@@ -1245,5 +1246,171 @@ class FrontEndController extends Controller
             'status' => true,
             'errMsg' => '',
         ]);
+    }
+
+
+
+    public function foodDetails($alias, $foodId)
+    {
+        $item = Items::where('id', $foodId)->get();
+        //Do we have impressum app
+        $doWeHaveImpressumApp=Module::has('impressum');
+
+        $subDomain = $this->getSubDomain();
+        if ($subDomain && $alias !== $subDomain) {
+            return redirect()->route('restorant', $subDomain);
+        }
+        $restorant = Restorant::whereRaw('REPLACE(subdomain, "-", "") = ?', [str_replace("-","",$alias)])->first();
+        if(config('app.isloyalty',false)&&$restorant){
+            return $this->loyaltyPlatform($restorant);
+        }
+
+
+        $doWeHaveOrderAfterHours=Module::has('orderdatetime')&&$restorant->getConfig('order_date_time_enable',false);
+
+        //Template switcher
+        $menuTemplate=config('settings.front_end_template','defaulttemplate');
+        if(Module::has('themeswitcher')){
+            $vendorTemplate=$restorant->getConfig('menu_template',$menuTemplate);
+            //dd($vendorTemplate);    
+            config(['settings.front_end_template' =>$vendorTemplate ]);
+            $menuTemplate=$vendorTemplate;
+        }
+        
+
+        //Do we have google translate app
+        $doWeHaveGoogleTranslateApp=Module::has('googletranslate')&&$restorant->getConfig('gt_enable',false)=="true";
+               
+        if ($restorant && $restorant->active == 1) {
+
+            if(config('settings.is_pos_cloud_mode')){
+                return redirect(route('admin.restaurants.edit',$restorant->id));
+            }
+    
+            //Set config based on restaurant
+            config(['app.timezone' => $restorant->getConfig('time_zone',config('app.timezone'))]);
+    
+    
+
+            if(isset($_GET['pay'])){
+                //This is a payment link
+                $order=Order::findOrFail($_GET['pay']);
+                if($order->restorant_id==$restorant->id){
+                    return redirect($order->payment_link);
+                }
+            }
+
+            $restorant->increment('views');
+
+            $canDoOrdering = $restorant->getPlanAttribute()['canMakeNewOrder'];
+            
+            //ratings usernames
+            $usernames = [];
+            if(config('app.isft')){
+                if ($restorant && $restorant->ratings) {
+                    foreach ($restorant->ratings as $rating) {
+                        $user = User::where('id', $rating->user_id)->get()->first();
+    
+                        if (! array_key_exists($user->id, $usernames)) {
+                            $new_obj = (object) [];
+                            $new_obj->name = $user->name;
+    
+                            $usernames[$user->id] = (object) $new_obj;
+                        }
+                    }
+                }
+            }
+            
+
+           
+            $previousOrders = Cookie::get('orders') ? Cookie::get('orders') : '';
+            $previousOrderArray = array_filter(explode(',', $previousOrders));
+
+            //tables
+            $tablesData = [];
+            $tables = Tables::where('restaurant_id', $restorant->id)->get();
+            foreach ($tables as $key => $table) {
+                $tablesData[$table->id] = $table->restoarea ? $table->restoarea->name.' - '.$table->name : $table->name;
+            }
+
+            //Change Language
+            ConfChanger::switchLanguage($restorant);
+
+            //Change currency
+            ConfChanger::switchCurrency($restorant);
+
+            $currentEnvLanguage = isset(config('config.env')[2]['fields'][0]['data'][config('app.locale')]) ? config('config.env')[2]['fields'][0]['data'][config('app.locale')] : 'UNKNOWN';
+
+            //dd($restorant->categories[1]->items[0]->extras);
+           // dd(Categories::where('restorant_id',$restorant->id)->ordered()->get());
+
+           $businessHours=$restorant->getBusinessHours();
+           
+           $tz= $restorant->getConfig('time_zone',config('app.timezone'));
+           $now = new \DateTime('now',new \DateTimeZone($tz));
+
+           $formatter = new \IntlDateFormatter(config('app.locale'), \IntlDateFormatter::SHORT, \IntlDateFormatter::SHORT);
+           $formatter->setPattern(config('settings.datetime_workinghours_display_format_new'));
+           $formatter->setTimeZone($tz);
+
+         
+           $viewFile='restorants.food_details';
+           if($menuTemplate!='defaulttemplate'){
+            $viewFile=config('settings.front_end_template','defaulttemplate')."::show";
+           }
+          
+
+           $wh=$businessHours->forWeek();
+           
+
+           $canDoOrdering=$canDoOrdering&&($businessHours->isOpen()||$doWeHaveOrderAfterHours);
+           if ($restorant->getConfig('disable_ordering', false)){
+            $canDoOrdering=false;
+           }
+           
+           $openingTime=null;
+           $closingTime=null;
+           try {
+            $openingTime=$businessHours->isClosed()?$formatter->format($businessHours->nextOpen($now)):null;
+            $closingTime=$businessHours->isOpen()?$formatter->format($businessHours->nextClose($now)):null;
+           } catch (MaximumLimitExceeded $th) {
+               //throw $th;
+           }
+           
+           session(['last_visited_restaurant_alias' => $restorant->alias]);
+          $viewData=[
+                'wh'=>$wh,
+                'allergens'=>in_array("allergens", config('global.modules',[]))?Allergens::where('post_type','allergen')->get():[],
+                'currentDay'=>strtolower((new DateTime())->format('l')),
+                'doWeHaveImpressumApp'=>$doWeHaveImpressumApp,
+                'restorant' => $restorant,
+                'item' => $item,
+                'openingTime' => $openingTime,
+                'closingTime' => $closingTime,
+                'doWeHaveOrderAfterHours'=> $doWeHaveOrderAfterHours,
+                'usernames' => $usernames,
+                'canDoOrdering'=>$canDoOrdering,
+                'currentLanguage'=>$currentEnvLanguage,
+                'showGoogleTranslate'=>$doWeHaveGoogleTranslateApp,
+                'showAllGTLanguages'=>$restorant->getConfig('gt_all',true),
+                'showGTLanguages'=>$restorant->getConfig('gt_list',""),
+                'showLanguagesSelector'=>env('ENABLE_MILTILANGUAGE_MENUS', false) && $restorant->localmenus()->count() > 1,
+                'hasGuestOrders'=>count($previousOrderArray) > 0,
+                'fields'=>[['class'=>'col-12', 'classselect'=>'noselecttwo', 'ftype'=>'select', 'name'=>'Table', 'id'=>'table_id', 'placeholder'=>'Select table', 'data'=>$tablesData, 'required'=>true]],
+           ];
+           
+    
+
+           $response = new \Illuminate\Http\Response(view($viewFile,$viewData));
+
+           if(isset($_GET['tid'])){
+                $response->withCookie(cookie('tid', $_GET['tid'], 360));
+           }else{
+                $response->withCookie(cookie('tid',"", 360));
+           }
+            return $response;
+        } else {
+            return abort(404,__('The selected restaurant is not active at this moment!'));
+        }
     }
 }

@@ -26,6 +26,10 @@ Route::post('/payment-product/{id?}', 'ProductPaymentController@payment')->name(
 
 Route::post('/order-product', 'OrderController@storeProduct')->name('order.product.store');
 
+
+
+Route::get('/{alias}/{foodId}', 'FrontEndController@foodDetails')->name('foodItemDetails');
+
     //Admin, Restaurant, User Product Purchase List
     Route::get('purchase-list', 'AdminProductController@purchaseList')->name('purchase.list');
 

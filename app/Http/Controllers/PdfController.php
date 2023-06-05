@@ -21,11 +21,12 @@ use App\Models\Allergens;
 class PdfController extends Controller
 {
   public function layoutindex(){
-     
+
     $active_template = RestaurantMenu::where('user_id', auth()->user()->id)->first();
     $restaurant_id = auth()->user()->restorant->id;
     $resto_name = auth()->user()->restorant->name;
-     
+    $resto_subdomain = auth()->user()->restorant->subdomain;
+
     if (auth()->user()->hasRole('owner')) {
             
       $canAdd = auth()->user()->restorant->getPlanAttribute()['canAddNewItems'];
@@ -87,6 +88,7 @@ class PdfController extends Controller
           'active_template' => $active_template,
           'restorant_id' => auth()->user()->restorant->id,
           'resto_name' => $resto_name,
+          'resto_subdomain' => $resto_subdomain,
           'restaurant_id' => $restaurant_id,
           'currentLanguage'=> $currentEnvLanguage,
           'availableLanguages'=>auth()->user()->restorant->localmenus,
@@ -97,6 +99,7 @@ class PdfController extends Controller
   }
   }
   public function index($var){
+     $resto_subdomain = auth()->user()->restorant->subdomain;
     
     if($var == 1){
         $resto_name = auth()->user()->restorant->name;
@@ -161,6 +164,7 @@ class PdfController extends Controller
               'categories' => $categories,
               'restorant_id' => auth()->user()->restorant->id,
               'resto_name' => $resto_name,
+              'resto_subdomain' => $resto_subdomain,
               'currentLanguage'=> $currentEnvLanguage,
               'availableLanguages'=>auth()->user()->restorant->localmenus,
               'defaultLanguage'=>$defaultLng?$defaultLng->language:""
@@ -231,6 +235,7 @@ class PdfController extends Controller
               'categories' => $categories,
               'restorant_id' => auth()->user()->restorant->id,
               'resto_name' => $resto_name,
+              'resto_subdomain' => $resto_subdomain,
               'currentLanguage'=> $currentEnvLanguage,
               'availableLanguages'=>auth()->user()->restorant->localmenus,
               'defaultLanguage'=>$defaultLng?$defaultLng->language:""
@@ -244,10 +249,12 @@ class PdfController extends Controller
   public function pdfDownload($var)
   {
       $resto_name = auth()->user()->restorant->name;
+      $resto_subdomain = auth()->user()->restorant->subdomain;
       $categories=auth()->user()->restorant->categories;
       $data = [
         'categories'    => $categories=auth()->user()->restorant->categories,
         'resto_name'    => $resto_name,
+        'resto_subdomain'    => $resto_subdomain,
       ];
       
     //   ini_set('max_execution_time', 180); //3 minutes
@@ -305,12 +312,15 @@ class PdfController extends Controller
 
   public function pdfDownloadUser($var)
   {
+
       $restorant = Restorant::whereRaw('REPLACE(subdomain, "-", "") = ?', [str_replace("-","",$var)])->first();
       $categories = $restorant->categories;
       $resto_name = $restorant->name;
+      $resto_subdomain = $restorant->subdomain;
       $data = [
         'categories'    => $categories,
         'resto_name'    => $resto_name,
+        'resto_subdomain'    => $resto_subdomain,
       ];
      
       $default_menu =  RestaurantMenu::where('restaurant_id', $restorant->id)->where('subdomain', $restorant->subdomain)->select('pdf_no')->first();

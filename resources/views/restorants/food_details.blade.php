@@ -96,55 +96,33 @@
 <section class="section pt-lg-0" id="restaurant-content" style="padding-top: 0px">
    <input type="hidden" id="rid" value="{{ $restorant->id }}"/>
    <div class="container container-restorant">
-      @if(!$restorant->categories->isEmpty())
-      <nav class="tabbable sticky" style="top: {{ config('app.isqrsaas') ? 64:88 }}px;">
-         <ul class="nav nav-pills bg-white mb-2">
-            <li class="nav-item nav-item-category ">
-               <a class="nav-link  mb-sm-3 mb-md-0 active" data-toggle="tab" role="tab" href="">{{ __('All categories') }}</a>
-            </li>
-            @foreach ( $restorant->categories as $key => $category)
-            @if(!$category->aitems->isEmpty())
-            <li class="nav-item nav-item-category" id="{{ 'cat_'.clean(str_replace(' ', '', strtolower($category->name)).strval($key)) }}">
-               <a class="nav-link mb-sm-3 mb-md-0" data-toggle="tab" role="tab" id="{{ 'nav_'.clean(str_replace(' ', '', strtolower($category->name)).strval($key)) }}" href="#{{ clean(str_replace(' ', '', strtolower($category->name)).strval($key)) }}">{{ $category->name }}</a>
-            </li>
-            @endif
-            @endforeach
-         </ul>
-      </nav>
-      @endif
-      @if(!$restorant->categories->isEmpty())
-      @foreach ( $restorant->categories as $key => $category)
-      @if(!$category->aitems->isEmpty())
-      <div id="{{ clean(str_replace(' ', '', strtolower($category->name)).strval($key)) }}" class="{{ clean(str_replace(' ', '', strtolower($category->name)).strval($key)) }}">
-         <h1>{{ $category->name }}</h1>
-         <br />
-      </div>
-      @endif
-      <div class="row {{ clean(str_replace(' ', '', strtolower($category->name)).strval($key)) }}">
-         @foreach ($category->aitems as $item)
-         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+     
+ 
+    
+      <div class="d-flex justify-content-left ">
+          <div class=" ">
             <div class="strip">
-               @if(!empty($item->image))
+               @if(!empty($item[0]->logom))
                <figure>
-                  <a onClick="setCurrentItem({{ $item->id }})" href="javascript:void(0)"><img src="{{ $item->logom }}" loading="lazy" data-src="{{ config('global.restorant_details_image') }}" class="img-fluid lazy" alt=""></a>
+                  <a onClick="setCurrentItem({{ $item[0]->id }})" href="javascript:void(0)"><img src="{{ $item[0]->logom }}" loading="lazy" data-src="{{ config('global.restorant_details_image') }}" class="img-fluid lazy" alt=""></a>
                </figure>
                @endif
                <div class="d-flex justify-between">
                   <div>
-                     <div class="res_title"><b><a onClick="setCurrentItem({{ $item->id }})" href="javascript:void(0)">{{Str::limit($item->name, 18)}}</a></b></div>
-                     <div class="res_description">{{Str::limit($item->short_description, 25)}}</div>
+                     <div class="res_title"><b><a onClick="setCurrentItem({{ $item[0]->id }})" href="javascript:void(0)">{{Str::limit($item[0]->name, 18)}}</a></b></div>
+                     <div class="res_description">{{Str::limit($item[0]->short_description, 25)}}{{ $item[0]->id }}</div>
                      <div class="row">
                         <div class="col-6">
                            <div class="res_mimimum">
-                              @if ($item->discounted_price>0)
-                              <span class="text-muted" style="text-decoration: line-through;">@money($item->discounted_price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
+                              @if ($item[0]->discounted_price>0)
+                              <span class="text-muted" style="text-decoration: line-through;">@money($item[0]->discounted_price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
                               @endif
-                              @money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))
+                              @money($item[0]->price, config('settings.cashier_currency'),config('settings.do_convertion'))
                            </div>
                         </div>
                         <div class="col-6">
                            <div class="allergens" style="text-align: right;">
-                              @foreach ($item->allergens as $allergen)
+                              @foreach ($item[0]->allergens as $allergen)
                               <div class='allergen' data-toggle="tooltip" data-placement="bottom" title="{{$allergen->title}}" >
                                  <img  src="{{$allergen->image_link}}" />
                               </div>
@@ -155,7 +133,7 @@
                   </div>
                   <div class="p-3" style="margin-bottom: -20px;" >
                      <b>
-                     <a onClick="setCurrentItem({{ $item->id }})" href="javascript:void(0)">
+                     <a onClick="setCurrentItem({{ $item[0]->id }})" href="javascript:void(0)">
                      <img src="{{asset('images/icons/plus.png')}}" alt="" srcset="" width="30px">
                      </a>
                      </b>
@@ -163,21 +141,9 @@
                </div>
             </div>
          </div>
-         @endforeach
-      </div>
-      @endforeach
-      @else
-      <div class="row">
-         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-            <p class="text-muted mb-0">{{ __('Hmmm... Nothing found!')}}</p>
-            <br/><br/><br/>
-            <div class="text-center" style="opacity: 0.2;">
-               <img src="https://www.jing.fm/clipimg/full/256-2560623_juice-clipart-pizza-box-pizza-box.png" width="200" height="200">
-            </div>
-         </div>
-      </div>
-      @endif
-      <!-- Check if is installed -->
+       </div>
+      
+       <!-- Check if is installed -->
       @if (isset($doWeHaveImpressumApp)&&$doWeHaveImpressumApp)
       <!-- Check if there is value -->
       @if (strlen($restorant->getConfig('impressum_value',''))>5)

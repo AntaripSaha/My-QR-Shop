@@ -110,7 +110,7 @@
                   <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
                </td>
                <td width="30px">
-                  <a href="https://myqrshop.com/" target="_blank">
+                  <a href="/{{$resto_subdomain}}/{{ $item->id }}" target="_blank">
                      <img src="/images/icons/plus.svg" width="50px">
                   </a>
                </td>
