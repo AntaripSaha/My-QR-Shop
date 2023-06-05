@@ -25,15 +25,22 @@
                         </div>
                     </div>
                     <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination mb-5"></div>
                       <!-- If we need navigation buttons -->
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
+                    <div class="mb-5"></div>
                 </div>
-                
+                <div class="col-12 text-center mb-1 pb-2">
+                    <!-- Button Modal -->
+                    <a href="{{ route('newrestaurant.register') }}" class="btn btn-secondary animate-up-2"><span class="mr-2"><i class="fas fa-hand-pointer"></i></span>{{ __('qrlanding.demo_button') }}</a>
+                </div>
+               
             </div>
             
+            
         </div>
+      
     </div>
 </section>
 

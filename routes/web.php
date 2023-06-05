@@ -26,6 +26,7 @@ Route::post('/payment-product/{id?}', 'ProductPaymentController@payment')->name(
 
 Route::post('/order-product', 'OrderController@storeProduct')->name('order.product.store');
 
+Route::get('/blog/{slug}', 'PagesController@blog')->name('blog');
 
 
 Route::get('/{alias}/{foodId}', 'FrontEndController@foodDetails')->name('foodItemDetails');
@@ -317,7 +318,6 @@ Route::get('/cartdec/{item}', 'CartController@decrease')->name('cart.decrease');
 Route::post('/order', 'OrderController@store')->name('order.store');
 
 Route::resource('pages', 'PagesController');
-Route::get('/blog/{slug}', 'PagesController@blog')->name('blog');
 
 Route::get('/login/google', 'Auth\LoginController@googleRedirectToProvider')->name('google.login');
 Route::get('/login/google/redirect', 'Auth\LoginController@googleHandleProviderCallback');

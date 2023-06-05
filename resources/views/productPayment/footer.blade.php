@@ -114,7 +114,7 @@
                 <div class="support-text__content text-white text-center">
                     <h3 class="support-title text-uppercase text-white">Talk to an expert</h3>
                     <div class="support-subTitle">Call us to make order now</div>
-                    <div class="support-hotline">90-500-28-999</div>
+                    <div class="support-hotline">971 55 910 8575</div>
                 </div>
             </div>
         </div>
