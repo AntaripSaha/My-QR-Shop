@@ -26,8 +26,8 @@ Route::post('/payment-product/{id?}', 'ProductPaymentController@payment')->name(
 
 Route::post('/order-product', 'OrderController@storeProduct')->name('order.product.store');
 
-Route::get('/blog/{slug}', 'PagesController@blog')->name('blog');
 
+Route::get('/blog/{slug}', 'PagesController@blog')->name('blog');
 
 Route::get('/{alias}/{foodId}', 'FrontEndController@foodDetails')->name('foodItemDetails');
 

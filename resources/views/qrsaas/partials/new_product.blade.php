@@ -10,7 +10,7 @@
         <div class="row">
             <!-- Data Call From Frontend Controller -->
         @foreach ($products as $key=>$product) 
-            <div class="col-lg-3 col-md-4 col-sm-6 p-2 d-flex justify-content-center">
+            <div class="col-lg-3 col-sm-6 p-2 d-flex justify-content-center">
                 <a href="{{route('cart.checkout.product', $product->id)}}">
                 
                     <div class="card" style="width: 18rem;">
