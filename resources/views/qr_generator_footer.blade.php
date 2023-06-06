@@ -158,11 +158,11 @@ main,
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h2 class="text-white footer-title text-left">Get The Latest News</h2>
                  <div class="footer-link d-flex justify-content-left">
-                    <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-facebook-f icon-custom"></i></a>
-                    <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-twitter icon-custom"></i></a>
-                    <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-youtube icon-custom"></i></a>
-                    <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-linkedin-in icon-custom"></i></a>
-                    <a class="d-block" href="#"><i aria-hidden="true" class="fab fa-instagram icon-custom"></i></a>
+                    <a class="d-block" target="_blank" href="https://www.facebook.com/myqrshop"><i aria-hidden="true" class="fab fa-facebook-f icon-custom"></i></a>
+                    <a class="d-block" target="_blank" href="#"><i aria-hidden="true" class="fab fa-twitter icon-custom"></i></a>
+                    <a class="d-block" target="_blank" href="https://www.youtube.com/@MyQRShop"><i aria-hidden="true" class="fab fa-youtube icon-custom"></i></a>
+                    <a class="d-block" target="_blank" href="https://www.linkedin.com/company/my-qr-shop/?original_referer="><i aria-hidden="true" class="fab fa-linkedin-in icon-custom"></i></a>
+                    <a class="d-block" target="_blank" href="https://www.instagram.com/myqrshop/"><i aria-hidden="true" class="fab fa-instagram icon-custom"></i></a>
                  </div>
                  <div>
                     <p class="text-white text-left">Subscribe to keep up with the latest industry news. My QR Shop updates, events, and more !</p>
