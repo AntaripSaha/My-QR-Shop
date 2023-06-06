@@ -16,8 +16,8 @@
         </div>
         <div class="row">
             <div class="col-12 ">
-                <div class="swiper-container ">
-                    <div class="swiper-wrapper">
+                <div class="swiper-container2 overflow-hidden ">
+                    <div class="swiper-wrapper ">
                         <div class="swiper-slide">
                             <div class="customer-testimonial d-flex mb-5">
                                 <img src="https://randomuser.me/api/portraits/men/74.jpg" class="image image-sm mr-3 rounded-circle shadow" alt="">
@@ -106,3 +106,36 @@
     </div>
 </section>
 <!-- End Testimonials -->
+
+<!-- Add Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script type="text/javascript">
+    // Initialize Swiper
+    var swiper = new Swiper('.swiper-container2', {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+         // when window width is >= 320px
+         320: {
+            slidesPerView: 1,
+            spaceBetween: 50
+         },
+         // when window width is >= 480px
+         480: {
+            slidesPerView: 3,
+            spaceBetween: 10
+         },
+      },
+    });
+</script>
