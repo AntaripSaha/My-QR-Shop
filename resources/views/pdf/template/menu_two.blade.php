@@ -135,7 +135,7 @@
                                                 <p class="item-price">@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</p>
                                             </td>
                                             <td width="30px">
-                                                <a href="https://myqrshop.com/{{$resto_subdomain}}/{{ $item->id }}" style="text-decoration: none;">
+                                                <a href="https://myqrshop.com/restaurant/{{$resto_subdomain}}/{{ $item->id }}" style="text-decoration: none;">
                                                     <div class="plus-icon">+</div>
                                                     </a>                   
                                             </td>
