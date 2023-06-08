@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/generate-qr', 'FrontEndController@generateQr')->name('generateqr');
 Route::get('/pdf-layouts', 'PdfController@layoutindex')->name('pdf.menu.layouts');
 Route::get('/pdf-menu/{var?}', 'PdfController@index')->name('pdf.menu');
