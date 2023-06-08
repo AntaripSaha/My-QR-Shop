@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/restaurant/{alias}/{foodId}', 'FrontEndController@foodDetails')->name('foodItemDetails');
 
 Route::get('/generate-qr', 'FrontEndController@generateQr')->name('generateqr');
 Route::get('/pdf-layouts', 'PdfController@layoutindex')->name('pdf.menu.layouts');
@@ -28,7 +29,6 @@ Route::post('/order-product', 'OrderController@storeProduct')->name('order.produ
 
 Route::get('/blog/{slug}', 'PagesController@blog')->name('blog');
 
-Route::get('/{alias}/{foodId}', 'FrontEndController@foodDetails')->name('foodItemDetails');
 
     //Admin, Restaurant, User Product Purchase List
     Route::get('purchase-list', 'AdminProductController@purchaseList')->name('purchase.list');
