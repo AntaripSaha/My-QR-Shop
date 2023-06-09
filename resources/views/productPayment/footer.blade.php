@@ -187,17 +187,16 @@
     </div>
     <hr class="bg-white">
     <div class="d-flex justify-content-between pl-5 pr-5 desktop">
+        <div class="">
+            <img src="/images/payment_methods.png" width="350px" alt="">
+        </div>
         <div class="text-white">
             <p>
                 © Copyright  2023. All rights reserved My QR Shop. 
             </p>
         </div>
-        <div class="">
-            <img src="/images/payment_methods.png" width="350px" alt="">
-        </div>
     </div>
     <div class=" mobile">
-        
         <div class="d-flex justify-content-center">
             <img src="/images/payment_methods.png" width="350px" alt="">
         </div>

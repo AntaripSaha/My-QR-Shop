@@ -226,7 +226,7 @@
       <div class="bg-white mt-5 pt-5">
          <input type="hidden" id="qrcdr-relative" value="">
          <div class="container pt-3"  id="qrgen">
-            <h1 class="text-center">Generate Your Customized QR Code</h1>
+            <h1 class="text-center">Generate Your QR Code</h1>
             <div class="row ">
                <div class="col-lg-4 order-last">
                   <nav class="navbar sticky-top">
@@ -3471,8 +3471,8 @@
       {{-- Section 1 Start --}}
       <div class="pt-5 pb-2 bg-light">
          <div class="container mt-5 mb-4">
-            <h1 class="text-center fw-bold">Boost Your Business with Personalized and Customized QR Codes</h1>
-            <p class="text-center">Generate your very own QR codes and manage them at one place.</p>
+            <h1 class="text-center fw-bold">Create Your Own QR Codes and Boost Your Business.</h1>
+            <p class="text-center">Easily generate, manage and statistically track your QR codes.</p>
             <div class="d-flex justify-content-center">
                <a href="#qrgen">
                <button class="btn btn-primary rounded-pill btn-lg">
@@ -3488,8 +3488,8 @@
       {{-- Section 1 End --}}
       {{-- Section 2 Start--}}
       <div class="container mt-5 mb-4">
-         <h1 class="text-center">Let’s Get Started!</h1>
-         <p class="text-center">Learn more about the basic concepts of QR codes and key steps that you should be aware of.</p>
+         <h1 class="text-center">Everything You Need to Know to Get Started</h1>
+         <p class="text-center">In this section you will find the basic concepts and the necessary steps to start enjoying the benefits of using QR.</p>
          <div class="row mt-5 mb-5">
             <div class="col-md-6 col-sm-12 mt-0">
                <img class="rounded" width="350px" src="./images/qr_ico3.png" alt="">
@@ -3497,42 +3497,41 @@
             <div class="col-md-6 col-sm-12 mt-5">
                <div class="accordion" id="accordionExample">
                   <div class="card">
-                     <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true">
+                     <div class="card-header d-flex justify-content-between" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
                         <h2 >What is a QR Code?</h2>
                         <span class="accicon">
                         <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                         </span>
                      </div>
-                     <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                         <div class="card-body">
-                           "QR" stands for "quick response" and refers to immediate access to the data in the concerned code. In a nutshell, it is a black-and-white pixelated code and a development over the barcode. Created by Denso Wave, a Japanese subsidiary of Toyota Denso, they were first used to designate the parts of their vehicles and speed up production logistics. Because of its adaptability and accessibility, it has recently become extremely popular, thanks to the scanning feature of modern smartphones.                        
+                           The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        
                         </div>
                      </div>
                   </div>
                   <div class="card">
-                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        <h2 >The benefits of using QR codes</h2>
+                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h2 >Know the benefits of using QR</h2>
                         <span class="accicon">                     
                         <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                         </span>
                      </div>
-                     <div id="collapseFive" class="collapse" data-parent="#accordionExample">
+                     <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
                         <div class="card-body">
-                           Today, a vast majority of companies are implementing QR codes. These codes have become a fundamental resource for the marketing and commercialization of products and services. Its rising popularity is a result of its diverse applications, including using a simple scan to collect payments from customers, share links to web pages, catalogs, and price lists, collect feedback on goods or services, invite customers to share images or videos, promote business events, and many more.
+                           You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        
                         </div>
                      </div>
                   </div>
                   <div class="card">
-                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false">
-                        <h2 >How to use QR codes?
-                        </h2>
+                     <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
+                        <h2>How to start using QR?</h2>
                         <span class="accicon">                     
                         <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                         </span>
                      </div>
-                     <div id="collapseSix" class="collapse" data-parent="#accordionExample">
+                     <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                         <div class="card-body">
-                           A QR code reader is already present on most smartphones and many modern devices. All you need to do is open your phone's camera and hold it over the code for a few seconds, waiting for a notification to show up on the screen. If this does not occur, check the settings to see if QR scanning is turned on. You can also download and install a QR code reader from your app store.                       
+                           Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        
                         </div>
                      </div>
                   </div>
@@ -3546,27 +3545,27 @@
          <div class="container">
             <div class="row">
                <div class="col-md-5 col-sm-12">
-                  <h1 class="text-center">My QR Shop Offers Superfast QR Code Generation</h1>
-                  <p>When it comes to generating QR codes for your digital menu, My QR Shop is the best option that you can have. Our user-friendly features and easy-to-use options can help you create a QR code quickly and grow your business smoothly.</p>
+                  <h1 class="text-center">MyQrShop Makes All the Difference</h1>
+                  <p>If you want to create your own QR code, a good tool for doing so is the MyQrShop QR generator, due to its ease of use and all the options it offers to make your ideas come true or your business grow.</p>
                   <div class="d-flex justify-content-between gap-2 desktop">
                      <div>
                         <p>
                            <img width="20px" src="./images/check-mark.png" alt="">
-                           Unlimited color options
+                           Unlimited QR codes
                         </p>
                         <p>
                            <img width="20px" src="./images/check-mark.png" alt="">
-                           Variety of logos and frames
+                           Scan without limits
                         </p>
                         <p>
                            <img width="20px" src="./images/check-mark.png" alt="">
-                           Numerous designs
+                           Mass creation
                         </p>
                      </div>
                      <div>
                         <p>
                            <img width="20px" src="./images/check-mark.png" alt="">
-                           Quick and easy registration
+                           Add multiple users
                         </p>
                         <p>
                            <img width="20px" src="./images/check-mark.png" alt="">
@@ -3854,7 +3853,6 @@
                            <img src="./images/qr-slider/text.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/text.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">Text</h2>
                            <div>
                               <p></p>
@@ -3873,7 +3871,6 @@
                            <img src="./images/qr-slider/email.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/email.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">E-mail</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -3892,7 +3889,6 @@
                            <img src="./images/qr-slider/location.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/location.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">Location</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -3911,7 +3907,6 @@
                            <img src="./images/qr-slider/phone.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/phone.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">Phone</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -3930,7 +3925,6 @@
                            <img src="./images/qr-slider/sms.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/sms.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">SMS</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -3949,7 +3943,6 @@
                            <img src="./images/qr-slider/whatsapp.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/whatsapp.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">WhatsApp</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -3968,7 +3961,6 @@
                            <img src="./images/qr-slider/skype.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/skype.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">Skype</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -3987,7 +3979,6 @@
                            <img src="./images/qr-slider/zoom.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/zoom.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">Zoom</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -4006,7 +3997,6 @@
                            <img src="./images/qr-slider/wifi.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/wifi.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">WI-FI</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -4025,7 +4015,6 @@
                            <img src="./images/qr-slider/v-card.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/v-card.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">V-Card</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -4044,7 +4033,6 @@
                            <img src="./images/qr-slider/event.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/event.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">Event</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -4063,7 +4051,6 @@
                            <img src="./images/qr-slider/paypal.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/paypal.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">PayPal</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -4082,7 +4069,6 @@
                            <img src="./images/qr-slider/bitcoin.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/bitcoin.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">BitCoin</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -4101,7 +4087,6 @@
                            <img src="./images/qr-slider/event.png" alt="Hero Image" class="hero-image">
                         </div>
                         <div class="hero-container">
-                           <img src="./images/qr-slider/event.png" alt="Hero Image" class="hero-image-two">
                            <h2 class="hero-title">Menu</h2>
                            <div>
                               <p>If you have a bar or restaurant, this type of QR code is for you. No more reprinting menus every time you make a modification.</p>
@@ -4197,34 +4182,33 @@
                         </div>
                         <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
                            <div class="card-body">
-                              "QR" stands for "quick response" and refers to immediate access to the data in the concerned code. In a nutshell, it is a black-and-white pixelated code and a development over the barcode. Created by Denso Wave, a Japanese subsidiary of Toyota Denso, they were first used to designate the parts of their vehicles and speed up production logistics. Because of its adaptability and accessibility, it has recently become extremely popular, thanks to the scanning feature of modern smartphones.                        
+                              The term “QR” stands for “quick response” and refers to instant access to the information contained in the Code. It is, in short, the evolution of the barcode, made up of patterns of black and white pixels. Denso Wave, a Japanese subsidiary of Toyota Denso, developed them in order to mark the components of their cars and thus speed up logistics in their production. Currently, it has gained great popularity, due to its versatility and accessibility, thanks to the functions of smart phones.                        
                            </div>
                         </div>
                      </div>
                      <div class="card">
                         <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                           <h2 >The benefits of using QR codes</h2>
+                           <h2 >Know the benefits of using QR</h2>
                            <span class="accicon">                     
                            <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                            </span>
                         </div>
                         <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                            <div class="card-body">
-                              Today, a vast majority of companies are implementing QR codes. These codes have become a fundamental resource for the marketing and commercialization of products and services. Its rising popularity is a result of its diverse applications, including using a simple scan to collect payments from customers, share links to web pages, catalogs, and price lists, collect feedback on goods or services, invite customers to share images or videos, promote business events, and many more.
+                              You will have noticed that more and more companies choose to include QR, as a fundamental resource for the marketing and commercialization of their products and services. Its growing popularity is due to the multiplicity of uses that you can give it: to receive payments from your clients, share links to web pages, catalogs and price lists, receive comments on your products or services, invite the client to share images or videos , promote your business events and much more, with just a scan!                        
                            </div>
                         </div>
                      </div>
                      <div class="card">
                         <div class="card-header collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false">
-                           <h2 >How to use QR codes?
-                           </h2>
+                           <h2 >How to start using QR?</h2>
                            <span class="accicon">                     
                            <img class="rounded rotate-icon" width="15px" src="./images/down-arrow.png" alt="">
                            </span>
                         </div>
                         <div id="collapseSix" class="collapse" data-parent="#accordionExample">
                            <div class="card-body">
-                              A QR code reader is already present on most smartphones and many modern devices. All you need to do is open your phone's camera and hold it over the code for a few seconds, waiting for a notification to show up on the screen. If this does not occur, check the settings to see if QR scanning is turned on. You can also download and install a QR code reader from your app store.                       
+                              Many devices already have a built-in QR code reader. In this case, all you have to do is open the camera on your mobile phone and hold it over a code for a few seconds, until a notification appears on the screen. In case this does not happen, go to settings to check that QR scanning is enabled. If you don't have the feature, just download and install a QR code reader from your app store.                        
                            </div>
                         </div>
                      </div>

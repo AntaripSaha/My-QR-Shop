@@ -30,8 +30,8 @@ Route::post('/order-product', 'OrderController@storeProduct')->name('order.produ
 Route::get('/blog/{slug}', 'PagesController@blog')->name('blog');
 
 
-//Admin, Restaurant, User Product Purchase List
-Route::get('purchase-list', 'AdminProductController@purchaseList')->name('purchase.list');
+    //Admin, Restaurant, User Product Purchase List
+    Route::get('purchase-list', 'AdminProductController@purchaseList')->name('purchase.list');
 
 
 Route::post('/checkout', 'ProductPaymentController@showCheckout')->name('checkout');

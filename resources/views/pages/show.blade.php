@@ -1,23 +1,16 @@
-@extends('layouts.customLayouts', ['class' => ''])
+@extends('layouts.front', ['class' => ''])
 
 @section('content')
-    
-        <div class="container h-100 pt-5 mt-5">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 text-center">
-                    <h2 class="display-2 page-title text-black">{{ $page->title }}</h2>
-                </div>
-            </div>
-        </div> 
-    {{-- <header class="masthead" style="{{ 'background-image: url('.config('global.restorant_details_cover_image').')' }}">
+    <header class="masthead" style="{{ 'background-image: url('.config('global.restorant_details_cover_image').')' }}">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
-                    <h2 class="display-2 page-title text-black">{{ $page->title }}</h2>
+                    <h1 class="display-2 page-title">{{ $page->title }}</h1>
+                    
                 </div>
             </div>
         </div>
-    </header> --}}
+    </header>
     <section class="section">
         <div class="container container-pages">
             <div class="row">
@@ -28,8 +21,6 @@
                 </div>
             </div>
         </div>
+
     </section>
 @endsection
- 
- 
-

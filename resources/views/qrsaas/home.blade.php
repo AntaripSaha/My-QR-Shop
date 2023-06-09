@@ -19,31 +19,32 @@
 <html lang="en">
 
 <head>
-    <!-- Facebook Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="My QR Shop" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Contactless Digital QR Menu to Grow Your Restaurant Business - My QR Shop">
-    <meta property="og:description" content="Generate a personalized QR code for your digital menu with My QR Shop. Get contactless digital QR menus to grow your restaurant business and reach new customers.">
-    <meta property="og:image" content="https://myqrshop.com/public/images/myqrshop.jpg">
-    <meta name="og:image:width" content="1200" />
-    <meta name="og:image:height" content="630" />
-    <meta property="og:url" content="https://myqrshop.com/">
-    <meta property="og:image:alt" content="Contactless Digital QR Menu to Grow Your Restaurant Business - My QR Shop" />
-    <meta property="og:image:type" content="image/jpeg" />
+
+  <!-- Facebook Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="My QR Shop" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Contactless Digital QR Menu to Grow Your Restaurant Business - My QR Shop">
+<meta property="og:description" content="Generate a personalized QR code for your digital menu with My QR Shop. Get contactless digital QR menus to grow your restaurant business and reach new customers.">
+<meta property="og:image" content="https://myqrshop.com/public/images/myqrshop.jpg">
+<meta name="og:image:width" content="1200" />
+<meta name="og:image:height" content="630" />
+<meta property="og:url" content="https://myqrshop.com/">
+<meta property="og:image:alt" content="Contactless Digital QR Menu to Grow Your Restaurant Business - My QR Shop" />
+<meta property="og:image:type" content="image/jpeg" />
 
 
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contactless Digital QR Menu to Grow Your Restaurant Business - My QR Shop">
-    <meta name="twitter:description" content="Generate a personalized QR code for your digital menu with My QR Shop. Get contactless digital QR menus to grow your restaurant business and reach new customers.">
-    <meta name="twitter:image" content="https://myqrshop.com/public/images/myqrshop.jpg">
-    <meta name="twitter:image:width" content="1200" />
-    <meta name="twitter:image:height" content="630" />
-    <meta property="twitter:url" content="https://myqrshop.com/">
-    <meta name="twitter:site" content="@Myqrshop1" />
-    <meta property="twitter:site_name" content="My QR Shop" />
+  <!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contactless Digital QR Menu to Grow Your Restaurant Business - My QR Shop">
+<meta name="twitter:description" content="Generate a personalized QR code for your digital menu with My QR Shop. Get contactless digital QR menus to grow your restaurant business and reach new customers.">
+<meta name="twitter:image" content="https://myqrshop.com/public/images/myqrshop.jpg">
+<meta name="twitter:image:width" content="1200" />
+<meta name="twitter:image:height" content="630" />
+<meta property="twitter:url" content="https://myqrshop.com/">
+<meta name="twitter:site" content="@Myqrshop1" />
+<meta property="twitter:site_name" content="My QR Shop" />
 
     <!-- Primary Meta Tags -->
     <meta charset="utf-8" />
