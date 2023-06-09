@@ -1,4 +1,4 @@
-@extends('layouts.front', ['title' => __('User Profile')])
+@extends('layouts.customLayouts', ['title' => __('User Profile')])
 @if (strlen(config('settings.recaptcha_site_key'))>2)
     @section('head')
     {!! htmlScriptTagJsApi([]) !!}
