@@ -1,9 +1,15 @@
-@extends('layouts.app', ['class' => 'bg-default'])
+<style>
+    .password-info{
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+</style>
+@extends('layouts.customLayouts', ['class' => 'bg-default'])
 
 @section('content')
-    @include('layouts.headers.guest')
-    
-    <div class="container mt--8 pb-5">
+    <div class="container mt-8">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
@@ -15,7 +21,6 @@
                             @csrf
 
                             <input type="hidden" name="token" value="{{ $token }}">
-
                             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} mb-3">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
@@ -29,6 +34,7 @@
                                     </span>
                                 @endif
                             </div>
+                            <p class="password-info">Password Must be 8 Characters</p>
                             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">

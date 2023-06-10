@@ -1,15 +1,14 @@
-@extends('layouts.app', ['class' => 'bg-default'])
+@extends('layouts.customLayouts', ['class' => 'bg-default'])
 
 @section('content')
-    @include('layouts.headers.guest')
-
-    <div class="container mt--8 pb-5">
-        <div class="row justify-content-center">
+ 
+    <div class="container">
+        <div class="row justify-content-center mt-8">
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
-                            <small>{{ __('Reset password') }}</small>
+                            <small>{{ __('Reset Password') }}</small>
                         </div>
 
                         @if (session('status'))
