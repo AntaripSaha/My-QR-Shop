@@ -64,9 +64,9 @@
                                 @foreach ($products as $product)
                                     <tr>
                                         @if(auth()->user()->hasRole('manager'))
-                                            <td><a href="{{ route('admin.restaurants.loginas', $product) }}">{{ $product->name }}</a></td>
+                                            <td><a href="#">{{ $product->name }}</a></td>
                                         @else
-                                            <td><a href="{{ route('admin.restaurants.edit', $product) }}">{{ $product->name }}</a></td>
+                                            <td><a href="#">{{ $product->name }}</a></td>
                                         @endif
                                        
                                         <td><img class="rounded" src={{ $product->image }} width="50px" height="auto" ></td>

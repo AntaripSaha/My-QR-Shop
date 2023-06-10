@@ -42,6 +42,11 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.subscribed.plan') }}">
+            <i class="ni ni-bag-17 text-success"></i> {{ __('Plan Subscribed') }}
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="#navbar-product" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
             <i class="ni ni-cart text-info"></i>
             <span class="nav-link-text">{{ __('Products') }}</span>

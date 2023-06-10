@@ -3,6 +3,7 @@
 @section('content')
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
     </div>
+    
 
 
     <div class="container-fluid mt--9">
@@ -10,7 +11,7 @@
         @if($currentPlan)
             <!-- Show Current form actions -->
             @include("plans.info",['planAttribute'=> $planAttribute,'showLinkToPlans'=>false])
-        @endif
+         @endif
 
         <div class="row">
 
@@ -76,6 +77,10 @@
                                 @if($currentPlan&&$plan['id'].""==$currentPlan->id."")
                                     <a href="" class="btn btn-primary disabled">{{__('Current Plan')}}</a>
                                 @else
+                                @if ($plan['price'] != 0)
+                                    <a href="{{route('restaurant.plans', $plan['id'])}}" class="btn btn-success">{{__('Purchase Plan')}}</a>
+                                @endif
+
 
                                 <!-- Button holder -->
                                 <div id="button-container-plan-{{$plan['id']}}"></div>

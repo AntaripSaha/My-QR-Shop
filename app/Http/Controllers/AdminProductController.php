@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Traits\Modules;
 use Akaunting\Module\Facade as Module;
+use App\Models\PlanSubscription;
 use App\Traits\Fields;
 
 use App\Restorant;
@@ -116,6 +117,11 @@ class AdminProductController extends Controller
             $purchases =  ProductPayment::where('user_id', auth()->user()->id)->with('product', 'user', 'restaurant')->paginate(10);        
             return view('restorants.product_purchase_list', compact('purchases'));
         }
+    }
+
+    public function subscription(){
+        $plan_subscriptions = PlanSubscription::with('user', 'restaurant', 'plan')->paginate(10);
+        return view('restorants.subscription_list', compact('plan_subscriptions'));
     }
 
 }

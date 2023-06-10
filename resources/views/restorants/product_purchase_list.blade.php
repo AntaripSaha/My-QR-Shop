@@ -47,10 +47,10 @@
                                         @if ( $purchase->restaurant)
                                         <td><a href="{{ route('admin.restaurants.edit', $purchase->restaurant->id) }}">{{ $purchase->user->name }}</a></td>
                                         @else
-                                        <td><a href="#">{{ $purchase->user->name }}</a></td>
+                                        <td><a href="#">{{ ($purchase->user->name) }}</a></td>
                                         @endif
-                                        <td>{{ $purchase->user->email }}</td>
-                                        <td>{{ $purchase->user->phone }}</td>
+                                        <td>{{ ($purchase->user->email) }}</td>
+                                        <td>{{ ($purchase->user->phone) }}</td>
                                         <td><img class="rounded" src={{ $purchase->product->image }} width="70px" height="auto" ></td>
                                         <td>{{ $purchase->product_quantity }}</td>
                                         <td>{{ $purchase->total_paid }}</td>

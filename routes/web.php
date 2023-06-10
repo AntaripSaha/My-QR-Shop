@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Custom Routes Start
 Route::get('/restaurant/{alias}/{foodId}', 'FrontEndController@foodDetails')->name('foodItemDetails');
 
 Route::get('/generate-qr', 'FrontEndController@generateQr')->name('generateqr');
@@ -29,14 +30,22 @@ Route::post('/order-product', 'OrderController@storeProduct')->name('order.produ
 
 Route::get('/blog/{slug}', 'PagesController@blog')->name('blog');
 
+// Subscription plan purchase 
+Route::get('/purchase/plan/{id}', 'RestaurantSubscription@index')->name('restaurant.plans');
+Route::get('/purchase/success', 'RestaurantSubscription@subscriptionCheckoutSuccess')->name('restaurant.success');
 
-    //Admin, Restaurant, User Product Purchase List
-    Route::get('purchase-list', 'AdminProductController@purchaseList')->name('purchase.list');
+
+
+//Admin, Restaurant, User Product Purchase List
+Route::get('purchase-list', 'AdminProductController@purchaseList')->name('purchase.list');
 
 
 Route::post('/checkout', 'ProductPaymentController@showCheckout')->name('checkout');
 Route::get('/checkout/success', 'ProductPaymentController@checkoutSuccess')->name('checkout.success');
 Route::get('/checkout/cancel', 'ProductPaymentController@checkoutCancel')->name('checkout.cancel');
+
+
+// Custom Routes End
 
 
 Route::get('/', 'FrontEndController@index')->name('front');
@@ -93,6 +102,8 @@ Route::group(['middleware' => ['auth','impersonate']], function () {
         Route::get('product_remove/{id?}', 'AdminProductController@remove')->name('product.remove');
         //Admin, Product Purchase List
         Route::get('product-purchase-list', 'AdminProductController@purchaseList')->name('product.purchase.list');
+        // Admin, Subscription Purchased List
+        Route::get('subscription-purchase-list', 'AdminProductController@subscription')->name('subscribed.plan');
 
         // Landing page settings 
         Route::get('landing', 'SettingsController@landing')->name('landing');
@@ -283,6 +294,10 @@ Route::group(['middleware' => ['auth','impersonate']], function () {
     Route::get('/subscribe/cancel', 'PlansController@cancelStripeSubscription')->name('plans.cancel');
     Route::get('/subscribe/plan3d/{plan}/{user}', 'PlansController@subscribe3dStripe')->name('plans.subscribe_3d_stripe');
     Route::post('/subscribe/update', 'PlansController@adminupdate')->name('update.plan');
+
+
+
+
 
     Route::get('qr', 'QRController@index')->name('qr');
 

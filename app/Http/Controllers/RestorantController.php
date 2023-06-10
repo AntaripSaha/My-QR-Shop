@@ -983,4 +983,5 @@ $restaurant=Restorant::findOrFail($restaurantid);
         //5. Redirect
         return redirect()->route('items.index')->withStatus(__('New language successfully created.'));
     }
+ 
 }

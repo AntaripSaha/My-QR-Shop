@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Laravel\Cashier\Exceptions\PaymentActionRequired;
 use Laravel\Cashier\Exceptions\PaymentFailure;
 use Akaunting\Module\Facade as Module;
+use App\Models\PlanSubscription;
 use Laravel\Cashier\Exceptions\IncompletePayment;
 
 class PlansController extends Controller
@@ -16,7 +17,7 @@ class PlansController extends Controller
 
     public function current()
     {
-
+        
         //The curent plan -- access for owner only
         if (! auth()->user()->hasRole('owner')) {
             abort(403, 'Unauthorized action.');
@@ -326,6 +327,9 @@ class PlansController extends Controller
         $user->plan_id = $request->plan_id;
         $user->plan_status = "set_by_admin";
         $user->update();
+        PlanSubscription::where('user_id', $request->user_id)->update([
+            'status' => 1
+        ]);
 
         return redirect()->route('admin.restaurants.edit', $request->restaurant_id)->withStatus(__('Plan successfully updated.'));
     }
