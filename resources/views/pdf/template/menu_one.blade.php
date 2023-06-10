@@ -74,6 +74,15 @@
          align-items:center;
          justify-content:space-between;
          }
+         .plus-icon
+        {
+            background: #13905e;
+            padding: 2px;
+            text-align: center;
+            border: 2px solid #13905e;
+            border-radius: 5px;
+            color: white;
+        }
          .submenu-container{
          display:flex;
          align-items:center;
@@ -110,8 +119,8 @@
                   <span>@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
                </td>
                <td width="30px">
-                  <a href="https://myqrshop.com/{{$resto_subdomain}}/{{ $item->id }}" target="_blank">
-                     <img src="/images/icons/plus.svg" width="50px">
+                  <a href="https://myqrshop.com/restaurant/{{$resto_subdomain}}/{{ $item->id }}" style="text-decoration: none;">
+                     <div class="plus-icon">+</div>
                   </a>
                </td>
             </tr>
