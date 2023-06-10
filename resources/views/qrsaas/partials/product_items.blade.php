@@ -14,7 +14,7 @@
                     </li>
                 @endforeach
             </ul>
-            <a href="{{ route('newrestaurant.register') }}" class="btn btn-primary">{{ $button_name }}</a>
+            <a href="{{ route('login') }}" class="btn btn-primary">{{ $button_name }}</a>
         </div>
     </div>
 </div>
