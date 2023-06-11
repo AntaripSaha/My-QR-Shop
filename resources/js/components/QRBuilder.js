@@ -209,7 +209,7 @@ export default class QRBuilder extends Component {
                                     </div>
                                 </div>
                                 <div>
-                                    <input type='radio' name='qrOptions' onChange={()=> this.setState({tempUrl:this.state.resto_name})} checked={this.state.tempUrl === this.state.resto_name ? 'checked' : ''}/> Menu
+                                    <input type='radio' name='qrOptions' onChange={()=> this.setState({tempUrl:this.state.resto_name})} checked={this.state.tempUrl === this.state.resto_name ? 'checked' : ''}/> Pdf Menu
                                     <input  style={{ marginLeft: '15px'}} type='radio' name='qrOptions' onChange={()=> this.setState({tempUrl:this.state.url})} checked={this.state.tempUrl === this.state.url ? 'checked' : ''} /> Restaurant
                                 </div>
                             </div>
