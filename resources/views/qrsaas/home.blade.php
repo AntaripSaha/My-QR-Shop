@@ -111,6 +111,7 @@
     
 </head>
 <body>
+    @include('sweetalert::alert')
 
     <script type="application/ld+json">
         {
@@ -298,6 +299,11 @@
        @include('qrsaas.partials.footer')
 
    </main>
+
+
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  
 
     <!-- Core -->
     <script src="{{ asset('impactfront') }}/vendor/jquery/dist/jquery.min.js"></script>

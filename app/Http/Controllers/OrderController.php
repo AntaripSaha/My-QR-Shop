@@ -357,7 +357,6 @@ class OrderController extends Controller
 
         if(!($request->table_id)){
             Alert::warning('Please Select Table');
-    
             return redirect()->back();
         }
 

@@ -49,7 +49,6 @@ class FrontEndController extends Controller
             if($plan[0]>0){
                 return view ('generate_qr');
             }else{
-                 
                 Alert::success('Please Subscribe a Plan First!');
                 return redirect()->back();
             }
