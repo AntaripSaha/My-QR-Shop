@@ -120,7 +120,10 @@ class AdminProductController extends Controller
     }
 
     public function subscription(){
-        $plan_subscriptions = PlanSubscription::with('user', 'restaurant', 'plan')->paginate(10);
+        $plan_subscriptions = PlanSubscription::with('user', 'restaurant', 'plan')
+        ->orderBy('created_at', 'desc')
+        ->groupBy('user_id')
+        ->paginate(10);    
         return view('restorants.subscription_list', compact('plan_subscriptions'));
     }
 
