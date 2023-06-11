@@ -62,6 +62,7 @@
         "onecentlin/laravel-adminer": "^4.7",
         "paypal/rest-api-sdk-php": "^1.14",
         "pusher/pusher-php-server": "^4.1",
+        "realrashid/sweet-alert": "^7.0",
         "silviolleite/laravelpwa": "^2.0",
         "spatie/eloquent-sortable": "^3.11",
         "spatie/geocoder": "^3.9",

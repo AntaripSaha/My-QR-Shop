@@ -26,6 +26,7 @@ use App\Events\OrderAcceptedByAdmin;
 use App\Events\OrderAcceptedByVendor;
 use App\Models\Orderitems;  
 use App\Models\SimpleDelivery;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class OrderController extends Controller
 {
@@ -353,6 +354,12 @@ class OrderController extends Controller
     }
 
     public function store(Request $request){
+
+        if(!($request->table_id)){
+            Alert::warning('Please Select Table');
+    
+            return redirect()->back();
+        }
 
         //Convert web request to mobile like request
         if(config('app.isdrive',false)){

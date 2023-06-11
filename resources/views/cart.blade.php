@@ -1,4 +1,4 @@
-@extends('layouts.front', ['class' => ''])
+@extends('layouts.front_two', ['class' => ''])
 @section('content')
     <section class="section-profile-cover section-shaped my--1 d-none d-md-none d-lg-block d-lx-block">
         <!-- Circles background -->
@@ -8,10 +8,10 @@
 
         </div>
     </section>
+
     <section class="section bg-secondary">
 
       <div class="container">
-
 
         {{-- <x:notify-messages /> --}}
 

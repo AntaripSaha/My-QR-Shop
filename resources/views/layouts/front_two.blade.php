@@ -155,7 +155,7 @@ Coded by www.creative-tim.com
 
      <!-- SELECT2 -->
      <script src="{{ asset('custom') }}/js/select2.js"></script>
-     <script src="{{ asset('vendor') }}/select2/select2.min.js"></script>
+     {{-- <script src="{{ asset('vendor') }}/select2/select2.min.js"></script> --}}
 
     <!-- All in one -->
     <script src="{{ asset('custom') }}/js/js.js?id={{ config('config.version')}}"></script>
