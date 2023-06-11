@@ -16,11 +16,11 @@ class RestaurantSubscription extends Controller
         
        $plan = Plans::where('id', $id)->first();
   
-       Stripe::setApiKey('sk_test_51LZpTqSFrfnDBpn6AAKuqwnYh60DqCzlPa27ta84QkHoh67C2k2fbqTR0z7fo6zPl04QAS1b2j2ZRUQ3gxCes1B9001tCMISvy');
-    //    Stripe::setApiKey(env('STRIPE_SECRET'));
-        // Store the plan ID in the session
+    //    Stripe::setApiKey('sk_test_51LZpTqSFrfnDBpn6AAKuqwnYh60DqCzlPa27ta84QkHoh67C2k2fbqTR0z7fo6zPl04QAS1b2j2ZRUQ3gxCes1B9001tCMISvy');
+          Stripe::setApiKey(env('STRIPE_SECRET'));
+          // Store the plan ID in the session
           session()->put('plan_id', $plan->id);
-         // Create a new Stripe Checkout session
+           // Create a new Stripe Checkout session
             $session = Session::create([
             'payment_method_types' => ['card'],
             'line_items' => [
@@ -49,8 +49,8 @@ class RestaurantSubscription extends Controller
     public function subscriptionCheckoutSuccess(Request $request)
     {
         $paymentIntentId = $request->input('session_id');
-        // Stripe::setApiKey(env('STRIPE_SECRET'));
-        Stripe::setApiKey('sk_test_51LZpTqSFrfnDBpn6AAKuqwnYh60DqCzlPa27ta84QkHoh67C2k2fbqTR0z7fo6zPl04QAS1b2j2ZRUQ3gxCes1B9001tCMISvy');
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+        // Stripe::setApiKey('sk_test_51LZpTqSFrfnDBpn6AAKuqwnYh60DqCzlPa27ta84QkHoh67C2k2fbqTR0z7fo6zPl04QAS1b2j2ZRUQ3gxCes1B9001tCMISvy');
         $paymentIntent = Session::retrieve($paymentIntentId);
         $subscription_payment = new PlanSubscription();
         $subscription_payment->plan_id = $request->session()->get('plan_id');

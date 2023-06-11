@@ -31,7 +31,7 @@ $(document).ready(function () {
     // preloader
     var $preloader = $('.preloader');
     if($preloader.length) {
-        $preloader.delay(10).slideUp();
+        $preloader.delay(500).slideUp();
     }
 
     var $navbarCollapse = $('.navbar-main .collapse');

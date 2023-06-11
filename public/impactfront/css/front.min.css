@@ -30358,7 +30358,7 @@ article h6 {
 .tooltip-inner {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
-/* .preloader {
+.preloader {
     display: flex;
     align-items: center;
     height: 100vh;
@@ -30368,8 +30368,8 @@ article h6 {
     transition: opacity 0.2s linear;
     width: 100%;
     z-index: 9999;
-} */
-/* .preloader .loader-element {
+}
+.preloader .loader-element {
     position: relative;
 }
 .preloader .loader-element .loader-animated-dot {
@@ -30382,7 +30382,7 @@ article h6 {
     left: 1px;
     top: 1px;
     animation: bounce 0.6s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
-} */
+}
 @keyframes bounce {
     0% {
         transform: translateY(0);
