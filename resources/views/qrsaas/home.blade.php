@@ -99,14 +99,25 @@
 
     <!-- Custom CSS defined by admin -->
     <link type="text/css" href="{{ asset('byadmin') }}/front.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B3J8KPNZL0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-B3J8KPNZL0');
+    </script>
+    
 </head>
 <body>
+
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Affordable & Customizable QR Codes for Your Restaurant's Digital Menu - My QR Shop",
-            "description": "Boost customer engagement with affordable and customizable QR codes from My QR Shop. Create a user-friendly digital menu experience for your restaurant or bar. Choose from stunning styles and unlimited color options. Quick registration process. Great prices.",
+            "name": "Contactless Digital QR Menu to Grow Your Restaurant Business - My QR Shop",
+            "description": "Generate a personalized QR code for your digital menu with My QR Shop. Get contactless digital QR menus to grow your restaurant business and reach new customers.",
             "url": "https://myqrshop.com/",
             "image": "https://myqrshop.com/uploads/settings/b609a738-b9b9-4614-9306-951437e8c1cf_logo.jpg",
             "logo": "https://myqrshop.com/uploads/settings/b609a738-b9b9-4614-9306-951437e8c1cf_logo.jpg",
@@ -122,9 +133,9 @@
             "dateModified": "2023-06-05",
             "interactionService": {
                 "@type": "WebSite",
-                "name": "Affordable & Customizable QR Codes for Your Restaurant's Digital Menu - My QR Shop",
+                "name": "Contactless Digital QR Menu to Grow Your Restaurant Business - My QR Shop",
                 "url": "https://myqrshop.com/",
-                "description": "Boost customer engagement with affordable and customizable QR codes from My QR Shop. Create a user-friendly digital menu experience for your restaurant or bar. Choose from stunning styles and unlimited color options. Quick registration process. Great prices.",
+                "description": "Generate a personalized QR code for your digital menu with My QR Shop. Get contactless digital QR menus to grow your restaurant business and reach new customers."
             },
             "breadcrumb": {
                 "@type": "BreadcrumbList",
@@ -237,7 +248,7 @@
                 }
             ]
         }
-        </script>
+    </script>
 
     <header class="header-global">
         @include('qrsaas.partials.nav')
@@ -245,48 +256,48 @@
 
     <main>
 
-         <!-- Loader -->
-        <div class="preloader bg-soft flex-column justify-content-center align-items-center">
-            <div class="loader-element">
-                <span class="loader-animated-dot"></span>
-                <img src="{{ config('global.site_logo') }}" height="40" alt="logo">
-            </div>
-        </div>
+        <!-- Loader -->
+       <div class="preloader bg-soft flex-column justify-content-center align-items-center">
+           <div class="loader-element">
+               <span class="loader-animated-dot"></span>
+               <img src="{{ config('global.site_logo') }}" height="40" alt="logo">
+           </div>
+       </div>
 
-        {{-- OpenGraph Image --}}
-        <div class="d-none">
-             <img src="./images/myqrshop.jpg" alt="">
-        </div>
+       {{-- OpenGraph Image --}}
+       <div class="d-none">
+            <img src="./images/myqrshop.jpg" alt="">
+       </div>
 
-        <!-- Hero 1 -->
-        @include('qrsaas.partials.hero')
-        <div class="pb-5"></div>
-        @include('qrsaas.partials.tutorial')
+       <!-- Hero 1 -->
+       @include('qrsaas.partials.hero')
+       <div class="pb-5"></div>
+       @include('qrsaas.partials.tutorial')
 
 
-        <!-- Product -->
-        @include('qrsaas.partials.product')
-        @include('qrsaas.partials.new_product')
+       <!-- Product -->
+       @include('qrsaas.partials.product')
+       @include('qrsaas.partials.new_product')
 
-        <!-- Pricing -->
-        @include('qrsaas.partials.pricing')
+       <!-- Pricing -->
+       @include('qrsaas.partials.pricing')
 
-        <!-- Testimonials -->
-        @include('qrsaas.partials.testimonials')
+       <!-- Testimonials -->
+       @include('qrsaas.partials.testimonials')
 
-        <!-- Featured clients -->
-        @if(in_array("feautureclients", config('global.modules',[])))
-         @include('feautureclients::qrsaas')
-        @endif
+       <!-- Featured clients -->
+       @if(in_array("feautureclients", config('global.modules',[])))
+        @include('feautureclients::qrsaas')
+       @endif
 
-        <!-- DEMO -->
-        @include('qrsaas.partials.demo')
+       <!-- DEMO -->
+       @include('qrsaas.partials.demo')
 
-        <!-- Footer -->
-        {{-- @include('productPayment.footer') --}}
-        @include('qrsaas.partials.footer')
+       <!-- Footer -->
+       {{-- @include('productPayment.footer') --}}
+       @include('qrsaas.partials.footer')
 
-    </main>
+   </main>
 
     <!-- Core -->
     <script src="{{ asset('impactfront') }}/vendor/jquery/dist/jquery.min.js"></script>

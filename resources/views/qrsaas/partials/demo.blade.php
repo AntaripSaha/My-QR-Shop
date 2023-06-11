@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-12 text-center mb-1 pb-2">
                     <!-- Button Modal -->
-                    <a href="{{ route('newrestaurant.register') }}" class="btn btn-secondary animate-up-2"><span class="mr-2"><i class="fas fa-hand-pointer"></i></span>{{ __('qrlanding.demo_button') }}</a>
+                    <a href="{{ route('login') }}" class="btn btn-secondary animate-up-2"><span class="mr-2"><i class="fas fa-hand-pointer"></i></span>{{ __('qrlanding.demo_button') }}</a>
                 </div>
                
             </div>
