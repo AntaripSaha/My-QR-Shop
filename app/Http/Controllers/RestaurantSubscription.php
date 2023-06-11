@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PlanSubscription;
 use App\Plans;
+use App\User;
 use Illuminate\Http\Request;
 use Stripe\Checkout\Session;
 use Stripe\Stripe;
@@ -55,9 +56,13 @@ class RestaurantSubscription extends Controller
         $subscription_payment->plan_id = $request->session()->get('plan_id');
         $subscription_payment->amount = $paymentIntent->amount_total / 100;
         $subscription_payment->user_id = auth()->user()->id;
-        $subscription_payment->status = 0;
+        $subscription_payment->status = 1;
         $subscription_payment->stripe_id = $paymentIntent->payment_intent;
         $subscription_payment->save();
+        User::where('id', auth()->user()->id)->update([
+            'plan_id'=>$request->session()->get('plan_id'),
+            'plan_status'=>'Automated'
+        ]);
         // Redirect or display a success message
         return view('productPayment.success');
     }

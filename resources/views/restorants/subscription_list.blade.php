@@ -61,7 +61,7 @@
                                         </td>
                                         <td>
                                             <a href="{{ route('admin.restaurants.edit', $plan->restaurant->id) }}">
-                                                <button class="btn btn-info btn-sm">Approve</button>
+                                                <button class="btn btn-info btn-sm">Details</button>
                                             </a>
                                         </td>
                                         {{-- <td class="text-right">

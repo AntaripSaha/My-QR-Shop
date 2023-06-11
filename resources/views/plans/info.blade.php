@@ -10,10 +10,8 @@
                 </div>
             </div>
             <div class="card-body">
-                <p>{{ __('You are currently using the ').$planAttribute['plan']['name']." ".__('plan') }}<p>
+                <p class="alert alert-info">{{ __('You are currently using the ').$planAttribute['plan']['name']." ".__('plan') }}<p>
                      
-                    <p class="alert alert-info">If You Purchased Any Plan, Please Wait For The Admin Confirmation.</p>
-
                 <!-- ORDERS -->
                 <div class="alert alert-{{$planAttribute['ordersAlertType']}}" role="alert">
                     {{ $planAttribute['ordersMessage'] }}
