@@ -37,6 +37,8 @@ use Akaunting\Money\Money;
 use Akaunting\Money\Currency;
 use App\Events\NewClient;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class FrontEndController extends Controller
 {
@@ -47,7 +49,9 @@ class FrontEndController extends Controller
             if($plan[0]>0){
                 return view ('generate_qr');
             }else{
-                return redirect()->route('front')->withStatus('Subscribe A Plan to Access This Feature!');
+                 
+                Alert::success('Please Subscribe a Plan First!');
+                return redirect()->back();
             }
         }
         else{
