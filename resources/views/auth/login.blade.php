@@ -87,7 +87,26 @@
                                 </div>
                             </div>
                         @endif
+                        <div class="card-header bg-transparent pb-5">
+                            <div class="text-muted text-center mt-2 mb-3"><small>{{ __('Sign in with') }}</small></div>
+                            <div class="btn-wrapper text-center">
 
+                                @if (strlen(config('settings.google_client_id'))>3)
+                                    <a href="{{ route('google.login') }}" class="btn btn-neutral btn-icon">
+                                        <span class="btn-inner--icon"><img src="{{ asset('argonfront/img/google.svg') }}"></span>
+                                        <span class="btn-inner--text">Google</span>
+                                    </a>
+                                @endif
+
+                                @if (strlen(config('settings.facebook_client_id'))>3)
+                                    <a href="{{ route('facebook.login') }}" class="btn btn-neutral btn-icon">
+                                        <span class="btn-inner--icon"><img src="{{ asset('custom/img/facebook.png') }}"></span>
+                                        <span class="btn-inner--text">Facebook</span>
+                                    </a>
+                                @endif
+
+                            </div>
+                        </div>
 
                         <form id="loginForm" role="form" method="POST" action="{{ route('login') }}">
                             @csrf
