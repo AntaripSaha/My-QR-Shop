@@ -12,6 +12,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
+use DB;
+use Carbon\Carbon;
 
 class LoginController extends Controller
 {
@@ -93,36 +95,13 @@ class LoginController extends Controller
 
             $user->assignRole('owner');
 
-            $restaurant = Restorant::create([
-                'name'=>'Restaurant Name',
-                'user_id'=> $user->id,
-                'description'=>'Description',
-                'minimum'=> 0,
-                'lat'=> 0,
-                'lng'=> 0,
-                'address'=>'',
-                'phone'=> 00000000,
-                'subdomain'=> $this->makeAlias(strip_tags($user_google->name))
-            ]);
-            // $restaurant->name = 'Restaurant Name';
-            // $restaurant->user_id = $user->id;
-            // $restaurant->description = 'Description';
-            // $restaurant->minimum = 0;
-            // $restaurant->lat = 0;
-            // $restaurant->lng = 0;
-            // $restaurant->address = '';
-            // $restaurant->phone = 00000000;
-            // $restaurant->subdomain = $this->makeAlias(strip_tags($user_google->name));
-            
-            $restaurant->save();
 
-            
-
-            $restaurant->setConfig('disable_callwaiter', 0);
-            $restaurant->setConfig('disable_ordering', 0);
-
-         //Fire event
-         NewVendor::dispatch($user,$restaurant);
+            $data=array('name'=>'Restaurant Name','user_id'=> $user->id, 'description'=>'Description', 'minimum'=>0, 'lat'=>0, 'lng'=>0, 'address'=>'address', 'phone'=>000000, 'subdomain'=>'restaurant');
+            // $data=array('name'=>'Restaurant Name','user_id'=> $user->id, 'description'=>'Description', 'minimum'=>0, 'lat'=>0, 'lng'=>0, 'address'=>'address', 'phone'=>000000, 'subdomain'=>$this->makeAlias(strip_tags($user_google->name)));
+            DB::table('companies')->insert($data);
+            // $restaurant->save();
+ 
+ 
 
         } else {
             if (empty($user->google_id)) {
@@ -161,25 +140,10 @@ class LoginController extends Controller
             $user->save();
 
             $user->assignRole('owner');
-
-            //Create Restorant
-            $restaurant = Restorant::create([
-                'name'=>'Restaurant Name',
-                'user_id'=> $user->id,
-                'description'=>'Description',
-                'minimum'=> 0,
-                'lat'=> 0,
-                'lng'=> 0,
-                'address'=>'',
-                'phone'=> 00000000,
-                'subdomain'=> $this->makeAlias(strip_tags($user_facebook->name))
-            ]);
-            $restaurant->save();
-
             
-
-            $restaurant->setConfig('disable_callwaiter', 0);
-            $restaurant->setConfig('disable_ordering', 0);
+            $data=array('name'=>'Restaurant Name','user_id'=> $user->id, 'description'=>'Description', 'minimum'=>0, 'lat'=>0, 'lng'=>0, 'address'=>'address', 'phone'=>000000, 'subdomain'=>'restaurant');
+            // $data=array('name'=>'Restaurant Name','user_id'=> $user->id, 'description'=>'Description', 'minimum'=>0, 'lat'=>0, 'lng'=>0, 'address'=>'address', 'phone'=>000000, 'subdomain'=>$this->makeAlias(strip_tags($user_google->name)));
+            DB::table('companies')->insert($data);
 
          //Fire event
          NewVendor::dispatch($user,$restaurant);
