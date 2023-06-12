@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\NewVendor;
+use App\Hours;
 use App\Http\Controllers\Controller;
 use App\Restorant;
 use App\User;
@@ -49,7 +51,7 @@ class LoginController extends Controller
         if($lastVendor&&auth()->user()->hasRole('client')){
             return route('vendrobyalias',['alias'=>$lastVendor]);
         }else{
-            return route('front');
+            return route('home');
         }
     }
 
@@ -89,7 +91,47 @@ class LoginController extends Controller
             $user->api_token = Str::random(80);
             $user->save();
 
-            $user->assignRole('client');
+            $user->assignRole('owner');
+
+            $restaurant = new Restorant;
+            $restaurant->name = 'Restaurant Name';
+            $restaurant->user_id = $user->id;
+            $restaurant->description = 'Description';
+            $restaurant->minimum = $user->minimum | 0;
+            $restaurant->lat = 0;
+            $restaurant->lng = 0;
+            $restaurant->address = 'Your Address';
+            $restaurant->phone = 00000000;
+            $restaurant->subdomain = $this->makeAlias(strip_tags($user_google->name));
+            $restaurant->save();
+
+            //default hours
+            $hours = new Hours();
+            $hours->restorant_id = $restaurant->id;
+            
+            $hours->{'0_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'0_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'1_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'1_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'2_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'2_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'3_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'3_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'4_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'4_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'5_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'5_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'6_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'6_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            
+            $hours->save();
+
+            $restaurant->setConfig('disable_callwaiter', 0);
+            $restaurant->setConfig('disable_ordering', 0);
+
+         //Fire event
+         NewVendor::dispatch($user,$restaurant);
+
         } else {
             if (empty($user->google_id)) {
                 $user->google_id = $user_google->id;
@@ -126,7 +168,47 @@ class LoginController extends Controller
             $user->api_token = Str::random(80);
             $user->save();
 
-            $user->assignRole('client');
+            $user->assignRole('owner');
+
+            //Create Restorant
+            $restaurant = new Restorant;
+            $restaurant->name = 'Restaurant Name';
+            $restaurant->user_id = $user->id;
+            $restaurant->description = 'Description';
+            $restaurant->minimum = $user->minimum | 0;
+            $restaurant->lat = 0;
+            $restaurant->lng = 0;
+            $restaurant->address = 'Your Address';
+            $restaurant->phone = 00000000;
+            $restaurant->subdomain = $this->makeAlias(strip_tags($user_facebook->name));
+            $restaurant->save();
+
+            //default hours
+            $hours = new Hours();
+            $hours->restorant_id = $restaurant->id;
+            
+            $hours->{'0_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'0_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'1_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'1_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'2_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'2_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'3_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'3_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'4_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'4_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'5_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'5_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            $hours->{'6_from'} = config('settings.time_format') == "AM/PM" ? "9:00 AM" : "09:00";
+            $hours->{'6_to'} = config('settings.time_format') == "AM/PM" ? "5:00 AM" : "17:00";
+            
+            $hours->save();
+
+            $restaurant->setConfig('disable_callwaiter', 0);
+            $restaurant->setConfig('disable_ordering', 0);
+
+         //Fire event
+         NewVendor::dispatch($user,$restaurant);
         } else {
             if (empty($user->fb_id)) {
                 $user->fb_id = $user_facebook->id;

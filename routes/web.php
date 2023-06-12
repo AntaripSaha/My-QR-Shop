@@ -12,6 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+// Social Login
+Route::get('/login/google', 'Auth\LoginController@googleRedirectToProvider')->name('google.login');
+Route::get('/login/google/redirect', 'Auth\LoginController@googleHandleProviderCallback');
+
+Route::get('/login/facebook', 'Auth\LoginController@facebookRedirectToProvider')->name('facebook.login');
+Route::get('/login/facebook/redirect', 'Auth\LoginController@facebookHandleProviderCallback');
+
 // Custom Routes Start
 Route::get('/restaurant/{alias}/{foodId}', 'FrontEndController@foodDetails')->name('foodItemDetails');
 
@@ -333,11 +342,7 @@ Route::post('/order', 'OrderController@store')->name('order.store');
 
 Route::resource('pages', 'PagesController');
 
-Route::get('/login/google', 'Auth\LoginController@googleRedirectToProvider')->name('google.login');
-Route::get('/login/google/redirect', 'Auth\LoginController@googleHandleProviderCallback');
 
-Route::get('/login/facebook', 'Auth\LoginController@facebookRedirectToProvider')->name('facebook.login');
-Route::get('/login/facebook/redirect', 'Auth\LoginController@facebookHandleProviderCallback');
 
 Route::get('/new/'.config('settings.url_route').'/register', 'RestorantController@showRegisterRestaurant')->name('newrestaurant.register');
 Route::post('/new/restaurant/register/store', 'RestorantController@storeRegisterRestaurant')->name('newrestaurant.store');
