@@ -95,10 +95,22 @@ class LoginController extends Controller
 
             $user->assignRole('owner');
 
+            //Create Restorant
+            $restaurant = new Restorant;
+            $restaurant->name = $user_google->name;
+            $restaurant->user_id = $user->id;
+            $restaurant->description = 'description';
+            $restaurant->minimum = 0;
+            $restaurant->lat = 0;
+            $restaurant->lng = 0;
+            $restaurant->address = '';
+            $restaurant->phone = '00';
+            $restaurant->subdomain = $this->makeAlias(strip_tags($user_google->name));
+            $restaurant->save();
 
-            $data=array('name'=>'Restaurant Name','user_id'=> $user->id, 'description'=>'Description', 'minimum'=>0, 'lat'=>0, 'lng'=>0, 'address'=>'address', 'phone'=>000000, 'subdomain'=>'restaurant');
-            // $data=array('name'=>'Restaurant Name','user_id'=> $user->id, 'description'=>'Description', 'minimum'=>0, 'lat'=>0, 'lng'=>0, 'address'=>'address', 'phone'=>000000, 'subdomain'=>$this->makeAlias(strip_tags($user_google->name)));
-            DB::table('companies')->insert($data);
+            // $data=array('name'=>'Restaurant Name','user_id'=> $user->id, 'description'=>'Description', 'minimum'=>0, 'lat'=>0, 'lng'=>0, 'address'=>'address', 'phone'=>000000, 'subdomain'=>'restaurant');
+            // // $data=array('name'=>'Restaurant Name','user_id'=> $user->id, 'description'=>'Description', 'minimum'=>0, 'lat'=>0, 'lng'=>0, 'address'=>'address', 'phone'=>000000, 'subdomain'=>$this->makeAlias(strip_tags($user_google->name)));
+            // DB::table('companies')->insert($data);
             // $restaurant->save();
  
  
@@ -129,6 +141,7 @@ class LoginController extends Controller
      */
     public function facebookHandleProviderCallback()
     {
+       
         $user_facebook = Socialite::driver('facebook')->stateless()->user();
         $user = User::where('email', $user_facebook->email)->first();
         if (! $user) {
@@ -146,7 +159,7 @@ class LoginController extends Controller
             DB::table('companies')->insert($data);
 
          //Fire event
-         NewVendor::dispatch($user,$restaurant);
+        //  NewVendor::dispatch($user,$restaurant);
         } else {
             if (empty($user->fb_id)) {
                 $user->fb_id = $user_facebook->id;
