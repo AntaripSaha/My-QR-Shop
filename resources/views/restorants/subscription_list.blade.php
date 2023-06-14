@@ -45,10 +45,16 @@
                                         @else
                                             <td><a href="#">{{ $plan->plan->name }}</a></td>
                                         @endif
-                                       
+                                       @if(!empty($plan->restaurant->name))
                                         <td>{{ $plan->restaurant->name }}</td>
                                         <td>{{ $plan->amount }}</td>
                                         <td>{{ $plan->stripe_id }}</td>
+                                        @else
+                                        <td>.</td>
+                                        <td>.</td>
+                                        <td>.</td>
+                                        @endif
+                                    
                                
                                      
                                         <td>{{ $plan->created_at->locale(Config::get('app.locale'))->isoFormat('LLLL') }}</td>
@@ -60,9 +66,15 @@
                                            @endif
                                         </td>
                                         <td>
+                                            @if(!empty($plan->restaurant->id))
                                             <a href="{{ route('admin.restaurants.edit', $plan->restaurant->id) }}">
                                                 <button class="btn btn-info btn-sm">Details</button>
                                             </a>
+                                            @else
+                                            <a href="#">
+                                                <button class="btn btn-info btn-sm">Details</button>
+                                            </a>
+                                            @endif
                                         </td>
                                         {{-- <td class="text-right">
                                             <div class="dropdown">
