@@ -27,6 +27,32 @@ Coded by www.creative-tim.com
 
     @notifyCss
 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
@@ -37,7 +63,7 @@ Coded by www.creative-tim.com
 
     <!-- CSS Files -->
     <link href="{{ asset('argonfront') }}/css/argon-design-system.min.css?v=1.4.0" rel="stylesheet" />
-
+ 
 
     <!-- Fontawesome -->
     <link type="text/css" href="{{ asset('impactfront') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">

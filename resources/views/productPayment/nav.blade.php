@@ -1,6 +1,6 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg headroom py-lg-3 px-lg-6 navbar-light navbar-theme-primary fixed-top" style="background-color: #0648b3 !important; ">
     <div class="container">
-        <a class="navbar-brand @@logo_classes" href="/">
+        <a class="navbar-brand @@logo_classes mobile-padding" href="/">
             <img class="navbar-brand-dark common" src="{{ config('global.site_logo_dark') }}" height="35" alt="Logo">
          </a>
         <div class="navbar-collapse collapse" id="navbar_global">
@@ -35,6 +35,17 @@
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                     <a data-scroll href="{{route('generateqr')}}" class="nav-link text-white" style="font-size: 16px;">QrGenerator</a>
                 </li>
+                <div class=" @@cta_button_classes desktop-hide">
+                    <a data-scroll href="/login" class="btn btn-md bg-white animate-up-2 mr-3 fw-600" style="color: #0648b3; font-weight: 700;"><i class="fas fa-th-large mr-2"></i>
+                        @auth()
+                            {{ __('qrlanding.dashboard')}}
+                        @endauth
+                        @guest()
+                            {{ __('qrlanding.login')}}
+                        @endguest
+                    </a>
+                </div>
+                
                 
                 @if(!empty(config('global.facebook')))
                 <li class="nav-item">
@@ -54,9 +65,14 @@
                 @endif
             </ul>
         </div>
-        <div class=" @@cta_button_classes ">
+        <div class=" @@cta_button_classes mobile-hide">
             <a data-scroll href="/login" class="btn btn-md bg-white animate-up-2 mr-3 fw-600" style="color: #0648b3; font-weight: 700;"><i class="fas fa-th-large mr-2"></i>
-                Dashboard
+            @auth()
+                {{ __('qrlanding.dashboard')}}
+            @endauth
+            @guest()
+                {{ __('qrlanding.login')}}
+            @endguest
             </a>
         </div>
         <div class="d-flex d-lg-none align-items-center">
@@ -67,3 +83,20 @@
     </div>
 </nav>
 
+<style>
+    @media (min-width: 268px) and (max-width: 568px) {
+        .mobile-padding{
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+        .mobile-hide{
+            display: none !important; 
+        }   
+    }
+    @media (min-width: 568px) {
+ 
+        .desktop-hide{
+            display: none !important; 
+        }   
+    }
+</style>

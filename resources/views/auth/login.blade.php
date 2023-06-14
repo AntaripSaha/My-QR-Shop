@@ -1,9 +1,9 @@
-@extends('layouts.app', ['class' => 'bg'])
+@extends('layouts.customLayouts', ['class' => 'bg'])
 
 @section('content')
-    @include('layouts.headers.guest')
+    {{-- @include('layouts.headers.guest') --}}
 
-    <div class="container mt--6 pb-5">
+    <div class="container mt-6 pt-3 pb-2">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
 
@@ -94,16 +94,11 @@
                                 @if (strlen(config('settings.google_client_id'))>3)
                                     <a href="{{ route('google.login') }}" class="btn btn-neutral btn-icon">
                                         <span class="btn-inner--icon"><img src="{{ asset('argonfront/img/google.svg') }}"></span>
-                                        <span class="btn-inner--text">Google</span>
+                                        {{-- <span class="btn-inner--text">Google</span> --}}
                                     </a>
                                 @endif
 
-                                @if (strlen(config('settings.facebook_client_id'))>3)
-                                    <a href="{{ route('facebook.login') }}" class="btn btn-neutral btn-icon">
-                                        <span class="btn-inner--icon"><img src="{{ asset('custom/img/facebook.png') }}"></span>
-                                        <span class="btn-inner--text">Facebook</span>
-                                    </a>
-                                @endif
+                     
 
                             </div>
                         </div>
@@ -162,7 +157,7 @@
                 <div class="row mt-3">
                     <div class="col-6">
                         @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}" class="text-light">
+                            <a href="{{ route('password.request') }}" class="text-primary">
                                 <small>{{ __('Forgot password?') }}</small>
                             </a>
                         @endif

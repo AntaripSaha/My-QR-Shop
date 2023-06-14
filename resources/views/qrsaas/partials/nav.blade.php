@@ -36,6 +36,20 @@
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                     <a data-scroll href="{{route('generateqr')}}" class="nav-link mobile">QrGenerator</a>
                 </li>
+                <div class="@@cta_button_classes desktop-hide">
+                    <a data-scroll href="/login" class="btn btn-md btn-docs bg-white animate-up-2 mr-3"><i class="fas fa-th-large mr-2"></i>
+                        @auth()
+                            {{ __('qrlanding.dashboard')}}
+                        @endauth
+                        @guest()
+                            {{ __('qrlanding.login')}}
+                        @endguest
+                    </a>
+                    @guest()
+                        <a href="{{ route('newrestaurant.register') }}" target="_blank" class="btn btn-md btn-secondary animate-up-2"><i class="fas fa-paper-plane mr-2"></i>{{ __('qrlanding.register')}}</a>
+                    @endguest
+        
+                </div>
                 
                 @if(!empty(config('global.facebook')))
                 <li class="nav-item">
@@ -55,7 +69,7 @@
                 @endif
             </ul>
         </div>
-        <div class=" @@cta_button_classes">
+        <div class="@@cta_button_classes mobile-hide">
             <a data-scroll href="/login" class="btn btn-md btn-docs bg-white animate-up-2 mr-3"><i class="fas fa-th-large mr-2"></i>
                 @auth()
                     {{ __('qrlanding.dashboard')}}
@@ -80,6 +94,15 @@
     @media (min-width: 268px) and (max-width: 568px) {
         .mobile{
             color: #0648b3 !important; 
-        }    
+        }
+        .mobile-hide{
+            display: none !important; 
+        }   
+    }
+    @media (min-width: 568px) {
+ 
+        .desktop-hide{
+            display: none !important; 
+        }   
     }
 </style>
