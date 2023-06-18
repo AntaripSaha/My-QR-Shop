@@ -62,7 +62,6 @@ class RestorantController extends Controller
      */
     public function index(Restorant $restaurants)
     {
-
         //With downloaod
         if (isset($_GET['downlodcsv'])) {
             $items = [];
